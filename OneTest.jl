@@ -106,14 +106,17 @@ end
 Returns the matrices `A` and the permutation `sort_order` such that
 
 ````
-demand(market, p)[sort_order] == A * p[sort_order] + market.gamma[sort_order]
+demand(market, p)[sort_order] == A * cutoffs[sort_order] + market.gamma[sort_order]
 ````
 
 and
 
 ````
-appeal(market, p)[sort_order] == (A * p[sort_order] .^2 + market.gamma[sort_order])/2
+appeal(market, p)[sort_order] == (A * cutoffs[sort_order] .^2 + market.gamma[sort_order])/2
 ````
+
+The argument `cutoffs` is used only to determine the sort order, so it may be
+replaced with any vector whose entries sort the same way.
 """
 function demandmatrix(market, cutoffs)
     m = length(market)
@@ -141,13 +144,16 @@ end
 
 Tatonnement procedure for finding equibilibrium.
 """
-function equilibrium(market::Market; maxit::Int=500, tol=1e-8)
-
-#     To use random cutoffs
-#     p = rand(length(market))
-    
-#     To use heuristic cutoffs
-    p = heuristiceq(market)
+function equilibrium(market::Market; maxit::Int=500, tol=1e-8, p0=nothing)
+    if p0 === nothing || p0 == :heuristic
+        # Heuristic cutoffs
+        p = heuristiceq(market)
+    elseif p0 == :random
+        # Random cutoffs
+        p = rand(length(market))
+    else
+        p = p0
+    end
     
     nit = 0
     
@@ -166,7 +172,7 @@ function equilibrium(market::Market; maxit::Int=500, tol=1e-8)
 #         p = max.(0, p + (1 .- market.capacities ./ D) .* (1 .- p))
         
 #         Normalize to satisfy D = Ap + γ
-        p = heuristiceq(market; orderby = p)
+        p = heuristiceq(market; orderby=p)
     end
     
     return p, nit
@@ -176,8 +182,7 @@ end
 """
     heuristiceq(market; orderby)
     
-Uses the gamma-minus-capacity heuristic to find an approximate equilibrium, or 
-tries to order the optimal cutoffs by another argument supplies. 
+Uses the gamma-minus-capacity heuristic to find an approximate equilibrium, or tries to order the optimal cutoffs by another argument supplied. 
 """
 function heuristiceq(market::Market; orderby=nothing)
     if orderby === nothing

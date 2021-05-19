@@ -1,0 +1,61 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{supplydemandfw}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=0b38b39638394e0856c58aa0ab543791}{%
+           family={Azevedo},
+           familyi={A\bibinitperiod},
+           given={Eduardo\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37b6efb6f6fb90c4962db831302812df}{%
+           family={Leshno},
+           familyi={L\bibinitperiod},
+           given={Jacob\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a2b74cfdfd2c93eb979acf467757b537}
+      \strng{fullhash}{a2b74cfdfd2c93eb979acf467757b537}
+      \strng{bibnamehash}{a2b74cfdfd2c93eb979acf467757b537}
+      \strng{authorbibnamehash}{a2b74cfdfd2c93eb979acf467757b537}
+      \strng{authornamehash}{a2b74cfdfd2c93eb979acf467757b537}
+      \strng{authorfullhash}{a2b74cfdfd2c93eb979acf467757b537}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{Sept.}
+      \field{journaltitle}{Journal of Political Economy}
+      \field{number}{5}
+      \field{title}{A Supply and Demand Framework for Two-Sided Matching Markets}
+      \field{volume}{124}
+      \field{year}{2016}
+      \field{pages}{1235\bibrangedash 68}
+      \range{pages}{34}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

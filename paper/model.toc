@@ -1,0 +1,65 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Introduction}{3}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Preliminaries}{4}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Characterization of admissions markets}{4}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Notion of equilibrium}{5}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3}Interpretation of the equilibrium conditions}{5}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.3.1}As a fixed point of a t\^{a}tonnement process}{5}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.3.2}As a competitive (Nash) equilibrium}{5}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.3.3}As a market-clearing cutoff vector}{5}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.3.4}As a stable matching}{6}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4}Equivalent formulations of the equilibrium conditions}{7}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.4.1}Nonlinear complementarity problem}{7}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.4.2}Variational inequality problem}{7}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5}Optimization tasks}{7}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Single-score model with multinomial logit preferences}{7}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Characterization of $\eta $}{8}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}Demand function}{8}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.2.1}Continuity and piecewise linearity of the demand function}{9}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3}Appeal function}{10}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Unconstrained comparative statics}{11}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Cutoff effects}{11}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Quality effects}{12}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}Interpretation of subdifferentials when multiple cutoffs are equal}{12}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Optimization tasks}{12}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1}Computing the equilibrium}{13}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.1.1}T\^{a}tonnement algorithm}{13}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.1.2}Closed-form expression for equilibrium when cutoff order is known}{13}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.1.3}A heuristic for the optimal cutoff order}{15}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.1.4}Validation}{15}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2}Reverse optimization of student preferences}{15}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Comparitive statics at equilibrium}{15}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1}At equilibrium: Demand effects}{15}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Extensions}{16}{}%
