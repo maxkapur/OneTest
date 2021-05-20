@@ -58,32 +58,45 @@ This model enables us to actually compute useful comparative statics.
 Moreover, it is realistic xyz.
 
 \section{Preliminaries}
-Before specifying the market used in this paper, I will describe a nonatomic, competitive school admissions market and summarize some important theoretical results.
+Before specifying the market used in this paper, I will define a nonatomic admissions market and summarize some important theoretical results.
 
 \subsection{Admissions markets}
-\begin{definition} An \emph{admissions market} consists of a set of schools $C = \{ 1\dots |C| \}$ and a continuum of students $s \in S$. It is characterized by four parameters:
+\begin{definition} An \emph{admissions market} consists of a set of schools $C = \{ 1\dots |C| \}$ and a mass-1 continuum of students over the set $S$ of student types. The market is characterized by four parameters:
 \begin{enumerate}
-\item The distribution of students $\eta$ over the $S$, the set of possible student types. Each point $s$ in $S$ is associated with a preference list over the schools  $>_s$ and a percentile score at each school $\theta_{sc} \in [0,1]$.
-\item The score cutoff vector $p$. 
-\item The demand vector $D$.
-\item The capacity vector $q$.
+\item The measure $\eta: S \mapsto [0, 1]$ over the continuum of students.
+\item The score cutoff vector $p \in [0, 1]^C$. 
+\item The demand vector $D \in [0, 1]^C$.
+\item The capacity vector $q \in \mathbb{R}_{++}^C$.
 \end{enumerate}
 \end{definition}
 
-The distribution of students $\eta$ is a probability distribution over $S$, the set of possible student types. Each point $s$ in $S$ is associated with a preference list over the schools  $>_s$ and a percentile score at each school $\theta_{sc} \in [0,1]$.
+The model is \emph{nonatomic} in that it represents students as a probability measure over the set of student types instead of considering individual students as discrete actors. Each point $s$ in the set of student types $S$ is associated with a preference list over the schools $>_s$ and a percentile score at each school $\theta_{sc} \in [0,1]$. Hence, $S = C! \times [0, 1]^C$. 
 
-Schools prefer students with higher scores; hence the model is \emph{competitive,} because each school will do what it can to obtain the best entering class. Admissions decisions are based on the ordering of students' scores at $c$. Any student for whom $\theta_{sc} \geq p_c$ is admitted to the school.
+Schools marginally prefer students with higher scores. Their admissions decisions are represented by the score cutoff vector $p$. Any student for whom $\theta_{sc} \geq p_c$ is said to be \emph{admitted} to school $c$. 
 
-The model remains discrete with regard to the set of schools. There are $|C|$ schools $c \in C$, each having capacity $q_c > 0$. , expressed as a fraction of the total distribution of students. The capacity may be a hard limit on the number of students a school can accept, as dictated by government policy or physical constraints. Or, the capacity may be an enrollment target determined by the admissions office. 
+The demand vector represents the number of students who enroll at each school. Assume that each student attends her favorite school among the set of schools to which she is admitted, which is called her \emph{consideration set} $C^\# \in 2^C$. Then the demand for school $c$ is a function of $p$ and $\eta$; specifically, it is the measure of students who are admitted to school $c$ but not admitted to any school that they prefer to $c$:
+\begin{equation} \label{demanddefinition}
+D_c \equiv \eta\left(s: c = \arg \max_{>_s} \left\{\hat c: e_{\hat c}^s \geq p_{\hat c} \right\}\right)
+\end{equation}
+Observe that $D_c$ is weakly decreasing in $p_c$ and weakly increasing in $p_{c'}$ for $c' \neq c$. Furthermore, if the preference lists are independent of the score vectors and the marginal distribution of scores at each school has full support (alternatively, if $\eta$ has full support), then $D_c$ is strictly decreasing in $p_c$ and strictly increasing in $p_{c'}$ for $c' \neq c$. Intuitively, this means that the margin of students who would choose to attend $D_c$ if its cutoff decreased is never empty. Finally, observe that $p_c = 1 \implies D_c = 0$ regardless of the other schools' cutoffs.
+
+If the preference lists are independent of the score vectors, the demand can also be expressed as the sum of the demand from each combination of preference list and consideration set:
+\begin{align*}D_c = 
+\sum_{>_s \in C!} \sum_{\substack{C^\# \in 2^{C}:\\ c \in C^\#}}
+\eta\Big(\;s:&~~\underbrace{e_{c'}^s \geq p_{c'}, \forall c' \in C^\#}_{\text{got into schools in } C^\# } \\
+\text{ and} &~~\underbrace{e_{c''}^s < p_{c''}, \forall c'' \in C \setminus C^\#}_{\text{rejected elsewhere}} \\
+\text{ and} &~~\underbrace{c >_s \hat c, \forall \hat c \in C^\#\setminus \{c\}}_{\text{prefers } c \text{ among } C^\#} \;\Big)
+\end{align*}
+This expression yields immediate insight into the complexity of nonatomic admissions markets. When schools are allowed to set their own cutoffs, and students are given free choice among the schools in their consideration sets, the number of terms in the sum above is $|C|!\times2^{|C|}$. However, such a general characterization of students is not always needed. The model considered in this paper, described in \S\ref{modeldescription}, characterizes $S$ using only $|C|$ parameters.
+
+Each school's capacity $q_c > 0$ represents the fraction of the total mass of students that the school can accept. The capacity is used to define the notion of equilibrium below.
 
 Assume that students prefer to be assigned to any school, even their last choice, than to remain unassigned. This is without loss of generality; if some students prefer to be unassigned than attend a particular school, then this choice can be incorporated into the model by adding a dummy school, representing nonassignment, with arbitrary large capacity. 
 
-This model largely agrees with the supply--demand framework provided by Azevedo and Leshno \parencite*{supplydemandfw}. It elaborates their model, however, by offering a more robust characterization of student preferences and school scoring practices. In particular, I consider student preferences derived from the multinomial logit choice model. I introduce the notion of a school assessment function by which schools can express their preferences for students with different strengths. And I show how to express the demand for each school as a function of its choice model parameters and assessment function.
-
-Show how this induces a demand function and what our assumptions are
+Assume that almost no ties occur among scores at a given school. That is, for any fixed $c$ and constant $\bar \theta$, $\eta( s: \theta_{sc} = \bar \theta) = 0$. It follows that the demand is continuous in $p$. 
 
 \subsection{Notion of equilibrium}
-(change to state results in general form)
+Let's consider a notion of equilibrium that turns out to have several realistic interpretations. 
 
 \begin{definition} \label{marketeqconditions} An admissions market is in \emph{equilibrium} if the following conditions hold:
 \begin{align} D_c &\leq q_c, \quad \forall c \label{capacitycondition} \\
@@ -94,30 +107,66 @@ The first condition, called the \emph{capacity condition,} says that no school's
 
 Using the sign constraint on $p$ and the capacity condition, an equivalent to the stability condition is $D_c < q_c \implies p_c = 0$ or $p^T \left(D - q\right) = 0$.
 
-The following assumptions ensure the existence of the equilibrium: First, restrict domain of $p$ to $[0,1]$. Demand decreasing in $p$. Full support in $\eta$. 
+As shown below, a sufficient condition for the existence of the equilibrium is that the demand is continuous in $p$. A sufficient condition for the uniqueness of the equilibrium is that the demand is strictly decreasing in $p$. As discussed above, both of these conditions are met if the preference lists are independent of the score vectors and the marginal distribution of scores at each school has full support.
+%The following assumptions ensure the existence of the equilibrium: First, restrict domain of $p$ to $[0,1]$. Demand decreasing in $p$. Full support in $\eta$. 
 
 \subsection{Interpretation of the equilibrium conditions}
+The applicability and interpretation of the equilibrium conditions depends on the design of the admissions markets. I offer four interpretations, moving from theoretical to practical. The first interpretation establishes a sufficient condition for the existence of the equilibrium. 
 
-There are several possible interpretations of the equilibrium conditions that depend on the design of the admissions market. Note that these interpretations hold for more general admissions markets.
-
+In all cases, assume the distribution of student types $\eta$ and the school capacities $q$ are fixed; thus the demand $D(p)$ is determined entirely by the cutoffs $p$. 
 
 \subsubsection{As a fixed point of a t\^{a}tonnement process}
-In this and the following subsection, let's consider a 
+Suppose that each school has set an admissions target of $q_c$ and observes its demand from year to year. If more than $q_c$ students enroll, then the school attempts to reduce remand by increasing its cutoff. If fewer than $q_c$ students enroll, the school attempts to increase demand by lowering its cutoff (but not past zero). 
 
-Guaranteed to exist by Brouwer's. 
+Let $Z(p) \equiv D(p) - q$ denote the excess demand vector. Then the process described above implies the following recursive relation between the cutoff vector in year $k$ and in year $k+1$:
+\[p_c^{(k+1)} = \max\biggl\{0,~p_c^{(k)}+ \Gamma_c\Bigl[Z_c\bigl(p^{(k)}\bigr)\Bigr] \biggr\}\]
+where $\Gamma$ is sign-preserving. A dynamic process like this one, in which prices adjust in the direction of excess demand, is called a \emph{t\^{a}tonnement process}.
+\begin{theorem}
+If $\bar p$ is a fixed point of the t\^{a}tonnement process, then it satisfies the equilibrium conditions. The converse also holds.
+\end{theorem}
+\textbf{Proof.} Pick $\bar p$ such that $\bar p = \max\bigl\{0, \bar p_c + \Gamma_c\left[Z_c(\bar p)\right] \bigr\}$. Subtract $\bar p_c$ from both sides to obtain $0 = \max\bigl\{-\bar p_c,\Gamma_c\left[Z_c(\bar p)\right] \bigr\}$, which implies $0 \geq \Gamma_c\left[Z_c(\bar p)\right] \bigr\}$. This means that the excess demand is negative, which establishes the capacity condition. Now, suppose $\bar p_c > 0$; then $\bar p_c =  \bar p_c + \Gamma_c\left[Z_c(\bar p)\right] $ establishes the stability condition $Z_c(\bar p = 0)$. Hence, any fixed point of the t\^{a}tonnement process is an equilibrium. 
+
+As for the converse, if $p^{(k)}$ satisfies the equilibrium conditions, it is easy to verify that $p^{(k+1)} = p^{(k)}$. \hfill  $\square$
+
+Moreover, if the demand function is continuous in $p$, then Brouwer's fixed-point theorem guarantees that a fixed point exists. (Observe that the cutoff update maps the convex set $[0, 1]^C$ to itself.) This means that continuous demand is sufficient for the existence of an equilibrium in admissions markets. 
+
+Quantitative economists have studied t\^{a}tonnement processes extensively. For an introduction, see Codenotti and Varadarajan \parencite*{compmkteq} or Intriligator \parencite*[][chap. 9]{mathematicaloptandecontheory}. A classical proof of various convergence conditions is Uzawa \parencite*{walrastatonnement}. 
 
 \subsubsection{As a competitive (Nash) equilibrium}
-Competitive equilibrium. A decentralized admissions procedure like that used by private universities in the US. In this case, schools designate their own capacity, which is not necessarily a physical limitation on the number of students it can receive but rather a way of maintaining the school's selective reputation. In this case, schools must observe their demand from year over year and adjust their admissions cutoffs accordingly. If the adjustment process fits certain regularity conditions, then this process converges to the equilibrium defined above. The equilibrium is a fixed point of a tatonnement process. (In fact, a version of this process is how the function `quickeq()` computes equilibria.) (Show that this is a Nash EQ when schools use quality as their utility func.)
+% Perhaps rewrite these utility functions in terms of p
+Suppose that each school's capacity $q_c$ is a physical constraint on the number of students it can admit. Each school would like to recruit as many students as possible. However, if more students choose to attend the school than the school has capacity for, it must rent additional classroom space at considerable expense per student. That is, each school has a piecewise utility function $u_c(D_c)$ that is increasing in the demand when $0 \leq D_c \leq q_c$ but decreasing when $D_c > q_c$, and $\lim_{D_c \to q_c^+} u_c(D_c) \leq u_c(q_c)$. 
+
+Another scenario in which utility functions with this shape may arise is as follows: Schools' utility functions are mostly by the number of students they enroll and, to a lesser extent, by their average score. If the demand for a school is less than its capacity, then a marginal student is always desirable. On the other hand, if the demand exceeds the capacity, then the school has no ability to procure space for the excess demand. Instead, it allows students to register on a first come, first served basis. Because the set of registered students is a random subset of the students who attempt to enroll at the school, it provides the school with less overall utility than if it handpicked the $q_c$ students with the highest scores. That is, when $D_c >q_c$, $u_c$ is increasing in $p_c$, and therefore decreasing in $D_c$. 
+
+In both of these situations, the admissions market equilibrium can be interpreted as a Nash equilibrium. 
+\begin{theorem}
+Consider the game in which each school picks a cutoff $p_c \in [0,1]$ and tries to maximize a utility function $u_c(D_c)$ that is increasing in the demand when $0 \leq D_c \leq q_c$ but decreasing when $D_c > q_c$, and $\lim_{D_c \to q_c^+} u_c(D_c) \leq u_c(q_c)$.
+
+If $p^*$ satisfies the equilibrium conditions, then it is the Nash equilibrium of the game above. The converse also holds.
+\end{theorem}
+\textbf{Proof.} Suppose $p^*$ satisfies the admissions market equilibrium conditions. For the schools for which $D_c = q_c$, their utility is globally maximal. For a school for which $D_c < q_c$, the only way for the school to increase its utility is to decrease its cutoff, but $p_c^* = 0$ by assumption. Hence, is incentivized to change its cutoff, and $p^*$ is a Nash equilibrium of the game defined by the schools' utility functions and the action space $p_c \in [0, 1]$. Furthermore, it can be seen that if the utility functions are strictly increasing or decreasing in the situations described above, then any Nash equilibrium is an admissions market equilibrium. \hfill $\square$
+
+As an aside, observe both of the above are natural situations in which the t\^{atonnement} dynamics may arise.
 
 \subsubsection{As a market-clearing cutoff vector}
-Consider a semicentralized admissions procedure similar to the one use for college admissions in South Korea. In order to ensure an even geographic distribution of students, the government places a limit on the number of students who can attend each university, equivalent to our capacity. Then, college make admissions offers over the course of several rounds, observing the number of students who commit to the university and steadily lowering their cutoffs until the capacity is full or there are no students left who have not committed to a school.
-That is, the process terminates when the \emph{market clears:} There may be empty seats at some schools or some students who were admitted nowhere, but never both. 
+Consider a semicentralized admissions procedure similar to the one used for college admissions in South Korea. In order to ensure an even geographic distribution of students, the government places a firm limit $q_c$ on the number of students who can attend each university. At the beginning of the admissions cycle, colleges are given the profiles of all the students interested in attending. Each college makes admissions offers over the course of several rounds, beginning with the highest-qualified students, and at each round a subset of the admitted students tentatively commit to attending one of the colleges that admitted them. Continuing in this manner, colleges continue lowering their cutoffs and offering admission to new students until either they fill their capacity, or lowering the cutoff fails to elicit an increase in demand. That is, the process terminates when the \emph{market clears:} There may be empty seats at some schools or some students who were admitted nowhere, but never both. The total number of assigned students is $\min\{\sum_c q_c, 1\}$.
 
-Call the final vector of admissions cutoffs $\hat p$. In reality, many students employ a satisficing strategy by committing to a college that is "good enough" in an early admissions round before observing their full consideration set. However, if we assume (unrealistically) that students have perfect knowledge of their scores, then the number of students enrolled in each college at the end of this process is precisely equal to the demand $D(\hat p)$ that would arise if the colleges had instated their cutoffs pro hoc and allowed students to enroll freely. 
+Call the final vector of admissions cutoffs $\hat p$. If we assume that student preference lists are independent of their scores and that the marginal distribution of scores at each school has full support, then it follows that market-clearing cutoffs $\hat p$ satisfy the equilibrium conditions. The capacity condition holds at $\hat p$, because colleges are prohibited from lowering their cutoffs beyond the point where the demand equals the capacity. The stability condition also holds: Suppose (for a contradiction) that at the end of the final round, there is a school which has both remaining capacity (that is, $D_c < q_c$) and a positive cutoff $\hat p_c > 0$. By the full support assumption on the marginal score distribution, the set of marginal students at $c$ is nonempty. Hence, if $c$ lowers its cutoff, it can attract additional students. This contradicts the stopping criterion.
 
-It follows that market-clearing cutoffs $\hat p$ satisfy the equilibrium conditions. The capacity condition holds at $\hat p$, because colleges are not allowed to lower their cutoffs beyond the point where the demand equals the capacity. The stability condition also holds: Suppose that at the end of the final round, there is a school which has remaining capacity (that is, $D_c < q_c$) and $\hat p_c > 0$.  However, among the set of students whose score is on the interval $(0, \hat p_c)$,  (by full support, for some of them) for $\gamma_c / \Gamma$ of them, $c$ is their first choice. Hence, if $c$ lowers its cutoff, it can attract additional students; by the perfect information assumption, students who were marginally rejected by $c$ at the cutoff $p_c$ would not have committed to another school in an earlier round. This means that both unallocated capacity and uncomitted students remain, which contradicts the stopping criterion.
+The previous paragraph establishes the following theorem:
+\begin{theorem}
+If $\hat p$ is a market-clearing cutoff vector obtained from the semicentralized admissions procedure, then it satisfies the equilibrium conditions.
+\end{theorem}
+The semicentralized admissions procedure can be interpreted as a t\^{a}tonnement process in which the initial cutoffs are a vector of ones, or as a distributed school-proposing deferred acceptance process, discussed below.
 
-\subsubsection{As a stable matching}
+\subsubsection{As a stable assignment}
+The notion of a stable assignment has its roots in the field of mechanism design and emerges most naturally from a \emph{centralized school choice process} in which students and schools submit their preference lists to the school board, and the school board determines the assignment of students to schools. First, I define the class of assignments the school board may consider.
+\begin{definition}
+A school choice \emph{assignment} is a mapping $\mu: S \to C \cup \{c_0\}$ that respects schools' capacity constraints. Namely, $\eta (s: \mu(s) = c) \leq q_c, \forall c \in C$. $\mu(s) = c_0$ represents nonassignment.
+\end{definition}
+
+
+
 It turns out we can state this result more strongly: By Lemma 1 of Azevedo and Leshno, there is a one-to-one relationship between market-clearing cutoff vectors and stable assignments.
 
 The notion of stable assignments applies to a *centralized school-choice process* in which students submit their preference lists to a central agency that computes a match using the DA process, namely ...
@@ -157,7 +206,15 @@ If $D$ is strictly decreasing in $p$, then $F$ is strictly increasing, and $p^*$
 Give this a better title. Simply list possible optimization tasks. 
 
 
-\section{Single-score model with multinomial logit preferences}
+
+
+
+
+
+
+
+
+\section{Single-score model with multinomial logit preferences} \label{modeldescription}
 This model consideries a special kind of admissions market that has not received much attention in the school-choice literature but approximates the admissions procedure used in many systems around the world.
 
 \subsection{Characterization of $\eta$}

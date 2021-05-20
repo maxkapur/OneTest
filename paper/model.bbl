@@ -55,6 +55,129 @@
       \field{pages}{1235\bibrangedash 68}
       \range{pages}{34}
     \endentry
+    \entry{compmkteq}{incollection}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c89897e80d8e67afe9b0fb75f889e9cd}{%
+           family={Codenotti},
+           familyi={C\bibinitperiod},
+           given={Bruno},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=25a9e2d489efa64117f9b45f6e02eadf}{%
+           family={Varadarajan},
+           familyi={V\bibinitperiod},
+           given={Kasturi},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=dd03ed102537d5040adaf7ede9bad0ec}{%
+           family={Nisan},
+           familyi={N\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod}}}%
+        {{hash=efce6f6d496cdcc1bb07fb47dfecb3aa}{%
+           family={Roughgarden},
+           familyi={R\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3b65c0aec42ebdc08432a6ece3a86584}{%
+           family={Tardos},
+           familyi={T\bibinitperiod},
+           given={Éva},
+           giveni={É\bibinitperiod}}}%
+        {{hash=4391dea254c3bbcaff1fefed241caed0}{%
+           family={Vazirani},
+           familyi={V\bibinitperiod},
+           given={Vijay\bibnamedelima V.},
+           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{04d12956d7a4f456f8c770b39db6056d}
+      \strng{fullhash}{04d12956d7a4f456f8c770b39db6056d}
+      \strng{bibnamehash}{04d12956d7a4f456f8c770b39db6056d}
+      \strng{authorbibnamehash}{04d12956d7a4f456f8c770b39db6056d}
+      \strng{authornamehash}{04d12956d7a4f456f8c770b39db6056d}
+      \strng{authorfullhash}{04d12956d7a4f456f8c770b39db6056d}
+      \strng{editorbibnamehash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \strng{editornamehash}{a461b403bdb909ab1f593fcc8e04d108}
+      \strng{editorfullhash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Algorithmic Game Theory}
+      \field{chapter}{6}
+      \field{title}{Computation of Market Equilibria by Convex Programming}
+      \field{year}{2007}
+    \endentry
+    \entry{mathematicaloptandecontheory}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=281b8f46561c8ee4cc91b9b36212e71e}{%
+           family={Intriligator},
+           familyi={I\bibinitperiod},
+           given={Michael\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Englewood Cliffs, NJ}%
+      }
+      \list{publisher}{1}{%
+        {Prentice-Hall}%
+      }
+      \strng{namehash}{281b8f46561c8ee4cc91b9b36212e71e}
+      \strng{fullhash}{281b8f46561c8ee4cc91b9b36212e71e}
+      \strng{bibnamehash}{281b8f46561c8ee4cc91b9b36212e71e}
+      \strng{authorbibnamehash}{281b8f46561c8ee4cc91b9b36212e71e}
+      \strng{authornamehash}{281b8f46561c8ee4cc91b9b36212e71e}
+      \strng{authorfullhash}{281b8f46561c8ee4cc91b9b36212e71e}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Mathematical Optimization and Economic Theory}
+      \field{year}{1971}
+    \endentry
+    \entry{walrastatonnement}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4cf09f93abf65f26171201339553f28e}{%
+           family={Uzawa},
+           familyi={U\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4cf09f93abf65f26171201339553f28e}
+      \strng{fullhash}{4cf09f93abf65f26171201339553f28e}
+      \strng{bibnamehash}{4cf09f93abf65f26171201339553f28e}
+      \strng{authorbibnamehash}{4cf09f93abf65f26171201339553f28e}
+      \strng{authornamehash}{4cf09f93abf65f26171201339553f28e}
+      \strng{authorfullhash}{4cf09f93abf65f26171201339553f28e}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{June}
+      \field{journaltitle}{The Review of Economic Studies}
+      \field{number}{3}
+      \field{title}{Walras' Tâtonnement in the Theory of Exchange}
+      \field{volume}{27}
+      \field{year}{1960}
+      \field{pages}{182\bibrangedash 194}
+      \range{pages}{13}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

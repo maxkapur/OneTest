@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  19 MAY 2021 18:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  20 MAY 2021 19:00
 entering extended mode
 **./model.tex
 (model.tex
@@ -624,25 +624,32 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout4 = `model.toc'.
 
 
-[2] [3] [4] [5] [6] [7] [8] [9] [10]
-Overfull \hbox (12.9559pt too wide) in paragraph at lines 283--285
+[2] [3] [4]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 9
+0.
+
+(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+[5] [6] [7] [8] [9] [10] [11] [12]
+Overfull \hbox (12.9559pt too wide) in paragraph at lines 340--342
 \OT1/ptm/m/n/12 The di-ag-o-nal is neg-a-tive, mean-ing that each school's de-m
 and is de-creas-ing in its cut-off (downward-
  []
 
-[11] [12] [13] [14] [15] [16] [17] (model.aux)
+[13] [14] [15] [16] [17] [18] [19] (model.aux)
 Package logreq Info: Writing requests to 'model.run.xml'.
 \openout1 = `model.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12709 strings out of 479334
- 231642 string characters out of 2858034
- 1031581 words of memory out of 3000000
- 30002 multiletter control sequences out of 15000+200000
- 427709 words of font info for 86 fonts, out of 3000000 for 9000
+ 12758 strings out of 479334
+ 232684 string characters out of 2858034
+ 1025818 words of memory out of 3000000
+ 30047 multiletter control sequences out of 15000+200000
+ 428023 words of font info for 87 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,19n,78p,956b,1431s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 72i,19n,78p,1103b,1436s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/U
 sers/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pf
 b><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
@@ -661,13 +668,14 @@ Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pf
 b><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 sy8.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /latxfont/line10.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/symbols/msbm10.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fo
-nts/type1/urw/times/utmb8a.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/font
-s/type1/urw/times/utmr8a.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/
-type1/urw/times/utmri8a.pfb>
-Output written on model.pdf (17 pages, 235320 bytes).
+blic/amsfonts/symbols/msam10.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Max/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Max/AppData/Local/Programs
+/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Max/AppData/Local/Programs/M
+iKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on model.pdf (19 pages, 260788 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
+ 145 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
