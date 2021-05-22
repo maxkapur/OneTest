@@ -41,7 +41,7 @@
       \strng{authornamehash}{a2b74cfdfd2c93eb979acf467757b537}
       \strng{authorfullhash}{a2b74cfdfd2c93eb979acf467757b537}
       \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
@@ -50,6 +50,7 @@
       \field{journaltitle}{Journal of Political Economy}
       \field{number}{5}
       \field{title}{A Supply and Demand Framework for Two-Sided Matching Markets}
+      \field{titlekey}{supplydemandfw}
       \field{volume}{124}
       \field{year}{2016}
       \field{pages}{1235\bibrangedash 68}
@@ -108,14 +109,17 @@
       \strng{editornamehash}{a461b403bdb909ab1f593fcc8e04d108}
       \strng{editorfullhash}{f3f9b9c1f783937a9e09835a23bf3b16}
       \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Algorithmic Game Theory}
+      \field{booktitlekey}{compmkteq}
       \field{chapter}{6}
+      \field{editortype}{compmkteq}
       \field{title}{Computation of Market Equilibria by Convex Programming}
+      \field{titlekey}{compmkteq}
       \field{year}{2007}
     \endentry
     \entry{mathematicaloptandecontheory}{book}{}
@@ -140,12 +144,13 @@
       \strng{authornamehash}{281b8f46561c8ee4cc91b9b36212e71e}
       \strng{authorfullhash}{281b8f46561c8ee4cc91b9b36212e71e}
       \field{sortinit}{I}
-      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{sortinithash}{9417e9a1288a9371e2691d999083ed39}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Mathematical Optimization and Economic Theory}
+      \field{titlekey}{mathematicaloptandecontheory}
       \field{year}{1971}
     \endentry
     \entry{walrastatonnement}{article}{}
@@ -164,7 +169,7 @@
       \strng{authornamehash}{4cf09f93abf65f26171201339553f28e}
       \strng{authorfullhash}{4cf09f93abf65f26171201339553f28e}
       \field{sortinit}{U}
-      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{sortinithash}{77a6935510e008adcf5b555e7b4f0711}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
@@ -173,6 +178,7 @@
       \field{journaltitle}{The Review of Economic Studies}
       \field{number}{3}
       \field{title}{Walras' Tâtonnement in the Theory of Exchange}
+      \field{titlekey}{walrastatonnement}
       \field{volume}{27}
       \field{year}{1960}
       \field{pages}{182\bibrangedash 194}

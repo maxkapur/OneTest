@@ -27,7 +27,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{algorithm}{Algorithm}
 
-\title{Admissions markets with single scoring and multinomial logit student preferences}
+\title{From centralized school choice problems to competitive admissions markets: On the equivalence of stable matchings and market equilibrium}
 \date{\today}
 \author{Max Kapur}
 \begin{document}
@@ -39,7 +39,7 @@
 
 \pagebreak
 \section{Introduction}
-The classical \emph{school choice problem} is a one-to-many stable assignment problem. Given a set of students and a set of schools, each student supplies her ranked preferences over the schools (typically without ties), and each school supplies its ranked preferences over the students (sometimes allowing for ties). Using a deferred acceptance algorithm in conjunction with a tiebreaking rule, the school board computes a \emph{stable assignment} of students to schools, or one in which every school that rejects students fills its capacity with students equal to or better than other students who prefer that school to the school to which they are matched.
+The classical \emph{school choice problem} is a one-to-many stable matching problem. Given a set of students and a set of schools, each student supplies her ranked preferences over the schools (typically without ties), and each school supplies its ranked preferences over the students (sometimes allowing for ties). Using a deferred acceptance algorithm in conjunction with a tiebreaking rule, the school board computes a \emph{stable assignment} of students to schools, or one in which every school that rejects students fills its capacity with students equal to or better than other students who prefer that school to the school to which they are matched.
 
 Recently, attention has shifted toward a nonatomic formulation of this problem in which individual students are replaced with a distribution of students over the space of possible preference lists and scores. The nonatomic formulation, due to Azevedo and Leshno \parencite*{supplydemandfw}, enables the characterization of assignment policies, including stable assignments, via school admissions cutoffs, which indicate a score threshold above which all students have the option of attending the school in question. Current research in school choice problems takes advantage of the nonatomic formulation because it can be interpreted as the limit of the discrete assignment problem as the number of students and seats increases to infinity; thus, score cutoffs in the nonatomic formulation are free of the ``noise'' associated with discretization. 
 
@@ -56,6 +56,7 @@ It is this computational question to which I turn. I propose a continuous model 
 This model enables us to actually compute useful comparative statics. 
 
 Moreover, it is realistic xyz.
+I establish the equivalency between the notion of equilibrium defined in reference to the demand function and school capacities, and several notions of equilibrium rooted in quantitative economics, game theory, and mechanism design. In fact, most previous literature on school choice process considers a centralized ...
 
 \section{Preliminaries}
 Before specifying the market used in this paper, I will define a nonatomic admissions market and summarize some important theoretical results.
@@ -171,22 +172,22 @@ In reference to this interpretation of the equilibrium conditions, Azevedo and L
 
 The semicentralized admissions procedure can be interpreted as a t\^{a}tonnement process in which the initial cutoffs are a vector of ones, or as a distributed school-proposing deferred acceptance process, discussed below.
 
-\subsubsection{As a stable assignment}
-The final interpretation of the equilibrium conditions comes from Lemma 1 of Azevedo and Leshno \parencite*{supplydemandfw}, which says that there is a one-to-one relationship between stable assignments and equilibrium cutoff vectors (they omit the proof). In this section, I define stable assignments, discuss the classical deferred acceptance algorithm used to find them, and offer a proof of this lemma. 
+\subsubsection{As a stable matching}
+The final interpretation of the equilibrium conditions comes from Lemma 1 of Azevedo and Leshno \parencite*{supplydemandfw}, which says that there is a one-to-one relationship between stable matchings and equilibrium cutoff vectors. In this section, I offer a proof of this lemma. 
 
-The notion of a stable assignment has its roots in the field of mechanism design, and thus emerges most naturally from a centralized school choice process as follows: Before the school year begins, students fill out an online form indicating their preference order over the set of schools in the district. Likewise, schools submit their preference order over the students (or equivalently, the scores they have given to each student) to the school board. Then, the school board determines the assignment of students to schools.
+The notion of a stable assignment has its roots in the field of mechanism design, and thus emerges most naturally from a centralized school choice process as follows: Before the school year begins, students fill out an online form indicating their preference order over the set of schools in the district. Likewise, schools submit their preference order over the students (or equivalently, the scores they have given to each student) to the school board. Then, the school board determines the assignment of students to schools. 
 
-First, some notation. An allocation is a mapping of students to schools. 
+First, some notation. A assignment is a mapping of students to schools.
 \begin{definition}
-A school choice \emph{allocation} is a mapping $\mu: S \to C \cup \{c_0\}$. $\mu(s) = c_0$ represents nonassignment.
+A school choice \emph{assignment} is a mapping $\mu: S \to C \cup \{c_0\}$. $\mu(s) = c_0$ represents nonassignment.
 \end{definition}
-The school board is interested in assignments, or allocations that respect capacity constraints. 
+The school board is interested in matchings, or assignments that respect capacity constraints. 
 \begin{definition}
-An \emph{assignment} is an allocation $\mu$ that respects schools' capacity constraints; namely, $\eta (s: \mu(s) = c) \leq q_c, \forall c \in C$. 
+A \emph{matching} is an assignment $\mu$ that respects schools' capacity constraints; namely, $\eta (s: \mu(s) = c) \leq q_c, \forall c \in C$. 
 \end{definition}
-To protect itself from lawsuits and encourage honest participation in the assignment process, the school board decides to rule out assignments that create justified envy; that is, assignments in which a student $s$ who prefers school $c$ to $c'$ is assigned to $c'$ despite scoring higher than a student assigned to $c$, or $c$ having remaining capacity. In such a situation, $(s, c)$ is called a blocking pair, and a stable assignment is an assignment that does not admit any blocking pairs.
+To protect itself from lawsuits and encourage honest participation in the assignment process, the school board decides to rule out matchings that create justified envy; that is, matchings in which a student $s$ who prefers school $c$ to $c'$ is assigned to $c'$ despite scoring higher than a student assigned to $c$, or $c$ having remaining capacity. In such a situation, $(s, c)$ is called a blocking pair, and a stable matching is a matching that does not admit any blocking pairs.
 \begin{definition}
-A \emph{stable assignment} is an assigment $\mu$ that admits no blocking pairs. That is, there exist no tuples $(s, c)$ s.t. $c >_s \mu(s)$ and one of the following holds:
+A \emph{stable matching} or \emph{stable assignment} is an matching $\mu$ that admits no blocking pairs. That is, there exist no tuples $(s, c)$ s.t. $c >_s \mu(s)$ and one of the following holds:
 \begin{itemize}
 \item School $c$ has remaining capacity:
 \[\eta\bigl(s: \mu(s) = c \bigr) < q_c\]
@@ -196,20 +197,20 @@ A \emph{stable assignment} is an assigment $\mu$ that admits no blocking pairs. 
 These are called type I and type II blocking pairs, respectively.
 \end{definition}
 
-In a nonatomic admissions market, where the number of students is infinite, the definition above offers no guidance as to how to encode a stable assignment $\mu$. This presents an apparent computational challenge. However, it turns out that stable assignments are in one-to-one correspondence with equilibrium cutoff vectors. This means that any stable assignment $\mu$ can be fully encoded by a $|C|$-vector of cutoffs $p$. 
+In a nonatomic admissions market, where the number of students is infinite, the definition above offers no guidance as to how to encode a stable matching $\mu$. This presents an apparent computational challenge. However, it turns out that stable matching are in one-to-one correspondence with equilibrium cutoff vectors. This means that any stable matching $\mu$ can be fully encoded by a $|C|$-vector of cutoffs $p$. 
 
-To establish this result, we must define operators that take cutoff vectors to allocations, and vice-versa. First, the allocation of students induced by instating the cutoff vector $p$ and allowing students to choose freely among their consideration set is
+To establish this result, we must define operators that take cutoff vectors to assignments, and vice-versa. First, the assignment of students induced by instating the cutoff vector $p$ and allowing students to choose freely among their consideration set is
 \[\mu_p(s) \equiv \max_{>_s} c \in C : \theta_{sc} \geq p_c, \qquad \forall s \in S\]  % fix to theta notation
-Note that this is not necessarily an assignment because it may violate the capacity constraints. 
+Note that this assignment is not necessarily a matching because it may violate the capacity constraints. 
 
-Second, the following expression gives the admissions cutoffs implied by a given allocation $\mu$, namely, the minimum score of the students admitted to each school:
+Second, the following expression gives the admissions cutoffs implied by a given matching $\mu$, namely, the minimum score of the students admitted to each school:
 \[p_c(\mu) \equiv \min \left\{\theta_{sc}: \mu(s) = c\right\}\]
-In general, these operators are not necessarily inverses of one another. However, as I will now show, they are inverses when we restrict their domains to the sets of equilibrium cutoffs and stable assignments, respectively. 
+In general, these operators are not necessarily inverses of one another. However, as implied by the following theorem, they are inverses when we restrict their domains to the sets of equilibrium cutoffs and stable matchings, respectively. 
 
 %%%%%%%%%%%%%%
-\begin{theorem}If $p^*$ satisfies the equilibrium conditions, then $\mu_{p^*}$ is a stable assignment. 
+\begin{theorem}If $p^*$ satisfies the equilibrium conditions, then $\mu_{p^*}$ is a stable matching. 
 
-Conversely, if $\bar \mu$ is a stable assignment and $\eta$ has full or strong support, then $p_c(\bar \mu)$ satisfies the equilibrium conditions. \end{theorem}
+Conversely, if $\bar \mu$ is a stable matching and $\eta$ has full or strong support, then $p_c(\bar \mu)$ satisfies the equilibrium conditions. \end{theorem}
 
 \begin{proof}Pick an equilibrium cutoff $p^*$. Then by the definitions of the demand function \eqref{demanddefinition} and equilibrium conditions \eqref{marketeqconditions}, 
 \begin{align*}
@@ -218,20 +219,19 @@ D_c(p^*) = \eta\bigl(s: \mu_{p^*}(s) = c\bigr) &= q_c, \quad \forall c: p_c^* > 
 \end{align*}
 By the capacity condition, no school exceeds its capacity, so $\mu$ is an assignment. By the stability condition, there are no type I blocking pairs. And there are no type II blocking pairs, because if a student fails to meet the cutoff for a school she prefers to $\mu_{p^*}(s)$, it is because the school has replaced her with students who got higher scores. Hence, $\mu_{p^*}$ is a stable matching.
 
-The converse is proven as follows. Fix a stable assignment $\bar \mu$, and let $\bar p \equiv p(\bar \mu)$. To get a contradiction, suppose $\bar p$ is not an equilibrium. This can happen in two ways:
+The converse is proven as follows. Fix a stable matching $\bar \mu$, and let $\bar p \equiv p(\bar \mu)$. To get a contradiction, suppose $\bar p$ is not an equilibrium. This can happen in two ways:
 \begin{itemize}
-\item For some school $c$, $D_c( \bar p) > q_c$. This means $D_c( \bar p)  >  \eta\bigl(s: \bar \mu(s) = c\bigr) $, which implies the existence of a student  $s$ who is admitted to $c$ at $\bar p$ (that is, $\theta_{sc} \geq \theta_{s'c}$ for some $s': \bar \mu(s') = c$) and prefers $c$ among her consideration set, but for whom $\bar \mu(s) \neq c$. $(s, c)$ is a type II blocking pair; hence, $\bar \mu$ is not a stable assignment.
-\item For some school $c$, $\bar p_c > 0$ and $D_c(\bar p) < q_c$. By the assumption of strong or full support, there is a student $s$ for whom $c >_s \bar \mu(s)$ and $\theta_{sc} < \bar p_c$. The latter implies that $\bar \mu(s) \neq c$. Hence, $(s, c)$ is a type I blocking pair, and $\mu$ is not a stable assignment. 
+\item For some school $c$, $D_c( \bar p) > q_c$. This means $D_c( \bar p)  >  \eta\bigl(s: \bar \mu(s) = c\bigr) $, which implies the existence of a student  $s$ who is admitted to $c$ at $\bar p$ (that is, $\theta_{sc} \geq \theta_{s'c}$ for some $s': \bar \mu(s') = c$) and prefers $c$ among her consideration set, but for whom $\bar \mu(s) \neq c$. $(s, c)$ is a type II blocking pair; hence, $\bar \mu$ is not a stable matching.
+\item For some school $c$, $\bar p_c > 0$ and $D_c(\bar p) < q_c$. By the assumption of strong or full support, there is a student $s$ for whom $c >_s \bar \mu(s)$ and $\theta_{sc} < \bar p_c$. The latter implies that $\bar \mu(s) \neq c$. Hence, $(s, c)$ is a type I blocking pair, and $\mu$ is not a stable matching. 
 \end{itemize}
 Therefore, $\bar p$ must satisfy the equilibrium conditions.
 \end{proof}
 
 \subsection{The relationship between t\^{atonnement} processes, deferred acceptance, and equilibrium cutoffs}
-
-The classical solution to the stable assignment problem is known as a deferred acceptance (DA) mechanism, which comes in many flavors. When neither students' nor schools' preference lists contains ties, the student-proposing DA procedure is a deterministic algorithm for a stable assignment.  In this section, I first define the student- and school-proposing DA algorithms. Then, I argue that DA algorithms are t\^{a}tonnement processes.
+The classical solution to the stable matching problem is known as a deferred acceptance (DA) mechanism, which comes in many flavors. When neither students' nor schools' preference lists contains ties, the student-proposing DA procedure is a deterministic algorithm for a stable matching.  In this section, I first define the student- and school-proposing DA algorithms. Then, I argue that DA algorithms are t\^{a}tonnement processes.
 
 \begin{algorithm}
-The \emph{student-proposing deferred acceptance algorithm} is as follows. Given each student's preference list $>_s$ over the set of schools and each school's scores $\theta_{.c}$ over the set of students, both without ties, and the capacity $q_c$ of each school, the following steps are repeated until no rejections take place:
+The \emph{student-proposing deferred acceptance algorithm} is as follows. Given each student's preference order $>_s$ over the set of schools, without ties;  each school's score distribution $\theta_{.c}$ over the set of students, with zero probability of ties; and the capacity $q_c$ of each school, the following steps are repeated until no rejections take place:
 \begin{enumerate}
 \item Each student applies to the school highest on her list.
 \item Each school examines the applications it received. If it received more applicants than it can seat, it rejects its least-favorite applicants such that the remaining applicants fill its capacity exactly.
@@ -239,7 +239,7 @@ The \emph{student-proposing deferred acceptance algorithm} is as follows. Given 
 \end{enumerate}
 When the algorithm terminates, return the assignment $\mu$, where $\mu(s)$ is highest school remaining on $s$'s preference list, or $c_0$ if no schools remain. 
 \end{algorithm}
-The properties of the resultant assignment are well known. $\mu$ is stable. The resultant assignment is strongly student optimal. That is, if another assignment $\mu'$ is chosen from the set of stable assignments, then $\mu(s) \geq_s \mu'(s)$ for all students $s$, and there is at least one student for whom $\mu(s) \geq \mu'(s)$. Similarly, the resultant assignment is strongly school pessimal, meaning any other stable assignment yields the same or better students at each school. Finally, the algorithm is weakly incentive compatible for individual students. That is, no student can obtain a better match than $\mu(s)$ by falsifying her preference list. % Give some citations here.
+The properties of the resultant assignment are well known. $\mu$ is stable. The resultant assignment is strongly student optimal. That is, if another assignment $\mu'$ is chosen from the set of stable matchings, then $\mu(s) \geq_s \mu'(s)$ for all students $s$, and there is at least one student for whom $\mu(s) \geq \mu'(s)$. Similarly, the resultant assignment is strongly school pessimal, meaning any other stable assignment yields the same or better students at each school. Finally, the algorithm is weakly incentive compatible for individual students. That is, no student can obtain a better match than $\mu(s)$ by falsifying her preference list. Succinct proofs of these results are given in Roth \parencite*{economicsofmatching}.
 
 It is worthwhile to compare school-proposing reverse DA. 
 \begin{algorithm}
@@ -251,11 +251,21 @@ The \emph{school-proposing deferred acceptance algorithm} is as follows. Given e
 \end{enumerate}
 When the algorithm terminates, return the assignment $\mu$, where $\mu(s)$ is the school $s$ prefers among those that proposed to her, or $c_0$ if she received no proposals.
 \end{algorithm}
-This algorithm has symmetrical properties to those of forward DA, including student pessimality. For that reason, and the fact that it is not incentive compatible for students, reverse DA is seldom used in school choice, although in practice the differences among the resulting assignments tend to be minor.
+This algorithm has symmetrical properties to those of forward DA, including student pessimality and incentive compatibility for the schools (but not the students).  For these reasons, student-proposing deferred acceptance is seldom used in school choice, and its counterpart in the National Residency Matching Program was abandoned in favor of a resident-proposing algorithm. However, in practice the differences among the resulting assignments tend to be minor. % cite
+
+Under the constraint of stable assignment, student and school utility (as quantified by the preference orders) trade off directly. The student-optimal stable matching from student-proposing DA and the school-optimal stable matching from school-supposing DA define two extreme points of the set of all possible stable matchings, and they are linked by exchanging cycles of students such that student utility increases and school utility decreases, or vice-versa. This means that in a discrete context, to find \emph{all} stable matchings, it suffices to run only the student-proposing DA algorithm, then determine the possible cycles that move the assignment toward student pessimality. Such a procedure allows us to formulate the optimal stable matching problem as the maximal closure of the cycle dependency graph \parencite[][]{efficientalgorithmoptimal}. 
 
 \begin{proposition}The student-proposing DA algorithm is a t\^{a}tonnement process in which the initial cutoff vector is $p = \vec 0$. The school-proposing DA algorithm is a t\^{a}tonnement process in which the initial cutoff vector is $p = \vec 1$. \end{proposition}
 
-% write better
+Each iteration of student-proposing DA can be characterized by a cutoff vector $p^{(k)}$. At the beginning of the first iteration, each student is tentatively matched to her favorite school; this is equivalent to the mapping $\mu_{p^{(0)}}$ where $p^{(0)} = \vec 0 $. Then, each school $c$ rejects the students with the lowest scores such that the set of remaining students does not exceed $q_c$. Let $p_c^{(1)}$ denote the lowest score among the students not rejected to $c$.  At the beginning of the second iteration, let $\mu^{(1)}$ denote the assignment associated with sending each student to their favorite school that hasn’t rejected them yet. $\mu^{(1)}(s) \not<_s \mu_{p^{(1)}}(s)$, because if $s$ hasn’t crossed $c$ off her list $k=1$, then $s$ must have $\theta_{sc} \geq p_c^{(1)}$. And $\mu^{(1)}(s) \not>_s \mu_{p^{(1)}}(s)$, because ... % continue the induction
+
+Now consider the iteration $k$, and let $\mu^{(k)}$ denote the assignment associated with sending each student to their favorite school that hasn’t rejected them yet, and let $p_c^{(k)}$ denote the lowest score associated with a student who has applied to $c$ and not yet been rejected (or take $p_c^{(k)} =0$ if
+
+Then, each school $c$ rejects the students with the lowest scores such that the set of remaining students does not exceed $q_c$. Let $p_c^{(1)}$ denote the lowest score among the students not rejected to $c$. Observe that $p^{(1)} \geq p^{(0)}$, and since all schools 
+
+
+
+
 As each school lowers its cutoff, it effectively "proposes" to the set of students whose scores fell between the old and new cutoffs. Students then reject all schools but their favorite, and iteration continues until no rejections take place. Because the final assignment of students is stable, the equilibrium conditions must hold. 
 
 
@@ -295,9 +305,7 @@ This model consideries a special kind of admissions market that has not received
 
 To characterize $\eta$, we must describe both how schools rank students, and how students rank schools.
 
-In a \emph{single-score model,} all schools share the same ranking over the students. A single-score system may arise in one of several real-world scenarios. The most obvious case is a centralized admissions market, similar to that used in China, in which the government requires schools to admit students solely on the basis of a single standardized test. Alternatively, if students are scored using various dimensions of student characteristics such as test scores, GPA, and the quality of their letters of recommendation, it is common for these various dimensions to correlate tightly. If so, then principle component analysis can be used to determine a composite score whose order approximates the ordering of students at each university.
-
-%Finally, in a centralized school choice lottery that uses single tiebreaking to assign a random priority ranking to each student and students are matched to their favorite schools in priority order, the single-score model is ... argue for realism
+In a \emph{single-score model,} all schools share the same ranking over the students. A single-score system may arise in one of several real-world scenarios. The most obvious case is a centralized admissions market, similar to that used in China, in which the government requires schools to admit students solely on the basis of a single standardized test. Alternatively, if students are scored using various dimensions of student characteristics such as test scores, GPA, and the quality of their letters of recommendation, it is common for these various dimensions to correlate tightly. If so, then principle component analysis can be used to determine a composite score whose order approximates the ordering of students at each university. Finally, in many public school systems, schools have no preference order over the students; instead students take turns picking their favorite school in an order determined by random lottery, or (equivalently) the single tiebreaking mechanism is used to generate schools’ preference lists and the assignment of students to schools is computed using student-proposing DA \parencite[][]{whatmatters}. 
 
 Regardless of the device used to generate the single scores, taking percentile scores over the final distribution allows us to assume that the scores are uniformly distributed on the interval $[0,1]$. 
 
