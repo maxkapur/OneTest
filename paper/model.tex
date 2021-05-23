@@ -92,7 +92,7 @@ If the preference lists are independent of the score vectors (for example, if $\
 \text{ and} &~~\underbrace{e_{c''}^s < p_{c''}, \forall c'' \in C \setminus C^\#}_{\text{rejected elsewhere}} \\
 \text{ and} &~~\underbrace{c >_s \hat c, \forall \hat c \in C^\#\setminus \{c\}}_{\text{prefers } c \text{ among } C^\#} \;\Big)
 \end{align*}
-This expression yields immediate insight into the complexity of nonatomic admissions markets. When schools are allowed to set their own cutoffs, and students are given free choice among the schools in their consideration sets, the number of terms in the sum above is $|C|!\times2^{|C|}$. However, such a general characterization of students is not always needed. The model considered in this paper, described in \S\ref{modeldescription}, characterizes $S$ using only $|C|$ parameters.
+This expression yields immediate insight into the complexity of nonatomic admissions markets. When schools are allowed to set their own cutoffs, and students are given free choice among the schools in their consideration sets, the number of terms in the sum above is $|C|!\times2^{|C|}$. However, such a general characterization of students is not always needed. The model considered in this paper, described in \S\ref{modeldescription}, characterizes $S$ using only $|C|$ parameters. Alternatively, generic markets can be discretized by representing individual students using explicit preference lists and score vectors. 
 
 Each school's capacity $q_c > 0$ represents the fraction of the total mass of students that the school can accept. The capacity is used to define the notion of equilibrium below.
 
@@ -227,7 +227,7 @@ The converse is proven as follows. Fix a stable matching $\bar \mu$, and let $\b
 Therefore, $\bar p$ must satisfy the equilibrium conditions.
 \end{proof}
 
-\subsection{The relationship between t\^{atonnement} processes, deferred acceptance, and equilibrium cutoffs}
+\subsection{Deferred acceptance processes are t\^{atonnement} processes}
 The classical solution to the stable matching problem is known as a deferred acceptance (DA) mechanism, which comes in many flavors. When neither students' nor schools' preference lists contains ties, the student-proposing DA procedure is a deterministic algorithm for a stable matching.  In this section, I first define the student- and school-proposing DA algorithms. Then, I argue that DA algorithms are t\^{a}tonnement processes.
 
 \begin{algorithm}
@@ -255,18 +255,30 @@ This algorithm has symmetrical properties to those of forward DA, including stud
 
 Under the constraint of stable assignment, student and school utility (as quantified by the preference orders) trade off directly. The student-optimal stable matching from student-proposing DA and the school-optimal stable matching from school-supposing DA define two extreme points of the set of all possible stable matchings, and they are linked by exchanging cycles of students such that student utility increases and school utility decreases, or vice-versa. This means that in a discrete context, to find \emph{all} stable matchings, it suffices to run only the student-proposing DA algorithm, then determine the possible cycles that move the assignment toward student pessimality. Such a procedure allows us to formulate the optimal stable matching problem as the maximal closure of the cycle dependency graph \parencite[][]{efficientalgorithmoptimal}. 
 
-\begin{proposition}The student-proposing DA algorithm is a t\^{a}tonnement process in which the initial cutoff vector is $p = \vec 0$. The school-proposing DA algorithm is a t\^{a}tonnement process in which the initial cutoff vector is $p = \vec 1$. \end{proposition}
+\begin{theorem}When $\eta$ has strong or full support, the student-proposing DA algorithm is a t\^{a}tonnement process in which the initial cutoff vector is $p = \vec 0$, and the school-proposing DA algorithm is a t\^{a}tonnement process in which the initial cutoff vector is $p = \vec 1$. \end{theorem}
+\begin{proof}
+Consider the case of student-proposing DA, and let $\mu^{(k)}$ denote the tentative assignment formed at each iteration of the algorithm. That is, $\mu^{(k)}(s)$ is the school at the top of $s$’s preference list at the beginning of the $k$th iteration.
 
-Each iteration of student-proposing DA can be characterized by a cutoff vector $p^{(k)}$. At the beginning of the first iteration, each student is tentatively matched to her favorite school; this is equivalent to the mapping $\mu_{p^{(0)}}$ where $p^{(0)} = \vec 0 $. Then, each school $c$ rejects the students with the lowest scores such that the set of remaining students does not exceed $q_c$. Let $p_c^{(1)}$ denote the lowest score among the students not rejected to $c$.  At the beginning of the second iteration, let $\mu^{(1)}$ denote the assignment associated with sending each student to their favorite school that hasn’t rejected them yet. $\mu^{(1)}(s) \not<_s \mu_{p^{(1)}}(s)$, because if $s$ hasn’t crossed $c$ off her list $k=1$, then $s$ must have $\theta_{sc} \geq p_c^{(1)}$. And $\mu^{(1)}(s) \not>_s \mu_{p^{(1)}}(s)$, because ... % continue the induction
+It suffices to prove the following three statements:
+\begin{enumerate}
+\item Each $\mu^{(k)}$ is characterized by a cutoff vector $p^{(k)}$.
 
-Now consider the iteration $k$, and let $\mu^{(k)}$ denote the assignment associated with sending each student to their favorite school that hasn’t rejected them yet, and let $p_c^{(k)}$ denote the lowest score associated with a student who has applied to $c$ and not yet been rejected (or take $p_c^{(k)} =0$ if
+Fix $k$, let $p^{(k)} \equiv p\left(\mu^{(k)}\right)$, and let $m = \mu_{p^{(k)}}$. It suffices to show that $m = \mu^{(k)}$. Pick a student $s$ and let $c = m(s)$. Since $s$ is among the set of students who determined the cutoff vector $p^{(k)}$, $ \mu^{(k)}(s)$ is still in $s$’s consideration set under these cutoffs; hence,  $c \geq_s \mu^{(k)}(s)$.  Now suppose $c >_s \mu^{(k)}(s)$. Since $s$ prefers $c$, she must have been applied to $s$ in a previous round and been rejected. This implies $p^{(k)}_{c} > \theta_{sc}$; hence $s$ is not admitted to $c$ in $m$, a contradiction. It follows that $m(s) = \mu^{(k)}(s)$. 
 
-Then, each school $c$ rejects the students with the lowest scores such that the set of remaining students does not exceed $q_c$. Let $p_c^{(1)}$ denote the lowest score among the students not rejected to $c$. Observe that $p^{(1)} \geq p^{(0)}$, and since all schools 
+\item The initial cutoff vector has $p^{(0)} = \vec 0$.
+
+At the beginning of the first iteration, each student is attending her favorite school. By the support assumption, for all schools $c$, the set of students who have $c$ at the top of their list and whose score is almost zero is nonempty. Hence, the minimum score of each student at each school is zero.
+
+\item $p^{(k+1)}$ is related to $p^{(k)}$ by a t\^{a}tonnement update.
+
+At the beginning of each iteration of student-proposing DA, students who were not rejected in the previous iteration apply to the same school as before; on the other hand, students who were rejected apply to new schools. This means that students who apply to school $c$ at the $k$th iteration and are \emph{not} rejected are a subset set of students who apply at the $k+1$th iteration; hence, at every school $c$, $p_c^{(k+1)} \geq p^{(k)}$. Suppose $p_c^{(k+1)} > p_c^{(k)}$. This implies that $c$ rejected students during iteration $k$, which can occur only if the number of students tentatively matched to $c$ at $k$ exceeds $c$’s capacity. Hence, $D_c ( p^{(k)}) > q_c$, and the excess demand $Z_c(p^{(k)})$ is positive at $k$. This agrees with the sign of the change in cutoff. 
+
+Suppose $p_c^{(k+1)} = p^{(k)}$. This means that $c$ made no rejections during the $k$th iteration, or equivalently, that the number of students tentatively assigned to $c$ is less than or equal to $q_c$. In our notation, $\eta(s: \mu^{(k)} (s) = c)  = D_c (p^{(k)}) \leq q_c$. Hence the excess demand $Z_c(p^{(k)})$ is nonpositive. If $Z_c(p^{(k)}) = 0$, then the statement holds. If $Z_c(p^{(k)}) < 0$, then the statement holds only if $p_c^{(k)} = 0$. To get a contradiction, suppose $p_c^{(k)} > 0$. By the support assumption, there are students whose score is less than $p_c^{(k)}$ who have ranked $c$ first. These students applied to $c$ in an earlier round---call it $j$---and were rejected. This implies $c$ filled its capacity at $j$. Since the students not rejected at $j$ continue to apply to $c$ unless rejected again, $c$ fills its capacity at all subsequent rounds, including round $k$. Hence $Z_c(p^{(k)}) \geq 0$, a contradiction.
+\end{enumerate}
+The case of school-proposing DA is analogous. 
+\end{proof}
 
 
-
-
-As each school lowers its cutoff, it effectively "proposes" to the set of students whose scores fell between the old and new cutoffs. Students then reject all schools but their favorite, and iteration continues until no rejections take place. Because the final assignment of students is stable, the equilibrium conditions must hold. 
 
 
 \subsection{Equivalent formulations of the equilibrium conditions}
