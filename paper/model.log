@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  24 MAY 2021 18:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  25 MAY 2021 15:14
 entering extended mode
 **./model.tex
 (model.tex
@@ -689,7 +689,7 @@ sta-ble match-ing from student-proposing
  []
 
 [12] [13]
-Overfull \hbox (10.38345pt too wide) in paragraph at lines 302--303
+Overfull \hbox (10.38345pt too wide) in paragraph at lines 300--301
 []\OT1/ptm/m/n/12 Taking $\OML/cmm/m/it/12 p[] \OT1/cmr/m/n/12 = []$\OT1/ptm/m/
 n/12 , it is easy to see that the the school-proposing de-ferred ac-cep-tance t
 []atonnement
@@ -697,56 +697,49 @@ n/12 , it is easy to see that the the school-proposing de-ferred ac-cep-tance t
 
 
 LaTeX Warning: Citation 'walrastatonnement' on page 14 undefined on input line 
-304.
+302.
 
 [14]
 
-LaTeX Warning: Citation 'theoryofvariationalinequalities' on page 15 undefined 
-on input line 323.
+LaTeX Warning: Citation 'robbinsmonro' on page 15 undefined on input line 318.
 
 
-Overfull \hbox (71.25893pt too wide) in paragraph at lines 322--324
+LaTeX Warning: Citation 'supplydemandfw' on page 15 undefined on input line 320
+.
+
+[15]
+
+LaTeX Warning: Citation 'theoryofvariationalinequalities' on page 16 undefined 
+on input line 341.
+
+
+Overfull \hbox (71.25893pt too wide) in paragraph at lines 340--342
 \OT1/ptm/m/n/12 If $\OML/cmm/m/it/12 D$ \OT1/ptm/m/n/12 is strictly de-creas-in
 g in $\OML/cmm/m/it/12 p$\OT1/ptm/m/n/12 , then $\OML/cmm/m/it/12 F$ \OT1/ptm/m
 /n/12 is strictly in-creas-ing, and $\OML/cmm/m/it/12 p[]$ \OT1/ptm/m/n/12 is u
 nique ([]).
  []
 
-[15]
-
-LaTeX Warning: Citation 'supplydemandfw' on page 16 undefined on input line 351
-.
-
 [16]
 
-LaTeX Warning: Citation 'whatmatters' on page 17 undefined on input line 368.
+LaTeX Warning: Citation 'whatmatters' on page 17 undefined on input line 384.
 
-[17] [18]
+[17] [18] [19]
 
-LaTeX Warning: Citation 'supplydemandfw' on page 19 undefined on input line 455
+LaTeX Warning: Citation 'supplydemandfw' on page 20 undefined on input line 470
 .
 
-[19]
-Overfull \hbox (12.9559pt too wide) in paragraph at lines 476--478
+[20]
+Overfull \hbox (12.9559pt too wide) in paragraph at lines 491--493
 \OT1/ptm/m/n/12 The di-ag-o-nal is neg-a-tive, mean-ing that each school's de-m
 and is de-creas-ing in its cut-off (downward-
  []
 
-[20] [21]
+[21] [22] [23] [24]
 
-LaTeX Warning: Citation 'robbinsmonro' on page 22 undefined on input line 541.
+LaTeX Warning: Empty bibliography on input line 653.
 
-[22] [23]
-Overfull \hbox (11.05954pt too wide) in paragraph at lines 617--618
-\OT1/ptm/m/n/12 More-over, if the heuris-tic hap-pens to cor-rectly pre-dict th
-e op-ti-mal or-der of cut-offs, the t[]atonnement
- []
-
-[24] [25]
-
-LaTeX Warning: Empty bibliography on input line 671.
-
-[26] (model.aux)
+[25] (model.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -760,10 +753,10 @@ Package logreq Info: Writing requests to 'model.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12722 strings out of 479334
- 231675 string characters out of 2858034
- 1025999 words of memory out of 3000000
- 30013 multiletter control sequences out of 15000+200000
+ 12724 strings out of 479334
+ 231712 string characters out of 2858034
+ 1028016 words of memory out of 3000000
+ 30015 multiletter control sequences out of 15000+200000
  428023 words of font info for 87 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,22n,78p,1174b,1199s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -789,9 +782,9 @@ blic/amsfonts/symbols/msbm10.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fo
 nts/type1/urw/times/utmb8a.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/font
 s/type1/urw/times/utmr8a.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on model.pdf (26 pages, 283182 bytes).
+Output written on model.pdf (25 pages, 280230 bytes).
 PDF statistics:
- 163 PDF objects out of 1000 (max. 8388607)
+ 160 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

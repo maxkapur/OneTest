@@ -2,7 +2,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1}Introduction}{3}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Preliminaries}{4}{}%
+\contentsline {section}{\numberline {2}Interpretations of equilibrium in admissions markets}{4}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1}Admissions markets}{4}{}%
 \defcounter {refsection}{0}\relax 
@@ -20,48 +20,44 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4}Deferred acceptance algorithms as t\^{atonnement} processes}{11}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5}Equivalent formulations of the equilibrium conditions}{14}{}%
+\contentsline {subsection}{\numberline {2.5}Computing the equilibrium}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.5.1}Nonlinear complementarity problem}{14}{}%
+\contentsline {subsection}{\numberline {2.6}Equivalent formulations of the equilibrium conditions}{15}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.5.2}Variational inequality problem}{15}{}%
+\contentsline {subsubsection}{\numberline {2.6.1}Nonlinear complementarity problem}{15}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.5.3}Convex optimization problem}{15}{}%
+\contentsline {subsubsection}{\numberline {2.6.2}Variational inequality problem}{16}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6}Optimization tasks}{16}{}%
+\contentsline {subsubsection}{\numberline {2.6.3}Convex optimization problem}{16}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Single-score model with multinomial logit preferences}{16}{}%
+\contentsline {subsection}{\numberline {2.7}Optimization tasks}{17}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Single-score model with multinomial logit preferences}{17}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1}Model description}{17}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.1.1}Characterization of $\eta $}{17}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.2}Demand function}{17}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Demand function}{18}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.3}Properties of the demand function}{18}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}Properties of the demand function}{19}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.4}Appeal function}{19}{}%
+\contentsline {subsubsection}{\numberline {3.1.4}Appeal function}{20}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Unconstrained comparative statics}{20}{}%
+\contentsline {subsection}{\numberline {3.2}Unconstrained comparative statics}{21}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.1}Cutoff effects}{20}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Cutoff effects}{21}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.2}Quality effects}{21}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Quality effects}{22}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Computing the equilibrium}{21}{}%
+\contentsline {subsection}{\numberline {3.3}Computing the equilibrium}{22}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1}T\^{a}tonnement algorithm}{22}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Validation}{24}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.2}Closed-form expression for equilibrium when cutoff order is known}{22}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.3}A heuristic for the optimal cutoff order}{24}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.4}Validation}{25}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Reverse optimization of student preferences}{25}{}%
+\contentsline {subsection}{\numberline {3.4}Reverse optimization of student preferences}{24}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Comparitive statics at equilibrium}{25}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1}At equilibrium: Demand effects}{25}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Extensions}{26}{}%
+\contentsline {section}{\numberline {5}Extensions}{25}{}%

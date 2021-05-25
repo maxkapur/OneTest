@@ -58,7 +58,7 @@ This model enables us to actually compute useful comparative statics.
 Moreover, it is realistic xyz.
 I establish the equivalency between the notion of equilibrium defined in reference to the demand function and school capacities, and several notions of equilibrium rooted in quantitative economics, game theory, and mechanism design. In fact, most previous literature on school choice process considers a centralized ...
 
-\section{Preliminaries}
+\section{Interpretations of equilibrium in admissions markets}
 Before specifying the market used in this paper, I will define a nonatomic admissions market and summarize some important theoretical results.
 
 \subsection{Admissions markets}
@@ -282,7 +282,6 @@ The case of school-proposing DA is analogous.
 \end{proof}
 
 Using this result, we can rewrite the DA algorithms above in a more computational form that uses the cutoff vector $p$ as the state variable. In fact, allowing $p^{(0)}$ to take an arbitrary value, we can define a whole subclass of t\^{a}tonnement processes that use deferred acceptance to update the cutoff vector. I conjecture that this process converges regardless of the value of the initial cutoff vector. However, even if that conjecture is true, we still have some distance to tread before arriving at a general algorithm for admissions market equilibrium, because the process defined below does not specify how to compute the demand vector or its roots.
-
 \begin{algorithm}
 A \emph{deferred acceptance t\^{a}tonnement process} is as follows. Given an initial cutoff vector $p^{(0)}$, each student's preference order $>_s$ over the set of schools, without ties;  each school's score distribution $\theta_{.c}$ over the set of students, with zero probability of ties; and the capacity $q_c$ of each school, the following steps are repeated until $p^{(k+1)} = p^{(k)}$: For $k = 0, 1, \dots$, 
 \begin{enumerate}
@@ -298,10 +297,29 @@ p_c: D_c(p_c; p_{c'} ) = q_c, &\text{if such a } p_c \text{ exists}\\
 \end{enumerate}
 When the algorithm terminates, return $p_c^{(k)}$. 
 \end{algorithm}
-
 Taking $p^{(0)} = \vec 1$, it is easy to see that the the school-proposing deferred acceptance t\^{a}tonnement process is a stylized form of market-clearing procedure described above (\S\ref{mktclearingproc}).
 
 This algorithm bears a strong resemblance to the so-called successive t\^{a}tonnement process in which each company adjusts its price to the value that clears its supply under the assumption that other companies' prices are fixed \parencite[see][eqn. 6]{walrastatonnement}. 
+
+\subsection{Computing the equilibrium} \label{computingtheeq}
+Consider a general admissions market in which $\eta$ and $q$ are fixed. We want to compute the equilibrium of this market. It is impractical to apply a DA algorithm to nonatomic admissions markets, because DA requires using exact line search to determine the new cutoff value for each school. Instead, the equilibrium can be computed fairly rapidly using simultaneous t\^{a}tonnement algorithm that evaluates the demand vector once per iteration and updates the cutoffs in the direction of the excess demand according to a predetermined sequence of decreasing step sizes.
+
+The equilibrium can be computed to arbitrary precision using the following algorithm, which is derived from the t\^{a}tonnement process described above (\S\ref{asafixedpoint}). 
+\begin{algorithm} \label{admissionseqtatalgo}
+The \emph{admissions equilibrium t\^{a}tonnement algorithm} is as follows. Given an initial cutoff vector $p^{(0)}$, market parameters $\gamma$ and $q$, step parameters $\alpha >0$ and $0 \leq \beta < 1$, and a tolerance parameter $\epsilon$:
+\begin{enumerate}
+\item Compute the excess demand $Z = D (p^{(k)}) - q$. 
+\item Update the cutoffs:
+\[ p_c^{(k+1)} \equiv p_c^{(k)} + \frac{\alpha}{(k+1)^\beta} Z_c\]
+\item Terminate if $| p_c^{(k+1)} - p_c^{(k)} | < \epsilon, \forall c$; otherwise, set $k \equiv k+1$ and repeat. 
+\end{enumerate}
+When the algorithm terminates, return $p_c^{(k)}$. 
+\end{algorithm}
+If the demand is continuous, convergence to an $\epsilon$-approximate equilibrium is guaranteed by the fact that the sequence of step sizes satisfies the Robbins--Monro conditions \parencite[][]{robbinsmonro}. However, algorithm is not necessarily computationally efficient. Although a good choice of parameters can enable the algorithm to terminate in a small number of iterations, in general, evaluating the demand vector at each iteration incurs a high computational cost. For example, even under the assumption of independence between students' preference orders and score vectors, the number of terms in each school's demand can be $|C|! \times 2^{|C|}$, as shown in equation \eqref{demandbigsum}.
+
+Alternatively, if we have the ability to sample student preference lists and score vectors from $\eta$, then we can exploit the relationship between equilibrium cutoffs and stable matchings to estimate the equilibrium cutoffs with high confidence in polynomial time. The technique is as follows: Draw a discrete sample from $\eta$ and run a DA algorithm. Then compute the minimum score at each school in the resultant stable assignment. If student-proposing DA is used, the expected value of each the cutoffs from the student-optimal stable match approaches the equilibrium cutoff value from below as the size of the sample goes to infinity \parencite[][]{supplydemandfw}. Similarly, if school-proposing DA is used, the expected value of the obtained cutoffs approaches the equilibrium from above. 
+
+Above, I described an expensive, guaranteed-precision technique and a cheap, stochastic technique for computing the equilibrium. One motivation for the model considered below (\S\ref{modeldescription}) is the fact that the equilibrium can computed in closed form by solving a linear system in $|C|$ equations for $p$, providing a baseline against which to evaluate the performance of these techniques. 
 
 \subsection{Equivalent formulations of the equilibrium conditions}
 The conditions for a market-clearing cutoff vector given in Definition \ref{marketeqconditions} can be expressed in a few additional ways. Throughout this section assume $\eta$ and $q$ are fixed and use \[F(p) \equiv -Z(p) = q - D(p)\]
@@ -320,11 +338,11 @@ By a canonical result, the following variational inequality problem is also equi
 \begin{align*}
 \text{find } p \geq 0:\quad F(p)^T (\pi-p) \geq 0, \quad \forall \pi \geq 0
 \end{align*}
-If $D$ is strictly decreasing in $p$, then $F$ is strictly increasing, and $p^*$ is unique \parencite[][\S2]{theoryofvariationalinequalities}. This, combined with the argument of \S\ref{asafixedpoint}, yields the following theorem:
+If $D$ is strictly decreasing in $p$, then $F$ is strictly increasing, and $p^*$ is unique \parencite[][\S2]{theoryofvariationalinequalities}. This, combined with the argument above establishing the existence of equilibrium (\S\ref{asafixedpoint}), yields the following theorem:
 \begin{theorem} \label{strongsupportimpliesunique}
 If $\eta$ has strong support, then the admissions market equilibrium exists and is unique.
 \end{theorem}
-Full support is also sufficient.
+Full support in $\eta$ is also sufficient.
 
 \subsubsection{Convex optimization problem}
 Suppose that the excess supply function $F$ defines a conservative vector field. This means that there exists a potential function (Lyupanov function) $\Phi(p)$ whose gradient is $F$:
@@ -341,14 +359,12 @@ As the feasible set has nonempty interior, the optimal solution $(p^*, \lambda^*
 &p^* \geq 0, ~~ \lambda^* \geq 0  & \text{(primal, dual feasibility)}\\
 &\lambda^{*T} p^*=0  & \text{(complementarity)}
 \end{align*}
-Eliminating the dual variables $\lambda^*$ yields the nonlinear complementarity problem above \eqref{nonlinearcompprob}; hence, $p^*$ is an equilibrium. Moreover, observe that a simultaneous t\^{a}tonnement process where $\Gamma(Z) = \alpha Z$ for some scalar $\alpha >0$ is a projected gradient ascent algorithm for this convex program, and vice-versa. 
+Eliminating the dual variables $\lambda^*$ yields the nonlinear complementarity problem above \eqref{nonlinearcompprob}; hence, $p^*$ is an equilibrium. Moreover, observe that the t\^{a}tonnement procedure of Algorithm \ref{admissionseqtatalgo} is a projected gradient ascent algorithm for this convex program, and vice-versa. 
 
 \subsection{Optimization tasks}
 With the equivalence results established above in hand, we can expand our understanding of admissions markets to encompass a range of optimization tasks that span a variety of realistic scenarios.
 
-First, there is the canonical school-choice problem. Given  $\eta$ and the capacity vector $q$, we must compute a stable matching $\mu$ or its equivalent cutoff vector $p$. When the demand function $D(p)$ is available, this can be done using a generic t\^{a}tonnement algorithm with an appropriate choice of $\Gamma$. However, although t\^{a}tonnement algorithms are computationally efficient in the number of times they evaluate the demand, the expression above \eqref{demandbigsum}) indicates that cost of $D$ itself may be exponential in the number of schools. One motivation for the model considered below (\ref{modeldescription}) is the fact that its demand function can be efficiently computed. 
-
-In general, even if $D$ itself is exponentially complex in $p$, if we have the ability to sample student preference lists and score vectors from $\eta$, then the equilibrium can be approximated in polynomial time by drawing a discrete sample from $\eta$, running DA, and computing the minimum score at each school in the resultant stable assignment. If student-proposing DA is used, the expected value of each the cutoffs from the student-optimal stable match approaches the equilibrium cutoff value from below as the size of the sample goes to infinity \parencite[][]{supplydemandfw}.
+First, there is the canonical school-choice problem. Given  $\eta$ and the capacity vector $q$, we must compute a stable matching $\mu$. It suffices to find the equivalent cutoff vector $p$, as discussed above (\S\ref{admissionseqtatalgo}).
 
 Second, there is the \emph{inverse optimization} problem. Given $p$ and demand $D$, we try to infer information about $\eta$ such as the overall preferability of each school or the joint distribution of students' scores. This task requires many simplifying assumptions, because the number of student distributions that could induce a given stable assignment is typically infinite. 
 
@@ -408,7 +424,6 @@ $D$ is \emph{continuous} in $p$. To see this, expand the equation above:
 + \frac{1}{\sum_{i=1}^{|C|} \gamma_i}
 \right]\]
 \normalsize Since $D$ is linear in any neighborhood where the order of cutoffs is unambiguous, the only opportunity for discontinuity occurs when two or more cutoffs are equal. Thus, it suffices to show that the value of $D_c$ is independent of how ties among the $p_c$ are broken. Suppose that $p_j = \dots = p_{j+n} = \tilde p$ for some $j > c$. Then (dividing by $\gamma_c$ for legibility),
-
 \scriptsize \begin{align}
 \frac{D_c}{\gamma_c} &= \cdots
 + \left(\frac{1}{\sum_{i=1}^{j-1} \gamma_i} - \frac{1}{\sum_{i=1}^{j} \gamma_i} \right) p_{j}
@@ -428,17 +443,17 @@ $D$ is \emph{continuous} in $p$. To see this, expand the equation above:
 + \left(\frac{1}{\sum_{i=1}^{j-1} \gamma_i} - \frac{1}{\sum_{i=1}^{j+n+1} \gamma_i}\right) \tilde p
 + \cdots
 \end{align}
-
 \normalsize The internal sums that depend on the order of the indices $j \dots j+n$ cancel out; hence, they may be arbitrarily reordered without changing the value of $D_c$. Similar canceling shows that the demand does not vary under tiebreaking when $c$ itself is involved in a tie. Hence, $D$ is continuous in $p$. 
 
 The expansion above also allows us to see that the demand vector is defined by the \emph{matrix equation}
 \begin{equation}D = A p + \frac{1}{\Gamma}\gamma \label{demandmatrixeq}\end{equation}
 where $A\in \mathbb{R}^{|C| \times |C|}$ is the triangular matrix with
-\begin{align}A_{ij} &\equiv \begin{cases}
+\begin{align} \label{Adef}
+A_{ij} &\equiv \begin{cases}
 0, & i > j \\
 -\gamma_i \left(\frac{1}{ \sum_{k=1}^i \gamma_k}\right), & i=j \\
 \gamma_i \left( \frac{1}{\sum_{k=1}^{j-1} \gamma_k} -  \frac{1}{\sum_{k=1}^{j} \gamma_k}\right), & i<j \\
-\end{cases} \label{Adef} \\[.8em]
+\end{cases} \\[.8em]
 \implies A &= \begin{bmatrix}
 \gamma_1 \left( \frac{-1}{\gamma_1} \right) & \gamma_1 \left(\frac{1}{\gamma_1} - \frac{1}{\gamma_1 + \gamma_2} \right) & \gamma_1 \left(\frac{1}{\gamma_1 + \gamma_2} - \frac{1}{\gamma_1 + \gamma_2 + \gamma_3} \right) & \cdots &  \gamma_1 \left(\frac{1}{\sum_{i=1}^{|C| - 1}\gamma_i} - \frac{1}{\Gamma}  \right)  \\
  & \gamma_2 \left( \frac{-1}{\gamma_1 + \gamma_2} \right) & \gamma_2 \left(\frac{1}{\gamma_1 + \gamma_2} - \frac{1}{\gamma_1 + \gamma_2 + \gamma_3} \right) & \cdots &  \gamma_2 \left(\frac{1}{\sum_{i=1}^{|C| - 1}\gamma_i} - \frac{1}{\Gamma} \right)  \\
@@ -449,7 +464,7 @@ where $A\in \mathbb{R}^{|C| \times |C|}$ is the triangular matrix with
 
 Since $\gamma > 0$, $A$ is invertible. 
 
-Because the matrix $A$ depends on the order of the $p_c$ values, the demand function is \emph{piecewise linear} in $p$.
+Because the matrix $A$ depends on the order of the $p_c$ values, the demand function is \emph{piecewise linear} in $p$. In the context of an iterative schema like those discussed below, instead of sorting $p$ itself, it is often simpler to permute the rows and columns of $A$ according to the inverse of the permutation that sorts $p$. 
 
 \subsubsection{Appeal function}
 Another interesting indicator from Azevedo and Leshno \parencite*{supplydemandfw} is the \emph{appeal} of a school's entering class, or the integral of scores over the set of admitted students. The appeal of the entering class is not necessarily the school's objective function, because schools may value an abstract notion of selectivity or students' tuition dollars higher than this value. 
@@ -514,43 +529,32 @@ By the same procedure used to show the continuity of $D$ above, it is easy to se
 
 
 \subsection{Computing the equilibrium}
-In the market under consideration, the equilibrium conditions are
+In the market under consideration, the equilibrium is conditions are as follows:
 \begin{gather} \label{ssmnleqconds}
 \begin{aligned}
 D = A p + \frac{1}{\Gamma}\gamma &\leq q \\
 D_c = A_{c.} p + \frac{1}{\Gamma} \gamma_c &= q_c, \quad \forall c: p_c > 0
 \end{aligned}
 \end{gather}
-Since $\eta$ has strong support, by Theorem \ref{strongsupportimpliesunique}, the equilibrium exists and is unique. 
+Since $\eta$ has strong support, by Theorem \ref{strongsupportimpliesunique}, the equilibrium exists and is unique. Moreover, it turns out that the order of the optimal cutoffs is determined by the order of the ratios $\gamma_c / q_c$, and this fact  enables us to compute the equilibrium directly by solving a linear system.
 
-\subsubsection{T\^{a}tonnement algorithm}
-Applying a deferred acceptance algorithm to this market is somewhat computationally inefficient, because it requires using exact line search to determine the new cutoff value for each school at every iteration. Instead, a simultaneous t\^{a}tonnement algorithm that evaluates the demand vector once per iteration and updates the cutoffs exactly in the direction of the excess demand converges quite rapidly.
-
-\begin{algorithm}
-The \emph{admissions equilibrium t\^{a}tonnement algorithm} is as follows. Given an initial cutoff vector $p^{(0)}$, market parameters $\gamma$ and $q$, step parameters $\alpha >0$ and $0 \leq \beta < 1$, and a tolerance parameter $\epsilon$:
-\begin{enumerate}
-\item Compute the excess demand $Z = D (p^{(k)}) - q$. 
-\item Update the cutoffs:
-\[ p_c^{(k+1)} \equiv p_c^{(k)} + \frac{\alpha}{(k+1)^\beta} Z_c\]
-\item Terminate if $| p_c^{(k+1)} - p_c^{(k)} | < \epsilon, \forall c$; otherwise, set $k \equiv k+1$ and repeat. 
-\end{enumerate}
-When the algorithm terminates, return $p_c^{(k)}$. 
-\end{algorithm}
-The output is a cutoff vector that satisfies the specified tolerance.
-
-Convergence is guaranteed by the fact that the sequence of step sizes satisfies the Robbins--Monro conditions \parencite[][]{robbinsmonro}. Experimentally, choosing $\alpha = 0.5$ and $\beta = 0.001$ yields good convergence.
-
-
-\subsubsection{Closed-form expression for equilibrium when cutoff order is known}
-Suppose that the order of the cutoffs at equilibrium is known beforehand; then $A$ is fixed, and it suffices to find the vector $p$ that meets the conditions given above \eqref{ssmnleqconds}. 
-
-The following theorem says that it suffices to solve the linear system given by the first condition for $p$ under the assumption that each school fills its capacity, then take the positive part. Below, the positive part operator $x^+$ works entrywise on the elements of $x$:
+Below, the positive part operator $x^+$ works entrywise on the elements of its argument $x$:
 \[(x^+)_i \equiv \max\{0, x_i\}\]
-\begin{theorem}When the optimal cutoffs are known to satisfy $p_1 \leq \cdots \leq p_{|C|}$, the vector
-\[\hat p \equiv \left[A^{-1} (q - \frac{1}{\Gamma} \gamma) \right]^+\]
-satisfies the equilibrium condition.\end{theorem}
 
-\textbf{Proof.} First, it is not difficult to verify that the inverse of $A$ is
+\begin{theorem}
+Without loss of generality, suppose that $\frac{\gamma_1}{q_1} \leq \dots \leq \frac{\gamma_{|C|}}{q_{|C|}}$. Then $\hat p_1 \leq \cdots \leq \hat p_{|C|}$, and
+\[\hat p \equiv \left[A^{-1} (q - \frac{1}{\Gamma} \gamma) \right]^+\]
+is the market equilibrium.
+\end{theorem} 
+
+\begin{proof}
+I show the following statements:
+\begin{enumerate}
+\item $\hat p$ satisfies $\hat p_1 \leq \cdots \leq \hat p_{|C|}$. This means that the demand at $\hat p$ is given by the expression $A \hat p + \frac{1}{\Gamma}\gamma$ (which only holds if $\hat p$ is sorted).
+\item $\hat p$ satisfies the equilibrium conditions given in equation \eqref{ssmnleqconds}.
+\end{enumerate}
+
+\underline{$\hat p$ is sorted.} It is not difficult to verify that the inverse of $A$ is
 \[A^{-1} = \begin{bmatrix}
 \frac{-1}{\gamma_1}\left( \gamma_1 \right) & -1 & -1 &\cdots & -1 \\
  & \frac{-1}{\gamma_2}\left( \gamma_1 + \gamma_2 \right) & -1 &\cdots & -1 \\
@@ -558,19 +562,20 @@ satisfies the equilibrium condition.\end{theorem}
  &  &  & \ddots & \vdots \\
  & & & &  \frac{-1}{\gamma_{|C|}} \Gamma \\
 \end{bmatrix}\]
-The demand at $\hat p$ is 
-\begin{align}
+%do the multiplication, show that sortation holds
+\underline{$\hat p$ satisfies the equilibrium conditions.} The demand at $\hat p$ is 
+\begin{align*}
 D &= A \hat p + \frac{1}{\Gamma}\gamma\quad
 \iff \quad \hat p = A^{-1} (D - \frac{1}{\Gamma} \gamma)
-\end{align}
+\end{align*}
 Let
-\[\bar p = A^{-1} (q - \frac{1}{\Gamma} \gamma)\]
+\[\bar p \equiv A^{-1} (q - \frac{1}{\Gamma} \gamma)\]
 Since $\hat p = \bar p^+ \geq \bar p$, the above expressions imply
 \[A^{-1} D \geq A^{-1} q \quad \implies \quad D \leq q\]
-The right side follows from the fact that $A^{-1}$ is negative definite. This establishes the capacity condition. 
+The right side follows from the fact that $A^{-1}$ is triangular and its nonzero entries are strictly negative. This establishes the capacity condition. 
 
-Now, we need to show that the demand equals the capacity when $p_c > 0$. Since the cutoffs are sorted, let $b$ denote the first nonzero cutoff. That is, $p_1 = \dots = p_{b-1} = 0$, and $0 < p_b \leq p_{b+1} \leq \dots \leq p_{|C|}$. Then the demand at $\hat p$ may be written
-\begin{gather}\begin{aligned}
+Now, we need to show that the demand equals the capacity when $p_c > 0$. Let $b$ denote the first school with a nonzero cutoff. That is, $p_1 = \dots = p_{b-1} = 0$, and $0 < p_b \leq p_{b+1} \leq \dots \leq p_{|C|}$. Then the demand at $\hat p$ may be written
+\begin{gather*}\begin{aligned}
 D &= A \hat p + \frac{1}{\Gamma}\gamma \\
 &= \sum_{i=1}^{|C|} A_{.i} \hat p_i + \frac{1}{\Gamma}\gamma  \\
 &= \sum_{i=1}^{|C|} A_{.i} \left[A^{-1} \left(q - \frac{1}{\Gamma}\gamma\right) \right]_i^+ + \frac{1}{\Gamma}\gamma  \\
@@ -580,7 +585,7 @@ D &= A \hat p + \frac{1}{\Gamma}\gamma \\
 0_{b \times b} & T_{b \times (|C| - b)} \\
 0_{(|C| - b) \times b} & I_{|C| - b} \\
 \end{bmatrix} \left(q - \frac{1}{\Gamma}\gamma\right) + \frac{1}{\Gamma}\gamma  \\
-\end{aligned}\end{gather}
+\end{aligned}\end{gather*}
 where
 \[T = \begin{bmatrix}
 \frac{-\gamma_1}{\sum_{i=1}^{b-1} \gamma_i} & \cdots & \frac{-\gamma_1}{\sum_{i=1}^{b-1} \gamma_i} \\
@@ -588,52 +593,30 @@ where
 \frac{-\gamma_{b-1}}{\sum_{i=1}^{b-1} \gamma_i} & \cdots & \frac{-\gamma_{b-1}}{\sum_{i=1}^{b-1} \gamma_i}
 \end{bmatrix}\]
 For the schools with $p_c > 0$, the demand is
-\begin{align}
+\begin{align*}
 D_c &=
 \begin{bmatrix}
 0& I
-\end{bmatrix}_{c.} \left(q - \frac{1}{\Gamma}\gamma\right) + \frac{1}{\Gamma}\gamma \\
-&= q_c
-\end{align}
-Hence, the stability criterion holds, and $\hat p$ is an equilibrium.
+\end{bmatrix}_{c.} \left(q - \frac{1}{\Gamma}\gamma\right) + \frac{1}{\Gamma}\gamma
+= q_c
+\end{align*}
+Hence, the stability criterion holds, and $\hat p$ is an equilibrium.\end{proof}
 
 For reference, for the schools with $p_c = 0$, the demand is 
-\begin{align}
+\begin{align*}
 D_c &=
 \begin{bmatrix}
 0& T
-\end{bmatrix}_{c.} \left(q - \frac{1}{\Gamma}\gamma\right) + \frac{1}{\Gamma}\gamma  \\
-&= \frac{-\gamma_c}{\sum_{i=1}^{b-1} \gamma_i} \sum_{j=b}^{|C|} \left(q_j - \frac{1}{\Gamma}\gamma_j\right)  + \frac{1}{\Gamma}\gamma_c \leq q_c
-\end{align}
-From this expression, we can derive the minimum value of $\gamma_c$ that will cause $c$ to meet its capacity. 
+\end{bmatrix}_{c.} \left(q - \frac{1}{\Gamma}\gamma\right) + \frac{1}{\Gamma}\gamma  
+= \frac{-\gamma_c}{\sum_{i=1}^{b-1} \gamma_i} \sum_{j=b}^{|C|} \left(q_j - \frac{1}{\Gamma}\gamma_j\right)  + \frac{1}{\Gamma}\gamma_c \leq q_c
+\end{align*}
+From this expression, we can derive the minimum value of $\gamma_c$ that will cause $c$ to meet its capacity at equilibrium. 
 
-Note that when the sum of capacities is less than one, then $D = q$, and $0 < p^* = A^{-1} (q - \gamma)$. 
 
-This finding implies that once a suitably accurate cutoff vector $\bar p$ has been obtained from the t\^{a}tonnement algorithm, we can obtain the exact equilibrium $p^*$ by assuming that $\bar p$ has the same order and exploiting the local linearity of the demand function. In addition, instead of sorting $p$ itself, it is often simpler to permute the rows and columns of $A$ according to the inverse of the permutation that sorts $p$. 
 
-\subsubsection{A heuristic for the optimal cutoff order} 
-The following heuristic can be used to predict the order of the cutoffs at optimality: The order of the entries of $p^*$ is approximately determined by the order of the entries of $\gamma - q$. Intuitively, this says that schools with high preferability and low capacity tend to have higher cutoffs at equilibrium.
-
-Using this order to construct $A$, we can obtain a reasonably accurate estimate of $p^*$ that, when used as the seed value in the t\^{a}tonnement algorithm, greatly speeds its convergence. Moreover, if the heuristic happens to correctly predict the optimal order of cutoffs, the t\^{a}tonnement algorithm terminates after the first iteration. 
-
-Combining the finding of the previous section with this heuristic, I offer a t\^{a}tonnement algorithm with experimentally good convergence. It uses the heuristic to determine the initial cutoff vector, takes a t\^{a}tonnement step, then computes the order of the new cutoff vector and ``normalizes'' the new cutoffs to satisfy the relation $\hat p \equiv \left[A^{-1} (q - \frac{1}{\Gamma} \gamma) \right]^+$.
-\begin{algorithm}
-The \emph{practical admissions equilibrium t\^{a}tonnement algorithm with heuristic normalization} is as follows. Given market parameters $\gamma$ and $q$, step parameters $\alpha >0$ and $0 \leq \beta < 1$, let \[p^{(0)} \equiv \left[A^{-1} (q - \frac{1}{\Gamma} \gamma) \right]^+ \]
-where the rows and columns of $A$ are permutated according to the inverse permutation of the order indicated by the entries of $\gamma - q$. Then repeat the following steps:
-\begin{enumerate}
-\item Compute the excess demand $Z = D (p^{(k)}) - q$. If the equilibrium conditions are satisfied, terminate.
-\item Predict the updated cutoffs using t\^{a}tonnement step:
-	\[ \bar p_c \equiv p_c^{(k)} + \frac{\alpha}{(k+1)^\beta} Z_c\]
-\item Compute $A$ as indicated by the order of the entries of $\bar p$, then normalize the cutoffs:
-	\[p^{(k+1)} \equiv \left[A^{-1} (q - \frac{1}{\Gamma} \gamma) \right]^+ \]
-\item Set $k \equiv k+1$ and repeat. 
-\end{enumerate}
-When the algorithm terminates, return $p_c^{(k)}$. 
-\end{algorithm}
-In theory, if the step size is too small, the order of the new cutoffs may not change between iterations, causing the algorithm to cycle. In practice, this virtually never occurs, and the optimal order is typically found in only a few iterations. 
 
 \subsubsection{Validation}
-Validate the results using deferred acceptance. 
+Validate the results using deferred acceptance and tat.
 
 
 
