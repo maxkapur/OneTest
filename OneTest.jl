@@ -1,5 +1,6 @@
 using LinearAlgebra
 import Base:length
+import DeferredAcceptance:DA
 
 """
 Contains static information about a school-choice market.
@@ -12,6 +13,18 @@ end
 
 
 length(market::Market) = length(market.qualities)
+
+
+"""
+Sort the market by gamma over capacities, i.e. in 
+ascending order of selectivity at equilibrium.
+"""
+function sort(market::Market)
+    sort_order = sortperm(market.gamma ./ market.capacities)
+    return Market(market.qualities[sort_order],
+                  market.capacities[sort_order],
+                  market.gamma[sort_order])
+end
 
 
 """
@@ -37,7 +50,6 @@ function Market(m::Int)
     capacities = 2 * rand(m)/m
     return Market(qualities, capacities)
 end
-
 
 
 """
@@ -140,60 +152,65 @@ end
 
 
 """
-    quickeq(market)
+    tatonnement(market)
 
-Tatonnement procedure for finding equibilibrium.
+Simultaneous tatonnement process for the given market.
 """
-function equilibrium(market::Market; maxit::Int=500, tol=1e-8, p0=nothing)
-    if p0 === nothing || p0 == :heuristic
-        # Heuristic cutoffs
-        p = heuristiceq(market)
-    elseif p0 == :random
+function tatonnement(market::Market; maxit::Int=50, p0=nothing,
+                     rate=.5, damping=.001)
+    if p0 === nothing 
         # Random cutoffs
         p = rand(length(market))
     else
         p = p0
     end
     
-    nit = 0
+    res = Vector[]
     
-    while true
-        nit += 1
-        D = demand(market, p)
-        
-        if all(D .< market.capacities .+ tol) || nit==maxit
-            break
-        end
-#         Generic decreasing step sequence
-        p = max.(0, p + .5 * (D - market.capacities) / nit^.001)
-        
-#         Step sequence based on monopoly assumption
-#         Seems clever but can cause cycling in practice
-#         p = max.(0, p + (1 .- market.capacities ./ D) .* (1 .- p))
-        
-#         Normalize to satisfy D = Ap + γ
-        p = heuristiceq(market; orderby=p)
+    for it in 1:maxit 
+        push!(res, p)
+        p = max.(0, p + rate * (demand(market, p) - market.capacities) / it^damping)
     end
     
-    return p, nit
+    return res
 end
 
 
 """
-    heuristiceq(market; orderby)
+    equilibrium(market)
     
-Uses the gamma-minus-capacity heuristic to find an approximate equilibrium, or tries to order the optimal cutoffs by another argument supplied. 
+Uses the gamma-over-capacity property to find the equilibrium.
 """
-function heuristiceq(market::Market; orderby=nothing)
-    if orderby === nothing
-        orderby = market.gamma - market.capacities
-    end
-    
-    # Use the heuristic as the cutoffs arg, since demand() looks only at its order
-    A, sort_order = demandmatrix(market, orderby)
+function equilibrium(market::Market)
+    A, sort_order = demandmatrix(market, market.gamma ./ market.capacities)
 
     p_heuristic = zeros(length(market))
     p_heuristic[sort_order] = max.(0, A\(market.capacities - market.gamma)[sort_order])
     
     return p_heuristic
+end
+
+
+"""
+    makepreflists(market; n_students)
+
+Generates preference lists for schools in the corresponding market.
+"""
+function makepreflists(market::Market; n_students::Int=100)
+    caps = round.(Int, n_students * market.capacities)
+    
+    dist = Gumbel()
+    
+    n_schools = length(market)
+    
+    studentprefs = zeros(Int, n_schools, n_students)
+    for i in 1:n_students
+        ratings = market.qualities + rand(dist, n_schools)
+        studentprefs[:, i] = invperm(sortperm(ratings, rev=true))
+    end
+    
+    scores = rand(n_students)
+    schoolprefs = repeat(invperm(sortperm(scores, rev=true)), 1, n_schools) 
+    
+    return studentprefs, schoolprefs, caps, scores
 end
