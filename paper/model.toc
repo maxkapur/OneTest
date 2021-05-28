@@ -44,20 +44,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.1.4}Appeal function}{20}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Unconstrained comparative statics}{21}{}%
+\contentsline {subsection}{\numberline {3.2}Computing the equilibrium}{21}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.1}Cutoff effects}{21}{}%
+\contentsline {subsection}{\numberline {3.3}Validation}{23}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.2}Quality effects}{22}{}%
+\contentsline {subsection}{\numberline {3.4}Unconstrained comparative statics}{25}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Computing the equilibrium}{22}{}%
+\contentsline {subsubsection}{\numberline {3.4.1}Cutoff effects}{25}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1}Validation}{24}{}%
+\contentsline {subsubsection}{\numberline {3.4.2}Quality effects}{29}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Reverse optimization of student preferences}{24}{}%
+\contentsline {subsection}{\numberline {3.5}Comparitive statics at equilibrium}{29}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Comparitive statics at equilibrium}{25}{}%
+\contentsline {subsubsection}{\numberline {3.5.1}At equilibrium: Demand effects}{30}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}At equilibrium: Demand effects}{25}{}%
+\contentsline {subsection}{\numberline {3.6}Reverse optimization of student preferences}{30}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Extensions}{25}{}%
+\contentsline {section}{\numberline {4}Extensions}{30}{}%
