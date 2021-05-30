@@ -79,13 +79,9 @@ The demand vector represents the number of students who enroll at each school. A
 \begin{equation} \label{demanddefinition}
 D_c \equiv \eta\left(s: c = \arg \max_{>_s} \left\{\hat c: \theta_{s\hat c} \geq p_{\hat c} \right\}\right)
 \end{equation}
-Observe that $D_c$ is weakly decreasing in $p_c$ and weakly increasing in $p_{c'}$ for $c' \neq c$.
-\begin{definition} \label{strongsupportdefinition}
-$\eta$ is said to have \emph{strong support} if the preference lists are independent of the score vectors and each possible preference list has nonzero marginal density, and the marginal distribution of scores at each school has full support. 
-\end{definition}
-Furthermore, if $\eta$ has strong support or full support, then $D_c$ is strictly decreasing in $p_c$ and strictly increasing in $p_{c'}$ for $c' \neq c$. Intuitively, this means that the margin of students who would choose to attend $D_c$ if its cutoff decreased is never empty. Finally, observe that $p_c = 1 \implies D_c = 0$ regardless of the other schools' cutoffs.
+Observe that $D_c$ is weakly decreasing in $p_c$ and weakly increasing in $p_{c'}$ for $c' \neq c$, and that $p_c = 1 \implies D_c = 0$ regardless of the other schools' cutoffs.
 
-If the preference lists are independent of the score vectors (for example, if $\eta$ has strong support), then the demand can also be expressed as the sum of the demand from each combination of preference list and consideration set:
+If the preference lists are independent of the score vectors, then the demand can also be expressed as the sum of the demand from each combination of preference list and consideration set:
 \begin{gather} \label{demandbigsum}
 \begin{aligned}
 D_c = 
@@ -115,11 +111,10 @@ The first condition, called the \emph{capacity condition,} says that no school's
 
 Using the sign constraint on $p$ and the capacity condition, an equivalent to the stability condition is $D_c < q_c \implies p_c = 0$ or $p^T \left(D - q\right) = 0$.
 
-As shown below, a sufficient condition for the existence of the equilibrium is that the demand is continuous in $p$. A sufficient condition for the uniqueness of the equilibrium is that the demand is strictly decreasing in $p$. As discussed above, both of these conditions are met if $\eta$ has strong support or full support. 
-%The following assumptions ensure the existence of the equilibrium: First, restrict domain of $p$ to $[0,1]$. Demand decreasing in $p$. Full support in $\eta$. 
+As shown below, a sufficient condition for the existence of the equilibrium is that the demand is continuous in $p$. A sufficient condition for the uniqueness of the equilibrium is that the demand is strictly decreasing in $p$. Both of these follow from, for example, an assumption of full support in $\eta$. 
 
 \subsection{Interpretation of the equilibrium conditions}
-The applicability and interpretation of the equilibrium conditions depends on the design of the admissions markets. I offer four interpretations, moving from theoretical to practical. With additional assumptions on $\eta$, such as strong support, all four interpretations become sufficient conditions for equilibria as well. Additionally, the first interpretation establishes a sufficient condition for the existence of the equilibrium. 
+The applicability and interpretation of the equilibrium conditions depends on the design of the admissions markets. I offer four interpretations, moving from theoretical to practical. With additional assumptions on $\eta$, such as full support, all four interpretations become sufficient conditions for equilibria as well. Additionally, the first interpretation establishes a sufficient condition for the existence of the equilibrium. 
 
 In all cases, assume the distribution of student types $\eta$ and the school capacities $q$ are fixed; thus the demand $D(p)$ is determined entirely by the cutoffs $p$. 
 
@@ -211,7 +206,7 @@ In general, these operators are not necessarily inverses of one another. However
 
 \begin{theorem}If $p^*$ satisfies the equilibrium conditions, then $\mu_{p^*}$ is a stable matching. 
 
-Conversely, if $\bar \mu$ is a stable matching and $\eta$ has full or strong support, then $p_c(\bar \mu)$ satisfies the equilibrium conditions. \end{theorem}
+Conversely, if $\bar \mu$ is a stable matching and $\eta$ has full support, then $p_c(\bar \mu)$ satisfies the equilibrium conditions. \end{theorem}
 
 \begin{proof}Pick an equilibrium cutoff $p^*$. Then by the definitions of the demand function \eqref{demanddefinition} and equilibrium conditions \eqref{marketeqconditions}, 
 \begin{align*}
@@ -340,9 +335,9 @@ By a canonical result, the following variational inequality problem is also equi
 \end{align*}
 If $D$ is strictly decreasing in $p$, then $F$ is strictly increasing, and $p^*$ is unique \parencite[][\S2]{theoryofvariationalinequalities}. This, combined with the argument above establishing the existence of equilibrium (\S\ref{asafixedpoint}), yields the following theorem:
 \begin{theorem} \label{strongsupportimpliesunique}
-If $\eta$ has strong support, then the admissions market equilibrium exists and is unique.
+If $\eta$ has full support, then the admissions market equilibrium exists and is unique.
 \end{theorem}
-Full support in $\eta$ is also sufficient.
+This is Theorem 1 of Azevedo and Leshno \parencite*{supplydemandfw}.
 
 \subsubsection{Convex optimization problem}
 Suppose that the excess supply function $F$ defines a conservative vector field. This means that there exists a potential function (Lyupanov function) $\Phi(p)$ whose gradient is $F$:
@@ -388,7 +383,8 @@ Regardless of the device used to generate the single scores, taking percentile s
 As for students' choice of school, this paper assumes students use \emph{multinomial logit} (MNL) choice to derive their preference lists. This means that each school has a given preferability parameter $\delta_c$. Letting $C^\# \subseteq C$ denote set of schools to which a given student is admitted, she chooses to attend school $c \in C^\#$ with
 \[\frac{\exp \delta_c}{\sum_{d \in C^\#} \exp \delta_d}\]
 For convenience, let $\gamma_c \equiv \exp \delta_c > 0$ and $\Gamma = \sum_c \gamma_c$. Since the equation is homogeneous in $\gamma$, we may assume without loss of generality that $\Gamma = 1$; however, I will resist this assumption since many parameter-estimation techniques for MNL choice do not use it. 
-Observe that in the single-score model with MNL choice, $\eta$ has strong support (see Definition \ref{strongsupportdefinition}). 
+
+Observe that in the single-score model with MNL choice, $\eta$ does \emph{not} have full support, because the probability of having different scores at any two schools is zero. However, the algebraic analysis below reveals that the equilibrium is unique.
 
 \subsubsection{Demand function}
 Let's derive the demand function $D(\gamma, p)$ for the single-score model with MNL student preferences.
@@ -494,36 +490,42 @@ D = A p + \frac{1}{\Gamma}\gamma &\leq q \\
 D_c = A_{c.} p + \frac{1}{\Gamma} \gamma_c &= q_c, \quad \forall c: p_c > 0
 \end{aligned}
 \end{gather}
-Since $\eta$ has strong support, by Theorem \ref{strongsupportimpliesunique}, the equilibrium exists and is unique. Moreover, it turns out that the order of the optimal cutoffs is determined by the order of the ratios $\gamma_c / q_c$, and this fact  enables us to compute the equilibrium directly by solving a linear system. (Below, the positive part operator $x^+$ works entrywise on the elements of its argument $x$: $(x^+)_i \equiv \max\{0, x_i\}$.)
+As I will now show, it turns out that at equilibrium, the order of the schoo cutoffs is determined by the order of the \emph{competitiveness ratios} $\gamma_c / q_c$. This fact enables us to compute the equilibrium directly by solving a linear system. (Below, the positive part operator $x^+$ works elementwise on its argument $x$. That is, $(x^+)_i \equiv \max\{0, x_i\}$.)
 
 \begin{theorem} \label{cutoffsortationthm}
 Without loss of generality, suppose that $\frac{\gamma_1}{q_1} \leq \dots \leq \frac{\gamma_{|C|}}{q_{|C|}}$. Then $\hat p_1 \leq \cdots \leq \hat p_{|C|}$, and
 \[\hat p \equiv \left[A^{-1} (q - \frac{1}{\Gamma} \gamma) \right]^+\]
-is the market equilibrium.
+is the market equilibrium in the single-score, MNL choice model. Moreover, the equilibrium is unique. 
 \end{theorem} 
 
 \begin{proof}
 I show the following statements:
 \begin{enumerate}
 \item $\hat p$ satisfies $\hat p_1 \leq \cdots \leq \hat p_{|C|}$. This means that the demand at $\hat p$ is given by the expression $A \hat p + \frac{1}{\Gamma}\gamma$ (which only holds if $\hat p$ is sorted).
+\item $\hat p$ is the same regardless of how ties among the competitiveness ratios are resolved. This means that the equilibrium is unique, because the only opportunity for multiple equilibria occurs when there are ties among the competitiveness ratios $\gamma_c / q_c$.
+% I don’t think this is true--could have another equilibrium that isn’t sorted at all.  Need to show that if you pick a non-sorted A, you get a non equilibrium.
 \item $\hat p$ satisfies the equilibrium conditions given in equation \eqref{ssmnleqconds}.
 \end{enumerate}
 For convenience, let $\bar p \equiv A^{-1} (q - \frac{1}{\Gamma} \gamma) $, so that $\hat p = \bar p^+$. 
 
 \underline{$\hat p$ is sorted.} Pick any school $c < |C|$. It suffices to show that $\bar p_{c+1} - \bar p_{c} \geq 0$. The inverse of $A$ is
-\[A^{-1} = \begin{bmatrix}
+\begin{equation} \label{Ainv}
+A^{-1} = \begin{bmatrix}
 \frac{-1}{\gamma_1}\left( \gamma_1 \right) & -1 & -1 &\cdots & -1 \\
  & \frac{-1}{\gamma_2}\left( \gamma_1 + \gamma_2 \right) & -1 &\cdots & -1 \\
  & & \frac{-1}{\gamma_2}\left( \gamma_1 + \gamma_2 + \gamma_3 \right) &\cdots & -1 \\
  &  &  & \ddots & \vdots \\
  & & & &  \frac{-1}{\gamma_{|C|}} \Gamma \\
-\end{bmatrix}\]
+\end{bmatrix}
+\end{equation}
 It is not difficult to verify that
-\begin{align*}
+\begin{align} \label{barpissorted}
 \bar p_{c+1} - \bar p_{c}
 &= \left[A^{-1} (q - \frac{1}{\Gamma} \gamma) \right]_{c+1} - \left[A^{-1} (q - \frac{1}{\Gamma} \gamma) \right]_{c} = \left(\sum_{j=1}^c \gamma_j \right) \left(\frac{q_c}{\gamma_c} - \frac{q_{c+1}}{\gamma_{c+1}}\right) \geq 0
-\end{align*}
+\end{align}
 which follows from the assumption that $\gamma_c / q_c \leq \gamma_{c+1} / q_{c+1}$.
+
+\underline{$\hat p$ is invariant under tiebreaking.} Inspecting the expression for $\bar p_{c+1} - \bar p_c$ \eqref{hatpissorted} reveals that the gap between adjacent cutoffs is zero when their competitiveness ratios are the same; therefore, the values of  $\bar p_{c+1}$ and $\bar p_c$ do not change when tied indices $c$ and $c+1$ are exchanged.
 
 \underline{$\hat p$ satisfies the equilibrium conditions.} The demand at $\hat p$ is $D = A \hat p + \frac{1}{\Gamma}\gamma$. Hence
 \begin{align*}
@@ -559,9 +561,10 @@ D_c &=
 \end{bmatrix}_{c.} \left(q - \frac{1}{\Gamma}\gamma\right) + \frac{1}{\Gamma}\gamma
 = q_c
 \end{align*}
-Hence, the stability criterion holds, and $\hat p$ is an equilibrium.\end{proof}
+Hence, the stability criterion holds, and $\hat p$ is an equilibrium.
+\end{proof}
 
-For reference, for the schools with $p_c = 0$, the demand is 
+For reference, for the schools with $p_c = 0$, the demand at equilibrium is 
 \begin{align*}
 D_c &=
 \begin{bmatrix}
@@ -569,6 +572,7 @@ D_c &=
 \end{bmatrix}_{c.} \left(q - \frac{1}{\Gamma}\gamma\right) + \frac{1}{\Gamma}\gamma  
 = \frac{-\gamma_c}{\sum_{i=1}^{b-1} \gamma_i} \sum_{j=b}^{|C|} \left(q_j - \frac{1}{\Gamma}\gamma_j\right)  + \frac{1}{\Gamma}\gamma_c \leq q_c
 \end{align*}
+
 %From this expression, we can derive the minimum value of $\gamma_c$ that will cause $c$ to meet its capacity at equilibrium. 
 % Statement above is not true, because changing gamma would change the order.
 
@@ -636,7 +640,7 @@ First, I derive comparative statics results that apply to an unconstrained marke
 \subsubsection{Cutoff effects}
 The change in demand in response to a change in cutoffs is the Jacobian of the demand function:
 \[\mathbf{J}_p D = A \]
-The diagonal is negative, meaning that each school's demand is decreasing in its cutoff (downward-sloping demand curves). The entries above the diagonal are positive, while those below the diagonal are zero. This means that each school $c$'s demand is increasing in the cutoffs of the \emph{more-selective} schools, but the cutoffs of \emph{less-selective schools} have no local effect on the demand at $c$.
+The diagonal is negative, meaning that each school's demand is decreasing in its cutoff, as expected. The entries above the diagonal are positive, while those below the diagonal are zero. This means that each school $c$'s demand is increasing in the cutoffs of the \emph{more-selective} schools, but the cutoffs of \emph{less-selective schools} have no local effect on the demand at $c$.
 
 Intuitively, this means that if all schools are equally preferable, a highly selective school has more market power than the others: If it increases its cutoff, it will cause many students to move onto another school. On the other hand, a school $c'$ that is less preferable than $c$ cannot affect $D_c$'s demand by changing its own cutoff, because any student currently admitted to $c$ was already admitted to $c'$, and chose $c$ instead. 
 
@@ -676,7 +680,7 @@ By the same procedure used to show the continuity of $D$ above, it is easy to se
 
 
 \subsection{Quality effects at equilibrium} \label{compstateq}
-Now, let's analyze the incentives available to schools when the market is constrained to equilibrium, for example, by a centralized admissions process that uses a DA algorithm to produce a stable matching. In this section, I will focus on the effect of a marginal change in quality on market, with the understanding that when a single school changes its quality, the location of the equilibrium changes. Throughout this section, I assume the schools schools are indexed in ascending order by the competitiveness ratios $\gamma_c / q_c$, and that no ties occur among these ratios or among the equilibrium cutoffs, to avoid the undefined derivatives that can occur in the edge cases discussed above. 
+Now, let's analyze the incentives available to schools when the market is constrained to equilibrium, for example, by a centralized admissions process that uses a DA algorithm to produce a stable matching. In this section, I will focus on the effect of a marginal change in quality on market, with the understanding that when a single school changes its quality, the location of the equilibrium changes. Throughout this section, I assume that schools are indexed in ascending order by the competitiveness ratios $\gamma_c / q_c$, and that no ties occur among these ratios or among the equilibrium cutoffs, to avoid the undefined derivatives that can occur in the edge cases discussed above. 
 
 First, I provide yet another expression for the equilibrium cutoff vector $\hat p$, which can be verified by expanding the equation given in Theorem \ref{cutoffsortationthm}. $\hat p_c = \bar p_c^+$, where
 \begin{equation}
@@ -684,7 +688,7 @@ First, I provide yet another expression for the equilibrium cutoff vector $\hat 
 \frac{1}{\gamma_c} \left(\frac{\gamma_c}{\Gamma} - q_c\right) \sum_{i=1}^{c} \gamma_i 
 + \sum_{j=c+1}^{|C|} \left( \frac{\gamma_j}{\Gamma} - q_j \right)
 \end{equation}
-This assumes the schools are indexed in ascending order by the competitiveness ratios $\gamma_c / q_c$. 
+and, in the $c = |C|$ case, I take $\sum_{j=|C|+1}^{|C|} \left( \frac{\gamma_j}{\Gamma} - q_j \right)= 0$. This assumes the schools are indexed in ascending order by the competitiveness ratios $\gamma_c / q_c$. 
 
 Differentiating with respect to the quality, we have
 \[\frac{\partial}{\partial\gamma_{\hat c}} \hat p_c = \begin{cases}
@@ -711,8 +715,48 @@ Effect of a change in capacity
 
 
 \subsection{Reverse optimization of student preferences}
-Compute gamma; show inductive procedure. Argue for the informational power of this gamma. 
+In this section, I consider the inverse optimization task, in which the demand of the market and the cutoff vector is provided and we attempt to compute the quality parameters. That is, we must solve the following system for $\gamma$:
+\begin{equation} \label{solvemeforgamma}
+D_c = \sum_{d=c}^{|C|} 
+\frac{\gamma_c}{ \sum_{i=1}^d \gamma_i} 
+\left(p_{d+1} - p_{d}\right),
+\quad \forall c \in C
+\end{equation}
 
+Assume the schools are sorted in ascending order of cutoffs, and by homogeneity, let $\sum_{c \in C} \gamma_c = 1$.
+
+Consider the demand for $|C|$, the school with the highest index and therefore highest cutoff. Students who get into this school necessarily get into every school, so the outer sum of the system \eqref{solvemeforgamma} has only one term, and the equation becomes
+\begin{align*}D_{|C|} =
+\frac{\gamma_{|C|}}{ \sum_{i=1}^{|C|} \gamma_i} 
+\left(1 - p_{|C|}\right) \\
+\implies \gamma_{|C|} = \frac{D_{|C|}}{1 - p_{|C|}}
+\end{align*}
+
+Now suppose that $\gamma_{c+1}, \gamma_{c+2}, \dots, \gamma_{|C|}$ are known. Then $\gamma_c$ can also be calculated from the observation that
+\[\sum_{i=1}^d \gamma_i = 1 - \sum_{j=d+1}^{|C|} \gamma_j\]
+where I take $\sum_{j=|C|+1}^{|C|} \gamma_j \equiv 0$.
+
+Hence, the following recursive relation allows us to compute all the $\gamma_c$ values in reverse order, starting with $\gamma_{|C|}$ and moving down:
+\begin{align}
+\gamma_{|C|} &= \frac{D_{|C|}}{1 - p_{|C|}} \\[1em]
+\gamma_c &= \frac{D_c}{~~\mathlarger{\sum_{d=c}^{|C|} \frac{p_{d+1} - p_d}{1 - \sum_{j=d+1}^{|C|} \gamma_j} ~~}}, \quad \forall c \in \bigl\{ |C|-1, |C|-2, \dots, 1\bigr\} \label{gammarecursion}
+\end{align}
+
+Because this expression requires repeated division by small numbers, it is numerically unstable when the number of schools is large, and the error accumulates with each iteration, with the result that low-popularity schools clip to $\gamma_c = 0$. Thus, it is often more effective to solve the system \label{solvemeforgamma} using a generic root-finding procedure; this spreads the numerical error out over all the schools while preserving granularity at the low end. 
+
+\subsubsection{Why it’s nice to know $\gamma$}
+During college admissions season in the US, news media often report the following measures as indicators of school popularity. However, I argue that none of the following measure a school’s underlying preferability to students as well as $\gamma$ does:
+\begin{itemize}
+\item \textbf{Total enrollment} is a function of how selective the school is. For example, Stanford and CSU Chico both enroll about 17,000 students and serve a global market.
+\item \textbf{Class statistics} like average GPA or cutoff scores are also a function of selectivity. It is easy for a school to admit 100 students with perfect grades, and it only has to recruit one of them to obtain a high class statistic.
+\item \textbf{Acceptance rate} overlooks that not all applicant pools are the same. High-achieving students typically don’t bother applying to more than one or two safety schools, because they know they will be able to get in someone better. At the other end, many students remove themselves from the applicant pool at selective schools because they know they don’t have a chance of getting in, or know they will not be able to afford to attend. 
+\item \textbf{Yield}, the percentage of admitted students who choose to enroll, is commonly used as one factor in rankings of colleges in the US. However, this measure unfairly punishes safety schools, and is sensitive to applicant behavior and recruiting practices. If widely adopted, it also creates a perverse incentive for a midtier school to reject highly qualified applicants whom it expects to enroll elsewhere (so-called yield protection).  
+\item \textbf{True yield}, the percentage of qualified students (whether they apply or not) who choose to enroll at a given school (this is my own term). This measure is better than yield, but it systematically overestimates the popularity of lenient schools, which face less competition for students. For example, consider a market with only two schools, Antarctic University and Oxvard University. Oxvard-tier students can choose between two schools, while Antarctic University--tier students have only one choice. Both schools may have similar true yield, but clearly Oxvard is globally preferable when controlling for selectivity.
+\end{itemize}
+$\gamma$ is free of bias at the extreme ends of the distribution, so it allows us to compare the preferability of Oxford and Antarctic U even though very few students actually make this binary choice. 
+
+\subsubsection{A demonstration}
+Maybe?
 
 
 
