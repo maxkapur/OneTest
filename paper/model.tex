@@ -490,7 +490,7 @@ D = A p + \frac{1}{\Gamma}\gamma &\leq q \\
 D_c = A_{c.} p + \frac{1}{\Gamma} \gamma_c &= q_c, \quad \forall c: p_c > 0
 \end{aligned}
 \end{gather}
-As I will now show, it turns out that at equilibrium, the order of the schoo cutoffs is determined by the order of the \emph{competitiveness ratios} $\gamma_c / q_c$. This fact enables us to compute the equilibrium directly by solving a linear system. (Below, the positive part operator $x^+$ works elementwise on its argument $x$. That is, $(x^+)_i \equiv \max\{0, x_i\}$.)
+As I will now show, it turns out that at equilibrium, the order of the school cutoffs is determined by the order of the \emph{competitiveness ratios} $\gamma_c / q_c$. This fact enables us to compute the equilibrium directly by solving a linear system. (Below, the positive part operator $x^+$ works elementwise on its argument $x$. That is, $(x^+)_i \equiv \max\{0, x_i\}$.)
 
 \begin{theorem} \label{cutoffsortationthm}
 Without loss of generality, suppose that $\frac{\gamma_1}{q_1} \leq \dots \leq \frac{\gamma_{|C|}}{q_{|C|}}$. Then $\hat p_1 \leq \cdots \leq \hat p_{|C|}$, and
@@ -536,7 +536,7 @@ which follows from the assumption that $\gamma_c / q_c \leq \gamma_{c+1} / q_{c+
 The final statement follows from the fact that $A^{-1}$ is triangular and its nonzero entries are strictly negative. This establishes the capacity condition. 
 
 Now, we need to show that the demand equals the capacity when $\hat p_c > 0$. Let $b$ denote the first school with a nonzero cutoff. That is, $\hat p_1 = \dots = \hat p_{b-1} = 0$, and $0 < \hat p_b \leq p_{b+1} \leq \dots \leq \hat p_{|C|}$. Then the demand at $\hat p$ may be written
-\begin{gather*}\begin{aligned}
+\begin{gather}\begin{aligned} \label{demandatphat}
 D &= A \hat p + \frac{1}{\Gamma}\gamma \\
 &= \sum_{i=1}^{|C|} A_{.i} \hat p_i + \frac{1}{\Gamma}\gamma  \\
 &= \sum_{i=1}^{|C|} A_{.i} \left[A^{-1} \left(q - \frac{1}{\Gamma}\gamma\right) \right]_i^+ + \frac{1}{\Gamma}\gamma  \\
@@ -546,13 +546,14 @@ D &= A \hat p + \frac{1}{\Gamma}\gamma \\
 0_{b \times b} & T_{b \times (|C| - b)} \\
 0_{(|C| - b) \times b} & I_{|C| - b} \\
 \end{bmatrix} \left(q - \frac{1}{\Gamma}\gamma\right) + \frac{1}{\Gamma}\gamma  \\
-\end{aligned}\end{gather*}
+\end{aligned}\end{gather}
 where
-\[T = \begin{bmatrix}
+\begin{equation} \label{Tdef}
+T = \begin{bmatrix}
 \frac{-\gamma_1}{\sum_{i=1}^{b-1} \gamma_i} & \cdots & \frac{-\gamma_1}{\sum_{i=1}^{b-1} \gamma_i} \\
 \vdots & \cdots & \vdots \\
 \frac{-\gamma_{b-1}}{\sum_{i=1}^{b-1} \gamma_i} & \cdots & \frac{-\gamma_{b-1}}{\sum_{i=1}^{b-1} \gamma_i}
-\end{bmatrix}\]
+\end{bmatrix}\end{equation}
 For the schools with $\hat p_c > 0$, the demand is
 \begin{align*}
 D_c &=
@@ -597,7 +598,7 @@ D(p^*, \gamma) &=  (0.3, 0.1, 0.2, 0.2)
 \end{align*}
 As the total capacity is less than one, each school fills its capacity at equilibrium.
 
-Figure \ref{tat-iter-cutoff} shows fifty iterations of the simultaneous t\^{a}tonnement process (Algorithm \ref{admissionseqtatalgo}) applied to Birchtown. At each iteration, the demand is computed directly by evaluating the expression derived above (\eqref{mnlonetestdemand}). Then, the cutoff vector is adjusted in the direction of excess demand according to a predetermined, decreasing sequence of step size. The cutoffs converge smoothly toward $p^*$, which suggests the continuity of the demand function and the stability of the equilibrium. 
+Figure \ref{tat-iter-cutoff} shows fifty iterations of the simultaneous t\^{a}tonnement process (Algorithm \ref{admissionseqtatalgo}) applied to Birchtown. At each iteration, the demand is computed directly by evaluating the expression derived above \eqref{mnlonetestdemand}. Then, the cutoff vector is adjusted in the direction of excess demand according to a predetermined, decreasing sequence of step size. The cutoffs converge smoothly toward $p^*$, which suggests the continuity of the demand function and the stability of the equilibrium. 
 
 Figures \ref{score-cutoff-choice} and \ref{score-DA-placement} consider discrete approximations of the Birchtown admissions markets with 20, 200, or 2000 students. In Figure \ref{score-cutoff-choice}, schools admit students according to their equilibrium cutoffs, students choose their favorite school, and schools observe their demand. When there are many students, the demand at each school approximately equals its capacity. In Figure \ref{score-DA-placement}, a stable matching of the students is computed so that each school fills its capacity exactly. When there are many students, the implied cutoffs approximately equal $p^*$. 
 
@@ -654,24 +655,29 @@ The derivatives given above are well-defined when the cutoffs are totally ordere
 
 \subsubsection{Quality effects}
 Differentiate the demand with respect to $\gamma$ to obtain the effect of a marginal change in quality:
-\[\frac{\partial}{\partial\gamma_{\hat c}} D_c = \begin{cases}
+\begin{equation}
+\left(\mathbf{J}_\gamma D \right)_{c\hat c} =
+\frac{\partial}{\partial\gamma_{\hat c}} D_c = \begin{cases}
 \sum_{d=c}^{|C|} \frac{-\gamma_c}{\left(\sum_{i=1}^{d} \right)^2} \left(p_{d+1} - p_d \right), & \hat c < c \\
 \sum_{d=c}^{|C|} \frac{1}{\left(\sum_{i=1}^{d} \right)}
     \left( 1 - \frac{\gamma_c}{\left(\sum_{i=1}^{d} \right)}\right)
     \left(p_{d+1} - p_d \right), & \hat c = c\\
 \sum_{d=\hat c}^{|C|} \frac{-\gamma_c}{\left(\sum_{i=1}^{d} \right)^2} \left(p_{d+1} - p_d \right), & \hat c > c
-\end{cases}\]
+\end{cases}
+\end{equation}
 
 (Note that the $\hat c > c$ and $ \hat c < c$ cases differ in the starting index.) The demand for $c$ is predictably decreasing in the quality of the other schools and increasing in $\gamma_c$. 
 
 A similar picture emerges when we differentiate the appeal with respect to $\gamma$:
-\[\frac{\partial}{\partial\gamma_{\hat c}} L_c = \begin{cases}
+\begin{equation}
+\left(\mathbf{J}_\gamma L \right)_{c\hat c} =
+\frac{\partial}{\partial\gamma_{\hat c}} L_c = \begin{cases}
 \frac{1}{2}\sum_{d=c}^{|C|} \frac{-\gamma_c}{\left(\sum_{i=1}^{d} \right)^2} \left(p_{d+1}^2 - p_d^2 \right), & \hat c < c \\
 \frac{1}{2}\sum_{d=c}^{|C|} \frac{1}{\left(\sum_{i=1}^{d} \right)}
     \left( 1 - \frac{\gamma_c}{\left(\sum_{i=1}^{d} \right)}\right)
     \left(p_{d+1}^2 - p_d^2 \right), & \hat c = c\\
 \frac{1}{2}\sum_{d=\hat c}^{|C|} \frac{-\gamma_c}{\left(\sum_{i=1}^{d} \right)^2} \left(p_{d+1}^2 - p_d^2 \right), & \hat c > c
-\end{cases}\]
+\end{cases}\end{equation}
 
 By the same procedure used to show the continuity of $D$ above, it is easy to see that the quality effects are continuous across tiebreaking permutations of $p$.
 
@@ -679,42 +685,81 @@ By the same procedure used to show the continuity of $D$ above, it is easy to se
 
 
 
-\subsection{Quality effects at equilibrium} \label{compstateq}
-Now, let's analyze the incentives available to schools when the market is constrained to equilibrium, for example, by a centralized admissions process that uses a DA algorithm to produce a stable matching. In this section, I will focus on the effect of a marginal change in quality on market, with the understanding that when a single school changes its quality, the location of the equilibrium changes. Throughout this section, I assume that schools are indexed in ascending order by the competitiveness ratios $\gamma_c / q_c$, and that no ties occur among these ratios or among the equilibrium cutoffs, to avoid the undefined derivatives that can occur in the edge cases discussed above. 
+\subsection{Comparative statics at equilibrium} \label{compstateq}
+Now, let's analyze the incentives available to schools and government planners when the market is constrained to equilibrium, for example, by a centralized admissions process that uses a DA algorithm to produce a stable matching. Throughout this section, I assume that schools are indexed in ascending order by the competitiveness ratios $\gamma_c / q_c$, and that no ties occur among these ratios or among the equilibrium cutoffs, to avoid the undefined derivatives that can occur in the edge cases discussed above. 
+
+\subsubsection{Quality effects at equilibrium}
+First, I will focus on the effect of a marginal change in quality on the allocation of students at equilibrium. Since, in theory, schools have the power to change their own quality by investing in their programs or marketing, the analysis below enables us to quantify the extent to which these investments are ``worth it'' with respect to the school's interest in maintaining high admissions standards or increasing its demand. 
 
 First, I provide yet another expression for the equilibrium cutoff vector $\hat p$, which can be verified by expanding the equation given in Theorem \ref{cutoffsortationthm}. $\hat p_c = \bar p_c^+$, where
-\begin{equation}
+\begin{equation} \label{yetanothereqcutoff}
 \bar p_c = 
 \frac{1}{\gamma_c} \left(\frac{\gamma_c}{\Gamma} - q_c\right) \sum_{i=1}^{c} \gamma_i 
 + \sum_{j=c+1}^{|C|} \left( \frac{\gamma_j}{\Gamma} - q_j \right)
 \end{equation}
 and, in the $c = |C|$ case, I take $\sum_{j=|C|+1}^{|C|} \left( \frac{\gamma_j}{\Gamma} - q_j \right)= 0$. This assumes the schools are indexed in ascending order by the competitiveness ratios $\gamma_c / q_c$. 
 
-Differentiating with respect to the quality, we have
-\[\frac{\partial}{\partial\gamma_{\hat c}} \hat p_c = \begin{cases}
+Differentiating the optimal cutoffs with respect to the quality and simplifying, we have
+\begin{equation}\label{jac-gamma-p}
+\left(\mathbf{J}_\gamma \hat p\right)_{c\hat c} =
+\frac{\partial}{\partial\gamma_{\hat c}} \hat p_c = \begin{cases}
 0, & \bar p_c < 0 \\
 \text{undefined}, & \bar p_c = 0 \\
-\frac{1}{\Gamma} - \frac{q_c}{\gamma_c}, & \bar p_c > 0 \text{ and }\hat c < c \\
-\frac{1}{\Gamma} + \frac{q_c}{\gamma_c^2} \sum_{i=1}^{c-1} \gamma_i, & \bar p_c > 0 \text{ and }\hat c = c\\
-\frac{1}{\Gamma}, & \bar p_c > 0 \text{ and }\hat c > c
-\end{cases}\]
-The most interesting case is the third, whose sign depends on the competitiveness ratio. For a school that fills its capacity, if $c$ has a high competitiveness ratio, then a marginal increase in quality at a school that is less competitive overall can make $c$ become \emph{more difficult} to get into, a counterintuitive result.
-% Numerical experiments do not seem do support this. Needs investigation 
+ - \frac{q_c}{\gamma_c}, & \bar p_c > 0 \text{ and }\hat c < c \\
+\frac{q_c}{\gamma_c^2} \sum_{i=1}^{c-1} \gamma_i, & \bar p_c > 0 \text{ and }\hat c = c\\
+0, & \bar p_c > 0 \text{ and }\hat c > c
+\end{cases}
+\end{equation}
+The Jacobian is lower triangular--any change in the quality of a school whose competitiveness ratio is already higher than that of $c$ induces no change in the cutoff at $c$. As above, in the $c=1$ case, we interpret the empty set as summing to zero: $\sum_{i=1}^{0} \gamma_i = 0$.
 
-\subsubsection{At equilibrium: Demand effects}
-On cutoff when quality is fixed
+Applying the chain rule to the demand at equilibrium $D = A \hat p + \frac{1}{\Gamma} \gamma$, and letting $b$ denote the index of the first school with a nonzero cutoff (as above), the derivative of the equilibrium demand at $c$ with respect to the quality of $\hat c$ is
+\begin{equation} \label{jac-gamma-demand}
+\left(\mathbf{J}_\gamma D\left(\hat p\right)\right)_{c\hat c} =
+\frac{\partial}{\partial\gamma_{\hat c}} D(\hat p_c) = \begin{cases}
+-\gamma_c \frac{1 - \sum_{j=b}^{|C|} q_j}{\left(\sum_{i=1}^{b-1} \gamma_i\right)^2}, & \bar p_c < 0 \text{ and }\hat c \neq c \\
+\left(- \gamma_c + \sum_{k=1}^{b-1} \gamma_k\right)\frac{1 - \sum_{j=b}^{|C|} q_j}{\left(\sum_{i=1}^{b-1} \gamma_i\right)^2}, & \bar p_c < 0 \text{ and }\hat c = c\\
+\text{undefined}, & \bar p_c = 0 \\
+0, & \bar p_c > 0
+\end{cases}
+\end{equation}
 
-Effect of a change in total student population (i.e. scaling capacity)
-Effect of a change in capacity
+
+The appeal function can be similarly differentiated, but does not admit a legible representation for an arbitrary number of schools. However, supposing that schools treat their appeal function as an objective function to be maximized, we can determine the signs along the Jacobian of the appeal function's main diagonal by inspection.
+
+Disregarding the knife-edge case in which $\bar p_c = 0$, the two derivatives above suggest that schools in the single-test model fall into one of two clear categories. For the schools for which $\bar p_c < 0$, a marginal improvement in quality increases the \emph{size} of the entering class but has no effect on its \emph{minimum score} (and, in general, the effect on the average score is small). On the other hand, for the schools for which $\bar p_c > 0$, their capacity is always filled at equilibrium, and any investment in quality translates into an improvement in the minimum score of the entering class. Although I have not specified the objective functions of any schools, if the objective functions are a combination of cutoff and demand, this analysis suggests that competition within these two broad groups of schools is close to zero-sum. Underdemanded schools compete for the finite pool of tuition dollars available in the market, whereas overdemanded schools compete for a choice slice of a fixed distribution of student talent.
+% Dynamic version of the RHT
+
+\subsubsection{Capacity and population effects}
+Consulting the cutoff sortation result of Theorem \ref{cutoffsortationthm}, it is easy to see that the derivative of the equilibrium cutoffs with respect to a given school's capacity is
+\begin{equation}\label{jac-q-p}
+\left(\mathbf{J}_q \hat p\right)_{c\hat c} =
+\frac{\partial}{\partial q_{\hat c}} \hat p_c = \begin{cases}
+0, & \bar p_c < 0 \\
+\text{undefined}, & \bar p_c = 0 \\
+A^{-1}_{c \hat c}, & \bar p_c > 0 \text{ and }\hat c < c 
+\end{cases}
+\end{equation}
+
+The derivative of the demand, by inspecting Equation \eqref{demandatphat}, has
+\begin{equation}\mathbf{J}_q D(\hat p) =
+\begin{bmatrix}
+0_{b \times b} & T_{b \times (|C| - b)} \\
+0_{(|C| - b) \times b} & I_{|C| - b} \\
+\end{bmatrix} 
+\end{equation}
+where the entries of $T$ are negative as given in \eqref{Tdef}.
+
+This confirms the intuitive result that only schools that are overdemanded at equilibrium can make use of excess capacity. In addition, observe that because $\mathbf{J}_q \hat p$ is upper triangular, adding capacity to a school whose competitiveness ratio is lower than that of $c$ has no marginal effect on the equilibrium cutoff at $c$. 
+
+Next, consider the effect of a uniform change in the total student population $P$. Since school capacities represent fractions of the total student population, this is equivalent to the effect of scaling each school's capacity proportionally. 
+
+% Write. 
 
 
 
 
 
-
-
-
-\subsection{Reverse optimization of student preferences}
+\subsection{Inverse optimization of student preferences}
 In this section, I consider the inverse optimization task, in which the demand of the market and the cutoff vector is provided and we attempt to compute the quality parameters. That is, we must solve the following system for $\gamma$:
 \begin{equation} \label{solvemeforgamma}
 D_c = \sum_{d=c}^{|C|} 

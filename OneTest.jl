@@ -35,7 +35,6 @@ Instantiate a school-choice market. `gamma` is normalized to sum to one.
 function Market(qualities::Array{T, 1}, capacities::Array{T, 1}) where {T<:AbstractFloat}
     length(qualities) == length(capacities) || return throw(DimensionMismatch)
     gamma = exp.(qualities)
-    gamma /= sum(gamma)
     return Market{T}(qualities, capacities, gamma)
 end
     
@@ -118,13 +117,13 @@ end
 Returns the matrices `A` and the permutation `sort_order` such that
 
 ````
-demand(market, p)[sort_order] == A * cutoffs[sort_order] + market.gamma[sort_order]
+demand(market, p)[sort_order] == A * cutoffs[sort_order] + market.gamma[sort_order]/sum(market.gamma)
 ````
 
 and
 
 ````
-appeal(market, p)[sort_order] == (A * cutoffs[sort_order] .^2 + market.gamma[sort_order])/2
+appeal(market, p)[sort_order] == (A * cutoffs[sort_order] .^2 + market.gamma[sort_order]/sum(market.gamma))/2
 ````
 
 The argument `cutoffs` is used only to determine the sort order, so it may be
@@ -185,7 +184,7 @@ function equilibrium(market::Market)
     A, sort_order = demandmatrix(market, market.gamma ./ market.capacities)
 
     p_heuristic = zeros(length(market))
-    p_heuristic[sort_order] = max.(0, A\(market.capacities - market.gamma)[sort_order])
+    p_heuristic[sort_order] = max.(0, A\(market.capacities - market.gamma/sum(market.gamma))[sort_order])
     
     return p_heuristic
 end
