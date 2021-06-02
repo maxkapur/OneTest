@@ -1,0 +1,423 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{whatmatters}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c1de651a58cf5e0f6f3db3531f3a877b}{%
+           family={Ashlagi},
+           familyi={A\bibinitperiod},
+           given={Itai},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=09b90fba952d28b7a698090585f5f50a}{%
+           family={Nikzad},
+           familyi={N\bibinitperiod},
+           given={Afshin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{84c41f89c5b3c7fd499f9aadf1642c10}
+      \strng{fullhash}{84c41f89c5b3c7fd499f9aadf1642c10}
+      \strng{bibnamehash}{84c41f89c5b3c7fd499f9aadf1642c10}
+      \strng{authorbibnamehash}{84c41f89c5b3c7fd499f9aadf1642c10}
+      \strng{authornamehash}{84c41f89c5b3c7fd499f9aadf1642c10}
+      \strng{authorfullhash}{84c41f89c5b3c7fd499f9aadf1642c10}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{title}{What Matters in School Choice Tie-Breaking? How Competition Guides Design}
+      \field{volume}{190}
+      \field{year}{2020}
+      \field{pages}{105120}
+      \range{pages}{1}
+    \endentry
+    \entry{supplydemandfw}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=0b38b39638394e0856c58aa0ab543791}{%
+           family={Azevedo},
+           familyi={A\bibinitperiod},
+           given={Eduardo\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37b6efb6f6fb90c4962db831302812df}{%
+           family={Leshno},
+           familyi={L\bibinitperiod},
+           given={Jacob\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a2b74cfdfd2c93eb979acf467757b537}
+      \strng{fullhash}{a2b74cfdfd2c93eb979acf467757b537}
+      \strng{bibnamehash}{a2b74cfdfd2c93eb979acf467757b537}
+      \strng{authorbibnamehash}{a2b74cfdfd2c93eb979acf467757b537}
+      \strng{authornamehash}{a2b74cfdfd2c93eb979acf467757b537}
+      \strng{authorfullhash}{a2b74cfdfd2c93eb979acf467757b537}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{Sept.}
+      \field{journaltitle}{Journal of Political Economy}
+      \field{number}{5}
+      \field{title}{A Supply and Demand Framework for Two-Sided Matching Markets}
+      \field{volume}{124}
+      \field{year}{2016}
+      \field{pages}{1235\bibrangedash 68}
+      \range{pages}{34}
+    \endentry
+    \entry{compmkteq}{incollection}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=c89897e80d8e67afe9b0fb75f889e9cd}{%
+           family={Codenotti},
+           familyi={C\bibinitperiod},
+           given={Bruno},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=25a9e2d489efa64117f9b45f6e02eadf}{%
+           family={Varadarajan},
+           familyi={V\bibinitperiod},
+           given={Kasturi},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=dd03ed102537d5040adaf7ede9bad0ec}{%
+           family={Nisan},
+           familyi={N\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod}}}%
+        {{hash=efce6f6d496cdcc1bb07fb47dfecb3aa}{%
+           family={Roughgarden},
+           familyi={R\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3b65c0aec42ebdc08432a6ece3a86584}{%
+           family={Tardos},
+           familyi={T\bibinitperiod},
+           given={Éva},
+           giveni={É\bibinitperiod}}}%
+        {{hash=4391dea254c3bbcaff1fefed241caed0}{%
+           family={Vazirani},
+           familyi={V\bibinitperiod},
+           given={Vijay\bibnamedelima V.},
+           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{04d12956d7a4f456f8c770b39db6056d}
+      \strng{fullhash}{04d12956d7a4f456f8c770b39db6056d}
+      \strng{bibnamehash}{04d12956d7a4f456f8c770b39db6056d}
+      \strng{authorbibnamehash}{04d12956d7a4f456f8c770b39db6056d}
+      \strng{authornamehash}{04d12956d7a4f456f8c770b39db6056d}
+      \strng{authorfullhash}{04d12956d7a4f456f8c770b39db6056d}
+      \strng{editorbibnamehash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \strng{editornamehash}{a461b403bdb909ab1f593fcc8e04d108}
+      \strng{editorfullhash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Algorithmic Game Theory}
+      \field{chapter}{6}
+      \field{title}{Computation of Market Equilibria by Convex Programming}
+      \field{year}{2007}
+    \endentry
+    \entry{mathematicaloptandecontheory}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=281b8f46561c8ee4cc91b9b36212e71e}{%
+           family={Intriligator},
+           familyi={I\bibinitperiod},
+           given={Michael\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Englewood Cliffs, NJ}%
+      }
+      \list{publisher}{1}{%
+        {Prentice-Hall}%
+      }
+      \strng{namehash}{281b8f46561c8ee4cc91b9b36212e71e}
+      \strng{fullhash}{281b8f46561c8ee4cc91b9b36212e71e}
+      \strng{bibnamehash}{281b8f46561c8ee4cc91b9b36212e71e}
+      \strng{authorbibnamehash}{281b8f46561c8ee4cc91b9b36212e71e}
+      \strng{authornamehash}{281b8f46561c8ee4cc91b9b36212e71e}
+      \strng{authorfullhash}{281b8f46561c8ee4cc91b9b36212e71e}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Mathematical Optimization and Economic Theory}
+      \field{year}{1971}
+    \endentry
+    \entry{efficientalgorithmoptimal}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3730d4653b8bd5da97e704cab5fcf3d8}{%
+           family={Irving},
+           familyi={I\bibinitperiod},
+           given={Robert\bibnamedelima W.},
+           giveni={R\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2f94e249cd3cfecb95e04b5c2aae9e80}{%
+           family={Leather},
+           familyi={L\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=68de6b5b0039868e480ad77af042b983}{%
+           family={Gusfield},
+           familyi={G\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8ff728a29d8f4634915e1e8f6243dd30}
+      \strng{fullhash}{8ff728a29d8f4634915e1e8f6243dd30}
+      \strng{bibnamehash}{8ff728a29d8f4634915e1e8f6243dd30}
+      \strng{authorbibnamehash}{8ff728a29d8f4634915e1e8f6243dd30}
+      \strng{authornamehash}{8ff728a29d8f4634915e1e8f6243dd30}
+      \strng{authorfullhash}{8ff728a29d8f4634915e1e8f6243dd30}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{July}
+      \field{journaltitle}{Journal of the Association for Computing Machinery}
+      \field{number}{3}
+      \field{title}{An Efficient Algorithm for the 'Optimal' Stable Marriage}
+      \field{volume}{34}
+      \field{year}{1987}
+      \field{pages}{532\bibrangedash 43}
+      \range{pages}{12}
+    \endentry
+    \entry{intlrankingsandconflicts}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b8a6a38addcb3e3c21886a9042d52537}{%
+           family={Jaschik},
+           familyi={J\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b8a6a38addcb3e3c21886a9042d52537}
+      \strng{fullhash}{b8a6a38addcb3e3c21886a9042d52537}
+      \strng{bibnamehash}{b8a6a38addcb3e3c21886a9042d52537}
+      \strng{authorbibnamehash}{b8a6a38addcb3e3c21886a9042d52537}
+      \strng{authornamehash}{b8a6a38addcb3e3c21886a9042d52537}
+      \strng{authorfullhash}{b8a6a38addcb3e3c21886a9042d52537}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{May 3}
+      \field{journaltitle}{Inside Higher Ed}
+      \field{title}{International Rankings and Conflicts of Interest}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.insidehighered.com/admissions/article/2021/05/03/international-rankings-and-conflicts-interest
+      \endverb
+      \verb{url}
+      \verb https://www.insidehighered.com/admissions/article/2021/05/03/international-rankings-and-conflicts-interest
+      \endverb
+    \endentry
+    \entry{theoryofvariationalinequalities}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=0ee46007407b55e5892ca407f79687f5}{%
+           family={Oden},
+           familyi={O\bibinitperiod},
+           given={J.\bibnamedelimi T.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b1296af833b6dca061cb08c34b6fda84}{%
+           family={Kikuchi},
+           familyi={K\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{56fa1dda94ce483fe455d6692695854a}
+      \strng{fullhash}{56fa1dda94ce483fe455d6692695854a}
+      \strng{bibnamehash}{56fa1dda94ce483fe455d6692695854a}
+      \strng{authorbibnamehash}{56fa1dda94ce483fe455d6692695854a}
+      \strng{authornamehash}{56fa1dda94ce483fe455d6692695854a}
+      \strng{authorfullhash}{56fa1dda94ce483fe455d6692695854a}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Engineering Science}
+      \field{number}{10--A}
+      \field{title}{Theory of Variational Inequalities with Applications to Problems of Flow Through Porous Media}
+      \field{volume}{18}
+      \field{year}{1980}
+      \field{pages}{1173\bibrangedash 1284}
+      \range{pages}{112}
+    \endentry
+    \entry{collegeadmissionskaggle}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=57af42130e01efe7087f6bb474007ee8}{%
+           family={Qian},
+           familyi={Q\bibinitperiod},
+           given={Samson},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{57af42130e01efe7087f6bb474007ee8}
+      \strng{fullhash}{57af42130e01efe7087f6bb474007ee8}
+      \strng{bibnamehash}{57af42130e01efe7087f6bb474007ee8}
+      \strng{authorbibnamehash}{57af42130e01efe7087f6bb474007ee8}
+      \strng{authornamehash}{57af42130e01efe7087f6bb474007ee8}
+      \strng{authorfullhash}{57af42130e01efe7087f6bb474007ee8}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{College Admissions: Admission/Class Demographics by University}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.kaggle.com/samsonqian/college-admissions
+      \endverb
+      \verb{url}
+      \verb https://www.kaggle.com/samsonqian/college-admissions
+      \endverb
+    \endentry
+    \entry{robbinsmonro}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=163566b92b332258782e61e3d217a2bb}{%
+           family={Robbins},
+           familyi={R\bibinitperiod},
+           given={Herbert},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=95751f7f614bc2af42f1a078b3e2ba61}{%
+           family={Monro},
+           familyi={M\bibinitperiod},
+           given={Sutton},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5d85b58c5cbfcc8fc266cf4f5f6fbdbb}
+      \strng{fullhash}{5d85b58c5cbfcc8fc266cf4f5f6fbdbb}
+      \strng{bibnamehash}{5d85b58c5cbfcc8fc266cf4f5f6fbdbb}
+      \strng{authorbibnamehash}{5d85b58c5cbfcc8fc266cf4f5f6fbdbb}
+      \strng{authornamehash}{5d85b58c5cbfcc8fc266cf4f5f6fbdbb}
+      \strng{authorfullhash}{5d85b58c5cbfcc8fc266cf4f5f6fbdbb}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{Sept.}
+      \field{journaltitle}{The Annals of Mathematical Statistics}
+      \field{number}{3}
+      \field{title}{A Stochastic Approximation Method}
+      \field{volume}{22}
+      \field{year}{1951}
+      \field{pages}{400\bibrangedash 407}
+      \range{pages}{8}
+    \endentry
+    \entry{economicsofmatching}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=320ab47af0997a7a69af46760b320783}{%
+           family={Roth},
+           familyi={R\bibinitperiod},
+           given={Alvin\bibnamedelima E.},
+           giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{320ab47af0997a7a69af46760b320783}
+      \strng{fullhash}{320ab47af0997a7a69af46760b320783}
+      \strng{bibnamehash}{320ab47af0997a7a69af46760b320783}
+      \strng{authorbibnamehash}{320ab47af0997a7a69af46760b320783}
+      \strng{authornamehash}{320ab47af0997a7a69af46760b320783}
+      \strng{authorfullhash}{320ab47af0997a7a69af46760b320783}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{Nov.}
+      \field{journaltitle}{Mathematics of Operations Research}
+      \field{number}{4}
+      \field{title}{The Economics of Matching: Stability and Incentives}
+      \field{volume}{7}
+      \field{year}{1982}
+      \field{pages}{617\bibrangedash 28}
+      \range{pages}{12}
+    \endentry
+    \entry{walrastatonnement}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4cf09f93abf65f26171201339553f28e}{%
+           family={Uzawa},
+           familyi={U\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4cf09f93abf65f26171201339553f28e}
+      \strng{fullhash}{4cf09f93abf65f26171201339553f28e}
+      \strng{bibnamehash}{4cf09f93abf65f26171201339553f28e}
+      \strng{authorbibnamehash}{4cf09f93abf65f26171201339553f28e}
+      \strng{authornamehash}{4cf09f93abf65f26171201339553f28e}
+      \strng{authorfullhash}{4cf09f93abf65f26171201339553f28e}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{June}
+      \field{journaltitle}{The Review of Economic Studies}
+      \field{number}{3}
+      \field{title}{Walras' Tâtonnement in the Theory of Exchange}
+      \field{volume}{27}
+      \field{year}{1960}
+      \field{pages}{182\bibrangedash 194}
+      \range{pages}{13}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

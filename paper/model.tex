@@ -555,18 +555,18 @@ T = \begin{bmatrix}
 \frac{-\gamma_{b-1}}{\sum_{i=1}^{b-1} \gamma_i} & \cdots & \frac{-\gamma_{b-1}}{\sum_{i=1}^{b-1} \gamma_i}
 \end{bmatrix}\end{equation}
 For the schools with $\hat p_c > 0$, the demand is
-\begin{align*}
+\begin{align} \label{demand-pc-gt-zero}
 D_c &=
 \begin{bmatrix}
 0& I
 \end{bmatrix}_{c.} \left(q - \frac{1}{\Gamma}\gamma\right) + \frac{1}{\Gamma}\gamma
 = q_c
-\end{align*}
+\end{align}
 Hence, the stability criterion holds, and $\hat p$ is an equilibrium.
 \end{proof}
 
-For reference, for the schools with $p_c = 0$, the demand at equilibrium is 
-\begin{align*}
+For reference, for the schools with $\hat p_c = 0$, the demand at equilibrium is 
+\begin{align*} \label{demand-pc-eq-zero}
 D_c &=
 \begin{bmatrix}
 0& T
@@ -751,7 +751,28 @@ where the entries of $T$ are negative as given in \eqref{Tdef}.
 
 This confirms the intuitive result that only schools that are overdemanded at equilibrium can make use of excess capacity. In addition, observe that because $\mathbf{J}_q \hat p$ is upper triangular, adding capacity to a school whose competitiveness ratio is lower than that of $c$ has no marginal effect on the equilibrium cutoff at $c$. 
 
-Next, consider the effect of a uniform change in the total student population $P$. Since school capacities represent fractions of the total student population, this is equivalent to the effect of scaling each school's capacity proportionally. 
+Next, consider the effect of a uniform marginal increase in the total student population $\eta(S)$, which nominally equals one. Since school capacities represent fractions of the total student population, this is equivalent to the effect of decreasing each school's capacity proportionally. In other words, when an attribute of the market is given by $f(q)$, it suffices to evaluate the derivative of $f(\alpha q)$ with respect to $\alpha$ at $\alpha =1$ and flip the sign.
+
+The change in cutoffs after a marginal increase in $\eta(S)$ is
+\begin{equation}\label{d-population-p}
+\frac{\mathrm{d}}{\mathrm{d}\eta(S)} \hat p_c = 
+- \left.\frac{\mathrm{d}}{\mathrm{d}\alpha} \hat p_c(\alpha q)\right|_{\alpha=1} = \begin{cases}
+0, & \bar p_c < 0 \\
+\text{undefined}, & \bar p_c = 0 \\
+-A^{-1}_{c .} q, & \bar p_c > 0
+\end{cases}
+\end{equation}
+Since the entries of $A^{-1}q$ are strictly negative, any school with a positive cutoff will attain a higher cutoff after an increase in population. The change in demand and appeal can be derived similarly. 
+
+%Inspecting the demand equations \eqref{demand-pc-gt-zero} and \eqref{demand-pc-eq-zero}, the change in demand is
+%\begin{equation}\label{d-population-D}
+%\frac{\mathrm{d}}{\mathrm{d}\eta(S)} D(\hat p_c) = 
+%- \left.\frac{\mathrm{d}}{\mathrm{d}\alpha} D\left( \hat p_c\left(\alpha q\right)\right) \right|_{\alpha=1} = \begin{cases}
+% \frac{\gamma_c}{\sum_{i=1}^{b-1} \gamma_i} \sum_{j=b}^{|C|} q_j , & \bar p_c < 0 \\
+%\text{undefined}, & \bar p_c = 0 \\
+%q_c, & \bar p_c > 0
+%\end{cases}
+%\end{equation}
 
 % Write. 
 
@@ -789,20 +810,30 @@ Hence, the following recursive relation allows us to compute all the $\gamma_c$ 
 
 Because this expression requires repeated division by small numbers, it is numerically unstable when the number of schools is large, and the error accumulates with each iteration, with the result that low-popularity schools clip to $\gamma_c = 0$. Thus, it is often more effective to solve the system \label{solvemeforgamma} using a generic root-finding procedure; this spreads the numerical error out over all the schools while preserving granularity at the low end. 
 
-\subsubsection{Why it’s nice to know $\gamma$}
-During college admissions season in the US, news media often report the following measures as indicators of school popularity. However, I argue that none of the following measure a school’s underlying preferability to students as well as $\gamma$ does:
+\subsubsection{A demonstration of the reverse optimization task}
+By way of demonstrating the inverse optimization process, I present an example using a public-domain admissions dataset from a large set of American universities \parencite[][]{collegeadmissionskaggle}. In addition to the fact that this model makes the unrealistic assumption that all colleges have the same preference list, the dataset is not adequately sourced, and thus the results below should be interpreted only as a proof of concept. This analysis makes no equilibrium assumption, as it does not invoke any notion of capacity. 
+
+The dataset contains information regarding SAT composite scores; the critical reading, math, and writing SAT subscores; and ACT composite scores. For each score, the dataset shows the 25th and 75th percentile of scores among students admitted to that school. By comparing these percentiles to percentile tables released each year by the testing agency, we can derive ten different estimates of each school's cutoff value. For example, at the University of Alabama, the 75th-percentile ACT composite score among admitted students is a 30 (out of 36). Relative to the population of ACT testtakers, a student who earns a 30 is at the 90th percentile overall; hence, if the University of Alabama looks only at ACT composite scores, it follows that the minimum score among Alabama's admits is at the 60th percentile among all testtakers. In the occasional case where this calculation yielded a negative value, I cropped it to zero. Explicitly, letting $p_{\text{rel}}$ (here $0.75$) denote the percentile under consideration, and $p_{\text{abs}}$ denote the percentile score of a student with that score relative to the whole student population (here $0.90$), the implied school cutoff is \[p_{\text{impl}} = \max\left\{0, 1 - \frac{1 - p_{\text{abs}}}{1- p_{\text{rel}}}\right\}\]
+
+To compute a composite estimate of each school's cutoff, I first averaged the cutoffs implied by the ACT and SAT data separately. Then, I took the average of these two weighted by the percentage of applicants who submitted each test score (which is also included in the dataset) and treated this as the school's $p_c$.
+
+To compute each school's demand, I divided the number of students enrolled at each school by the sum of the same. Thus, this model assumes that every student in the market can get in to at least one college, and that the dataset includes all the college-like options that students in this market would consider. The first assumption is mild, because there are many colleges in the dataset whose implied cutoff is quite nearly zero. The second assumption is much more restrictive, as there are many colleges that do not report test scores, as well as schools in other countries, that are not represented in the data.
+
+The results are shown in Figure (). % Discuss, show the final results
+
+
+\subsubsection{The usefulness of $\gamma$}
+The question of how to measure aggregate college preferability is not a simple one, and newspaper university rankings attract regular controversy for their imprecise methodology \parencite[][]{intlrankingsandconflicts}. Typically, such measures are based not on students' decisions but on performance measures of a university's quality, for example, its research output or data on alumni salaries. On the other hand, college administrators often want to know (and sometimes advertise) how preferable their school is from a marketing point of view. That is, to a graduating high school senior who is deciding among a subset of schools, what is the probability that she will pick $c$?
+
+A few candidate indicators of school popularity are as follows.
 \begin{itemize}
-\item \textbf{Total enrollment} is a function of how selective the school is. For example, Stanford and CSU Chico both enroll about 17,000 students and serve a global market.
-\item \textbf{Class statistics} like average GPA or cutoff scores are also a function of selectivity. It is easy for a school to admit 100 students with perfect grades, and it only has to recruit one of them to obtain a high class statistic.
-\item \textbf{Acceptance rate} overlooks that not all applicant pools are the same. High-achieving students typically don’t bother applying to more than one or two safety schools, because they know they will be able to get in someone better. At the other end, many students remove themselves from the applicant pool at selective schools because they know they don’t have a chance of getting in, or know they will not be able to afford to attend. 
-\item \textbf{Yield}, the percentage of admitted students who choose to enroll, is commonly used as one factor in rankings of colleges in the US. However, this measure unfairly punishes safety schools, and is sensitive to applicant behavior and recruiting practices. If widely adopted, it also creates a perverse incentive for a midtier school to reject highly qualified applicants whom it expects to enroll elsewhere (so-called yield protection).  
-\item \textbf{True yield}, the percentage of qualified students (whether they apply or not) who choose to enroll at a given school (this is my own term). This measure is better than yield, but it systematically overestimates the popularity of lenient schools, which face less competition for students. For example, consider a market with only two schools, Antarctic University and Oxvard University. Oxvard-tier students can choose between two schools, while Antarctic University--tier students have only one choice. Both schools may have similar true yield, but clearly Oxvard is globally preferable when controlling for selectivity.
+\item \emph{Total enrollment} is a function of how selective the school is. For example, Stanford and CSU Chico both enroll about 17,000 students and serve a global market.
+\item \emph{Class statistics} like average GPA or cutoff scores are also a function of selectivity. It is easy for a school to admit 100 students with perfect grades, and it only has to recruit one of them to obtain a high class statistic.
+\item \emph{Acceptance rate} overlooks that not all applicant pools are the same. High-achieving students typically don’t bother applying to more than one or two safety schools, because they know they will be able to get in someone better. At the other end, many students remove themselves from the applicant pool at selective schools because they know they don’t have a chance of getting in, or know they will not be able to afford to attend. 
+\item \emph{Yield}, the percentage of admitted students who choose to enroll, is commonly used as one factor in rankings of colleges in the US. However, this measure unfairly punishes safety schools, and is sensitive to applicant behavior and recruiting practices. If widely adopted, it also creates a perverse incentive for a midtier school to reject highly qualified applicants whom it expects to enroll elsewhere (so-called yield protection).  
+\item \emph{True yield}, the percentage of qualified students (whether they apply or not) who choose to enroll at a given school (this is my own term). This measure is better than yield, but it systematically overestimates the popularity of lenient schools, which face less competition for students. For example, consider a market with only two schools, Antarctic University and Oxvard University. Oxvard-tier students can choose between two schools, while Antarctic University--tier students have only one choice. Both schools may have similar true yield, but clearly Oxvard is globally preferable when controlling for selectivity.
 \end{itemize}
-$\gamma$ is free of bias at the extreme ends of the distribution, so it allows us to compare the preferability of Oxford and Antarctic U even though very few students actually make this binary choice. 
-
-\subsubsection{A demonstration}
-Maybe?
-
+Each one has certain flaws, and I argue that $\gamma$ is a better indicator of the underlying notion of preferability that the measures above approximate. Because $gamma$ is free of bias at the extreme ends of the distribution, so it allows us to compare the preferability of Oxvard and Antarctic University even though very few students actually make this binary choice. 
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  1 JUN 2021 16:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  2 JUN 2021 18:27
 entering extended mode
 **./model.tex
 (model.tex
@@ -605,12 +605,12 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 \openout3 = `model.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'model.bbl' not found.
-
-No file model.bbl.
+Package biblatex Info: ... file 'model.bbl' found.
+ (model.bbl)
 Package biblatex Info: Reference section=0 on input line 33.
 Package biblatex Info: Reference segment=0 on input line 33.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
+
 
 (C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -628,66 +628,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout4 = `model.toc'.
 
 
-[2]
-
-LaTeX Warning: Citation 'supplydemandfw' on page 3 undefined on input line 44.
-
-
-Overfull \hbox (14.58794pt too wide) in paragraph at lines 44--45
-\OT1/ptm/m/n/12 ence lists and scores. The nonatomic for-mu-la-tion, due to Aze
-vedo and Leshno ([]),
- []
-
-[3] [4]
+[2] [3] [4]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 9
 4.
- (C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+
+(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [5]
-
-LaTeX Warning: Citation 'compmkteq' on page 6 undefined on input line 136.
-
-
-LaTeX Warning: Citation 'mathematicaloptandecontheory' on page 6 undefined on i
-nput line 136.
-
-
-LaTeX Warning: Citation 'walrastatonnement' on page 6 undefined on input line 1
-36.
-
-
-Overfull \hbox (26.32347pt too wide) in paragraph at lines 136--137
-\OT1/ptm/m/n/12 tion, see Co-de-notti and Varadara-jan ([]) or In-trili-ga-tor 
-([]).
- []
-
-[6] [7]
-
-LaTeX Warning: Citation 'supplydemandfw' on page 8 undefined on input line 168.
-
-
-
-Overfull \hbox (60.3401pt too wide) in paragraph at lines 168--169
-[]\OT1/ptm/m/n/12 In ref-er-ence to this in-ter-pre-ta-tion of the equi-lib-riu
-m con-di-tions, Azevedo and Leshno ([])
- []
-
-[8]
-
-LaTeX Warning: Citation 'supplydemandfw' on page 9 undefined on input line 173.
-
-
-[9] [10]
-
-LaTeX Warning: Citation 'economicsofmatching' on page 11 undefined on input lin
-e 238.
-
-[11]
-
-LaTeX Warning: Citation 'efficientalgorithmoptimal' on page 12 undefined on inp
-ut line 252.
-
-
+)
+[5] [6] [7] [8] [9] [10] [11]
 Overfull \hbox (6.57127pt too wide) in paragraph at lines 252--253
 \OT1/ptm/m/n/12 pref-er-ence or-ders) trade off di-rectly. The student-optimal 
 sta-ble match-ing from student-proposing
@@ -700,64 +648,18 @@ n/12 , it is easy to see that the the school-proposing de-ferred ac-cep-tance t
 []atonnement
  []
 
-
-LaTeX Warning: Citation 'walrastatonnement' on page 14 undefined on input line 
-297.
-
-
-LaTeX Warning: Citation 'robbinsmonro' on page 14 undefined on input line 313.
-
-[14]
-
-LaTeX Warning: Citation 'supplydemandfw' on page 15 undefined on input line 315
-.
-
-[15]
-
-LaTeX Warning: Citation 'theoryofvariationalinequalities' on page 16 undefined 
-on input line 336.
-
-
-Overfull \hbox (71.25893pt too wide) in paragraph at lines 335--337
-\OT1/ptm/m/n/12 If $\OML/cmm/m/it/12 D$ \OT1/ptm/m/n/12 is strictly de-creas-in
-g in $\OML/cmm/m/it/12 p$\OT1/ptm/m/n/12 , then $\OML/cmm/m/it/12 F$ \OT1/ptm/m
-/n/12 is strictly in-creas-ing, and $\OML/cmm/m/it/12 p[]$ \OT1/ptm/m/n/12 is u
-nique ([]).
- []
-
-
-LaTeX Warning: Citation 'supplydemandfw' on page 16 undefined on input line 340
-.
-
-[16]
-
-LaTeX Warning: Citation 'whatmatters' on page 17 undefined on input line 379.
-
-[17] [18] [19]
-
-LaTeX Warning: Citation 'supplydemandfw' on page 20 undefined on input line 466
-.
-
-[20]
+[14] [15] [16] [17] [18] [19] [20]
 
 LaTeX Warning: Reference `hatpissorted' on page 21 undefined on input line 528.
 
 
 [21] [22]
-
-LaTeX Warning: Citation 'supplydemandfw' on page 23 undefined on input line 581
-.
-
 <plots/gammaq-pstar.pdf, id=89, 803.0pt x 702.625pt>
 File: plots/gammaq-pstar.pdf Graphic file (type pdf)
 <use plots/gammaq-pstar.pdf>
 Package pdftex.def Info: plots/gammaq-pstar.pdf  used on input line 586.
 (pdftex.def)             Requested size: 455.24411pt x 398.34544pt.
-
-LaTeX Warning: Citation 'supplydemandfw' on page 23 undefined on input line 605
-.
-
-[23] [24 <./plots/gammaq-pstar.pdf>]
+ [23] [24 <./plots/gammaq-pstar.pdf>]
 <plots/tat-iter-cutoff.pdf, id=97, 602.25pt x 401.5pt>
 File: plots/tat-iter-cutoff.pdf Graphic file (type pdf)
 <use plots/tat-iter-cutoff.pdf>
@@ -774,36 +676,38 @@ File: plots/score-DA-placement.pdf Graphic file (type pdf)
 <use plots/score-DA-placement.pdf>
 Package pdftex.def Info: plots/score-DA-placement.pdf  used on input line 627.
 (pdftex.def)             Requested size: 455.24411pt x 292.66295pt.
- [25 <./plots/tat-iter-cutoff.pdf>]
-[26 <./plots/score-cutoff-choice.pdf>] [27 <./plots/score-DA-placement.pdf>]
-[28] [29] [30] [31] [32]
+ [25 <./plots/tat-iter-cutoff.pdf>] [26 <./plots/score-cutoff-choice.pdf>] [27 
+<./plots/score-DA-placement.pdf>] [28] [29] [30] [31] [32] [33] [34]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 8
+54.
 
-LaTeX Warning: Empty bibliography on input line 825.
+(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Overfull \hbox (15.72244pt too wide) in paragraph at lines 855--855
+[][]\OT1/ptm/m/n/12 Qian, Sam-son. 2018. Col-lege Ad-mis-sions: Ad-mis-sion/Cla
+ss De-mo-graph-ics by Uni-ver-sity. $\OT1/pcr/m/n/12 https :
+ []
 
-[33] (model.aux)
+[35] (model.aux)
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                model
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'model.run.xml'.
 \openout1 = `model.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12776 strings out of 479334
- 232891 string characters out of 2858034
- 1028204 words of memory out of 3000000
- 30060 multiletter control sequences out of 15000+200000
- 428948 words of font info for 90 fonts, out of 3000000 for 9000
+ 12905 strings out of 479334
+ 235927 string characters out of 2858034
+ 1028791 words of memory out of 3000000
+ 30182 multiletter control sequences out of 15000+200000
+ 429463 words of font info for 92 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,22n,78p,1174b,1199s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 72i,22n,78p,1174b,1443s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/U
 sers/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pf
 b><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
@@ -823,12 +727,13 @@ b><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 sy8.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /latxfont/line10.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fo
+nts/type1/urw/courier/ucrr8a.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fo
 nts/type1/urw/times/utmb8a.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/font
 s/type1/urw/times/utmr8a.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on model.pdf (33 pages, 2001844 bytes).
+Output written on model.pdf (35 pages, 2022362 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
+ 203 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
