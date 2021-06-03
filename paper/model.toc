@@ -30,7 +30,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.6.3}Convex optimization problem}{16}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.7}Optimization tasks}{16}{}%
+\contentsline {subsection}{\numberline {2.7}Optimization tasks}{17}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Single-score model with multinomial logit preferences}{17}{}%
 \defcounter {refsection}{0}\relax 
@@ -40,7 +40,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.1.2}Demand function}{18}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.3}Properties of the demand function}{19}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}Continuity and piecewise linearity of the demand function}{19}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.1.4}Appeal function}{20}{}%
 \defcounter {refsection}{0}\relax 
@@ -60,10 +60,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.5.2}Capacity and population effects}{31}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6}Inverse optimization of student preferences}{31}{}%
+\contentsline {subsection}{\numberline {3.6}Inverse optimization of single-score admissions markets}{31}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.6.1}A demonstration of the reverse optimization task}{32}{}%
+\contentsline {subsubsection}{\numberline {3.6.1}The inverse optimization task and an analytic solution}{32}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.6.2}The usefulness of $\gamma $}{33}{}%
+\contentsline {subsubsection}{\numberline {3.6.2}A demonstration using admissions data from American universities}{32}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Extensions}{34}{}%
+\contentsline {subsubsection}{\numberline {3.6.3}The informative quality of $\gamma $}{37}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Extensions}{38}{}%

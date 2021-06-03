@@ -19,6 +19,27 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{ACTprofilerpt}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=90d991b47098ceef3d8283a386cf7e91}{%
+           family={ACT},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{90d991b47098ceef3d8283a386cf7e91}
+      \strng{fullhash}{90d991b47098ceef3d8283a386cf7e91}
+      \strng{bibnamehash}{90d991b47098ceef3d8283a386cf7e91}
+      \strng{authorbibnamehash}{90d991b47098ceef3d8283a386cf7e91}
+      \strng{authornamehash}{90d991b47098ceef3d8283a386cf7e91}
+      \strng{authorfullhash}{90d991b47098ceef3d8283a386cf7e91}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{2018 Profile Report: National}
+      \field{year}{2018}
+    \endentry
     \entry{whatmatters}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=c1de651a58cf5e0f6f3db3531f3a877b}{%
@@ -152,6 +173,27 @@
       \field{title}{Computation of Market Equilibria by Convex Programming}
       \field{year}{2007}
     \endentry
+    \entry{SATpercentileranks}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=5e9d007aa4ded24ca378767264027f52}{%
+           family={CollegeBoard},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e9d007aa4ded24ca378767264027f52}
+      \strng{fullhash}{5e9d007aa4ded24ca378767264027f52}
+      \strng{bibnamehash}{5e9d007aa4ded24ca378767264027f52}
+      \strng{authorbibnamehash}{5e9d007aa4ded24ca378767264027f52}
+      \strng{authornamehash}{5e9d007aa4ded24ca378767264027f52}
+      \strng{authorfullhash}{5e9d007aa4ded24ca378767264027f52}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SAT Percentile Ranks}
+      \field{year}{2015}
+    \endentry
     \entry{mathematicaloptandecontheory}{book}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=281b8f46561c8ee4cc91b9b36212e71e}{%
@@ -242,18 +284,56 @@
       \field{sortinit}{J}
       \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
       \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
+      \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issue}{May 3}
+      \field{day}{3}
       \field{journaltitle}{Inside Higher Ed}
+      \field{month}{5}
       \field{title}{International Rankings and Conflicts of Interest}
       \field{year}{2021}
+      \field{dateera}{ce}
       \verb{urlraw}
       \verb https://www.insidehighered.com/admissions/article/2021/05/03/international-rankings-and-conflicts-interest
       \endverb
       \verb{url}
       \verb https://www.insidehighered.com/admissions/article/2021/05/03/international-rankings-and-conflicts-interest
+      \endverb
+    \endentry
+    \entry{studentprefsrevopt}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c0eccba479573eeea8435e8c04f111bd}{%
+           family={Kapur},
+           familyi={K\bibinitperiod},
+           given={Max},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {GitHub}%
+      }
+      \strng{namehash}{c0eccba479573eeea8435e8c04f111bd}
+      \strng{fullhash}{c0eccba479573eeea8435e8c04f111bd}
+      \strng{bibnamehash}{c0eccba479573eeea8435e8c04f111bd}
+      \strng{authorbibnamehash}{c0eccba479573eeea8435e8c04f111bd}
+      \strng{authornamehash}{c0eccba479573eeea8435e8c04f111bd}
+      \strng{authorfullhash}{c0eccba479573eeea8435e8c04f111bd}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{3}
+      \field{month}{6}
+      \field{title}{StudentPrefsRevOpt}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/maxkapur/StudentPrefsRevOpt
+      \endverb
+      \verb{url}
+      \verb https://github.com/maxkapur/StudentPrefsRevOpt
       \endverb
     \endentry
     \entry{theoryofvariationalinequalities}{article}{}
@@ -291,7 +371,7 @@
       \field{pages}{1173\bibrangedash 1284}
       \range{pages}{112}
     \endentry
-    \entry{collegeadmissionskaggle}{misc}{}
+    \entry{collegeadmissionskaggle}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=57af42130e01efe7087f6bb474007ee8}{%
            family={Qian},
