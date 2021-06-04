@@ -1,5 +1,6 @@
 using LinearAlgebra
 import Base:length
+import Base:sort
 import DeferredAcceptance:DA
 
 """
