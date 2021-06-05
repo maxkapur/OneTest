@@ -609,6 +609,7 @@ D_c &=
 % Statement above is not true, because changing gamma would change the order.
 
 \subsection{Validation}
+% Maybe this can be moved to below the next section, and then build in the discussion of incentives, speculate a bit about how the shape of the incentive gradient is similar. see diag of jacobians. 
 In this section, I offer a numerical demonstration of the cutoff sort order given by Theorem \ref{cutoffsortationthm}. Additionally, I validate the interpretation of the equilibrium cutoffs as a stationary point of a t\^{a}tonnement process, as a market-clearing price vector, and as the limit point of stable assignments. (The demonstration of the latter two interpretations follows Azevedo and Leshno \parencite*{supplydemandfw}.)
 
 Figure \ref{gammaq-pstar} demonstrates the relationship between the equilibrium cutoffs $p_c^*$ and the competitiveness ratios $\gamma_c / q_c$ in randomly generated markets. Some of the markets are overdemanded, yielding $p^* > 0$, and others are underdemanded; however, the equilibrium cutoffs are always ordered according to the competitiveness ratios. As the graph indicates, the precise relationship is nonlinear and highly sensitive to variance in the market parameters. This suggests that even in the highly stylized model under consideration, it is difficult to predict the effect of small perturbation in a single $\gamma_c$ or $q_c$ value on the market as a whole simply from looking at the equilibrium assignment of students. 
@@ -666,17 +667,62 @@ Compare Figures \ref{score-cutoff-choice} and \ref{score-DA-placement} with Figu
 
 
 
+\begin{figure}
+\begin{center}\includegraphics[width=\linewidth, ]{plots/vary-gamma-demand.pdf}\end{center}
+\captionsetup{singlelinecheck=off}
+    \caption[.]{Quality effects in Pallet Town under a decentralized admissions process like that considered in Figure \ref{score-cutoff-choice}. Each line shows the change in each school’s demand when it changes its quality $\gamma_c$ while holding the cutoff vector and other schools’ quality fixed. To the extent that schools’ goal is to maximize their demand, the slope of the curve represents the strength of each school’s to improve its quality. The Jacobian of the cutoffs at the current cutoffs
+    \begin{equation*}
+    \mathbf{J}_\gamma D = A = \frac{1}{360}
+    \begin{bmatrix}
+22 & -14 & -6&  -2\\
+ -7   &29  &-3  &-1\\
+ -9   &-9  &15  &-3\\
+ -6   &-6&  -6  & 6
+    \end{bmatrix}
+    \end{equation*} 
+    according to the expression provided in \S\ref{unconstrainedqualityeffects}. }
+\label{vary-gamma-demand}
+\end{figure}
+
+
+
+
+
+
+\begin{figure}
+\begin{center}\includegraphics[width=\linewidth, ]{plots/vary-gamma-cutoff.pdf}\end{center}
+\captionsetup{singlelinecheck=off}
+    \caption[.]{Quality effects in Pallet Town under a centralized admissions process such as the deferred acceptance process shown in Figure \ref{score-DA-placement}. Each line shows the change in each school’s equilibrium cutoff when it changes its quality $\gamma_c$ while holding other schools’ quality fixed. To the extent that each school’s objective is to fill its capacity at a high cutoff, the slope of the curve represents the strength of each school to improve its quality. The Jacobian of the cutoffs at the current quality vector is
+    \begin{equation*}
+    \mathbf{J}_\gamma \hat p = \frac{1}{30}
+    \begin{bmatrix}
+      0 & & & \\
+      -3 & 6 & & \\
+      -2 & -2 & 2 & \\
+      -1 & -1 & -1 & 1 
+    \end{bmatrix}
+    \end{equation*} 
+according to the expression derived in \S\ref{qualityeffectsateq}. The elbows in the graph correspond to ties among the competitiveness ratios. 
+    }
+\label{vary-gamma-cutoff}
+\end{figure}
+
+
+
+
+
+
 \subsection{Unconstrained comparative statics}
 First, I derive comparative statics results that apply to an unconstrained market in which schools have no capacity constraints. This section makes no particular claim about what schools' objective functions are; rather, I simply compute the gradients of the demand and appeal functions with respect to $p$, and $\gamma$ using the relations $D = Ap + \gamma$ and $L = \frac{1}{2} A p.^2 + \frac{1}{2}\gamma$ and discuss their interpretations. These quantities prove useful in the following section, in which I quantify the incentives available to schools under a centralized admissions procedure that always produces a stable matching. 
 
-\subsubsection{Cutoff effects}
+\subsubsection{Cutoff effects} \label{unconstrainedcutoffeffects}
 The change in demand in response to a change in cutoffs is the Jacobian of the demand function:
 \[\mathbf{J}_p D = A \]
 The diagonal is negative, meaning that each school's demand is decreasing in its cutoff, as expected. The entries above the diagonal are positive, while those below the diagonal are zero. This means that each school $c$'s demand is increasing in the cutoffs of the \emph{more-selective} schools, but the cutoffs of \emph{less-selective schools} have no local effect on the demand at $c$.
 
 Intuitively, this means that if all schools are equally preferable, a highly selective school has more market power than the others: If it increases its cutoff, it will cause many students to move onto another school. On the other hand, a school $c'$ that is less preferable than $c$ cannot affect $D_c$'s demand by changing its own cutoff, because any student currently admitted to $c$ was already admitted to $c'$, and chose $c$ instead. 
 
-Observe also that $-1 = A_{11} < A_{22} < \dots < A_{|C||C|} < 0$. This says that the school with the most generous cutoff has the most power to increase its demand with a marginal decrease in $p_c$. Intuitively, this is because a student who gets into a school with a large cutoff gets into \emph{many} schools, so competition for this student is fiercer than for a student whose options are already limited by a low score.
+Observe also that $-1 = A_{11} < A_{22} < \dots < A_{|C||C|} < 0$. This says that the school with the most generous cutoff has the most power to increase its demand with a marginal decrease in $p_c$. Intuitively, this is because a student who gets into a school with a large cutoff gets into \emph{many} schools, so competition for this student is fiercer than for a student whose options are already limited by a low score. 
 
 Next, consider the change in the entering classes' \emph{appeal} in response to a change in cutoffs:
 \[\mathbf{J}_p L = A\operatorname{diag}(p)\]
@@ -684,30 +730,30 @@ For $p_c > 0$, the cutoff effect on appeal has the same direction as the cutoff 
 
 The derivatives given above are well-defined when the cutoffs are totally ordered. However, an edge case occurs when there is a tie among the cutoffs; then the subdifferential set is given by the convex hull of the Jacobians associated with the possible permutations of $p$. In this case, I argue that the best interpretation of the effect of an \emph{increase} in $p_c$ should be that associated with the permutation for which $c$ is indexed after schools with which its cutoff is tied. That is, because $p_c$ is "about to" become larger than the other cutoffs involved in the tie, break the tie in its favor. Likewise, to interpret a \emph{decrease} in a tied $p_c$, treat $p_c$ as the least member of the tied set.
 
-\subsubsection{Quality effects}
+\subsubsection{Quality effects} \label{unconstrainedqualityeffects}
 Differentiate the demand with respect to $\gamma$ to obtain the effect of a marginal change in quality:
 \begin{equation}
 \left(\mathbf{J}_\gamma D \right)_{c\hat c} =
 \frac{\partial}{\partial\gamma_{\hat c}} D_c = \begin{cases}
-\sum_{d=c}^{|C|} \frac{-\gamma_c}{\left(\sum_{i=1}^{d} \right)^2} \left(p_{d+1} - p_d \right), & \hat c < c \\
-\sum_{d=c}^{|C|} \frac{1}{\left(\sum_{i=1}^{d} \right)}
-    \left( 1 - \frac{\gamma_c}{\left(\sum_{i=1}^{d} \right)}\right)
+\sum_{d=c}^{|C|} \frac{-\gamma_c}{\left(\sum_{i=1}^{d} \gamma_i \right)^2} \left(p_{d+1} - p_d \right), & \hat c < c \\
+\sum_{d=c}^{|C|} \frac{1}{\sum_{i=1}^{d} \gamma_i}
+    \left( 1 - \frac{\gamma_c}{\sum_{i=1}^{d}\gamma_i }\right)
     \left(p_{d+1} - p_d \right), & \hat c = c\\
-\sum_{d=\hat c}^{|C|} \frac{-\gamma_c}{\left(\sum_{i=1}^{d} \right)^2} \left(p_{d+1} - p_d \right), & \hat c > c
+\sum_{d=\hat c}^{|C|} \frac{-\gamma_c}{\left(\sum_{i=1}^{d}\gamma_i \right)^2} \left(p_{d+1} - p_d \right), & \hat c > c
 \end{cases}
 \end{equation}
 
-(Note that the $\hat c > c$ and $ \hat c < c$ cases differ in the starting index.) The demand for $c$ is predictably decreasing in the quality of the other schools and increasing in $\gamma_c$. 
+(Note that the $\hat c > c$ and $ \hat c < c$ cases differ in the starting index.) The demand for $c$ is predictably decreasing in the quality of the other schools and increasing in $\gamma_c$. This Jacobian and a partial graph of schools’ demand curves in Pallet Town is given in Figure \ref{vary-gamma-demand}. 
 
 A similar picture emerges when we differentiate the appeal with respect to $\gamma$:
 \begin{equation}
 \left(\mathbf{J}_\gamma L \right)_{c\hat c} =
 \frac{\partial}{\partial\gamma_{\hat c}} L_c = \begin{cases}
-\frac{1}{2}\sum_{d=c}^{|C|} \frac{-\gamma_c}{\left(\sum_{i=1}^{d} \right)^2} \left(p_{d+1}^2 - p_d^2 \right), & \hat c < c \\
-\frac{1}{2}\sum_{d=c}^{|C|} \frac{1}{\left(\sum_{i=1}^{d} \right)}
-    \left( 1 - \frac{\gamma_c}{\left(\sum_{i=1}^{d} \right)}\right)
+\frac{1}{2}\sum_{d=c}^{|C|} \frac{-\gamma_c}{\left(\sum_{i=1}^{d}\gamma_i \right)^2} \left(p_{d+1}^2 - p_d^2 \right), & \hat c < c \\
+\frac{1}{2}\sum_{d=c}^{|C|} \frac{1}{\sum_{i=1}^{d} \gamma_i}
+    \left( 1 - \frac{\gamma_c}{\sum_{i=1}^{d} \gamma_i}\right)
     \left(p_{d+1}^2 - p_d^2 \right), & \hat c = c\\
-\frac{1}{2}\sum_{d=\hat c}^{|C|} \frac{-\gamma_c}{\left(\sum_{i=1}^{d} \right)^2} \left(p_{d+1}^2 - p_d^2 \right), & \hat c > c
+\frac{1}{2}\sum_{d=\hat c}^{|C|} \frac{-\gamma_c}{\left(\sum_{i=1}^{d} \gamma_i \right)^2} \left(p_{d+1}^2 - p_d^2 \right), & \hat c > c
 \end{cases}\end{equation}
 
 By the same procedure used to show the continuity of $D$ above, it is possible to show that the quality effects are continuous across tiebreaking permutations of $p$.
@@ -719,7 +765,7 @@ By the same procedure used to show the continuity of $D$ above, it is possible t
 \subsection{Comparative statics at equilibrium} \label{compstateq}
 Now, let's analyze the incentives available to schools and government planners when the market is constrained to equilibrium, for example, by a centralized admissions process that uses a DA algorithm to produce a stable matching. Throughout this section, I assume that schools are indexed in ascending order by the competitiveness ratios $\gamma_c / q_c$, and that no ties occur among these ratios or among the equilibrium cutoffs, to avoid the undefined derivatives that can occur in the edge cases discussed above. 
 
-\subsubsection{Quality effects at equilibrium}
+\subsubsection{Quality effects at equilibrium} \label{qualityeffectsateq}
 First, I will focus on the effect of a marginal change in quality on the allocation of students at equilibrium. Since, in theory, schools have the power to change their own quality by investing in their programs or marketing, the analysis below enables us to quantify the extent to which these investments are ``worth it'' with respect to the school's interest in maintaining high admissions standards or increasing its demand. 
 
 First, I provide yet another expression for the equilibrium cutoff vector $\hat p$, which can be verified by expanding the equation given in Theorem \ref{cutoffsortationthm}. $\hat p_c = \bar p_c^+$, where
@@ -741,7 +787,7 @@ Differentiating the optimal cutoffs with respect to the quality and simplifying,
 0, & \bar p_c > 0 \text{ and }\hat c > c
 \end{cases}
 \end{equation}
-As above, in the $c=1$ case, we interpret the empty set as summing to zero: $\sum_{i=1}^{0} \gamma_i = 0$. The Jacobian is lower triangular: any change in the quality of a school whose competitiveness ratio is already higher than that of $c$ induces no change in the cutoff at $c$.
+As above, in the $c=1$ case, we interpret the empty set as summing to zero: $\sum_{i=1}^{0} \gamma_i = 0$. This means that the entry in the top left is always zero. The Jacobian is lower triangular: any change in the quality of a school whose competitiveness ratio is already higher than that of $c$ induces no change in the cutoff at $c$. This calculation is applied to Pallet Town and verified graphically in Figure \ref{vary-gamma-cutoff}.
 
 Applying the chain rule to the demand at equilibrium $D = A \hat p + \frac{1}{\Gamma} \gamma$, and letting $b$ denote the index of the first school with a nonzero cutoff (as above), the derivative of the equilibrium demand at $c$ with respect to the quality of $\hat c$ is
 \begin{equation} \label{jac-gamma-demand}
@@ -753,7 +799,6 @@ Applying the chain rule to the demand at equilibrium $D = A \hat p + \frac{1}{\G
 0, & \bar p_c > 0
 \end{cases}
 \end{equation}
-
 
 The appeal function can be similarly differentiated, but does not admit a legible representation for an arbitrary number of schools. However, supposing that schools treat their appeal function as an objective function to be maximized, we can determine the signs along the Jacobian of the appeal function's main diagonal by inspection.
 
@@ -843,7 +888,7 @@ Hence, the following recursive relation allows us to compute all the $\gamma_c$ 
 \gamma_c &= \frac{D_c}{~~\mathlarger{\sum_{d=c}^{|C|} \frac{p_{d+1} - p_d}{1 - \sum_{j=d+1}^{|C|} \gamma_j} ~~}}, \quad \forall c \in \bigl\{ |C|-1, |C|-2, \dots, 1\bigr\} \label{gammarecursion}
 \end{align}
 
-Because this expression requires repeated division by small numbers, it is numerically unstable when the number of schools is large or there are many schools whose cutoffs are close together or equal. More over, the error accumulates with each iteration. Thus, it is often more effective to solve the system \label{solvemeforgamma} using a generic root-finding procedure; this spreads the numerical error out over all the schools while preserving granularity at the low end. 
+Because this expression requires repeated division by small numbers, it is numerically unstable when the number of schools is large or there are many schools whose cutoffs are close together or equal. More over, the error accumulates with each iteration. Thus, it is often more effective to solve the system \ref{solvemeforgamma} using a generic root-finding procedure; this spreads the numerical error out over all the schools while preserving granularity at the low end. 
 
 \subsubsection{A demonstration using admissions data from American universities}
 By way of demonstrating the inverse optimization process, I present an example using a public-domain admissions dataset from a large set of American universities \parencite[][]{collegeadmissionskaggle}.
@@ -862,7 +907,17 @@ Again, due to the low quality of the underlying data, I caution against reading 
 
 First, let's consider the top-ranked schools, whose figures are shown in Table \ref{tab:US-inverse-optimization}. In this model, the top-ranked schools, Harvard and Yale, are similarly selective (they have almost the same cutoff). However, Harvard achieves a higher preferability parameter because at the same admissions standards, it attracts a larger student body (1659 students, versus Yale's 1356). Conspiciously absent from the list is the school with the highest cutoff, California Institute of Technology ($p_c = 0.9590$, $\gamma_c = 0.0081$, rank 34). While Caltech is a little more selective than Harvard, its entering class size is much smaller, at 249 students. Since, in this model, the set of students admitted to Caltech is a slight subset of those admitted to Harvard, the inevitable conclusion is that Harvard is about $1659 / 249 = 6.67$ times as preferable. Perhaps an admissions director at Caltech would argue that the school's small entering class size is a key element of its appeal, and this is certainly true for many students. However, in this model, Harvard could easily achieve a similar class size to Caltech at a much higher cutoff, eliciting the same conclusion.
 
-This model makes no equilibrium assumption, and indeed invokes no notion of capacity or target class size. It simply reports the status of the market with respect to the current allocation of students. Thus, a possible application of this model is for an admissions director to use in modeling her school's demand curve. Three such curves are shown in Figure \ref{three-demand-curves}. In the future, suppose that Caltech decides that a larger cohort of 300 students better suits its goals. By how much should it relax its admissions standards in order to achieve this class size? If Caltech's true yield is fixed, Caltech should update its cutoff to $1 - \frac{300}{249}(1 - 0.9590) = 0.9506$. This value is a slight underestimate, because students admitted under the new cutoff whose score is (say) $0.951$ are \emph{not} qualified for Harvard and Yale, so Caltech will not have to compete as fiercely to recruit them as it does to recruit its current enrollees. This intuitive logic is visible in Caltech's demand curve, shown in detail in Figure \ref{caltech-demand-curve}, which is slightly convex. On the other hand, it may be an overestimate if there is truth to the hypothesis that Caltech's appeal depends on a small class size, in which case relaxed admissions standards reduce the school's preferability, necessitating a somewhat lower cutoff than predicted.
+It is worth considering schools in other parts of the preferability distribution as well. Because this model considers not only selectivity but also entering class size as an indication of market power, compared to conventional college rankings, it grants an elevated position to public flagships like the University of Michigan at Ann Arbor, which draw large entering classes while maintaining fairly high admissions standards.
+
+While conventional wisdom posits small liberal-arts colleges and large public universities as incommensurable, administrators at both types of school share a common goal of recruiting an entering class that is both ``large'' relative to the physical size of the campus and ``highly qualified'' relative to competitor schools. $\gamma_c$ offers us a way to compare the effectiveness of two schools' marketing efforts even when their recruitment strategies diverge. For example, the University of Vermont and Whitman College (a liberal-arts college in Eastern Washington) are ranked 106th and 107th, with preferability parameters $1.079 \times 10^{-3}$ and $1.044 \times 10^{-3}$, respectively. Vermont has a large class size and a middling cutoff, while Whitman has a small class size and a cutoff close to that of UM Ann Arbor. Looking only at conventional statistics, it is hard to predict the decision of a student choosing between the two schools, but comparing $\gamma$-values (which, by definition, are choice probability weights) reveals that in this case it is a nearly even coin flip. Indeed, the two school's demand curves (shown in Figure \ref{three-demand-curves}) are all but identical. 
+
+This model makes no equilibrium assumption, and indeed invokes no notion of capacity or target class size. It simply reports the status of the market with respect to the current allocation of students. Thus, a possible application of this model is for an admissions director to use in modeling her school's demand curve. Three such curves are shown in Figure \ref{three-demand-curves}. In the future, suppose that Caltech decides that a larger cohort of 350 students better suits its goals. By how much should it relax its admissions standards in order to achieve this class size? One way to answer this question is to assume that Caltech’s true yield remains approximately fixed. Then, Caltech should try to become $\frac{350}{249}$ as selective, by updating its cutoff to $1 - \frac{350}{249}(1 - 0.9590) = 0.9424$. A simple calculation shows that this way of estimating the demand curve is equivalent to fitting a linear model to the observed demand $(p_c, D_c) = (.9590, 249)$ and the implicit $x$-intercept $(1, 0)$. Of course, a more accurate regression could be constructed using demand observations from multiple years. 
+
+However, if the observations used to construct the regression model described above all occur in the neighborhood of the current cutoff, then the predicted cutoff with the higher target demand will be a slight underestimate, because Caltech’s true yield also varies as a function of $p$. Under the new cutoff, students admitted with scores of (say) $0.95$ are \emph{not} qualified for Harvard and Yale, so Caltech will not have to compete as fiercely to recruit them as it does to recruit its current enrollees. The model presented here accounts for this change in the consideration set of marginal students, and thus calls for a more modest reduction of Caltech’s cutoff, to the value of $0.9437$.
+
+Figure \ref{caltech-demand-curve} presents a detailed view of Caltech’s demand curve as predicted by this model as well as a linear model. The curve has a slightly convex shape, which confirms the intuitive argument for a gentler relaxation of admissions standards in order to achieve the target enrollment. In fact, every school’s demand curve in this model is piecewise linear convex, meaning that linear regression will always underestimate the demand at cutoffs distant from those used to fit the line.\footnote{If the model is constrained to contain the point $(1, 0)$, then it forms a chord of the convex curve, and it will \emph{overestimate} the demand at $p_c$-values \emph{higher} than those used to fit the model. On the other hand, if this constraint is dropped and the model is fitted to two or more local observations, then it will \emph{underestimate} the demand at both higher and lower cutoffs.}
+
+This analysis has not accounted for the hypothesis that Caltech's appeal depends on a small class size, in which case relaxed admissions standards also reduce the school's preferability, which may necessitate a lower cutoff after all. Thus, in practical decisionmaking a model like mine should only be used in concert with traditional regression models. 
 
 \begin{figure}
 \begin{center}\includegraphics[width=\linewidth, ]{plots/US-cutoff-gamma.pdf}\end{center}
@@ -920,7 +975,7 @@ The top twenty schools by preferability $\gamma_c$, as determined by applying th
 \begin{figure}
 \begin{center}\includegraphics[width=\linewidth, ]{plots/caltech-demand-curve.pdf}\end{center}
 \captionsetup{singlelinecheck=off}
-    \caption[.]{Detailed view of Caltech's demand curve in the neighborhood of its current cutoff. Assuming preferability and other schools' cutoffs remain fixed, if Caltech wishes to increase its class size to 300, it should update its cutoff to the value indicated by the intersection of the demand curve and the coral line. }
+    \caption[.]{Detailed view of Caltech's demand curve in the neighborhood of its current cutoff. Assuming preferability and other schools' cutoffs remain fixed, if Caltech wishes to increase its class size to 350, it should update its cutoff to the value indicated by the intersection of the demand curve and the coral line. A linear model prescribes decrease the cutoff to $p_c 0.9424$, whereas the model provided here accounts for the fact that there is less competition for marginal students at the lower cutoff and prescribes a more conservative decrease to $0.9437$. }
 \label{caltech-demand-curve}
 \end{figure}
 
@@ -930,9 +985,6 @@ The top twenty schools by preferability $\gamma_c$, as determined by applying th
 
 
 
-It is worth considering schools in other parts of the preferability distribution as well. Because this model considers not only selectivity but also entering class size as an indication of market power, compared to conventional college rankings, it grants an elevated position to public flagships like the University of Michigan at Ann Arbor, which draw large entering classes while maintaining fairly high admissions standards.
-
-While conventional wisdom posits small liberal-arts colleges and large public universities as incommensurable, administrators at both types of school share a common goal of recruiting an entering class that is both ``large'' relative to the physical size of the campus and ``highly qualified'' relative to competitor schools. $\gamma_c$ offers us a way to compare the effectiveness of two schools' marketing efforts even when their recruitment strategies diverge. For example, the University of Vermont and Whitman College (a liberal-arts college in Eastern Washington) are ranked 106th and 107th, with preferability parameters $1.079 \times 10^{-3}$ and $1.044 \times 10^{-3}$, respectively. Vermont has a large class size and a middling cutoff, while Whitman has a small class size and a cutoff close to that of UM Ann Arbor. Looking only at conventional statistics, it is hard to predict the decision of a student choosing between the two schools, but comparing $\gamma$-values (which, by definition, are choice probability weights) reveals that in this case it is a nearly even coin flip. Indeed, the two school's demand curves (shown in Figure \ref{three-demand-curves}) are all but identical. 
 
 The code used to produce these results, as well as more details regarding how the cutoffs were estimated from available SAT and ACT data, is available on GitHub \parencite[][]{studentprefsrevopt}.
 
