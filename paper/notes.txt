@@ -1,0 +1,3 @@
+Top of theoretical study:
+
+First, I define admissions markets and offer some preliminary theoretical results on the notion of equilibrium. The notion of equilibrium applies to an admissions market in which each school has a capacity, a hard limit on the number of students it can accept. In reality, instead of being constrained to a fixed capacity, what is colloquially called a college's cpacity is in actuality a target number of students that represents a tradeoff between having a large student body and high admissions standards.
