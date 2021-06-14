@@ -56,7 +56,6 @@
       \field{journaltitle}{American Economic Journal: Microeconomics}
       \field{number}{1}
       \field{title}{Expanding `Choice' in School Choice}
-      \field{titlekey}{expandingchoice}
       \field{volume}{7}
       \field{year}{2015}
       \field{pages}{1\bibrangedash 42}
@@ -81,7 +80,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{The ACT Profile Report: National}
-      \field{titlekey}{ACTprofilerpt}
       \field{year}{2018}
       \verb{urlraw}
       \verb https://www.act.org/content/dam/act/unsecured/documents/cccr2018/P_99_999999_N_S_N00_ACT-GCPR_National.pdf
@@ -119,7 +117,6 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Economic Theory}
       \field{title}{What Matters in School Choice Tie-Breaking? How Competition Guides Design}
-      \field{titlekey}{whatmatters}
       \field{volume}{190}
       \field{year}{2020}
       \field{pages}{article no. 105120}
@@ -156,7 +153,6 @@
       \field{journaltitle}{Journal of Political Economy}
       \field{number}{5}
       \field{title}{A Supply and Demand Framework for Two-Sided Matching Markets}
-      \field{titlekey}{supplydemandfw}
       \field{volume}{124}
       \field{year}{2016}
       \field{pages}{1235\bibrangedash 68}
@@ -190,7 +186,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{How Do High-Status Parents Choose Schools?}
-      \field{titlekey}{howdoparentschooseschools}
       \field{year}{2015}
     \endentry
     \entry{distributionalgoals}{article}{}
@@ -218,7 +213,6 @@
       \field{journaltitle}{Management Science}
       \field{number}{8}
       \field{title}{Optimizing for Distributional Goals in School Choice Problems}
-      \field{titlekey}{distributionalgoals}
       \field{volume}{66}
       \field{year}{2020}
       \field{pages}{3657\bibrangedash 76}
@@ -283,11 +277,8 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Algorithmic Game Theory}
-      \field{booktitlekey}{compmkteq}
       \field{chapter}{6}
-      \field{editortype}{compmkteq}
       \field{title}{Computation of Market Equilibria by Convex Programming}
-      \field{titlekey}{compmkteq}
       \field{year}{2007}
     \endentry
     \entry{SATpercentileranks}{book}{}
@@ -309,7 +300,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{SAT Percentile Ranks}
-      \field{titlekey}{SATpercentileranks}
       \field{year}{2015}
       \verb{urlraw}
       \verb https://web.archive.org/web/20160331125512/https://secure-media.collegeboard.org/digitalServices/pdf/sat/sat-percentile-ranks-crit-reading-math-writing-2014.pdf
@@ -348,9 +338,76 @@
       \field{journaltitle}{American Economic Journal: Applied Economics 2014}
       \field{number}{3}
       \field{title}{The Impact of Attending a School with High-Achieving Peers: Evidence from the New York City Exam Schools}
-      \field{titlekey}{impactofattending}
       \field{volume}{6}
       \field{year}{2014}
+    \endentry
+    \entry{coremanytoonebyfixedpoint}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=a55ad1254d7f1a1f3e3ce1d5f6c352a0}{%
+           family={Echenique},
+           familyi={E\bibinitperiod},
+           given={Federico},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1141658551e609061775de83f7e6a611}{%
+           family={Oviedo},
+           familyi={O\bibinitperiod},
+           given={Jorge},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fc01da3bbb1e39c503e41bc5133713d9}
+      \strng{fullhash}{fc01da3bbb1e39c503e41bc5133713d9}
+      \strng{bibnamehash}{fc01da3bbb1e39c503e41bc5133713d9}
+      \strng{authorbibnamehash}{fc01da3bbb1e39c503e41bc5133713d9}
+      \strng{authornamehash}{fc01da3bbb1e39c503e41bc5133713d9}
+      \strng{authorfullhash}{fc01da3bbb1e39c503e41bc5133713d9}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{title}{Core many-to-one matchings by fixed-point methods}
+      \field{volume}{115}
+      \field{year}{2004}
+      \field{pages}{358\bibrangedash 76}
+      \range{pages}{19}
+    \endentry
+    \entry{equilibriumandlocalredistribution}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d4fb4c017d962b340de2c7b911a2f193}{%
+           family={Epple},
+           familyi={E\bibinitperiod},
+           given={Dennis},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f78f0805e6b4d77920ebb6584a76954}{%
+           family={Platt},
+           familyi={P\bibinitperiod},
+           given={Glenn\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6069963f451211e2e8d7bf40f0d18900}
+      \strng{fullhash}{6069963f451211e2e8d7bf40f0d18900}
+      \strng{bibnamehash}{6069963f451211e2e8d7bf40f0d18900}
+      \strng{authorbibnamehash}{6069963f451211e2e8d7bf40f0d18900}
+      \strng{authornamehash}{6069963f451211e2e8d7bf40f0d18900}
+      \strng{authorfullhash}{6069963f451211e2e8d7bf40f0d18900}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Urban Economics}
+      \field{title}{Equilibrium and Local Redistribution in an Urban Economy when Households Differ in both Preferences and Incomes}
+      \field{volume}{43}
+      \field{year}{1998}
+      \field{pages}{23\bibrangedash 51}
+      \range{pages}{29}
     \endentry
     \entry{galeshapley1962}{article}{}
       \name{author}{2}{}{%
@@ -382,7 +439,6 @@
       \field{journaltitle}{American Mathematics Monthly}
       \field{number}{1}
       \field{title}{College Admissions and the Stability of Marriage}
-      \field{titlekey}{galeshapley1962}
       \field{volume}{69}
       \field{year}{1962}
       \field{pages}{9\bibrangedash 15}
@@ -416,8 +472,35 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{School Choice, Information, and Applicant Distributions in NYC Public Middle Schools}
-      \field{titlekey}{applicantdistsinNYC}
       \field{year}{2017}
+    \endentry
+    \entry{doescompetitionamongpublicschools}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=27cede9dd4c09ff40612f8cdf038da75}{%
+           family={Hoxby},
+           familyi={H\bibinitperiod},
+           given={Caroline\bibnamedelima M.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{27cede9dd4c09ff40612f8cdf038da75}
+      \strng{fullhash}{27cede9dd4c09ff40612f8cdf038da75}
+      \strng{bibnamehash}{27cede9dd4c09ff40612f8cdf038da75}
+      \strng{authorbibnamehash}{27cede9dd4c09ff40612f8cdf038da75}
+      \strng{authornamehash}{27cede9dd4c09ff40612f8cdf038da75}
+      \strng{authorfullhash}{27cede9dd4c09ff40612f8cdf038da75}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labeldatesource}{nodate}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{Dec.}
+      \field{journaltitle}{The American Economic Review}
+      \field{number}{5}
+      \field{title}{Does Competition among Public Schools Benefit Students and Taxpayers?}
+      \field{volume}{90}
+      \field{pages}{1209\bibrangedash 38}
+      \range{pages}{30}
     \endentry
     \entry{mathematicaloptandecontheory}{book}{}
       \name{author}{1}{}{%
@@ -447,7 +530,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Mathematical Optimization and Economic Theory}
-      \field{titlekey}{mathematicaloptandecontheory}
       \field{year}{1971}
     \endentry
     \entry{efficientalgorithmoptimal}{article}{}
@@ -487,11 +569,46 @@
       \field{journaltitle}{Journal of the Association for Computing Machinery}
       \field{number}{3}
       \field{title}{An Efficient Algorithm for the 'Optimal' Stable Marriage}
-      \field{titlekey}{efficientalgorithmoptimal}
       \field{volume}{34}
       \field{year}{1987}
       \field{pages}{532\bibrangedash 43}
       \range{pages}{12}
+    \endentry
+    \entry{measurementofstudentability}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=507ce1122553a755a5be6d302d31ae92}{%
+           family={Jacob},
+           familyi={J\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=19192fe53caa301de3ea1ecacca56af9}{%
+           family={Rothstein},
+           familyi={R\bibinitperiod},
+           given={Jesse},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
+      \strng{fullhash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
+      \strng{bibnamehash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
+      \strng{authorbibnamehash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
+      \strng{authornamehash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
+      \strng{authorfullhash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{Summer}
+      \field{journaltitle}{The Journal of Economic Perspectives}
+      \field{number}{3}
+      \field{title}{The Measurement of Student Ability in Modern Assessment Systems}
+      \field{volume}{30}
+      \field{year}{2016}
+      \field{pages}{85\bibrangedash 107}
+      \range{pages}{23}
     \endentry
     \entry{intlrankingsandconflicts}{article}{}
       \name{author}{1}{}{%
@@ -518,7 +635,6 @@
       \field{journaltitle}{Inside Higher Ed}
       \field{month}{5}
       \field{title}{International Rankings and Conflicts of Interest}
-      \field{titlekey}{intlrankingsandconflicts}
       \field{year}{2021}
       \field{dateera}{ce}
       \verb{urlraw}
@@ -555,7 +671,6 @@
       \field{day}{3}
       \field{month}{6}
       \field{title}{StudentPrefsRevOpt}
-      \field{titlekey}{studentprefsrevopt}
       \field{year}{2021}
       \field{dateera}{ce}
       \verb{urlraw}
@@ -593,7 +708,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{A Simulation Approach to Predicting College Admissions}
-      \field{titlekey}{asimulationapproachtopredictingcollegeadmissions}
       \field{year}{2013}
     \endentry
     \entry{consequencesofstructuralracism}{article}{}
@@ -627,7 +741,6 @@
       \field{journaltitle}{Academic Medicine}
       \field{number}{3}
       \field{title}{The Consequences of Structural Racism on MCAT Scores and Medical School Admissions: The Past Is Prologue}
-      \field{titlekey}{consequencesofstructuralracism}
       \field{volume}{95}
       \field{year}{2020}
       \field{pages}{351\bibrangedash 56}
@@ -663,7 +776,6 @@
       \field{journaltitle}{International Journal of Engineering Science}
       \field{number}{10--A}
       \field{title}{Theory of Variational Inequalities with Applications to Problems of Flow Through Porous Media}
-      \field{titlekey}{theoryofvariationalinequalities}
       \field{volume}{18}
       \field{year}{1980}
       \field{pages}{1173\bibrangedash 1284}
@@ -688,7 +800,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Estimating Applications, Transfers and Accepted Offers to the College}
-      \field{titlekey}{estimatingapplications}
       \field{year}{2014}
     \endentry
     \entry{collegeadmissionskaggle}{article}{}
@@ -713,7 +824,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{College Admissions: Admission/Class Demographics by University}
-      \field{titlekey}{collegeadmissionskaggle}
       \field{year}{2018}
       \verb{urlraw}
       \verb https://www.kaggle.com/samsonqian/college-admissions
@@ -753,7 +863,6 @@
       \field{journaltitle}{The Annals of Mathematical Statistics}
       \field{number}{3}
       \field{title}{A Stochastic Approximation Method}
-      \field{titlekey}{robbinsmonro}
       \field{volume}{22}
       \field{year}{1951}
       \field{pages}{400\bibrangedash 407}
@@ -784,7 +893,6 @@
       \field{journaltitle}{Mathematics of Operations Research}
       \field{number}{4}
       \field{title}{The Economics of Matching: Stability and Incentives}
-      \field{titlekey}{economicsofmatching}
       \field{volume}{7}
       \field{year}{1982}
       \field{pages}{617\bibrangedash 28}
@@ -844,7 +952,6 @@
       \field{journaltitle}{Psychological Science}
       \field{number}{9}
       \field{title}{The Role of Socioeconomic Status in SAT-Grade Relationships and in College Admissions Decisions}
-      \field{titlekey}{roleofSESinSAT}
       \field{volume}{23}
       \field{year}{2012}
       \field{pages}{1000\bibrangedash 1007}
@@ -905,7 +1012,6 @@
       \field{month}{12}
       \field{pubstate}{preprint}
       \field{title}{Students’ Preferences for Returning to Colleges and Universities During the COVID-19 Pandemic: A Discrete Choice Experiment}
-      \field{titlekey}{studentsprefscovid}
       \field{year}{2020}
       \field{dateera}{ce}
       \verb{urlraw}
@@ -914,6 +1020,36 @@
       \verb{url}
       \verb https://osf.io/mzxs6/
       \endverb
+    \endentry
+    \entry{apuretheoryoflocalexpenditures}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ff9f3b308b0c32e582fa2ac8c718001d}{%
+           family={Tiebout},
+           familyi={T\bibinitperiod},
+           given={Charles\bibnamedelima M.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{fullhash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{bibnamehash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{authorbibnamehash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{authornamehash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \strng{authorfullhash}{ff9f3b308b0c32e582fa2ac8c718001d}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{Oct.}
+      \field{journaltitle}{Journal of Political Economy}
+      \field{number}{5}
+      \field{title}{A Pure Theory of Local Expenditures}
+      \field{volume}{64}
+      \field{year}{1956}
+      \field{pages}{416\bibrangedash 24}
+      \range{pages}{9}
     \endentry
     \entry{walrastatonnement}{article}{}
       \name{author}{1}{}{%
@@ -940,7 +1076,6 @@
       \field{journaltitle}{The Review of Economic Studies}
       \field{number}{3}
       \field{title}{Walras' Tâtonnement in the Theory of Exchange}
-      \field{titlekey}{walrastatonnement}
       \field{volume}{27}
       \field{year}{1960}
       \field{pages}{182\bibrangedash 194}

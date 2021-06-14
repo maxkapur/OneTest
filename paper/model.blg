@@ -1,18 +1,18 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'model.blg'
-[376] biber-MSWIN64:340> INFO - === 
-[455] Biber.pm:415> INFO - Reading 'model.bcf'
-[764] Biber.pm:952> INFO - Found 25 citekeys in bib section 0
-[792] Biber.pm:4340> INFO - Processing section 0
-[814] Biber.pm:4531> INFO - Looking for bibtex format file 'refs.bib' for section 0
-[941] bibtex.pm:1689> INFO - LaTeX decoding ...
-[1054] bibtex.pm:1494> INFO - Found BibTeX data source 'refs.bib'[[1462] Utils.pm:395> WARN - BibTeX subsystem: C:\Users\Max\AppData\Local\Temp\biber_tmp_wlMy\8fe4c9854184545302f21ebf0d47516c_2524.utf8, line 155, warning: 1 characters of junk seen at toplevel
-[1463] Utils.pm:395> WARN - BibTeX subsystem: C:\Users\Max\AppData\Local\Temp\biber_tmp_wlMy\8fe4c9854184545302f21ebf0d47516c_2524.utf8, line 150, warning: undefined macro "58--75"
-[1585] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1585] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1585] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[1586] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[1647] bbl.pm:654> INFO - Writing 'model.bbl' with encoding 'UTF-8'
-[1673] bbl.pm:757> INFO - Output to model.bbl
-[1674] Biber.pm:128> INFO - WARNINGS: 2
-
+[235] biber-MSWIN64:340> INFO - === 
+[319] Biber.pm:415> INFO - Reading 'model.bcf'
+[502] Biber.pm:952> INFO - Found 30 citekeys in bib section 0
+[522] Biber.pm:4340> INFO - Processing section 0
+[538] Biber.pm:4531> INFO - Looking for bibtex format file 'refs.bib' for section 0
+[647] bibtex.pm:1689> INFO - LaTeX decoding ...
+[708] bibtex.pm:1494> INFO - Found BibTeX data source 'refs.bib'
+[863] Utils.pm:395> WARN - BibTeX subsystem: C:\Users\Max\AppData\Local\Temp\biber_tmp_f9T3\8fe4c9854184545302f21ebf0d47516c_16208.utf8, line 166, warning: 1 characters of junk seen at toplevel
+[863] Utils.pm:395> WARN - BibTeX subsystem: C:\Users\Max\AppData\Local\Temp\biber_tmp_f9T3\8fe4c9854184545302f21ebf0d47516c_16208.utf8, line 161, warning: undefined macro "58--75"
+[922] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[922] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[922] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[922] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[967] bbl.pm:654> INFO - Writing 'model.bbl' with encoding 'UTF-8'
+[987] bbl.pm:757> INFO - Output to model.bbl
+[987] Biber.pm:128> INFO - WARNINGS: 2
