@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  14 JUN 2021 18:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  15 JUN 2021 16:58
 entering extended mode
 **./model.tex
 (model.tex
@@ -632,25 +632,34 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 [5] [6] [7] [8] [9] [10] [11] [12] [13]
-Overfull \hbox (6.57127pt too wide) in paragraph at lines 266--267
-\OT1/ptm/m/n/12 pref-er-ence or-ders) trade off di-rectly. The student-optimal 
-sta-ble match-ing from student-proposing
+
+LaTeX Warning: Citation 'collegeadmissionsisnotmarriage' on page 14 undefined o
+n input line 264.
+
+
+LaTeX Warning: Citation 'unbalancedrandommatchingmarkets' on page 14 undefined 
+on input line 264.
+
+
+Overfull \hbox (10.79535pt too wide) in paragraph at lines 264--265
+\OT1/ptm/m/n/12 ences among the re-sult-ing as-sign-ments tend to be mi-nor ([]
+). 
  []
 
 [14] [15]
 
 LaTeX Warning: Reference `mktclearingproc' on page 16 undefined on input line 3
-09.
+10.
 
 
-Overfull \hbox (10.38345pt too wide) in paragraph at lines 309--310
+Overfull \hbox (10.38345pt too wide) in paragraph at lines 310--311
 []\OT1/ptm/m/n/12 Taking $\OML/cmm/m/it/12 p[] \OT1/cmr/m/n/12 = []$\OT1/ptm/m/
 n/12 , it is easy to see that the the school-proposing de-ferred ac-cep-tance t
 []atonnement
  []
 
 [16] [17] [18] [19]
-Overfull \hbox (12.02716pt too wide) in paragraph at lines 415--416
+Overfull \hbox (12.02716pt too wide) in paragraph at lines 416--417
 []\OT1/ptm/m/n/12 The MNL choice model rep-re-sents a com-pro-mise be-tween re-
 al-ism and com-pu-ta-tional tractabil-
  []
@@ -659,89 +668,89 @@ al-ism and com-pu-ta-tional tractabil-
 <plots/gammaq-pstar.pdf, id=112, 803.0pt x 702.625pt>
 File: plots/gammaq-pstar.pdf Graphic file (type pdf)
 <use plots/gammaq-pstar.pdf>
-Package pdftex.def Info: plots/gammaq-pstar.pdf  used on input line 778.
+Package pdftex.def Info: plots/gammaq-pstar.pdf  used on input line 779.
 (pdftex.def)             Requested size: 455.24411pt x 398.34544pt.
  [30] [31 <./plots/gammaq-pstar.pdf>]
 <plots/tat-iter-cutoff.pdf, id=121, 602.25pt x 401.5pt>
 File: plots/tat-iter-cutoff.pdf Graphic file (type pdf)
 <use plots/tat-iter-cutoff.pdf>
-Package pdftex.def Info: plots/tat-iter-cutoff.pdf  used on input line 798.
+Package pdftex.def Info: plots/tat-iter-cutoff.pdf  used on input line 799.
 (pdftex.def)             Requested size: 455.24411pt x 303.50742pt.
 <plots/score-cutoff-choice.pdf, id=122, 702.625pt x 451.6875pt>
 File: plots/score-cutoff-choice.pdf Graphic file (type pdf)
 <use plots/score-cutoff-choice.pdf>
-Package pdftex.def Info: plots/score-cutoff-choice.pdf  used on input line 808.
+Package pdftex.def Info: plots/score-cutoff-choice.pdf  used on input line 809.
 
 (pdftex.def)             Requested size: 455.24411pt x 292.66295pt.
 <plots/score-DA-placement.pdf, id=123, 702.625pt x 451.6875pt>
 File: plots/score-DA-placement.pdf Graphic file (type pdf)
 <use plots/score-DA-placement.pdf>
-Package pdftex.def Info: plots/score-DA-placement.pdf  used on input line 817.
+Package pdftex.def Info: plots/score-DA-placement.pdf  used on input line 818.
 (pdftex.def)             Requested size: 455.24411pt x 292.66295pt.
  [32] [33 <./plots/tat-iter-cutoff.pdf>] [34 <./plots/score-cutoff-choice.pdf>]
  [35 <./plots/score-DA-placement.pdf>]
 
 LaTeX Warning: Reference `jac-gamma-cutoff' on page 36 undefined on input line 
-832.
+833.
 
 <plots/vary-gamma-demand.pdf, id=139, 602.25pt x 401.5pt>
 File: plots/vary-gamma-demand.pdf Graphic file (type pdf)
 <use plots/vary-gamma-demand.pdf>
-Package pdftex.def Info: plots/vary-gamma-demand.pdf  used on input line 838.
+Package pdftex.def Info: plots/vary-gamma-demand.pdf  used on input line 839.
 (pdftex.def)             Requested size: 455.24411pt x 303.50742pt.
 <plots/vary-gamma-cutoff.pdf, id=140, 602.25pt x 401.5pt>
 File: plots/vary-gamma-cutoff.pdf Graphic file (type pdf)
 <use plots/vary-gamma-cutoff.pdf>
-Package pdftex.def Info: plots/vary-gamma-cutoff.pdf  used on input line 860.
+Package pdftex.def Info: plots/vary-gamma-cutoff.pdf  used on input line 861.
 (pdftex.def)             Requested size: 455.24411pt x 303.50742pt.
 [36] [37 <./plots/vary-gamma-demand.pdf>] [38 <./plots/vary-gamma-cutoff.pdf>]
 [39] [40] [41]
 <plots/US-cutoff-gamma.pdf, id=162, 602.25pt x 602.25pt>
 File: plots/US-cutoff-gamma.pdf Graphic file (type pdf)
 <use plots/US-cutoff-gamma.pdf>
-Package pdftex.def Info: plots/US-cutoff-gamma.pdf  used on input line 955.
+Package pdftex.def Info: plots/US-cutoff-gamma.pdf  used on input line 956.
 (pdftex.def)             Requested size: 455.24411pt x 455.26112pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 964.
+               Default added (so using `tbp') on input line 965.
 
 
-Overfull \hbox (21.3918pt too wide) in paragraph at lines 965--989
+Overfull \hbox (21.3918pt too wide) in paragraph at lines 966--990
 [][] 
  []
 
 <plots/three-demand-curves.pdf, id=163, 702.625pt x 501.875pt>
 File: plots/three-demand-curves.pdf Graphic file (type pdf)
 <use plots/three-demand-curves.pdf>
-Package pdftex.def Info: plots/three-demand-curves.pdf  used on input line 997.
+Package pdftex.def Info: plots/three-demand-curves.pdf  used on input line 998.
 
 (pdftex.def)             Requested size: 455.24411pt x 325.18105pt.
 <plots/caltech-demand-curve.pdf, id=164, 702.625pt x 501.875pt>
 File: plots/caltech-demand-curve.pdf Graphic file (type pdf)
 <use plots/caltech-demand-curve.pdf>
 Package pdftex.def Info: plots/caltech-demand-curve.pdf  used on input line 100
-8.
+9.
 (pdftex.def)             Requested size: 455.24411pt x 325.18105pt.
 [42] [43 <./plots/US-cutoff-gamma.pdf>] [44] [45 <./plots/three-demand-curves.p
 df>] [46 <./plots/caltech-demand-curve.pdf>] [47] [48] [49]
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-050.
+051.
 
 (C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Overfull \hbox (59.6805pt too wide) in paragraph at lines 1051--1051
+Overfull \hbox (59.6805pt too wide) in paragraph at lines 1052--1052
 \OT1/pcr/m/n/12 20160331125512 / https : / / secure -[] media . collegeboard . 
 org / digitalServices /
  []
 
 
 Package biblatex Warning: No driver for entry type 'mastersthesis'.
-(biblatex)                Using fallback driver on input line 1050.
+(biblatex)                Using fallback driver on input line 1051.
 
 [50]
-Overfull \hbox (73.9576pt too wide) in paragraph at lines 1051--1051
+Overfull \hbox (73.9576pt too wide) in paragraph at lines 1052--1052
 [][]\OT1/ptm/m/n/12 Kapur, Max. 2021. Stu-dent-Pref-s-RevOpt. $\OT1/pcr/m/n/12 
 https : / / github . com / maxkapur / StudentPrefsRevOpt$\OT1/ptm/m/n/12 . 
  []
@@ -750,16 +759,21 @@ https : / / github . com / maxkapur / StudentPrefsRevOpt$\OT1/ptm/m/n/12 .
 
 LaTeX Warning: There were undefined references.
 
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                model
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'model.run.xml'.
 \openout1 = `model.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
  13065 strings out of 479334
- 240887 string characters out of 2858034
- 1031513 words of memory out of 3000000
- 30333 multiletter control sequences out of 15000+200000
- 434626 words of font info for 99 fonts, out of 3000000 for 9000
+ 240853 string characters out of 2858034
+ 1031520 words of memory out of 3000000
+ 30332 multiletter control sequences out of 15000+200000
+ 436252 words of font info for 101 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,22n,78p,2433b,1578s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/U
@@ -786,7 +800,7 @@ TeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Max/AppData/Local/Programs/MiK
 TeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Max/AppData/Local/Programs/MiKTe
 X/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on model.pdf (52 pages, 1127417 bytes).
+Output written on model.pdf (52 pages, 1127131 bytes).
 PDF statistics:
  273 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
