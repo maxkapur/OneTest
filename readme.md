@@ -1,4 +1,4 @@
-# Admissions markets with a single score and MNL choice
+# Admissions markets with multinomial logit choice and single scoring
 
 Max Kapur | maxkapur.com
 
