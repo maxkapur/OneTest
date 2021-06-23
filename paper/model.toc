@@ -2,11 +2,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1}Introduction}{3}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1}Organization}{6}{}%
+\contentsline {subsection}{\numberline {1.1}Organization}{5}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Interpretations of equilibrium in admissions markets}{6}{}%
+\contentsline {section}{\numberline {2}Interpreting equilibria in admissions markets}{6}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Admissions markets}{7}{}%
+\contentsline {subsection}{\numberline {2.1}Admissions markets}{6}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2}Notion of equilibrium}{8}{}%
 \defcounter {refsection}{0}\relax 
@@ -22,9 +22,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5}Computing the equilibrium}{16}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6}Equivalent formulations of the equilibrium conditions}{18}{}%
+\contentsline {subsection}{\numberline {2.6}Equivalent formulations of the equilibrium conditions}{17}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.6.1}Nonlinear complementarity problem}{18}{}%
+\contentsline {subsubsection}{\numberline {2.6.1}Nonlinear complementarity problem}{17}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.6.2}Variational inequality problem}{18}{}%
 \defcounter {refsection}{0}\relax 
