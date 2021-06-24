@@ -59,11 +59,52 @@
       \field{year}{2015}
       \field{pages}{1\bibrangedash 42}
       \range{pages}{42}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1257/mic.20120027
+      \endverb
+    \endentry
+    \entry{schoolchoiceamechanismdesignapproach}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=9210d7a0646d485f1f21951c61c52cd2}{%
+           family={Abdulkadiroğlu},
+           familyi={A\bibinitperiod},
+           given={Atila},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8073f6091c1c9c41b6684fbd2d0112aa}{%
+           family={Sönmez},
+           familyi={S\bibinitperiod},
+           given={Tayfun},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3ea8bbd7b953270c0887a3a025b4e285}
+      \strng{fullhash}{3ea8bbd7b953270c0887a3a025b4e285}
+      \strng{bibnamehash}{3ea8bbd7b953270c0887a3a025b4e285}
+      \strng{authorbibnamehash}{3ea8bbd7b953270c0887a3a025b4e285}
+      \strng{authornamehash}{3ea8bbd7b953270c0887a3a025b4e285}
+      \strng{authorfullhash}{3ea8bbd7b953270c0887a3a025b4e285}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Review}
+      \field{number}{3}
+      \field{title}{School Choice: A Mechanism Design Approach}
+      \field{volume}{93}
+      \field{year}{2003}
+      \field{pages}{729\bibrangedash 47}
+      \range{pages}{19}
+      \verb{doi}
+      \verb https://doi.org/10.1257/000282803322157061
+      \endverb
     \endentry
     \entry{ACTprofilerpt}{book}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=90d991b47098ceef3d8283a386cf7e91}{%
-           family={ACT},
+           family={{ACT}},
            familyi={A\bibinitperiod}}}%
       }
       \strng{namehash}{90d991b47098ceef3d8283a386cf7e91}
@@ -127,6 +168,9 @@
       \field{year}{2017}
       \field{pages}{69\bibrangedash 98}
       \range{pages}{30}
+      \verb{doi}
+      \verb https://doi.org/10.1086/689869
+      \endverb
     \endentry
     \entry{whatmatters}{article}{}
       \name{author}{2}{}{%
@@ -161,6 +205,9 @@
       \field{year}{2020}
       \field{pages}{ article no. 105120}
       \range{pages}{-1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jet.2020.105120
+      \endverb
     \endentry
     \entry{supplydemandfw}{article}{}
       \name{author}{2}{}{%
@@ -196,6 +243,9 @@
       \field{year}{2016}
       \field{pages}{1235\bibrangedash 68}
       \range{pages}{34}
+      \verb{doi}
+      \verb https://doi.org/10.1086/687476
+      \endverb
     \endentry
     \entry{distributionalgoals}{article}{}
       \name{author}{1}{}{%
@@ -225,6 +275,9 @@
       \field{year}{2020}
       \field{pages}{3657\bibrangedash 76}
       \range{pages}{20}
+      \verb{doi}
+      \verb https://doi.org/10.1287/mnsc.2019.3376
+      \endverb
     \endentry
     \entry{compmkteq}{incollection}{}
       \name{author}{2}{}{%
@@ -345,11 +398,14 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Economic Theory}
       \field{number}{2}
-      \field{title}{Core many-to-one matchings by fixed-point methods}
+      \field{title}{Core Many-to-One Matchings by Fixed-Point Methods}
       \field{volume}{115}
       \field{year}{2004}
       \field{pages}{358\bibrangedash 76}
       \range{pages}{19}
+      \verb{doi}
+      \verb https://doi.org/10.1016/S0022-0531(03)00184-4
+      \endverb
     \endentry
     \entry{equilibriumandlocalredistribution}{article}{}
       \name{author}{2}{}{%
@@ -385,6 +441,9 @@
       \field{year}{1998}
       \field{pages}{23\bibrangedash 51}
       \range{pages}{29}
+      \verb{doi}
+      \verb https://doi.org/10.1006/juec.1996.2030
+      \endverb
     \endentry
     \entry{galeshapley1962}{article}{}
       \name{author}{2}{}{%
@@ -420,6 +479,9 @@
       \field{year}{1962}
       \field{pages}{9\bibrangedash 15}
       \range{pages}{7}
+      \verb{doi}
+      \verb https://doi.org/10.2307/2312726
+      \endverb
     \endentry
     \entry{doescompetitionamongpublicschools}{article}{}
       \name{author}{1}{}{%
@@ -449,6 +511,12 @@
       \field{year}{2000}
       \field{pages}{1209\bibrangedash 38}
       \range{pages}{30}
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/2677848
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/2677848
+      \endverb
     \endentry
     \entry{mathematicaloptandecontheory}{book}{}
       \name{author}{1}{}{%
@@ -479,6 +547,44 @@
       \field{labeltitlesource}{title}
       \field{title}{Mathematical Optimization and Economic Theory}
       \field{year}{1971}
+    \endentry
+    \entry{measurementofstudentability}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=507ce1122553a755a5be6d302d31ae92}{%
+           family={Jacob},
+           familyi={J\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=19192fe53caa301de3ea1ecacca56af9}{%
+           family={Rothstein},
+           familyi={R\bibinitperiod},
+           given={Jesse},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
+      \strng{fullhash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
+      \strng{bibnamehash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
+      \strng{authorbibnamehash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
+      \strng{authornamehash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
+      \strng{authorfullhash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Economic Perspectives}
+      \field{number}{3}
+      \field{title}{The Measurement of Student Ability in Modern Assessment Systems}
+      \field{volume}{30}
+      \field{year}{2016}
+      \field{pages}{85\bibrangedash 107}
+      \range{pages}{23}
+      \verb{doi}
+      \verb http://dx.doi.Org/10.1257/jep.30.3.85
+      \endverb
     \endentry
     \entry{intlrankingsandconflicts}{article}{}
       \name{author}{1}{}{%
@@ -579,6 +685,12 @@
       \field{labeltitlesource}{title}
       \field{title}{A Simulation Approach to Predicting College Admissions}
       \field{year}{2013}
+      \verb{urlraw}
+      \verb https://escholarship.org/uc/item/8r2695n5
+      \endverb
+      \verb{url}
+      \verb https://escholarship.org/uc/item/8r2695n5
+      \endverb
     \endentry
     \entry{understandingandpredictingtheyield}{article}{}
       \name{author}{3}{}{%
@@ -620,6 +732,9 @@
       \field{year}{1984}
       \field{pages}{55\bibrangedash 76}
       \range{pages}{22}
+      \verb{doi}
+      \verb https://doi.org/10.1007/BF00992035
+      \endverb
     \endentry
     \entry{theoryofvariationalinequalities}{article}{}
       \name{author}{2}{}{%
@@ -655,6 +770,39 @@
       \field{year}{1980}
       \field{pages}{1173\bibrangedash 1284}
       \range{pages}{112}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0020-7225(80)90111-1
+      \endverb
+    \endentry
+    \entry{theeconomicsofwelfare}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b8b284c4a122ffab971a3fdb5e99fe61}{%
+           family={Pigou},
+           familyi={P\bibinitperiod},
+           given={A.\bibnamedelimi C.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Macmillan}%
+      }
+      \strng{namehash}{b8b284c4a122ffab971a3fdb5e99fe61}
+      \strng{fullhash}{b8b284c4a122ffab971a3fdb5e99fe61}
+      \strng{bibnamehash}{b8b284c4a122ffab971a3fdb5e99fe61}
+      \strng{authorbibnamehash}{b8b284c4a122ffab971a3fdb5e99fe61}
+      \strng{authornamehash}{b8b284c4a122ffab971a3fdb5e99fe61}
+      \strng{authorfullhash}{b8b284c4a122ffab971a3fdb5e99fe61}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Economics of Welfare}
+      \field{year}{1920}
     \endentry
     \entry{estimatingapplications}{book}{}
       \name{author}{1}{}{%
@@ -747,15 +895,18 @@
       \field{year}{1951}
       \field{pages}{400\bibrangedash 407}
       \range{pages}{8}
+      \verb{doi}
+      \verb https://doi.org/10.1214/aoms/1177729586
+      \endverb
     \endentry
-    \entry{collegeadmissionsisnotmarriage}{article}{}
+    \entry{economicsofmatching}{article}{}
       \name{author}{1}{}{%
-        {{un=2,uniquepart=given,hash=320ab47af0997a7a69af46760b320783}{%
+        {{un=0,uniquepart=base,hash=320ab47af0997a7a69af46760b320783}{%
            family={Roth},
            familyi={R\bibinitperiod},
-           given={Alvin\bibnamedelima E},
+           given={Alvin\bibnamedelima E.},
            giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod},
-           givenun=2}}%
+           givenun=0}}%
       }
       \strng{namehash}{320ab47af0997a7a69af46760b320783}
       \strng{fullhash}{320ab47af0997a7a69af46760b320783}
@@ -770,22 +921,28 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Economic Theory}
-      \field{number}{2}
-      \field{title}{The college admissions problem is not equivalent to the marriage problem}
-      \field{volume}{36}
-      \field{year}{1985}
-      \field{pages}{277\bibrangedash 88}
+      \field{journaltitle}{Mathematics of Operations Research}
+      \field{number}{4}
+      \field{title}{The Economics of Matching: Stability and Incentives}
+      \field{volume}{7}
+      \field{year}{1982}
+      \field{pages}{617\bibrangedash 28}
       \range{pages}{12}
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/3689483
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/3689483
+      \endverb
     \endentry
-    \entry{economicsofmatching}{article}{}
+    \entry{collegeadmissionsisnotmarriage}{article}{}
       \name{author}{1}{}{%
-        {{un=2,uniquepart=given,hash=320ab47af0997a7a69af46760b320783}{%
+        {{un=0,uniquepart=base,hash=320ab47af0997a7a69af46760b320783}{%
            family={Roth},
            familyi={R\bibinitperiod},
            given={Alvin\bibnamedelima E.},
            giveni={A\bibinitperiod\bibinitdelim E\bibinitperiod},
-           givenun=2}}%
+           givenun=0}}%
       }
       \strng{namehash}{320ab47af0997a7a69af46760b320783}
       \strng{fullhash}{320ab47af0997a7a69af46760b320783}
@@ -800,13 +957,16 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Mathematics of Operations Research}
-      \field{number}{4}
-      \field{title}{The Economics of Matching: Stability and Incentives}
-      \field{volume}{7}
-      \field{year}{1982}
-      \field{pages}{617\bibrangedash 28}
+      \field{journaltitle}{Journal of Economic Theory}
+      \field{number}{2}
+      \field{title}{The College Admissions Problem is not Equivalent to the Marriage Problem}
+      \field{volume}{36}
+      \field{year}{1985}
+      \field{pages}{277\bibrangedash 88}
       \range{pages}{12}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0022-0531(85)90106-1
+      \endverb
     \endentry
     \entry{apuretheoryoflocalexpenditures}{article}{}
       \name{author}{1}{}{%
@@ -836,6 +996,12 @@
       \field{year}{1956}
       \field{pages}{416\bibrangedash 24}
       \range{pages}{9}
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/1826343
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/1826343
+      \endverb
     \endentry
     \entry{walrastatonnement}{article}{}
       \name{author}{1}{}{%
@@ -865,6 +1031,41 @@
       \field{year}{1960}
       \field{pages}{182\bibrangedash 194}
       \range{pages}{13}
+      \verb{doi}
+      \verb https://doi.org/10.2307/2296080
+      \endverb
+    \endentry
+    \entry{sometheoreticalaspectsofroadtraffic}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=38b796a7ce9723fcc76efe1aaa1a7557}{%
+           family={Wardrop},
+           familyi={W\bibinitperiod},
+           given={J.\bibnamedelimi G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{38b796a7ce9723fcc76efe1aaa1a7557}
+      \strng{fullhash}{38b796a7ce9723fcc76efe1aaa1a7557}
+      \strng{bibnamehash}{38b796a7ce9723fcc76efe1aaa1a7557}
+      \strng{authorbibnamehash}{38b796a7ce9723fcc76efe1aaa1a7557}
+      \strng{authornamehash}{38b796a7ce9723fcc76efe1aaa1a7557}
+      \strng{authorfullhash}{38b796a7ce9723fcc76efe1aaa1a7557}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Institute of Civil Engineers}
+      \field{number}{1}
+      \field{title}{Some Theoretical Aspects of Road Traffic Research}
+      \field{volume}{{Pt. II}}
+      \field{year}{1952}
+      \field{pages}{325\bibrangedash 78}
+      \range{pages}{54}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1680/ipeds.1952.11362
+      \endverb
     \endentry
   \enddatalist
 \endrefsection
