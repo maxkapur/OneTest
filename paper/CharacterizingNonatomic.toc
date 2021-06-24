@@ -6,7 +6,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2}Interpreting equilibria in admissions markets}{5}{section.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Admissions markets}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.1}Admissions markets}{6}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2}Notion of equilibrium}{7}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 
@@ -14,7 +14,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.3.1}As a fixed point of a t\^{a}tonnement process}{8}{subsubsection.2.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.3.2}As a competitive (Nash) equilibrium}{8}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.2}As a competitive (Nash) equilibrium}{9}{subsubsection.2.3.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.3.3}As a stable matching}{10}{subsubsection.2.3.3}%
 \defcounter {refsection}{0}\relax 
@@ -28,7 +28,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.6.2}Variational inequality problem}{16}{subsubsection.2.6.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.6.3}Convex optimization problem}{16}{subsubsection.2.6.3}%
+\contentsline {subsubsection}{\numberline {2.6.3}Convex optimization problem}{17}{subsubsection.2.6.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.7}Optimization tasks}{17}{subsection.2.7}%
 \defcounter {refsection}{0}\relax 

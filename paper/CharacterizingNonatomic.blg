@@ -1,15 +1,15 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'CharacterizingNonatomic.blg'
-[204] biber-MSWIN64:340> INFO - === 
-[281] Biber.pm:415> INFO - Reading 'CharacterizingNonatomic.bcf'
-[453] Biber.pm:952> INFO - Found 29 citekeys in bib section 0
-[472] Biber.pm:4340> INFO - Processing section 0
-[490] Biber.pm:4531> INFO - Looking for bibtex format file 'refs.bib' for section 0
-[615] bibtex.pm:1689> INFO - LaTeX decoding ...
-[692] bibtex.pm:1494> INFO - Found BibTeX data source 'refs.bib'
-[895] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[895] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[895] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[895] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[939] bbl.pm:654> INFO - Writing 'CharacterizingNonatomic.bbl' with encoding 'UTF-8'
-[957] bbl.pm:757> INFO - Output to CharacterizingNonatomic.bbl
+[179] biber-MSWIN64:340> INFO - === 
+[255] Biber.pm:415> INFO - Reading 'CharacterizingNonatomic.bcf'
+[441] Biber.pm:952> INFO - Found 31 citekeys in bib section 0
+[460] Biber.pm:4340> INFO - Processing section 0
+[478] Biber.pm:4531> INFO - Looking for bibtex format file 'refs.bib' for section 0
+[595] bibtex.pm:1689> INFO - LaTeX decoding ...
+[670] bibtex.pm:1494> INFO - Found BibTeX data source 'refs.bib'
+[885] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[885] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[885] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[885] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[932] bbl.pm:654> INFO - Writing 'CharacterizingNonatomic.bbl' with encoding 'UTF-8'
+[951] bbl.pm:757> INFO - Output to CharacterizingNonatomic.bbl

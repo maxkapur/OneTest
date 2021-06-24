@@ -247,6 +247,56 @@
       \verb https://doi.org/10.1086/687476
       \endverb
     \endentry
+    \entry{marryforwhat}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=027abafc894615db04e1c3f3dc5931c4}{%
+           family={Banerjee},
+           familyi={B\bibinitperiod},
+           given={Abhijit},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7e6b0ea4eee38822cdb0a4361e98752c}{%
+           family={Duflo},
+           familyi={D\bibinitperiod},
+           given={Esther},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=565cb121373a427ea1e6059a7d56564e}{%
+           family={Ghatak},
+           familyi={G\bibinitperiod},
+           given={Maitreesh},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc526bd1d11681fb64acfb499d94d5a2}{%
+           family={Lafortune},
+           familyi={L\bibinitperiod},
+           given={Jeanne},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{18edac96fea31ae12a7b321c919f67db}
+      \strng{fullhash}{ba370b63be89c79381e8269655a435a4}
+      \strng{bibnamehash}{ba370b63be89c79381e8269655a435a4}
+      \strng{authorbibnamehash}{ba370b63be89c79381e8269655a435a4}
+      \strng{authornamehash}{18edac96fea31ae12a7b321c919f67db}
+      \strng{authorfullhash}{ba370b63be89c79381e8269655a435a4}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Journal: Microeconomics}
+      \field{number}{2}
+      \field{title}{Marry for What? Caste and Mate Selection in Modern India}
+      \field{volume}{5}
+      \field{year}{2013}
+      \field{pages}{33\bibrangedash 72}
+      \range{pages}{40}
+      \verb{doi}
+      \verb http://doi.org/10.1257/mic.5.2.33
+      \endverb
+    \endentry
     \entry{distributionalgoals}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=b51211c7801a6229176080b059f7421f}{%
@@ -481,6 +531,50 @@
       \range{pages}{7}
       \verb{doi}
       \verb https://doi.org/10.2307/2312726
+      \endverb
+    \endentry
+    \entry{matchingandsortinginonlinedating}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=2ab96bf034d9ee09b9020ace26c14548}{%
+           family={Hitsch},
+           familyi={H\bibinitperiod},
+           given={Gunter\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6fc88c6bae8c9f898c876dbb9c822fff}{%
+           family={Hortaçsu},
+           familyi={H\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=71ec597571f84eda16f077607686f56b}{%
+           family={Ariely},
+           familyi={A\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{530b0afc0352cbcff210f66589087fa9}
+      \strng{fullhash}{530b0afc0352cbcff210f66589087fa9}
+      \strng{bibnamehash}{530b0afc0352cbcff210f66589087fa9}
+      \strng{authorbibnamehash}{530b0afc0352cbcff210f66589087fa9}
+      \strng{authornamehash}{530b0afc0352cbcff210f66589087fa9}
+      \strng{authorfullhash}{530b0afc0352cbcff210f66589087fa9}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Economic Review}
+      \field{number}{1}
+      \field{title}{Matching and Sorting in Online Dating}
+      \field{volume}{100}
+      \field{year}{2010}
+      \field{pages}{130\bibrangedash 63}
+      \range{pages}{34}
+      \verb{doi}
+      \verb http://doi.org/10.1257/aer.100.1.130
       \endverb
     \endentry
     \entry{doescompetitionamongpublicschools}{article}{}

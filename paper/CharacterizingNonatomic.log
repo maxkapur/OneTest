@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  24 JUN 2021 15:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  24 JUN 2021 17:47
 entering extended mode
 **./CharacterizingNonatomic.tex
 (CharacterizingNonatomic.tex
@@ -751,7 +751,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout5 = `CharacterizingNonatomic.toc'.
 
  [2] [3] [4] [5] [6] [7] [8]
-<plots/stylized-utility.pdf, id=296, 501.875pt x 501.875pt>
+<plots/stylized-utility.pdf, id=300, 501.875pt x 501.875pt>
 File: plots/stylized-utility.pdf Graphic file (type pdf)
 <use plots/stylized-utility.pdf>
 Package pdftex.def Info: plots/stylized-utility.pdf  used on input line 159.
@@ -782,24 +782,24 @@ Overfull \hbox (2.44003pt too wide) detected at line 499
  []
 
 [20] [21] [22] [23] [24] [25] [26]
-<plots/gammaq-pstar.pdf, id=488, 803.0pt x 702.625pt>
+<plots/gammaq-pstar.pdf, id=491, 803.0pt x 702.625pt>
 File: plots/gammaq-pstar.pdf Graphic file (type pdf)
 <use plots/gammaq-pstar.pdf>
 Package pdftex.def Info: plots/gammaq-pstar.pdf  used on input line 765.
 (pdftex.def)             Requested size: 455.24411pt x 398.34544pt.
  [27]
-<plots/tat-iter-cutoff.pdf, id=509, 602.25pt x 401.5pt>
+<plots/tat-iter-cutoff.pdf, id=512, 602.25pt x 401.5pt>
 File: plots/tat-iter-cutoff.pdf Graphic file (type pdf)
 <use plots/tat-iter-cutoff.pdf>
 Package pdftex.def Info: plots/tat-iter-cutoff.pdf  used on input line 787.
 (pdftex.def)             Requested size: 455.24411pt x 303.50742pt.
-<plots/score-cutoff-choice.pdf, id=512, 702.625pt x 451.6875pt>
+<plots/score-cutoff-choice.pdf, id=515, 702.625pt x 451.6875pt>
 File: plots/score-cutoff-choice.pdf Graphic file (type pdf)
 <use plots/score-cutoff-choice.pdf>
 Package pdftex.def Info: plots/score-cutoff-choice.pdf  used on input line 797.
 
 (pdftex.def)             Requested size: 455.24411pt x 292.66295pt.
-<plots/score-DA-placement.pdf, id=513, 702.625pt x 451.6875pt>
+<plots/score-DA-placement.pdf, id=516, 702.625pt x 451.6875pt>
 File: plots/score-DA-placement.pdf Graphic file (type pdf)
 <use plots/score-DA-placement.pdf>
 Package pdftex.def Info: plots/score-DA-placement.pdf  used on input line 806.
@@ -812,12 +812,12 @@ is un-der two dif-fer-ent as-sign-ment paradigms.
 
 [28] [29 <./plots/gammaq-pstar.pdf>] [30 <./plots/tat-iter-cutoff.pdf>]
 [31 <./plots/score-cutoff-choice.pdf>] [32 <./plots/score-DA-placement.pdf>]
-<plots/vary-gamma-demand.pdf, id=552, 602.25pt x 401.5pt>
+<plots/vary-gamma-demand.pdf, id=555, 602.25pt x 401.5pt>
 File: plots/vary-gamma-demand.pdf Graphic file (type pdf)
 <use plots/vary-gamma-demand.pdf>
 Package pdftex.def Info: plots/vary-gamma-demand.pdf  used on input line 821.
 (pdftex.def)             Requested size: 455.24411pt x 303.50742pt.
-<plots/vary-gamma-cutoff.pdf, id=555, 602.25pt x 401.5pt>
+<plots/vary-gamma-cutoff.pdf, id=558, 602.25pt x 401.5pt>
 File: plots/vary-gamma-cutoff.pdf Graphic file (type pdf)
 <use plots/vary-gamma-cutoff.pdf>
 Package pdftex.def Info: plots/vary-gamma-cutoff.pdf  used on input line 843.
@@ -825,7 +825,7 @@ Package pdftex.def Info: plots/vary-gamma-cutoff.pdf  used on input line 843.
 
 [33] [34 <./plots/vary-gamma-demand.pdf>] [35 <./plots/vary-gamma-cutoff.pdf>]
 [36] [37] [38]
-<plots/US-cutoff-gamma.pdf, id=615, 602.25pt x 602.25pt>
+<plots/US-cutoff-gamma.pdf, id=618, 602.25pt x 602.25pt>
 File: plots/US-cutoff-gamma.pdf Graphic file (type pdf)
 <use plots/US-cutoff-gamma.pdf>
 Package pdftex.def Info: plots/US-cutoff-gamma.pdf  used on input line 929.
@@ -840,13 +840,13 @@ Overfull \hbox (65.62943pt too wide) in paragraph at lines 939--963
 [][] 
  []
 
-<plots/three-demand-curves.pdf, id=617, 702.625pt x 501.875pt>
+<plots/three-demand-curves.pdf, id=620, 702.625pt x 501.875pt>
 File: plots/three-demand-curves.pdf Graphic file (type pdf)
 <use plots/three-demand-curves.pdf>
 Package pdftex.def Info: plots/three-demand-curves.pdf  used on input line 971.
 
 (pdftex.def)             Requested size: 455.24411pt x 325.18105pt.
-<plots/caltech-demand-curve.pdf, id=619, 702.625pt x 501.875pt>
+<plots/caltech-demand-curve.pdf, id=622, 702.625pt x 501.875pt>
 File: plots/caltech-demand-curve.pdf Graphic file (type pdf)
 <use plots/caltech-demand-curve.pdf>
 Package pdftex.def Info: plots/caltech-demand-curve.pdf  used on input line 982
@@ -892,10 +892,10 @@ Package logreq Info: Writing requests to 'CharacterizingNonatomic.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19191 strings out of 479334
- 331959 string characters out of 2858034
- 1129929 words of memory out of 3000000
- 36201 multiletter control sequences out of 15000+200000
+ 19204 strings out of 479334
+ 332367 string characters out of 2858034
+ 1130093 words of memory out of 3000000
+ 36212 multiletter control sequences out of 15000+200000
  417945 words of font info for 81 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,25n,74p,2439b,1616s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -927,9 +927,9 @@ Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Max/AppData
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><
 C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on CharacterizingNonatomic.pdf (47 pages, 1253406 bytes).
+Output written on CharacterizingNonatomic.pdf (47 pages, 1255916 bytes).
 PDF statistics:
- 839 PDF objects out of 1000 (max. 8388607)
- 208 named destinations out of 1000 (max. 500000)
+ 845 PDF objects out of 1000 (max. 8388607)
+ 210 named destinations out of 1000 (max. 500000)
  339 words of extra memory for PDF output out of 10000 (max. 10000000)
 
