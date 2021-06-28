@@ -750,6 +750,37 @@
       \verb https://github.com/maxkapur/StudentPrefsRevOpt
       \endverb
     \endentry
+    \entry{고석준thesis}{thesis}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=150e711068d3836697945a5a9d142cbf}{%
+           family={Ko},
+           familyi={K\bibinitperiod},
+           given={Suk-Joon},
+           giveni={S\bibinithyphendelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Seoul National University}%
+      }
+      \list{location}{1}{%
+        {Seoul}%
+      }
+      \strng{namehash}{150e711068d3836697945a5a9d142cbf}
+      \strng{fullhash}{150e711068d3836697945a5a9d142cbf}
+      \strng{bibnamehash}{150e711068d3836697945a5a9d142cbf}
+      \strng{authorbibnamehash}{150e711068d3836697945a5a9d142cbf}
+      \strng{authornamehash}{150e711068d3836697945a5a9d142cbf}
+      \strng{authorfullhash}{150e711068d3836697945a5a9d142cbf}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Nonatomic Discrete Choice Game Model with Taste Heterogeneity of Agents}
+      \field{type}{phdthesis}
+      \field{year}{2018}
+    \endentry
     \entry{asimulationapproachtopredictingcollegeadmissions}{thesis}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=133dcc7bbc5dca4fd0803d1d007a22d8}{%
@@ -1061,6 +1092,69 @@
       \verb{doi}
       \verb https://doi.org/10.1016/0022-0531(85)90106-1
       \endverb
+    \endentry
+    \entry{networkformationgames}{incollection}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=3b65c0aec42ebdc08432a6ece3a86584}{%
+           family={Tardos},
+           familyi={T\bibinitperiod},
+           given={Éva},
+           giveni={É\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fd805155045cf42997165108115d57be}{%
+           family={Wexler},
+           familyi={W\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=dd03ed102537d5040adaf7ede9bad0ec}{%
+           family={Nisan},
+           familyi={N\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod}}}%
+        {{hash=efce6f6d496cdcc1bb07fb47dfecb3aa}{%
+           family={Roughgarden},
+           familyi={R\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3b65c0aec42ebdc08432a6ece3a86584}{%
+           family={Tardos},
+           familyi={T\bibinitperiod},
+           given={Éva},
+           giveni={É\bibinitperiod}}}%
+        {{hash=4391dea254c3bbcaff1fefed241caed0}{%
+           family={Vazirani},
+           familyi={V\bibinitperiod},
+           given={Vijay\bibnamedelima V.},
+           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{28940a10c1e76ead5bcb8c8fd98e24b1}
+      \strng{fullhash}{28940a10c1e76ead5bcb8c8fd98e24b1}
+      \strng{bibnamehash}{28940a10c1e76ead5bcb8c8fd98e24b1}
+      \strng{authorbibnamehash}{28940a10c1e76ead5bcb8c8fd98e24b1}
+      \strng{authornamehash}{28940a10c1e76ead5bcb8c8fd98e24b1}
+      \strng{authorfullhash}{28940a10c1e76ead5bcb8c8fd98e24b1}
+      \strng{editorbibnamehash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \strng{editornamehash}{a461b403bdb909ab1f593fcc8e04d108}
+      \strng{editorfullhash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Algorithmic Game Theory}
+      \field{chapter}{19}
+      \field{title}{Computation of Market Equilibria by Convex Programming}
+      \field{year}{2007}
     \endentry
     \entry{apuretheoryoflocalexpenditures}{article}{}
       \name{author}{1}{}{%

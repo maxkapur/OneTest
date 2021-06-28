@@ -34,7 +34,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3}Single-score model with multinomial logit student preferences}{18}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Model description}{18}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}Model description}{19}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.1.1}Characterization of $\eta $}{19}{subsubsection.3.1.1}%
 \defcounter {refsection}{0}\relax 
@@ -60,14 +60,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.5}A numerical example}{27}{subsection.3.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6}Inverse optimization of single-score admissions markets}{33}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.6}Inverse optimization of single-score admissions markets}{32}{subsection.3.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.6.1}The inverse optimization task and an analytic solution}{33}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.1}The inverse optimization task and an analytic solution}{32}{subsubsection.3.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.6.2}A demonstration using admissions data from American universities}{36}{subsubsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.2}A demonstration using admissions data from American universities}{35}{subsubsection.3.6.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.6.3}The informational quality of $\gamma $}{39}{subsubsection.3.6.3}%
+\contentsline {subsubsection}{\numberline {3.6.3}The informational quality of $\gamma $}{42}{subsubsection.3.6.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Discussion}{43}{section.4}%
+\contentsline {section}{\numberline {4}Discussion}{42}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}References}{46}{section.5}%
+\contentsline {subsection}{\numberline {4.1}Future directions}{43}{subsection.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}References}{45}{section.5}%
