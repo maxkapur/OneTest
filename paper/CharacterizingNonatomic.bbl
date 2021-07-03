@@ -55,6 +55,7 @@
       \field{journaltitle}{American Economic Journal: Microeconomics}
       \field{number}{1}
       \field{title}{Expanding `Choice' in School Choice}
+      \field{titlekey}{expandingchoice}
       \field{volume}{7}
       \field{year}{2015}
       \field{pages}{1\bibrangedash 42}
@@ -93,6 +94,7 @@
       \field{journaltitle}{American Economic Review}
       \field{number}{3}
       \field{title}{School Choice: A Mechanism Design Approach}
+      \field{titlekey}{schoolchoiceamechanismdesignapproach}
       \field{volume}{93}
       \field{year}{2003}
       \field{pages}{729\bibrangedash 47}
@@ -120,6 +122,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{The ACT Profile Report: National}
+      \field{titlekey}{ACTprofilerpt}
       \field{year}{2018}
       \verb{urlraw}
       \verb https://www.act.org/content/dam/act/unsecured/documents/cccr2018/P_99_999999_N_S_N00_ACT-GCPR_National.pdf
@@ -164,6 +167,7 @@
       \field{journaltitle}{Journal of Political Economy}
       \field{number}{1}
       \field{title}{Unbalanced Random Matching Markets: The Stark Effect of Competition}
+      \field{titlekey}{unbalancedrandommatchingmarkets}
       \field{volume}{125}
       \field{year}{2017}
       \field{pages}{69\bibrangedash 98}
@@ -201,6 +205,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Economic Theory}
       \field{title}{What Matters in School Choice Tie-Breaking? How Competition Guides Design}
+      \field{titlekey}{whatmatters}
       \field{volume}{190}
       \field{year}{2020}
       \field{pages}{ article no. 105120}
@@ -239,6 +244,7 @@
       \field{journaltitle}{Journal of Political Economy}
       \field{number}{5}
       \field{title}{A Supply and Demand Framework for Two-Sided Matching Markets}
+      \field{titlekey}{supplydemandfw}
       \field{volume}{124}
       \field{year}{2016}
       \field{pages}{1235\bibrangedash 68}
@@ -289,6 +295,7 @@
       \field{journaltitle}{American Economic Journal: Microeconomics}
       \field{number}{2}
       \field{title}{Marry for What? Caste and Mate Selection in Modern India}
+      \field{titlekey}{marryforwhat}
       \field{volume}{5}
       \field{year}{2013}
       \field{pages}{33\bibrangedash 72}
@@ -321,6 +328,7 @@
       \field{journaltitle}{Management Science}
       \field{number}{8}
       \field{title}{Optimizing for Distributional Goals in School Choice Problems}
+      \field{titlekey}{distributionalgoals}
       \field{volume}{66}
       \field{year}{2020}
       \field{pages}{3657\bibrangedash 76}
@@ -388,8 +396,11 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Algorithmic Game Theory}
+      \field{booktitlekey}{compmkteq}
       \field{chapter}{6}
+      \field{editortype}{compmkteq}
       \field{title}{Computation of Market Equilibria by Convex Programming}
+      \field{titlekey}{compmkteq}
       \field{year}{2007}
     \endentry
     \entry{SATpercentileranks}{book}{}
@@ -411,6 +422,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{SAT Percentile Ranks}
+      \field{titlekey}{SATpercentileranks}
       \field{year}{2015}
       \verb{urlraw}
       \verb https://web.archive.org/web/20160331125512/https://secure-media.collegeboard.org/digitalServices/pdf/sat/sat-percentile-ranks-crit-reading-math-writing-2014.pdf
@@ -449,6 +461,7 @@
       \field{journaltitle}{Journal of Economic Theory}
       \field{number}{2}
       \field{title}{Core Many-to-One Matchings by Fixed-Point Methods}
+      \field{titlekey}{coremanytoonebyfixedpoint}
       \field{volume}{115}
       \field{year}{2004}
       \field{pages}{358\bibrangedash 76}
@@ -487,6 +500,7 @@
       \field{journaltitle}{Journal of Urban Economics}
       \field{number}{1}
       \field{title}{Equilibrium and Local Redistribution in an Urban Economy when Households Differ in Both Preferences and Incomes}
+      \field{titlekey}{equilibriumandlocalredistribution}
       \field{volume}{43}
       \field{year}{1998}
       \field{pages}{23\bibrangedash 51}
@@ -525,6 +539,7 @@
       \field{journaltitle}{American Mathematics Monthly}
       \field{number}{1}
       \field{title}{College Admissions and the Stability of Marriage}
+      \field{titlekey}{galeshapley1962}
       \field{volume}{69}
       \field{year}{1962}
       \field{pages}{9\bibrangedash 15}
@@ -569,6 +584,7 @@
       \field{journaltitle}{American Economic Review}
       \field{number}{1}
       \field{title}{Matching and Sorting in Online Dating}
+      \field{titlekey}{matchingandsortinginonlinedating}
       \field{volume}{100}
       \field{year}{2010}
       \field{pages}{130\bibrangedash 63}
@@ -601,6 +617,7 @@
       \field{journaltitle}{The American Economic Review}
       \field{number}{5}
       \field{title}{Does Competition among Public Schools Benefit Students and Taxpayers?}
+      \field{titlekey}{doescompetitionamongpublicschools}
       \field{volume}{90}
       \field{year}{2000}
       \field{pages}{1209\bibrangedash 38}
@@ -640,6 +657,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Mathematical Optimization and Economic Theory}
+      \field{titlekey}{mathematicaloptandecontheory}
       \field{year}{1971}
     \endentry
     \entry{measurementofstudentability}{article}{}
@@ -672,6 +690,7 @@
       \field{journaltitle}{The Journal of Economic Perspectives}
       \field{number}{3}
       \field{title}{The Measurement of Student Ability in Modern Assessment Systems}
+      \field{titlekey}{measurementofstudentability}
       \field{volume}{30}
       \field{year}{2016}
       \field{pages}{85\bibrangedash 107}
@@ -705,6 +724,7 @@
       \field{journaltitle}{Inside Higher Ed}
       \field{month}{5}
       \field{title}{International Rankings and Conflicts of Interest}
+      \field{titlekey}{intlrankingsandconflicts}
       \field{year}{2021}
       \field{dateera}{ce}
       \verb{urlraw}
@@ -741,6 +761,7 @@
       \field{day}{3}
       \field{month}{6}
       \field{title}{StudentPrefsRevOpt}
+      \field{titlekey}{studentprefsrevopt}
       \field{year}{2021}
       \field{dateera}{ce}
       \verb{urlraw}
@@ -750,7 +771,7 @@
       \verb https://github.com/maxkapur/StudentPrefsRevOpt
       \endverb
     \endentry
-    \entry{고석준thesis}{thesis}{}
+    \entry{ksjthesis}{thesis}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=150e711068d3836697945a5a9d142cbf}{%
            family={Ko},
@@ -778,6 +799,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Nonatomic Discrete Choice Game Model with Taste Heterogeneity of Agents}
+      \field{titlekey}{ksjthesis}
       \field{type}{phdthesis}
       \field{year}{2018}
     \endentry
@@ -809,6 +831,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{A Simulation Approach to Predicting College Admissions}
+      \field{titlekey}{asimulationapproachtopredictingcollegeadmissions}
       \field{year}{2013}
       \verb{urlraw}
       \verb https://escholarship.org/uc/item/8r2695n5
@@ -853,6 +876,7 @@
       \field{journaltitle}{Research in Higher Education}
       \field{number}{1}
       \field{title}{Understanding and Predicting the Yield in the MBA Admissions Process}
+      \field{titlekey}{understandingandpredictingtheyield}
       \field{volume}{20}
       \field{year}{1984}
       \field{pages}{55\bibrangedash 76}
@@ -891,6 +915,7 @@
       \field{journaltitle}{International Journal of Engineering Science}
       \field{number}{10--A}
       \field{title}{Theory of Variational Inequalities with Applications to Problems of Flow Through Porous Media}
+      \field{titlekey}{theoryofvariationalinequalities}
       \field{volume}{18}
       \field{year}{1980}
       \field{pages}{1173\bibrangedash 1284}
@@ -927,6 +952,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{The Economics of Welfare}
+      \field{titlekey}{theeconomicsofwelfare}
       \field{year}{1920}
     \endentry
     \entry{estimatingapplications}{book}{}
@@ -948,6 +974,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Estimating Applications, Transfers and Accepted Offers to the College}
+      \field{titlekey}{estimatingapplications}
       \field{year}{2014}
     \endentry
     \entry{collegeadmissionskaggle}{misc}{}
@@ -977,6 +1004,7 @@
       \field{day}{27}
       \field{month}{11}
       \field{title}{College Admissions: Admission/Class Demographics by University}
+      \field{titlekey}{collegeadmissionskaggle}
       \field{year}{2018}
       \field{dateera}{ce}
       \verb{urlraw}
@@ -1016,6 +1044,7 @@
       \field{journaltitle}{The Annals of Mathematical Statistics}
       \field{number}{3}
       \field{title}{A Stochastic Approximation Method}
+      \field{titlekey}{robbinsmonro}
       \field{volume}{22}
       \field{year}{1951}
       \field{pages}{400\bibrangedash 407}
@@ -1049,6 +1078,7 @@
       \field{journaltitle}{Mathematics of Operations Research}
       \field{number}{4}
       \field{title}{The Economics of Matching: Stability and Incentives}
+      \field{titlekey}{economicsofmatching}
       \field{volume}{7}
       \field{year}{1982}
       \field{pages}{617\bibrangedash 28}
@@ -1085,6 +1115,7 @@
       \field{journaltitle}{Journal of Economic Theory}
       \field{number}{2}
       \field{title}{The College Admissions Problem is not Equivalent to the Marriage Problem}
+      \field{titlekey}{collegeadmissionsisnotmarriage}
       \field{volume}{36}
       \field{year}{1985}
       \field{pages}{277\bibrangedash 88}
@@ -1152,8 +1183,11 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Algorithmic Game Theory}
+      \field{booktitlekey}{networkformationgames}
       \field{chapter}{19}
+      \field{editortype}{networkformationgames}
       \field{title}{Computation of Market Equilibria by Convex Programming}
+      \field{titlekey}{networkformationgames}
       \field{year}{2007}
     \endentry
     \entry{apuretheoryoflocalexpenditures}{article}{}
@@ -1180,6 +1214,7 @@
       \field{journaltitle}{Journal of Political Economy}
       \field{number}{5}
       \field{title}{A Pure Theory of Local Expenditures}
+      \field{titlekey}{apuretheoryoflocalexpenditures}
       \field{volume}{64}
       \field{year}{1956}
       \field{pages}{416\bibrangedash 24}
@@ -1215,6 +1250,7 @@
       \field{journaltitle}{The Review of Economic Studies}
       \field{number}{3}
       \field{title}{Walras' Tâtonnement in the Theory of Exchange}
+      \field{titlekey}{walrastatonnement}
       \field{volume}{27}
       \field{year}{1960}
       \field{pages}{182\bibrangedash 194}
@@ -1247,6 +1283,7 @@
       \field{journaltitle}{Proceedings of the Institute of Civil Engineers}
       \field{number}{1}
       \field{title}{Some Theoretical Aspects of Road Traffic Research}
+      \field{titlekey}{sometheoreticalaspectsofroadtraffic}
       \field{volume}{{Pt. II}}
       \field{year}{1952}
       \field{pages}{325\bibrangedash 78}
