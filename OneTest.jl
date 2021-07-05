@@ -1,7 +1,12 @@
+module OneTest
+
+import Base: length
+import Base: sort
+using Random, Distributions
 using LinearAlgebra
-import Base:length
-import Base:sort
-import DeferredAcceptance:DA
+
+export Market, demand, appeal, demandmatrix, tatonnement, equilibrium, makepreflists
+
 
 """
 Contains static information about a school-choice market.
@@ -213,4 +218,6 @@ function makepreflists(market::Market; n_students::Int=100)
     schoolprefs = repeat(invperm(sortperm(scores, rev=true)), 1, n_schools) 
     
     return studentprefs, schoolprefs, caps, scores
+end
+
 end
