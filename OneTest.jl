@@ -88,13 +88,17 @@ end
 
 
 """
-    appeal(market, cutoffs)
+    appeal(market, cutoffs, sigma=1)
 
-Return appeal of entring class at each school given a set of cutoffs, using
+Return appeal of entering class at each school given a set of cutoffs, using
 multinomial logit choice model with one student profile and a single test score.
+
+Sigma encodes the school's valuation function over the interval `[0, 1]`, namely
+``v(x) = 1 + x^ σ``. 
 """
 function appeal(market      ::Market,
                 cutoffs     ::AbstractArray{<:AbstractFloat, 1};
+                sigma=1     ::Union{AbstractFloat, AbstractArray{<:AbstractFloat, 1}}
                 )::AbstractArray{<:AbstractFloat, 1}
     
     m = length(market)
@@ -106,14 +110,14 @@ function appeal(market      ::Market,
     γ = exp.(market.qualities)
     appeals = zeros(m)
 
-    diff_of_squares = diff([cutoffs[sort_order]; 1] .^ 2)
+    diff_of_squares = diff([cutoffs[sort_order]; 1] .^ (sigma .+ 1))
 
     for c in 1:m, d in c:m     # For each score threshold
         appeals[sort_order[c]] += diff_of_squares[d] *
                                   γ[sort_order[c]] / sum(γ[sort_order[1:d]])
     end
 
-    return appeals / 2
+    return appeals ./ (sigma .+ 1)
 end
 
 
