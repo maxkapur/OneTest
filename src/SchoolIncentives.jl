@@ -1,5 +1,5 @@
-const phi = (-1 + √5)/2
-const omp = (3 - √5)/2 # One minus phi
+const phi = Float16((-1 + √5)/2)
+const omp = Float16((3 - √5)/2) # One minus phi
 
 
 """
