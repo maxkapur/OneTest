@@ -1,0 +1,9 @@
+name = "OneTest"
+uuid = "1ef6a4a2-16d2-490f-ac5f-8848ea0bfd49"
+authors = ["Max Kapur <maxkapur@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"

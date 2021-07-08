@@ -20,7 +20,8 @@ end
 When each school's objective function is ``u_c(p_c) = \\log D_c + σ \\log p_c``,
 gives the gradient of each school's objective with respect to its own cutoff.
 """
-function incentivegradient(mkt::Market, sigma::Union{<:Integer, <:AbstractFloat, Vector{<:AbstractFloat}},
+function incentivegradient(mkt::Market,
+                           sigma::Union{<:Integer, <:AbstractFloat, Vector{<:AbstractFloat}},
                            p::Vector{<:AbstractFloat})
     A, sort_order = demandmatrix(mkt, p)
     
@@ -85,7 +86,98 @@ end
 
 
 """
-    bestresponse(market, sigma, p_curr; nit, golden_nit)
+    brforc(c, sort_order, market, sigma, p)
+
+Computes the best response for school `c`. 
+"""
+@inline function brforc(c::Int,
+                        sort_order::Vector{Int},
+                        market::Market{T},
+                        sigma::T,
+                        p=nothing::Union{Nothing, Array{T, 1}}
+                        )::T where T<:AbstractFloat
+    
+    p = vcat(p, 1.)
+    C = length(market)
+    
+    global_sort_order = copy(sort_order)
+    local_sort_order = vcat(global_sort_order, C+1)
+#     local_sort_order[C+1] = C+1
+    
+    setdiff!(global_sort_order, c)
+    p_star = T(0)
+    U_star = T(0)
+    
+    for i in 1:C
+        if i > 1
+            local_sort_order[i-1] = global_sort_order[i-1]
+        end
+        local_sort_order[i] = c
+        local_sort_order[i+1:end-1] = global_sort_order[i:end]
+        
+        if i==C
+            density_cumsum = 0
+            p̄ = sigma / (1 + sigma) # * (p[C+1] - density_cumsum) = 1
+        else
+            density_cumsum = sum((p[local_sort_order[d+1]] - p[local_sort_order[d]]) /
+                sum(market.gamma[local_sort_order[1:d]])
+                              for d in i+1:C )
+            
+            p̄ = (sigma / (1 + sigma)) * 
+                (p[local_sort_order[i+1]] +
+                    sum(market.gamma[local_sort_order[1:i]]) * density_cumsum)
+        end
+        
+        # clamp
+        lb = i==1 ? 0 : p[local_sort_order[i-1]]
+        ub = p[local_sort_order[i+1]]
+        p̄ = max(lb, min(ub, p̄))
+        D̄ = density_cumsum + (p[local_sort_order[i+1]] - p̄) / 
+                             sum(market.gamma[local_sort_order[1:i]])
+        # gamma[c] * D̄ = demand for c
+        
+        Ū = D̄ * p̄^sigma
+        
+        if Ū > U_star
+            p_star, U_star = p̄, Ū
+        end
+    end
+
+    return p_star
+end
+
+
+"""
+    bestresponse_it(market, sigma, p)
+
+Computes one iteration of best_response dynamics, wherein each school
+updates its cutoff to the value that maximizes its utility on the assumption
+that other schools' cutoffs remain fixed. 
+"""
+function bestresponse_it(market::Market{T},
+                         sigma::Array{T, 1},
+                         p=nothing::Union{Nothing, Array{T, 1}};
+                         verbose=false::Bool
+                         )::Vector{T} where T<:AbstractFloat
+    
+    C = length(market)
+    global_sort_order = sortperm(p)
+    
+    p_star = zeros(T, C)
+    
+    verbose && print("\n  c = ")
+    
+    for c in 1:C
+        verbose && c%10 == 1 && print("$c ")
+        p_star[c] = brforc(c, global_sort_order, market, sigma[c], p)
+    end
+    
+    return p_star
+end
+
+
+"""
+    bestresponse(market, sigma, p_curr; nit=10)
 
 Compute iterates of the market when each school adjusts its cutoff to maximize its
 utility, where each school's utility function is ``u_c(p_c) = \\log D_c + σ \\log p_c``.
@@ -94,7 +186,7 @@ Set `golden_nit=0` to maximize over the set of cutoffs instead of using line sea
 function bestresponse(market::Market{T},
                       sigma::Array{T, 1},
                       p_curr=nothing::Union{Nothing, Array{T, 1}};
-                      nit=10::Int, golden_nit=5::Int, verbose=false
+                      nit=10::Int
                       )::Vector{Vector{T}} where T<:AbstractFloat
     if p_curr===nothing
         p_curr = rand(length(mkt))
@@ -103,33 +195,8 @@ function bestresponse(market::Market{T},
     res = Vector[p_curr]
     
     for j in 1:nit
-        p_next = zeros(length(p_curr))
-        verbose && print("c = ")
-        
-        p_intervals = sort(p_curr)
-        
-        for c in 1:length(market)
-            verbose && print("$c ")
-            
-            @inline function u(x::T)::T
-                pc = p_curr[c]
-                p_curr[c] = x
-                out = utility(market, sigma, p_curr)[c]
-                p_curr[c] = pc
-                return out
-            end
-            
-            if golden_nit == 0
-                p_next[c] = argmax(u, p_intervals)
-            else
-                p_next[c] = argmax(u, goldensection(u, lb, ub, nit=golden_nit)
-                                      for (lb, ub) in zip(vcat(0., p_intervals), vcat(p_intervals, 1.)))
-            end
-        end
-        verbose && println()
-        
-        p_curr = copy(p_next)
-        push!(res, p_curr)
+        p_curr = bestresponse_it(market, sigma, p_curr)
+        push!(res, copy(p_curr))
     end
     
     return res
@@ -140,28 +207,31 @@ end
     secantroot(f, x1, x2, nit)
 
 Use the secant method to find roots of `f` given starting points x1 and x2.
-Assume `f` is vector-valued where each entry of `f` is univariate in the corresponding `x[i]`. 
 """
 function secantroot(f::Function,
-                    x1::Array{T, 1},
-                    x2::Array{T, 1};
-                    nit=25, epsilon=1e-6, verbose=false)::Vector{T} where T<:AbstractFloat
+                    x1::T,
+                    x2::T;
+                    maxit=25, epsilon=Float16(1e-6), verbose=false
+                    )::Tuple{T, T} where T<:AbstractFloat
     i = 0
-    while i < nit && !(x1 == x2)
+    y1, y2 = f(x1), f(x2)
+    
+    while i < maxit && abs(y2) > epsilon && !(x1 == x2)
         i += 1
-        verbose && @show i
-        y1, y2 = f(x1), f(x2)
-        x3 = copy(x2)
-        for (i, dy) in enumerate(y2 .- y1)
-            # Prevent NaN if we hit the zero exactly
-            if dy != 0
-                x3[i] = max.(0+epsilon, x1[i] - y1[i] * (x2[i] - x1[i]) / dy)
-            end
+        x3 = x2
+        
+        # Prevent NaN if we hit the zero exactly
+        if (dy = y2 - y1) != 0
+            x3 = max(0 + epsilon, x1 - y1 * (x2 - x1) / dy)
         end
+        
         x1, x2 = x2, x3
+        y1, y2 = y2, f(x3)
     end
     
-    return (x1 + x2) ./ 2
+    verbose && println("  Iterations in secant: $i")
+    
+    return x2, y2
 end
 
 
@@ -170,27 +240,41 @@ end
 
 Estimate the selectivity parameter ``σ`` for each school such that the given cutoffs are 
 an equilibrium, when school's objective functions are ``u_c(p_c) = \\log D_c + σ \\log p_c``.
+Returns the vector of ``σ``-values and an error vector.
 """
-function sigmainvopt(market::Market{T}, p::Array{T, 1};
-                     secant_nit=0::Int, golden_nit=0, verbose=false) where T<:AbstractFloat
-    if secant_nit == 0
-        secant_nit = length(market)
+function sigmainvopt(market::Market{T},
+                     p::Array{T, 1};
+                     x1=nothing::Union{Nothing, Array{T, 1}},
+                     x2=nothing::Union{Nothing, Array{T, 1}}, 
+                     maxit=25::Int, epsilon=Float16(1e-5),
+                     verbose=false)::Tuple{Vector{T}, Vector{T}} where T<:AbstractFloat
+    
+    if x1 === nothing
+        x1 = fill(T(1e-1), length(market))
     end
     
-    x1 = fill(T(1e-1), length(market))
-    x2 = fill(T(1e0), length(market))
-    
-    @inline function f(x::Vector{T})::Vector{T}
-        return p - bestresponse(market, x, p; nit=1, golden_nit=golden_nit, verbose=verbose)[end]
+    if x2 === nothing
+        x2 = fill(T(2e-1), length(market))
     end
     
-    res = secantroot(f, x1, x2, nit=secant_nit, verbose=verbose)
+    global_sort_order = sortperm(p)
     
-    for (i, pc) in enumerate(p)
+    res = zeros(T, length(market))
+    err = zeros(T, length(market))
+    
+    for (c, pc) in enumerate(p)
+        verbose && @show c
         if pc == 0
-            res[i] = 0.
+            res[c] = 0
+        else
+            function f(x::T)::T
+                return brforc(c, global_sort_order, market, x, p) - p[c]
+            end
+            
+            res[c], err[c] = secantroot(f, x1[c], x2[c];
+                                        maxit=maxit, epsilon=epsilon, verbose=verbose)
         end
     end
     
-    return res
+    return res, err
 end
