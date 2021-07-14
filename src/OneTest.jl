@@ -6,7 +6,7 @@ using Random, Distributions
 using LinearAlgebra
 
 export Market, demand, appeal, demandmatrix, tatonnement, equilibrium, makepreflists
-export utility, incentivegradient, localequilibriumsearch, bestresponse_it, bestresponse, sigmainvopt
+export utility, incentivegradient, localequilibriumsearch, brforc, bestresponse_it, bestresponse, sigmainvopt
 
 
 """

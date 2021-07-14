@@ -62,7 +62,7 @@ end
     goldensection(f, lb, ub, nit)
 
 Computes the maximizer of `f` on the interval `(lb, ub)` by the method of golden
-sections. Uses `nit` iterations.
+sections. Uses `nit` iterations. Currently unused.
 """
 function goldensection(f::Function,
                        lb::T,
@@ -86,15 +86,18 @@ end
 
 
 """
-    brforc(c, sort_order, market, sigma, p)
+    brforc(c, sort_order, market, sigma, p; heuristic=false)
 
-Computes the best response for school `c`. 
+Computes the best response for school `c`. If `heuristic=true`, uses the
+"cloud hopping" heuristic, which reduces the computation time if the local optima
+form a discrete quasiconvex function. 
 """
 @inline function brforc(c::Int,
                         sort_order::Vector{Int},
                         market::Market{T},
                         sigma::T,
-                        p=nothing::Union{Nothing, Array{T, 1}}
+                        p=nothing::Union{Nothing, Array{T, 1}};
+                        heuristic=false::Bool
                         )::T where T<:AbstractFloat
     
     p = vcat(p, 1.)
@@ -102,62 +105,138 @@ Computes the best response for school `c`.
     
     global_sort_order = copy(sort_order)
     local_sort_order = vcat(global_sort_order, C+1)
-#     local_sort_order[C+1] = C+1
     
     setdiff!(global_sort_order, c)
-    p_star = T(0)
-    U_star = T(0)
     
-    for i in 1:C
-        if i > 1
-            local_sort_order[i-1] = global_sort_order[i-1]
-        end
-        local_sort_order[i] = c
-        local_sort_order[i+1:end-1] = global_sort_order[i:end]
-        
-        if i==C
-            density_cumsum = 0
-            p̄ = sigma / (1 + sigma) # * (p[C+1] - density_cumsum) = 1
-        else
-            density_cumsum = sum((p[local_sort_order[d+1]] - p[local_sort_order[d]]) /
-                sum(market.gamma[local_sort_order[1:d]])
-                              for d in i+1:C )
-            
-            p̄ = (sigma / (1 + sigma)) * 
-                (p[local_sort_order[i+1]] +
-                    sum(market.gamma[local_sort_order[1:i]]) * density_cumsum)
-        end
-        
-        # clamp
-        lb = i==1 ? 0 : p[local_sort_order[i-1]]
-        ub = p[local_sort_order[i+1]]
-        p̄ = max(lb, min(ub, p̄))
-        D̄ = density_cumsum + (p[local_sort_order[i+1]] - p̄) / 
-                             sum(market.gamma[local_sort_order[1:i]])
-        # gamma[c] * D̄ = demand for c
-        
-        Ū = D̄ * p̄^sigma
-        
-        if Ū > U_star
-            p_star, U_star = p̄, Ū
-        end
-    end
+    if heuristic
+        @inline function fetch_̄p(i::Int)::Tuple{T, T}
+            if i > 1
+                local_sort_order[begin:i-1] = global_sort_order[begin:i-1]
+            end
+            local_sort_order[i] = c
+            local_sort_order[i+1:end-1] = global_sort_order[i:end]
 
-    return p_star
+            if i==C
+                density_cumsum = 0
+                p̄ = sigma / (1 + sigma) # * (p[C+1] - density_cumsum) = 1
+            else
+                density_cumsum = sum((p[local_sort_order[d+1]] - p[local_sort_order[d]]) /
+                                     sum(market.gamma[local_sort_order[1:d]])
+                                     for d in i+1:C)
+
+                p̄ = (sigma / (1 + sigma)) * 
+                    (p[local_sort_order[i+1]] +
+                        sum(market.gamma[local_sort_order[1:i]]) * density_cumsum)
+            end
+
+            # clamp
+            lb = i==1 ? 0 : p[local_sort_order[i-1]]
+            ub = p[local_sort_order[i+1]]
+            p̄ = max(lb, min(ub, p̄))
+            D̄ = density_cumsum + (p[local_sort_order[i+1]] - p̄) / 
+                                 sum(market.gamma[local_sort_order[1:i]])
+            # gamma[c] * D̄ = demand for c
+
+            Ū = D̄ * p̄^sigma
+            
+            return p̄, Ū
+        end
+        
+        
+        p̄_vec = zeros(T, C+1)
+        Ū_vec = fill(T(Inf), C+1)
+        Ū_vec[C+1] = 0
+
+        h_lb, h_ub = 1, C
+        h = 0
+
+        it = 0
+        while h_ub - h_lb ≥ 1 && it < 250
+            it += 1
+            h = h_ub + (h_lb - h_ub) ÷ 2
+
+            if h != 1 && Ū_vec[h-1]==Inf
+                p̄_vec[h-1], Ū_vec[h-1] = fetch_̄p(h-1)
+            end
+                
+            if Ū_vec[h]==Inf
+                p̄_vec[h], Ū_vec[h] = fetch_̄p(h)
+            end
+
+            if Ū_vec[h+1]==Inf
+                p̄_vec[h+1], Ū_vec[h+1] = fetch_̄p(h+1)
+            end
+
+            if Ū_vec[h+1] - Ū_vec[h] ≤ 0
+                if h == 1 || Ū_vec[h] - Ū_vec[h-1] > 0
+                    h_lb = h
+                end
+                h_ub = h
+            else
+                h_lb = h
+            end    
+        end
+        
+        return p̄_vec[h]
+
+    else   # Search all indices
+        p_star = T(0)
+        U_star = T(0)
+        
+        for i in 1:C
+            if i > 1
+                local_sort_order[i-1] = global_sort_order[i-1]
+            end
+            local_sort_order[i] = c
+            local_sort_order[i+1:end-1] = global_sort_order[i:end]
+
+            if i==C
+                density_cumsum = 0
+                p̄ = sigma / (1 + sigma) # * (p[C+1] - density_cumsum) = 1
+            else
+                density_cumsum = sum((p[local_sort_order[d+1]] - p[local_sort_order[d]]) /
+                                     sum(market.gamma[local_sort_order[1:d]])
+                                     for d in i+1:C)
+
+                p̄ = (sigma / (1 + sigma)) * 
+                    (p[local_sort_order[i+1]] +
+                        sum(market.gamma[local_sort_order[1:i]]) * density_cumsum)
+            end
+
+            # clamp
+            lb = i==1 ? 0 : p[local_sort_order[i-1]]
+            ub = p[local_sort_order[i+1]]
+            p̄ = max(lb, min(ub, p̄))
+            D̄ = density_cumsum + (p[local_sort_order[i+1]] - p̄) / 
+                                 sum(market.gamma[local_sort_order[1:i]])
+            # gamma[c] * D̄ = demand for c
+
+            Ū = D̄ * p̄^sigma
+
+            if Ū > U_star
+                p_star, U_star = p̄, Ū
+            end
+        end
+
+        return p_star
+    end
 end
 
 
 """
-    bestresponse_it(market, sigma, p)
+    bestresponse_it(market, sigma, p; verbose=false, heuristic=false)
 
 Computes one iteration of best_response dynamics, wherein each school
 updates its cutoff to the value that maximizes its utility on the assumption
-that other schools' cutoffs remain fixed. 
+that other schools' cutoffs remain fixed. If `heuristic=true`, use the
+"cloud hopping" heuristic, which reduces the computation time if the local optima form a discrete quasiconvex function (as is usually true when the number)
+of schools is larger than about 10). 
 """
 function bestresponse_it(market::Market{T},
                          sigma::Array{T, 1},
                          p=nothing::Union{Nothing, Array{T, 1}};
-                         verbose=false::Bool
+                         verbose=false::Bool,
+                         heuristic=false::Bool
                          )::Vector{T} where T<:AbstractFloat
     
     C = length(market)
@@ -169,7 +248,7 @@ function bestresponse_it(market::Market{T},
     
     for c in 1:C
         verbose && c%10 == 1 && print("$c ")
-        p_star[c] = brforc(c, global_sort_order, market, sigma[c], p)
+        p_star[c] = brforc(c, global_sort_order, market, sigma[c], p; heuristic=heuristic)
     end
     
     return p_star
@@ -181,7 +260,6 @@ end
 
 Compute iterates of the market when each school adjusts its cutoff to maximize its
 utility, where each school's utility function is ``u_c(p_c) = \\log D_c + σ \\log p_c``.
-Set `golden_nit=0` to maximize over the set of cutoffs instead of using line search.
 """
 function bestresponse(market::Market{T},
                       sigma::Array{T, 1},
@@ -236,18 +314,24 @@ end
 
 
 """
-    sigmainvopt(market, p, secant_nit, golden_nit)
+    sigmainvopt(market, p; x1, x2, maxit=25, epsilon=1e-5, verbose=false, heuristic=false)
 
 Estimate the selectivity parameter ``σ`` for each school such that the given cutoffs are 
 an equilibrium, when school's objective functions are ``u_c(p_c) = \\log D_c + σ \\log p_c``.
 Returns the vector of ``σ``-values and an error vector.
+
+If `heuristic=true`, uses the
+"cloud hopping" heuristic (see `?bestresponse_it`). 
 """
 function sigmainvopt(market::Market{T},
                      p::Array{T, 1};
                      x1=nothing::Union{Nothing, Array{T, 1}},
                      x2=nothing::Union{Nothing, Array{T, 1}}, 
-                     maxit=25::Int, epsilon=Float16(1e-5),
-                     verbose=false)::Tuple{Vector{T}, Vector{T}} where T<:AbstractFloat
+                     maxit=25::Int,
+                     epsilon=Float16(1e-5),
+                     verbose=false::Bool,
+                     heuristic=false::Bool
+                     )::Tuple{Vector{T}, Vector{T}} where T<:AbstractFloat
     
     if x1 === nothing
         x1 = fill(T(1e-1), length(market))
@@ -268,11 +352,14 @@ function sigmainvopt(market::Market{T},
             res[c] = 0
         else
             function f(x::T)::T
-                return brforc(c, global_sort_order, market, x, p) - p[c]
+                return brforc(c, global_sort_order, market, x, p,
+                              heuristic=heuristic) - p[c]
             end
             
             res[c], err[c] = secantroot(f, x1[c], x2[c];
-                                        maxit=maxit, epsilon=epsilon, verbose=verbose)
+                                        maxit=maxit,
+                                        epsilon=epsilon,
+                                        verbose=verbose)
         end
     end
     
