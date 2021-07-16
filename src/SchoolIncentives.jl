@@ -108,6 +108,8 @@ form a discrete quasiconvex function.
     
     setdiff!(global_sort_order, c)
     
+    gamma_cumsum = cumsum(market.gamma[global_sort_order])
+    
     if heuristic
         @inline function fetch_̄p(i::Int)::Tuple{T, T}
             if i > 1
@@ -121,12 +123,12 @@ form a discrete quasiconvex function.
                 p̄ = sigma / (1 + sigma) # * (p[C+1] - density_cumsum) = 1
             else
                 density_cumsum = sum((p[local_sort_order[d+1]] - p[local_sort_order[d]]) /
-                                     sum(market.gamma[local_sort_order[1:d]])
+                                     (market.gamma[c] + get(gamma_cumsum, d-1, 0))
                                      for d in i+1:C)
 
                 p̄ = (sigma / (1 + sigma)) * 
                     (p[local_sort_order[i+1]] +
-                        sum(market.gamma[local_sort_order[1:i]]) * density_cumsum)
+                        (market.gamma[c] + get(gamma_cumsum, i-1, 0)) * density_cumsum)
             end
 
             # clamp
@@ -151,13 +153,9 @@ form a discrete quasiconvex function.
         h = 0
 
         it = 0
-        while h_ub - h_lb ≥ 1 && it < 250
+        while h_ub - h_lb ≥ 1 && it < 1000
             it += 1
             h = h_ub + (h_lb - h_ub) ÷ 2
-
-            if h != 1 && Ū_vec[h-1]==Inf
-                p̄_vec[h-1], Ū_vec[h-1] = fetch_̄p(h-1)
-            end
                 
             if Ū_vec[h]==Inf
                 p̄_vec[h], Ū_vec[h] = fetch_̄p(h)
@@ -168,8 +166,18 @@ form a discrete quasiconvex function.
             end
 
             if Ū_vec[h+1] - Ū_vec[h] ≤ 0
-                if h == 1 || Ū_vec[h] - Ū_vec[h-1] > 0
+                if h == 1
+                    # Descending at first point: Optimal
                     h_lb = h
+                else
+                    # Check the previous index
+                    if Ū_vec[h-1]==Inf
+                        p̄_vec[h-1], Ū_vec[h-1] = fetch_̄p(h-1)
+                    end 
+                    if Ū_vec[h] - Ū_vec[h-1] > 0
+                        # Found low-high-low pattern: Optimal
+                        h_lb = h
+                    end
                 end
                 h_ub = h
             else
@@ -195,12 +203,12 @@ form a discrete quasiconvex function.
                 p̄ = sigma / (1 + sigma) # * (p[C+1] - density_cumsum) = 1
             else
                 density_cumsum = sum((p[local_sort_order[d+1]] - p[local_sort_order[d]]) /
-                                     sum(market.gamma[local_sort_order[1:d]])
+                                     (market.gamma[c] + get(gamma_cumsum, d-1, 0))
                                      for d in i+1:C)
 
                 p̄ = (sigma / (1 + sigma)) * 
                     (p[local_sort_order[i+1]] +
-                        sum(market.gamma[local_sort_order[1:i]]) * density_cumsum)
+                        (market.gamma[c] + get(gamma_cumsum, i-1, 0)) * density_cumsum)
             end
 
             # clamp
@@ -314,6 +322,41 @@ end
 
 
 """
+    bisection(f, x1, x2, nit)
+
+Use the bisection method to find roots of an ascending function `f`
+given starting points `x1` and `x2`. Requires `x1` and `x2` to bracket the interval. 
+"""
+function bisection(f::Function,
+                   x1::T,
+                   x2::T;
+                   maxit=25, epsilon=Float16(1e-6), verbose=false
+                   )::Tuple{T, T} where T<:AbstractFloat
+    i = 0
+    y1, y2 = f(x1), f(x2)
+    
+    while i < maxit && abs(y2) > epsilon && !(x1 == x2)
+        i += 1
+        x3 = x1 + (x2 - x1)/2
+        
+        if (y3 = f(x3)) < 0
+            # New LB; keep UB. 
+            x1, x2 = x3, y2
+            y1, y2 = y3, y2
+        else
+            # New UB; keep LB. 
+            x1, x2 = x1, y3
+            y1, y2 = y1, y3
+        end 
+    end
+    
+    verbose && println("  Iterations in bisection: $i")
+    
+    return x2, y2
+end
+
+
+"""
     sigmainvopt(market, p; x1, x2, maxit=25, epsilon=1e-5, verbose=false, heuristic=false)
 
 Estimate the selectivity parameter ``σ`` for each school such that the given cutoffs are 
@@ -338,7 +381,7 @@ function sigmainvopt(market::Market{T},
     end
     
     if x2 === nothing
-        x2 = fill(T(2e-1), length(market))
+        x2 = fill(T(50), length(market))
     end
     
     global_sort_order = sortperm(p)
@@ -356,7 +399,7 @@ function sigmainvopt(market::Market{T},
                               heuristic=heuristic) - p[c]
             end
             
-            res[c], err[c] = secantroot(f, x1[c], x2[c];
+            res[c], err[c] = bisection(f, x1[c], x2[c];
                                         maxit=maxit,
                                         epsilon=epsilon,
                                         verbose=verbose)
