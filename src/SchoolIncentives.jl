@@ -96,7 +96,7 @@ form a discrete quasiconvex function.
                         sort_order::Vector{Int},
                         market::Market{T},
                         sigma::T,
-                        p=nothing::Union{Nothing, Array{T, 1}};
+                        p::Vector{T};
                         heuristic=false::Bool
                         )::T where T<:AbstractFloat
     
@@ -324,35 +324,52 @@ end
 """
     bisection(f, x1, x2, nit)
 
-Use the bisection method to find roots of an ascending function `f`
-given starting points `x1` and `x2`. Requires `x1` and `x2` to bracket the interval. 
+Use the bisection method to find roots of `f` given starting points `x1` and `x2`. `x1` must be
+a lower bound; `x2` will be doubled until an upper bound is discovered.
 """
 function bisection(f::Function,
-                   x1::T,
-                   x2::T;
-                   maxit=25, epsilon=Float16(1e-6), verbose=false
-                   )::Tuple{T, T} where T<:AbstractFloat
-    i = 0
+                    x1::T,
+                    x2::T;
+                    maxit=25,
+                    epsilon=Float16(1e-6),
+                    verbose=false
+                    )::Tuple{T, T} where T<:AbstractFloat
+
+    max_ub_search = 25
     y1, y2 = f(x1), f(x2)
     
+    h = 0
+    while y2 < 0 && h < max_ub_search
+        h += 1
+        x2 *= 2
+        y2 = f(x2)
+    end
+    
+    h == max_ub_search ? @warn("Failed to find an upper bound after $h doublings") : nothing
+    
+    x3, y3 = x2, y2
+    
+    i = 0
     while i < maxit && abs(y2) > epsilon && !(x1 == x2)
         i += 1
-        x3 = x1 + (x2 - x1)/2
         
-        if (y3 = f(x3)) < 0
+        x3 = (x1 + x2)/2
+        y3 = f(x3)
+        
+        if y3 < 0
             # New LB; keep UB. 
-            x1, x2 = x3, y2
+            x1, x2 = x3, x2
             y1, y2 = y3, y2
         else
             # New UB; keep LB. 
-            x1, x2 = x1, y3
+            x1, x2 = x1, x3
             y1, y2 = y1, y3
-        end 
+        end
     end
     
     verbose && println("  Iterations in bisection: $i")
     
-    return x2, y2
+    return x3, y3
 end
 
 
@@ -370,18 +387,18 @@ function sigmainvopt(market::Market{T},
                      p::Array{T, 1};
                      x1=nothing::Union{Nothing, Array{T, 1}},
                      x2=nothing::Union{Nothing, Array{T, 1}}, 
-                     maxit=25::Int,
+                     maxit=10::Int,
                      epsilon=Float16(1e-5),
                      verbose=false::Bool,
                      heuristic=false::Bool
                      )::Tuple{Vector{T}, Vector{T}} where T<:AbstractFloat
     
     if x1 === nothing
-        x1 = fill(T(1e-1), length(market))
+        x1 = fill(T(0), length(market))
     end
     
     if x2 === nothing
-        x2 = fill(T(50), length(market))
+        x2 = fill(T(2e-1), length(market))
     end
     
     global_sort_order = sortperm(p)
@@ -400,9 +417,9 @@ function sigmainvopt(market::Market{T},
             end
             
             res[c], err[c] = bisection(f, x1[c], x2[c];
-                                        maxit=maxit,
-                                        epsilon=epsilon,
-                                        verbose=verbose)
+                                       maxit=maxit,
+                                       epsilon=epsilon,
+                                       verbose=verbose)
         end
     end
     
