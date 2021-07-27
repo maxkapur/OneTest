@@ -407,7 +407,7 @@ function sigmainvopt(market::Market{T},
     err = zeros(T, length(market))
     
     for (c, pc) in enumerate(p)
-        verbose && @show c
+        verbose && c % 100 == 1 && @show c
         if pc == 0
             res[c] = 0
         else
@@ -419,9 +419,100 @@ function sigmainvopt(market::Market{T},
             res[c], err[c] = bisection(f, x1[c], x2[c];
                                        maxit=maxit,
                                        epsilon=epsilon,
-                                       verbose=verbose)
+                                       verbose=verbose && c % 100 == 1)
         end
     end
     
     return res, err
+end
+
+
+"""
+    sigmainvopt_disequilibrium(market, p, p_br; x1, x2, maxit=25, epsilon=1e-5, verbose=false, heuristic=false)
+
+Estimate the selectivity parameter ``σ`` for each school `c` such that when other schools cutoffs are `p`,
+`p_br[c]` gives `c`'s best response. Assume school's objective functions are ``u_c(p_c) = \\log D_c + σ \\log p_c``.
+Returns the vector of ``σ``-values and an error vector.
+
+If `heuristic=true`, uses the "cloud hopping" heuristic (see `?bestresponse_it`). 
+"""
+function sigmainvopt_disequilibrium(market::Market{T},
+                                    p::Array{T, 1},
+                                    p_br::Array{T, 1};
+                                    x1=nothing::Union{Nothing, Array{T, 1}},
+                                    x2=nothing::Union{Nothing, Array{T, 1}}, 
+                                    maxit=10::Int,
+                                    epsilon=Float16(1e-5),
+                                    verbose=false::Bool,
+                                    heuristic=false::Bool
+                                    )::Tuple{Vector{T}, Vector{T}} where T<:AbstractFloat
+    
+    if x1 === nothing
+        x1 = fill(T(0), length(market))
+    end
+    
+    if x2 === nothing
+        x2 = fill(T(2e-1), length(market))
+    end
+    
+    global_sort_order = sortperm(p)
+    
+    res = zeros(T, length(market))
+    err = zeros(T, length(market))
+    
+    for (c, pc) in enumerate(p)
+        verbose && c % 100 == 1 && @show c
+        if pc == 0
+            res[c] = 0
+        else
+            function f(x::T)::T
+                return brforc(c, global_sort_order, market, x, p,
+                              heuristic=heuristic) - p_br[c]
+            end
+            
+            res[c], err[c] = bisection(f, x1[c], x2[c];
+                                       maxit=maxit,
+                                       epsilon=epsilon,
+                                       verbose=verbose && c % 100 == 1)
+        end
+    end
+    
+    return res, err
+end
+
+
+"""
+    gammainvopt(demand, cutoff)
+
+Compute the preferability parameter ``γ`` for each school `c` such that the given demand results
+from the given cutoffs. 
+"""
+function gammainvopt(demand::Vector{U},
+                     cutoff::Vector{T})::Vector{T} where U<:Real where T<:Real
+    (m, ) = size(cutoff)
+    @assert size(cutoff) == size(demand) DimensionMismatch("cutoff and demand must have same length")
+
+    total_students = sum(demand)
+    sort_order = sortperm(cutoff)
+    
+    p_diff = diff(vcat(cutoff[sort_order], 1))
+    pdmon = p_diff[m]
+    
+    γ_expl = similar(cutoff)
+    γ_expl[sort_order[m]] = demand[sort_order[m]] / pdmon
+
+    γ_cumsum = similar(cutoff)
+    γ_cumsum[sort_order[m]] = γ_expl[sort_order[m]]
+    
+    for c in (m-1):-1:1
+        # I think there is a way to reduce this to O(n) by tracking the inner sum as you go.
+        denom = pdmon + total_students *
+                sum(p_diff[d] / (total_students - γ_cumsum[sort_order[d+1]])
+                    for d in c:m-1)
+
+        γ_expl[sort_order[c]] = demand[sort_order[c]] / denom
+        γ_cumsum[sort_order[c]] = γ_cumsum[sort_order[c+1]] + γ_expl[sort_order[c]]
+    end
+
+    return γ_expl ./ total_students
 end

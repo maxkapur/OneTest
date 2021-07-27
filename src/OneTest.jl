@@ -5,8 +5,26 @@ import Base: sort
 using Random, Distributions
 using LinearAlgebra
 
-export Market, demand, appeal, demandmatrix, tatonnement, equilibrium, makepreflists
-export utility, incentivegradient, localequilibriumsearch, brforc, bestresponse_it, bestresponse, sigmainvopt
+
+export 
+    Market,
+    demand,
+    appeal,
+    demandmatrix,
+    tatonnement,
+    equilibrium,
+    makepreflists
+
+export
+    utility,
+    incentivegradient,
+    localequilibriumsearch,
+    brforc,
+    bestresponse_it,
+    bestresponse,
+    sigmainvopt,
+    sigmainvopt_disequilibrium,
+    gammainvopt
 
 
 """
@@ -23,6 +41,8 @@ length(market::Market) = length(market.qualities)
 
 
 """
+    sort(market)
+
 Sort the market by gamma over capacities, i.e. in 
 ascending order of selectivity at equilibrium.
 """
