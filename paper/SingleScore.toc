@@ -20,26 +20,26 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Comparative statics under Walrasian equilibrium}{11}{section.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}Quality effects at equilibrium}{11}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.1}Quality effects at equilibrium}{12}{subsection.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Capacity effects}{12}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.2}Capacity effects}{13}{subsection.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Nash equilibrium}{12}{section.6}%
+\contentsline {section}{\numberline {6}Nash equilibrium}{13}{section.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Solving the best-response problem}{13}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.1}Solving the best-response problem}{14}{subsection.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}A numerical example}{14}{section.7}%
+\contentsline {section}{\numberline {7}A numerical example}{15}{section.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Inverse optimization of single-score admissions markets}{18}{section.8}%
+\contentsline {section}{\numberline {8}Inverse optimization of single-score admissions markets}{19}{section.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}The inverse optimization task and an analytic solution}{18}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.1}The inverse optimization task and an analytic solution}{19}{subsection.8.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}A demonstration using admissions data from American universities}{21}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.2}A demonstration using admissions data from American universities}{22}{subsection.8.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}The informational quality of $\gamma $, and the bias in (true) yield}{28}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.3}The informational quality of $\gamma $, and the bias in (true) yield}{25}{subsection.8.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Discussion}{28}{section.9}%
+\contentsline {section}{\numberline {9}Discussion}{30}{section.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1}Future directions}{29}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.1}Future directions}{30}{subsection.9.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}References}{31}{section.10}%
+\contentsline {section}{\numberline {10}References}{32}{section.10}%

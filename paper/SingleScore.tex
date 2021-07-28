@@ -68,7 +68,7 @@ The body of this article is divided into two sections. The first (\S\ref{interpe
 In the second section (\S\ref{singlescoremodel}), I apply the results above to a parameterized admissions market that I call the single-score market with multinomial logit student preferences. This model is chosen for its computational tractability. Unlike the nonatomic markets theorized by previous work, in which computing the equilibrium requires evaluating a demand function that is exponentially complex in the number of schools, the model considered here admits a piecewise linear demand function, and each school's cutoff at equilibrium can be expressed as the solution of a triangular linear system. In this context, comparative statics at the equilibrium can be computed analytically. I also provide an inverse optimization procedure that computes the preferability parameter for each school given the cutoff and demand vectors, and I apply the procedure to a dataset of 677 American colleges. Despite the noisy input data and the model's intrinsic simplicity, this procedure yields a familiar ranking of top universities, and does so without using the costly opinion surveys or data on alumni outcomes that newspapers traditionally use to rank schools. Furthermore, it provides an estimate of each school's demand curve, which could be a useful supplement to the logistic regression models that program planners currently use to predict their admissions yield.
 
 \section{Model description} \label{singlescoremodel}
-This article considers a single-score admissions market with multinomial logit student preferences. The market consists of a finite set of schools $C = \{ 1\dots |C| \}$ and continuum of students having unit mass and Lebesgue measure $\eta$.
+This article considers an admissions market with \underline{m}ultino\underline{m}ial logit student \underline{p}references and \underline{h}omogeneous \underline{s}coring (hereafter Memphis). The market consists of a finite set of schools $C = \{ 1\dots |C| \}$ and continuum of students having unit mass and Lebesgue measure $\eta$.
 
 The market is characterized by four parameters:
 \begin{enumerate}
@@ -94,7 +94,7 @@ Observe that $D_c$ is determined entirely by $p$ and $\gamma$. $D_c$ is weakly d
 In summary, the market is characterized
 
 \subsection{Demand function}
-Let us determine a closed-form expression for the demand function $D(\gamma, p)$ for the single-score model with MNL student preferences. First, sort the schools by cutoff, so that
+Let us determine a closed-form expression for the demand function $D(\gamma, p)$ for a Memphis market. First, sort the schools by cutoff, so that
 \[p_1 \leq p_2 \leq \dots \leq p_{|C|}\]
 Ties may be broken arbitrarily, as discussed below. Since getting into school $c$ implies getting into any school whose cutoff is less than or equal to $p_c$, there are only $|C| + 1$ possible consideration sets for each student, as follow.
 \begin{center}
@@ -216,9 +216,22 @@ D_c &= q_c, \quad \forall c: p_c > 0 \label{stabilitycondition}
 The first condition, called the \emph{capacity condition,} says that no school's demand exceeds its capacity. The second, called the \emph{stability condition,} says that if a school is rejecting students, it must be at full capacity.
 \end{definition}
 
-As argued by Azevedo and Leshno \parencite*{supplydemandfw}, the Walrasian equilibrium of a decentralized market is equivalent to the stable assignment produced by centralized school-choice mechanisms in the deferred acceptance family. In fact, deferred acceptance mechanisms can be interpreted as t\^{a}tonnement processes, a price-update rule known to converge to Walrasian equilibrium under certain conditions on the demand function \parencites[][\S2.4]{characterizingnonatomic}[][]{walrastatonnement}. 
+As argued by Azevedo and Leshno \parencite*{supplydemandfw}, the Walrasian equilibrium of a decentralized market is equivalent to the stable assignment produced by centralized school-choice mechanisms in the deferred acceptance family. In fact, deferred acceptance mechanisms can be interpreted as t\^{a}tonnement processes, a price-update rule known to converge to Walrasian equilibrium under certain conditions on the demand function \parencites[][\S2.4]{characterizingnonatomic}[][]{walrastatonnement}.
 
-In the market under consideration, the equilibrium conditions are as follows:
+The connection between stable assignments and Walrasian equilibria yields a sufficient condition for the uniqueness of the equilibrium. The theorem below follows from the rural hospitals theorem (RHT) of Roth \parencite*[][]{ruralhospitalstheorem}, which states the demand for each school is the same in any stable matching. 
+
+\begin{theorem} \label{equilibriumuniquenesstheorem}
+In any admissions market for which the demand function for school $D_c$ is strictly decreasing in $p_c$ and strictly increasing in $p_{c'}$ for $c' \neq c$, the Walrasian equilibrium is unique.
+\end{theorem} 
+
+\begin{proof}
+To get a contradiction, suppose that both $p$ and $\pi$ are equilibria and that for some school $c$, $p_c < \pi_c$. By the RHT, $D_c(p_c; p_{c'}) = D_c(\pi_c; \pi_{c'})$. On the other hand, by the gradient constraint,\[D_c(p_c; p_{c'}) > D_c(\pi_c; p_{c'})\]
+For the RHT to hold, there must be some school $d \neq c$ for which $p_d < \pi_d$. In the two-school case, this concludes the proof, because if both schools increase their cutoffs, then the set of unmatched students can only grow, which contradicts the RHT.
+
+In a market with more than two schools, the proof continues by induction. Since both $c$ and $d$ increased their cutoffs between $p$ and $\pi$, then for their demands to remain the same, there must be a third school $e$ that also increased its cutoff. By repeating this logic, we see that \emph{all} schools' cutoffs must increase, contradicting the RHT again. We conclude that $p = \pi$.
+\end{proof}
+
+Under Memphis, the equilibrium conditions are as follows:
 \begin{gather} \label{ssmnleqconds}
 \begin{aligned}
 D = A p + \frac{1}{\Gamma}\gamma &\leq q \\
@@ -229,18 +242,22 @@ D_c = A_{c.} p + \frac{1}{\Gamma} \gamma_c &= q_c, \quad \forall c: p_c > 0
 As I will now show, it turns out that at equilibrium, the order of the school cutoffs is determined by the order of the \emph{competitiveness ratios} $\gamma_c / q_c$. This fact enables us to compute the equilibrium directly by solving a linear system. Below, the positive part operator $x^+$ works elementwise on its argument $x$. That is, $(x^+)_i \equiv \max\{0, x_i\}$.
 
 \begin{theorem} \label{cutoffsortationthm}
-Index the cutoffs such that $\frac{\gamma_1}{q_1} \leq \dots \leq \frac{\gamma_{|C|}}{q_{|C|}}$. Then $\hat p_1 \leq \cdots \leq \hat p_{|C|}$, and
+Index the cutoffs such that $\frac{\gamma_1}{q_1} \leq \dots \leq \frac{\gamma_{|C|}}{q_{|C|}}$. Then % $\hat p_1 \leq \cdots \leq \hat p_{|C|}$, and
 \[\hat p \equiv \left[A^{-1} (q - \frac{1}{\Gamma} \gamma) \right]^+\]
-is the market equilibrium in the single-score, MNL choice model. Moreover, the equilibrium is unique. 
+is the market equilibrium of the Memphis market. Moreover, the equilibrium is unique. 
 \end{theorem} 
 
 \begin{proof}
+Theorem \ref{equilibriumuniquenesstheorem} establishes the uniqueness of the equilibrium.
+
 I show the following statements:
 \begin{enumerate}
 \item $\hat p$ satisfies $\hat p_1 \leq \cdots \leq \hat p_{|C|}$. This means that the demand at $\hat p$ is given by the expression $A \hat p + \frac{1}{\Gamma}\gamma$ (which only holds if $\hat p$ is sorted).
-%\item $\hat p$ is the same regardless of how ties among the competitiveness ratios are resolved. 
+\item $\hat p$ is the same regardless of how ties among the competitiveness ratios are resolved.
 \item $\hat p$ satisfies the equilibrium conditions given in equation \eqref{ssmnleqconds}.
 \end{enumerate}
+The second statement is not necessary for the theorem, but is required by the uniqueness of the equilibrium and thus offers a useful sanity check.
+
 For convenience, let $\bar p \equiv A^{-1} (q - \frac{1}{\Gamma} \gamma) $, so that $\hat p = \bar p^+$. 
 \begin{enumerate}
 \item Pick any school $c < |C|$. It suffices to show that $\bar p_{c+1} - \bar p_{c} \geq 0$. The inverse of $A$ is
@@ -260,7 +277,7 @@ It is not difficult to verify that
 \end{align}
 which follows from the assumption that $\gamma_c / q_c \leq \gamma_{c+1} / q_{c+1}$. Hence, $\bar p$ is sorted, and so is $\hat p$. 
 
-%\item Inspecting the expression for $\bar p_{c+1} - \bar p_c$ \eqref{hatpissorted} reveals that the gap between adjacent cutoffs is zero when their competitiveness ratios are the same; therefore, the values of  $\bar p_{c+1}$ and $\bar p_c$ do not change when tied indices $c$ and $c+1$ are exchanged.
+\item Inspecting the expression for $\bar p_{c+1} - \bar p_c$ \eqref{hatpissorted} reveals that the gap between adjacent cutoffs is zero when their competitiveness ratios are the same; therefore, the values of  $\bar p_{c+1}$ and $\bar p_c$ do not change when tied indices $c$ and $c+1$ are exchanged.
 
 \item The demand at $\hat p$ is $D = A \hat p + \frac{1}{\Gamma}\gamma$. Hence
 \begin{align*}
@@ -409,23 +426,23 @@ This confirms the intuitive result that only schools that are overdemanded at eq
 In this section, I discard the notion of a target class size $q_c$ and consider instead the case in which each school attempts to maximize an objective function $u_c$ whose input consists of the market parameters $\gamma$, $p$, and $D$. Each school can manipulate only its own cutoff $p_c$. The market attains its competitive or Nash equilibrium when no school, acting alone, can improve its objective function by changing its cutoff. 
 
 \begin{definition} \label{nasheqconditions} $p^*$ is a \emph{Nash equilibrium} for an admissions market when for all $c \in C$,
-\[ p_c^* \in \argmax_{p_c}\bigl\{ u_c(p_c; p_{c'}): p_c \in [0,1] \bigr\}\]
+\begin{equation} p_c^* \in \argmax_{p_c}\bigl\{ u_c(p_c; p_{c'}): p_c \in [0,1] \bigr\}\end{equation}
 \end{definition}
 
 It is also helpful to define a local Nash equilibrium, which occurs when each school's cutoff is a local maximizer of its objective function
 
 \begin{definition} \label{localnasheqconditions} $p^*$ is a \emph{local Nash equilibrium} for an admissions market when there exists an $\epsilon > 0$ such that for all $c \in C$,
-\[ p_c \in [0,1] \cap [p_c^* - \epsilon,  p_c^* + \epsilon] ~\implies~ u_c(p^*_c; p_{c'}) \geq u_c(p_c; p_{c'})  \]
+\begin{equation}p_c \in [0,1] \cap [p_c^* - \epsilon,  p_c^* + \epsilon] ~\implies~ u_c(p^*_c; p_{c'}) \geq u_c(p_c; p_{c'}) \end{equation}
 \end{definition}
 A (local) Nash equilibrium may coincide with the Walrasian equilibrium, but there is no reason to assume so.
 % previous research has avoided this; theoretical difficulties
 
-A standard tool for modeling the dynamics of a competitive game and searching for a pure-strategy equilibrium is the \emph{best-response operator}, which indicates the optimal value for $p_c$ on the assumption that the cutoffs of the other schools are fixed.
-\[\operatorname{BR}_c  (p_{c'} ; u_c) \equiv \argmax_{p_c}\bigl\{ u_c(p_c; p_{c'}): p_c \in [0,1] \bigr\}\]
+A standard tool for modeling the dynamics of a competitive game and searching for a pure-strategy equilibrium is the \emph{best-response} operator, which indicates the optimal value for $p_c$ on the assumption that the cutoffs of the other schools are fixed.
+\begin{equation}\operatorname{BR}_c  (p_{c'} ; u_c) \equiv \argmax_{p_c}\bigl\{ u_c(p_c; p_{c'}): p_c \in [0,1] \bigr\}\end{equation}
 If $u_c$ has multiple maxima, pick any of them. 
 
 Since $\gamma$ encodes the students' endogenous preferences, I assume that $u_c$ depends on $\gamma$ only through $D_c$. In particular, I consider the case when school's utility functions have the form $\hat u_c = D_c p_c^{\sigma_c}$, or equivalently,
-\[u_c = \log D_c(p_c; p_{c'})  + \sigma_c \log p_c \]
+\begin{equation} u_c = \log D_c(p_c; p_{c'})  + \sigma_c \log p_c \end{equation}
 $\sigma_c \in [0, \infty)$ is a \emph{selectivity parameter} that reflects the school's preference for high admissions standards relative to a large entering class size. This form is appealing because it affords efficient computation of each school's best response, while also allowing the optimum in $p_c$ to increase monotonically from zero to one as $\sigma_c$ increases. The linear combination $D_c + \sigma_c p_c$, for example, does not possess this property; because $D_c$ is a convex function, the linear form is always maximized at $p_c = 0$ or $p_c =1$ or both.
 %An example of $u_c$'s cloudlike shape appears in the next slide. Shows that maxima may be disjoint. 
 
@@ -451,8 +468,8 @@ Setting this expression equal to zero, we find the stationary point
 \frac{1}{ \sum_{\substack{i=1\\i\neq c}}^d \gamma_i} 
 \left(p_{d+1} - p_{d}\right)
 \Biggr)\Biggr]\]
-This point is only valid if $p_{h} \leq \bar p_h \leq p_{h+1}$, but by concavity, if $\bar p_h$ is outside this segment, then the maximum occurs at the nearer of the two endpoints. Hence
-\[\hat p_h = \max \Bigl( p_{c-1},  \min \left( p_{c+1}, \bar p_c \right)\Bigr) \]
+This point is valid only if $p_{h} \leq \bar p_h \leq p_{h+1}$, but by concavity, if $\bar p_h$ is outside this segment, then the maximum occurs at the nearer of the two endpoints. Hence
+\[\hat p_h = \max \bigl\{ p_{h},  \min \left\{ p_{h+1}, \bar p_h \right\}\bigr\} \]
 gives the constrained best response for school $c$ when its new index among the sorted cutoffs is $h$. The overall maximum, or  best response for $c$, is the maximum over all indices $h$:
 \begin{align} \label{brforc}
 \operatorname{BR}_c  (p_{c'} , \sigma)  =  \hat p_{h^*},\quad \text{where } h^* = \argmax_h \Bigl\{ u_c(\hat p_h; p_{c'}): h \in \left\{ 1 \dots |C| \right\} \Bigr\}

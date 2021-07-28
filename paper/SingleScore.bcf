@@ -2632,19 +2632,20 @@
     <bcf:citekey order="3">supplydemandfw</bcf:citekey>
     <bcf:citekey order="4">characterizingnonatomic</bcf:citekey>
     <bcf:citekey order="5">walrastatonnement</bcf:citekey>
-    <bcf:citekey order="6">supplydemandfw</bcf:citekey>
+    <bcf:citekey order="6">ruralhospitalstheorem</bcf:citekey>
     <bcf:citekey order="7">supplydemandfw</bcf:citekey>
     <bcf:citekey order="8">supplydemandfw</bcf:citekey>
-    <bcf:citekey order="9">collegeadmissionskaggle</bcf:citekey>
-    <bcf:citekey order="10">ACTprofilerpt</bcf:citekey>
-    <bcf:citekey order="10">SATpercentileranks</bcf:citekey>
-    <bcf:citekey order="11">studentprefsrevopt</bcf:citekey>
-    <bcf:citekey order="12">intlrankingsandconflicts</bcf:citekey>
-    <bcf:citekey order="13">measurementofstudentability</bcf:citekey>
-    <bcf:citekey order="14">collegeadmissionsisnotmarriage</bcf:citekey>
-    <bcf:citekey order="15">apuretheoryoflocalexpenditures</bcf:citekey>
-    <bcf:citekey order="15">equilibriumandlocalredistribution</bcf:citekey>
-    <bcf:citekey order="16">doescompetitionamongpublicschools</bcf:citekey>
+    <bcf:citekey order="9">supplydemandfw</bcf:citekey>
+    <bcf:citekey order="10">collegeadmissionskaggle</bcf:citekey>
+    <bcf:citekey order="11">ACTprofilerpt</bcf:citekey>
+    <bcf:citekey order="11">SATpercentileranks</bcf:citekey>
+    <bcf:citekey order="12">studentprefsrevopt</bcf:citekey>
+    <bcf:citekey order="13">intlrankingsandconflicts</bcf:citekey>
+    <bcf:citekey order="14">measurementofstudentability</bcf:citekey>
+    <bcf:citekey order="15">collegeadmissionsisnotmarriage</bcf:citekey>
+    <bcf:citekey order="16">apuretheoryoflocalexpenditures</bcf:citekey>
+    <bcf:citekey order="16">equilibriumandlocalredistribution</bcf:citekey>
+    <bcf:citekey order="17">doescompetitionamongpublicschools</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

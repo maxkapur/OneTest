@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  22 JUL 2021 10:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  28 JUL 2021 17:40
 entering extended mode
 **./SingleScore.tex
 (SingleScore.tex
@@ -798,189 +798,209 @@ LaTeX Warning: Reference `tat-iter-cutoff' on page 7 undefined on input line 17
 LaTeX Warning: Reference `demanddecreasingimpliesunique' on page 7 undefined on
  input line 175.
 
-[7] [8] [9] [10] [11]pdfTeX warning (ext4): destination with the same identifie
-r (name{equation.5.1}) has been already used, duplicate ignored
+[7]
+
+LaTeX Warning: Citation 'ruralhospitalstheorem' on page 8 undefined on input li
+ne 221.
+
+[8] [9]
+
+LaTeX Warning: Reference `hatpissorted' on page 10 undefined on input line 280.
+
+
+[10] [11] [12]pdfTeX warning (ext4): destination with the same identifier (name
+{equation.5.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.363 \begin{equation}
+l.380 \begin{equation}
                       \label{jac-q-p}pdfTeX warning (ext4): destination with th
 e same identifier (name{equation.5.1}) has been already used, duplicate ignored
 
 <to be read again> 
                    \relax 
-l.363 \begin{equation}
+l.380 \begin{equation}
                       \label{jac-q-p}pdfTeX warning (ext4): destination with th
 e same identifier (name{equation.5.1}) has been already used, duplicate ignored
 
 <to be read again> 
                    \relax 
-l.363 \begin{equation}
+l.380 \begin{equation}
                       \label{jac-q-p}pdfTeX warning (ext4): destination with th
 e same identifier (name{equation.5.1}) has been already used, duplicate ignored
 
 <to be read again> 
                    \relax 
-l.363 \begin{equation}
+l.380 \begin{equation}
                       \label{jac-q-p}pdfTeX warning (ext4): destination with th
 e same identifier (name{equation.5.2}) has been already used, duplicate ignored
 
 <to be read again> 
                    \relax 
-l.373 \begin{equation}
+l.390 \begin{equation}
                       \mathbf{J}_q D(\hat p) =pdfTeX warning (ext4): destinatio
 n with the same identifier (name{equation.5.2}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.373 \begin{equation}
+l.390 \begin{equation}
                       \mathbf{J}_q D(\hat p) =pdfTeX warning (ext4): destinatio
 n with the same identifier (name{equation.5.2}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.373 \begin{equation}
+l.390 \begin{equation}
                       \mathbf{J}_q D(\hat p) =pdfTeX warning (ext4): destinatio
 n with the same identifier (name{equation.5.2}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.373 \begin{equation}
-                      \mathbf{J}_q D(\hat p) = [12] [13]
-<plots/gammaq-pstar.pdf, id=253, 803.0pt x 702.625pt>
+l.390 \begin{equation}
+                      \mathbf{J}_q D(\hat p) = [13]pdfTeX warning (ext4): desti
+nation with the same identifier (name{equation.6.1}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.476 \end{align}
+                  [14]
+<plots/gammaq-pstar.pdf, id=265, 803.0pt x 702.625pt>
 File: plots/gammaq-pstar.pdf Graphic file (type pdf)
 <use plots/gammaq-pstar.pdf>
-Package pdftex.def Info: plots/gammaq-pstar.pdf  used on input line 468.
+Package pdftex.def Info: plots/gammaq-pstar.pdf  used on input line 485.
 (pdftex.def)             Requested size: 455.24411pt x 398.34544pt.
 
 
-LaTeX Warning: Reference `tat-iter-cutoff' on page 14 undefined on input line 4
-74.
+LaTeX Warning: Reference `tat-iter-cutoff' on page 15 undefined on input line 4
+91.
 
-[14] [15 <./plots/gammaq-pstar.pdf>]
-<plots/score-cutoff-choice.pdf, id=277, 702.625pt x 451.6875pt>
+<plots/score-cutoff-choice.pdf, id=275, 702.625pt x 451.6875pt>
 File: plots/score-cutoff-choice.pdf Graphic file (type pdf)
 <use plots/score-cutoff-choice.pdf>
-Package pdftex.def Info: plots/score-cutoff-choice.pdf  used on input line 489.
+Package pdftex.def Info: plots/score-cutoff-choice.pdf  used on input line 506.
 
 (pdftex.def)             Requested size: 455.24411pt x 292.66295pt.
-<plots/score-DA-placement.pdf, id=278, 702.625pt x 451.6875pt>
+<plots/score-DA-placement.pdf, id=276, 702.625pt x 451.6875pt>
 File: plots/score-DA-placement.pdf Graphic file (type pdf)
 <use plots/score-DA-placement.pdf>
-Package pdftex.def Info: plots/score-DA-placement.pdf  used on input line 498.
+Package pdftex.def Info: plots/score-DA-placement.pdf  used on input line 515.
 (pdftex.def)             Requested size: 455.24411pt x 292.66295pt.
 
-
-LaTeX Warning: Reference `studentproposingDA' on page 16 undefined on input lin
-e 500.
-
-
-LaTeX Warning: Reference `tat-iter-cutoff' on page 16 undefined on input line 5
-00.
+LaTeX Warning: Reference `studentproposingDA' on page 15 undefined on input lin
+e 517.
 
 
-Overfull \hbox (10.47328pt too wide) in paragraph at lines 505--506
+LaTeX Warning: Reference `tat-iter-cutoff' on page 15 undefined on input line 5
+17.
+
+
+Overfull \hbox (10.47328pt too wide) in paragraph at lines 522--523
 []\OT1/cmr/m/n/12 Figures []4[] and []5[] vi-su-al-ize the in-cen-tive anal-y-s
 is un-der two dif-fer-ent as-sign-ment paradigms.
  []
 
-[16 <./plots/score-cutoff-choice.pdf>] [17 <./plots/score-DA-placement.pdf>]
-<plots/vary-gamma-demand.pdf, id=297, 602.25pt x 401.5pt>
+[15] [16 <./plots/gammaq-pstar.pdf>] [17 <./plots/score-cutoff-choice.pdf>]
+[18 <./plots/score-DA-placement.pdf>]
+<plots/vary-gamma-demand.pdf, id=308, 602.25pt x 401.5pt>
 File: plots/vary-gamma-demand.pdf Graphic file (type pdf)
 <use plots/vary-gamma-demand.pdf>
-Package pdftex.def Info: plots/vary-gamma-demand.pdf  used on input line 513.
+Package pdftex.def Info: plots/vary-gamma-demand.pdf  used on input line 530.
 (pdftex.def)             Requested size: 455.24411pt x 303.50742pt.
-<plots/vary-gamma-cutoff.pdf, id=300, 602.25pt x 401.5pt>
+<plots/vary-gamma-cutoff.pdf, id=311, 602.25pt x 401.5pt>
 File: plots/vary-gamma-cutoff.pdf Graphic file (type pdf)
 <use plots/vary-gamma-cutoff.pdf>
-Package pdftex.def Info: plots/vary-gamma-cutoff.pdf  used on input line 535.
+Package pdftex.def Info: plots/vary-gamma-cutoff.pdf  used on input line 552.
 (pdftex.def)             Requested size: 455.24411pt x 303.50742pt.
 
-Overfull \hbox (6.41371pt too wide) in paragraph at lines 559--559
+Overfull \hbox (6.41371pt too wide) in paragraph at lines 576--576
 []\OT1/cmr/bx/n/17.28 Inverse op-ti-miza-tion of single-score ad-mis-sions mar-
 
  []
 
-[18] [19 <./plots/vary-gamma-demand.pdf>] [20 <./plots/vary-gamma-cutoff.pdf>]
-[21] [22] [23]
-<plots/US-cutoff-gamma.pdf, id=360, 602.25pt x 602.25pt>
+[19] [20 <./plots/vary-gamma-demand.pdf>] [21 <./plots/vary-gamma-cutoff.pdf>]
+[22] [23] [24]
+<plots/US-cutoff-gamma.pdf, id=368, 602.25pt x 602.25pt>
 File: plots/US-cutoff-gamma.pdf Graphic file (type pdf)
 <use plots/US-cutoff-gamma.pdf>
-Package pdftex.def Info: plots/US-cutoff-gamma.pdf  used on input line 617.
+Package pdftex.def Info: plots/US-cutoff-gamma.pdf  used on input line 634.
 (pdftex.def)             Requested size: 455.24411pt x 455.26112pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 626.
+               Default added (so using `tbp') on input line 643.
 
 
-Overfull \hbox (65.62943pt too wide) in paragraph at lines 627--651
+Overfull \hbox (65.62943pt too wide) in paragraph at lines 644--668
 [][] 
  []
 
-<plots/three-demand-curves.pdf, id=362, 702.625pt x 501.875pt>
+<plots/three-demand-curves.pdf, id=370, 702.625pt x 501.875pt>
 File: plots/three-demand-curves.pdf Graphic file (type pdf)
 <use plots/three-demand-curves.pdf>
-Package pdftex.def Info: plots/three-demand-curves.pdf  used on input line 659.
+Package pdftex.def Info: plots/three-demand-curves.pdf  used on input line 676.
 
 (pdftex.def)             Requested size: 455.24411pt x 325.18105pt.
-<plots/caltech-demand-curve.pdf, id=364, 702.625pt x 501.875pt>
+<plots/caltech-demand-curve.pdf, id=372, 702.625pt x 501.875pt>
 File: plots/caltech-demand-curve.pdf Graphic file (type pdf)
 <use plots/caltech-demand-curve.pdf>
-Package pdftex.def Info: plots/caltech-demand-curve.pdf  used on input line 670
+Package pdftex.def Info: plots/caltech-demand-curve.pdf  used on input line 687
 .
 (pdftex.def)             Requested size: 455.24411pt x 325.18105pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 687.
+(hyperref)                removing `math shift' on input line 704.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gamma' on input line 687.
+(hyperref)                removing `\gamma' on input line 704.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 687.
+(hyperref)                removing `math shift' on input line 704.
 
-[24] [25 <./plots/US-cutoff-gamma.pdf>] [26 <./plots/three-demand-curves.pdf>]
-[27 <./plots/caltech-demand-curve.pdf>] [28] [29] [30]
-Overfull \hbox (0.99413pt too wide) in paragraph at lines 710--710
+[25] [26 <./plots/US-cutoff-gamma.pdf>] [27] [28 <./plots/three-demand-curves.p
+df>] [29 <./plots/caltech-demand-curve.pdf>] [30] [31]
+Overfull \hbox (0.99413pt too wide) in paragraph at lines 727--727
 \OT1/cmr/m/n/12 How Com-pe-ti-tion Guides De-sign.'' \OT1/cmr/m/it/12 Jour-nal 
 of Eco-nomic The-ory \OT1/cmr/m/n/12 190: ar-ti-cle no. 105120.
  []
 
 
-Overfull \hbox (7.17117pt too wide) in paragraph at lines 710--710
+Overfull \hbox (7.17117pt too wide) in paragraph at lines 727--727
 [][]\OT1/cmr/m/n/12 College Board. 2015. \OT1/cmr/m/it/12 SAT Per-centile Ranks
 \OT1/cmr/m/n/12 . []$https : / / web . archive . org / web / 20160331125512 /
  []
 
 
-Overfull \hbox (30.62401pt too wide) in paragraph at lines 710--710
+Overfull \hbox (30.62401pt too wide) in paragraph at lines 727--727
 [][]\OT1/cmr/m/n/12 Kapur, Max. 2021a. Stu-dent-Pref-s-RevOpt. []$https : / / g
 ithub . com / maxkapur / StudentPrefsRevOpt$[]. 
  []
 
 
-Overfull \hbox (8.24644pt too wide) in paragraph at lines 710--710
+Overfull \hbox (8.24644pt too wide) in paragraph at lines 727--727
 [][][]\OT1/cmr/m/n/12 . 2021b. ``Char-ac-ter-iz-ing nonatomic ad-mis-sions mar-
 kets.'' Preprint, sub-mit-ted July 3,
  []
 
-[31] (SingleScore.aux)
+[32] (SingleScore.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `SingleScore.out' has not changed.
 (rerunfilecheck)             Checksum: D58EFF20D735D3533C5778AB8EF58E18;4322.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                SingleScore
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'SingleScore.run.xml'.
 \openout1 = `SingleScore.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18974 strings out of 479334
- 326458 string characters out of 2858034
- 1126912 words of memory out of 3000000
- 36076 multiletter control sequences out of 15000+200000
+ 18983 strings out of 479334
+ 326566 string characters out of 2858034
+ 1127955 words of memory out of 3000000
+ 36078 multiletter control sequences out of 15000+200000
  417945 words of font info for 81 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,25n,74p,1593b,1953s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1012,9 +1032,9 @@ Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Max/AppData
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><
 C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on SingleScore.pdf (31 pages, 1131157 bytes).
+Output written on SingleScore.pdf (32 pages, 1135567 bytes).
 PDF statistics:
- 546 PDF objects out of 1000 (max. 8388607)
- 118 named destinations out of 1000 (max. 500000)
+ 558 PDF objects out of 1000 (max. 8388607)
+ 125 named destinations out of 1000 (max. 500000)
  217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
