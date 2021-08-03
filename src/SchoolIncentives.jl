@@ -92,13 +92,13 @@ Computes the best response for school `c`. If `heuristic=true`, uses the
 "cloud hopping" heuristic, which reduces the computation time if the local optima
 form a discrete quasiconvex function. 
 """
-@inline function brforc(c::Int,
-                        sort_order::Vector{Int},
-                        market::Market{T},
-                        sigma::T,
-                        p::Vector{T};
-                        heuristic=false::Bool
-                        )::T where T<:AbstractFloat
+function brforc(c::Int,
+                sort_order::Vector{Int},
+                market::Market{T},
+                sigma::T,
+                p::Vector{T};
+                heuristic=false::Bool
+                )::T where T<:AbstractFloat
     
     p = vcat(p, 1.)
     C = length(market)
@@ -111,7 +111,7 @@ form a discrete quasiconvex function.
     gamma_cumsum = cumsum(market.gamma[global_sort_order])
     
     if heuristic
-        @inline function fetch_̄p(i::Int)::Tuple{T, T}
+        function fetch_̄p(i::Int)::Tuple{T, T}
             if i > 1
                 local_sort_order[begin:i-1] = global_sort_order[begin:i-1]
             end
