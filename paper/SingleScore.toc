@@ -2,7 +2,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1}Organization}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.1}Organization}{3}{subsection.1.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2}Model description}{4}{section.2}%
 \defcounter {refsection}{0}\relax 
@@ -20,26 +20,30 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Comparative statics under Walrasian equilibrium}{11}{section.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}Quality effects at equilibrium}{12}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.1}Quality effects at equilibrium}{11}{subsection.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Capacity effects}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.2}Capacity effects}{12}{subsection.5.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6}Nash equilibrium}{13}{section.6}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.1}Solving the best-response problem}{14}{subsection.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}A numerical example}{15}{section.7}%
+\contentsline {section}{\numberline {7}Inverse optimization of Memphis markets}{14}{section.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Inverse optimization of single-score admissions markets}{19}{section.8}%
+\contentsline {subsection}{\numberline {7.1}An analytic solution for the preferability parameters $\gamma $}{15}{subsection.7.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}The inverse optimization task and an analytic solution}{19}{subsection.8.1}%
+\contentsline {subsection}{\numberline {7.2}An algorithmic solution for the selectivity parameters $\sigma $}{15}{subsection.7.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}A demonstration using admissions data from American universities}{22}{subsection.8.2}%
+\contentsline {subsection}{\numberline {7.3}A demonstration using admissions data from American universities}{16}{subsection.7.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}The informational quality of $\gamma $, and the bias in (true) yield}{25}{subsection.8.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}Descriptive statistics}{17}{subsubsection.7.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Discussion}{30}{section.9}%
+\contentsline {subsubsection}{\numberline {7.3.2}Ranking colleges}{17}{subsubsection.7.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1}Future directions}{30}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {7.3.3}Demand curve modeling}{21}{subsubsection.7.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}References}{32}{section.10}%
+\contentsline {subsection}{\numberline {7.4}The informational quality of $\gamma $ and the bias in yield}{22}{subsection.7.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Discussion}{26}{section.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9}References}{28}{section.9}%

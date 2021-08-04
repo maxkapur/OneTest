@@ -1,42 +1,42 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  28 JUL 2021 17:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.6.13)  4 AUG 2021 16:24
 entering extended mode
 **./SingleScore.tex
 (SingleScore.tex
-LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18> xparse <2020-03-03>
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
-File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+LaTeX2e <2021-06-01>
+L3 programming layer <2021-06-01>
+(C:\Program Files\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
+(C:\Program Files\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count179
-\c@section=\count180
-\c@subsection=\count181
-\c@subsubsection=\count182
-\c@paragraph=\count183
-\c@subparagraph=\count184
-\c@figure=\count185
-\c@table=\count186
+\c@part=\count182
+\c@section=\count183
+\c@subsection=\count184
+\c@subsubsection=\count185
+\c@paragraph=\count186
+\c@subparagraph=\count187
+\c@figure=\count188
+\c@table=\count189
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Program Files\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks15
+\KV@toks@=\toks16
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+(C:\Program Files\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+(C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-\Gm@cnth=\count187
-\Gm@cntv=\count188
-\c@Gm@tempcnt=\count189
+\Gm@cnth=\count190
+\Gm@cntv=\count191
+\c@Gm@tempcnt=\count192
 \Gm@bindingoffset=\dimen139
 \Gm@wd@mp=\dimen140
 \Gm@odd@mp=\dimen141
@@ -45,98 +45,98 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layoutheight=\dimen144
 \Gm@layouthoffset=\dimen145
 \Gm@layoutvoffset=\dimen146
-\Gm@dimlist=\toks16
+\Gm@dimlist=\toks17
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+(C:\Program Files\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks17
+\@emptytoks=\toks18
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
-Package: amsmath 2020/09/23 v2.17i AMS math features
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2021/04/20 v2.17j AMS math features
 \@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks18
+\@emptytoks=\toks19
 \ex@=\dimen147
 ))
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen148
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+(C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count190
+\inf@bad=\count193
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count191
-\leftroot@=\count192
+\uproot@=\count194
+\leftroot@=\count195
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count193
-\DOTSCASE@=\count194
+\classnum@=\count196
+\DOTSCASE@=\count197
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box47
-\strutbox@=\box48
+\Mathstrutbox@=\box50
+\strutbox@=\box51
 \big@size=\dimen149
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count195
-\c@MaxMatrixCols=\count196
+\macc@depth=\count198
+\c@MaxMatrixCols=\count199
 \dotsspace@=\muskip16
-\c@parentequation=\count197
-\dspbrk@lvl=\count198
-\tag@help=\toks19
-\row@=\count199
-\column@=\count266
-\maxfields@=\count267
-\andhelp@=\toks20
+\c@parentequation=\count266
+\dspbrk@lvl=\count267
+\tag@help=\toks20
+\row@=\count268
+\column@=\count269
+\maxfields@=\count270
+\andhelp@=\toks21
 \eqnshift@=\dimen150
 \alignsep@=\dimen151
 \tagshift@=\dimen152
 \tagwidth@=\dimen153
 \totwidth@=\dimen154
 \lineht@=\dimen155
-\@envbody=\toks21
+\@envbody=\toks22
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks22
+\mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+(C:\Program Files\MiKTeX\tex/latex/amscls\amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks23
-\thm@bodyfont=\toks24
-\thm@headfont=\toks25
-\thm@notefont=\toks26
-\thm@headpunct=\toks27
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
 \thm@preskip=\skip52
 \thm@postskip=\skip53
 \thm@headsep=\skip54
-\dth@everypar=\toks28
+\dth@everypar=\toks29
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+(C:\Program Files\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+(C:\Program Files\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+(C:\Program Files\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \captionmargin=\dimen156
 \captionmargin@=\dimen157
@@ -147,96 +147,96 @@ Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \caption@hangindent=\dimen162
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count268
-\c@continuedfloat=\count269
+\c@caption@flags=\count271
+\c@continuedfloat=\count272
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/cancel\cancel.sty
+(C:\Program Files\MiKTeX\tex/latex/cancel\cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
-Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
-Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+(C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+(C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+(C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
- (C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen163
 \Gin@req@width=\dimen164
-) (C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
+)
+(C:\Program Files\MiKTeX\tex/latex/relsize\relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2021-02-10 v7.00j Hypertext links for LaTeX
+(C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+(C:\Program Files\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.s
-ty
+(C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+(C:\Program Files\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty
+(C:\Program Files\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefineke
-ys.sty
+(C:\Program Files\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+(C:\Program Files\MiKTeX\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+)
+(C:\Program Files\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro.s
-ty
+(C:\Program Files\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+)
+(C:\Program Files\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+(C:\Program Files\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen165
-\Hy@linkcounter=\count270
-\Hy@pagecounter=\count271
+\Hy@linkcounter=\count273
+\Hy@pagecounter=\count274
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2021-02-10 v7.00j Hyperref: PDFDocEncoding definition (HO)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref-langpat
-ches.def
-File: hyperref-langpatches.def 2021-02-10 v7.00j Hyperref: patches for babel la
+(C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref-langpatches.def
+File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
 nguages
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+(C:\Program Files\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+(C:\Program Files\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count272
+\Hy@SavedSpaceFactor=\count275
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2021-02-10 v7.00j Hyperref: PDF Unicode definition (HO)
+(C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
@@ -247,64 +247,60 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count273
+\c@Hy@tempcnt=\count276
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+(C:\Program Files\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen166
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.s
-ty
+(C:\Program Files\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count274
+\Fld@menulength=\count277
 \Field@Width=\dimen167
 \Fld@charsize=\dimen168
-Package hyperref Info: Hyper figures OFF on input line 6075.
-Package hyperref Info: Link nesting OFF on input line 6080.
-Package hyperref Info: Hyper index ON on input line 6083.
-Package hyperref Info: backreferencing OFF on input line 6090.
-Package hyperref Info: Link coloring OFF on input line 6095.
-Package hyperref Info: Link coloring with OCG OFF on input line 6100.
-Package hyperref Info: PDF/A mode OFF on input line 6105.
-LaTeX Info: Redefining \ref on input line 6145.
-LaTeX Info: Redefining \pageref on input line 6149.
+Package hyperref Info: Hyper figures OFF on input line 6076.
+Package hyperref Info: Link nesting OFF on input line 6081.
+Package hyperref Info: Hyper index ON on input line 6084.
+Package hyperref Info: backreferencing OFF on input line 6091.
+Package hyperref Info: Link coloring OFF on input line 6096.
+Package hyperref Info: Link coloring with OCG OFF on input line 6101.
+Package hyperref Info: PDF/A mode OFF on input line 6106.
+LaTeX Info: Redefining \ref on input line 6146.
+LaTeX Info: Redefining \pageref on input line 6150.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
-Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
-ge
-with kernel methods
+(C:\Program Files\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
 )
-\Hy@abspage=\count275
-\c@Item=\count276
-\c@Hfootnote=\count277
+\Hy@abspage=\count278
+\c@Item=\count279
+\c@Hfootnote=\count280
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2021-02-10 v7.00j Hyperref driver for pdfTeX
+(C:\Program Files\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+(C:\Program Files\MiKTeX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\Fld@listcount=\count278
-\c@bookmark@seq@number=\count279
+\Fld@listcount=\count281
+\c@bookmark@seq@number=\count282
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilec
-heck.sty
+(C:\Program Files\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecou
-nter.sty
+(C:\Program Files\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -312,65 +308,65 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip55
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+(C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+(C:\Program Files\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count280
+\etb@tempcnta=\count283
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+(C:\Program Files\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count281
+\lrq@indent=\count284
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+(C:\Program Files\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+(C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count282
-\c@listtotal=\count283
-\c@listcount=\count284
-\c@liststart=\count285
-\c@liststop=\count286
-\c@citecount=\count287
-\c@citetotal=\count288
-\c@multicitecount=\count289
-\c@multicitetotal=\count290
-\c@instcount=\count291
-\c@maxnames=\count292
-\c@minnames=\count293
-\c@maxitems=\count294
-\c@minitems=\count295
-\c@citecounter=\count296
-\c@maxcitecounter=\count297
-\c@savedcitecounter=\count298
-\c@uniquelist=\count299
-\c@uniquename=\count300
-\c@refsection=\count301
-\c@refsegment=\count302
-\c@maxextratitle=\count303
-\c@maxextratitleyear=\count304
-\c@maxextraname=\count305
-\c@maxextradate=\count306
-\c@maxextraalpha=\count307
-\c@abbrvpenalty=\count308
-\c@highnamepenalty=\count309
-\c@lownamepenalty=\count310
-\c@maxparens=\count311
-\c@parenlevel=\count312
-\blx@tempcnta=\count313
-\blx@tempcntb=\count314
-\blx@tempcntc=\count315
-\blx@maxsection=\count316
-\blx@maxsegment@0=\count317
-\blx@notetype=\count318
-\blx@parenlevel@text=\count319
-\blx@parenlevel@foot=\count320
-\blx@sectionciteorder@0=\count321
-\blx@entrysetcounter=\count322
-\blx@biblioinstance=\count323
+\c@tabx@nest=\count285
+\c@listtotal=\count286
+\c@listcount=\count287
+\c@liststart=\count288
+\c@liststop=\count289
+\c@citecount=\count290
+\c@citetotal=\count291
+\c@multicitecount=\count292
+\c@multicitetotal=\count293
+\c@instcount=\count294
+\c@maxnames=\count295
+\c@minnames=\count296
+\c@maxitems=\count297
+\c@minitems=\count298
+\c@citecounter=\count299
+\c@maxcitecounter=\count300
+\c@savedcitecounter=\count301
+\c@uniquelist=\count302
+\c@uniquename=\count303
+\c@refsection=\count304
+\c@refsegment=\count305
+\c@maxextratitle=\count306
+\c@maxextratitleyear=\count307
+\c@maxextraname=\count308
+\c@maxextradate=\count309
+\c@maxextraalpha=\count310
+\c@abbrvpenalty=\count311
+\c@highnamepenalty=\count312
+\c@lownamepenalty=\count313
+\c@maxparens=\count314
+\c@parenlevel=\count315
+\blx@tempcnta=\count316
+\blx@tempcntb=\count317
+\blx@tempcntc=\count318
+\blx@maxsection=\count319
+\blx@maxsegment@0=\count320
+\blx@notetype=\count321
+\blx@parenlevel@text=\count322
+\blx@parenlevel@foot=\count323
+\blx@sectionciteorder@0=\count324
+\blx@entrysetcounter=\count325
+\blx@biblioinstance=\count326
 \labelnumberwidth=\skip56
 \labelalphawidth=\skip57
 \biblabelsep=\skip58
@@ -382,99 +378,99 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \blx@bcfin=\read2
 \blx@bcfout=\write3
 \blx@langwohyphens=\language79
-\c@mincomprange=\count324
-\c@maxcomprange=\count325
-\c@mincompwidth=\count326
+\c@mincomprange=\count327
+\c@maxcomprange=\count328
+\c@mincompwidth=\count329
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+(C:\Program Files\MiKTeX\tex/latex/biblatex\blx-dm.def
 File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'windycity.dbx' found.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/windycity\windycity.dbx
-File: windycity.dbx 2021/01/30 Windy City data model file for biblatex
+(C:\Program Files\MiKTeX\tex/latex/windycity\windycity.dbx
+File: windycity.dbx 2021/05/02 Windy City data model file for biblatex
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count327
-\c@savedafterword=\count328
-\c@annotator=\count329
-\c@savedannotator=\count330
-\c@author=\count331
-\c@savedauthor=\count332
-\c@bookauthor=\count333
-\c@savedbookauthor=\count334
-\c@commentator=\count335
-\c@savedcommentator=\count336
-\c@editor=\count337
-\c@savededitor=\count338
-\c@editora=\count339
-\c@savededitora=\count340
-\c@editorb=\count341
-\c@savededitorb=\count342
-\c@editorc=\count343
-\c@savededitorc=\count344
-\c@foreword=\count345
-\c@savedforeword=\count346
-\c@holder=\count347
-\c@savedholder=\count348
-\c@introduction=\count349
-\c@savedintroduction=\count350
-\c@namea=\count351
-\c@savednamea=\count352
-\c@nameb=\count353
-\c@savednameb=\count354
-\c@namec=\count355
-\c@savednamec=\count356
-\c@translator=\count357
-\c@savedtranslator=\count358
-\c@shortauthor=\count359
-\c@savedshortauthor=\count360
-\c@shorteditor=\count361
-\c@savedshorteditor=\count362
-\c@preface=\count363
-\c@savedpreface=\count364
-\c@shortbookauthor=\count365
-\c@savedshortbookauthor=\count366
-\c@translatora=\count367
-\c@savedtranslatora=\count368
-\c@translatorb=\count369
-\c@savedtranslatorb=\count370
-\c@labelname=\count371
-\c@savedlabelname=\count372
-\c@institution=\count373
-\c@savedinstitution=\count374
-\c@lista=\count375
-\c@savedlista=\count376
-\c@listb=\count377
-\c@savedlistb=\count378
-\c@listc=\count379
-\c@savedlistc=\count380
-\c@listd=\count381
-\c@savedlistd=\count382
-\c@liste=\count383
-\c@savedliste=\count384
-\c@listf=\count385
-\c@savedlistf=\count386
-\c@location=\count387
-\c@savedlocation=\count388
-\c@organization=\count389
-\c@savedorganization=\count390
-\c@origlocation=\count391
-\c@savedoriglocation=\count392
-\c@origpublisher=\count393
-\c@savedorigpublisher=\count394
-\c@publisher=\count395
-\c@savedpublisher=\count396
-\c@language=\count397
-\c@savedlanguage=\count398
-\c@origlanguage=\count399
-\c@savedoriglanguage=\count400
-\c@pageref=\count401
-\c@savedpageref=\count402
+\c@afterword=\count330
+\c@savedafterword=\count331
+\c@annotator=\count332
+\c@savedannotator=\count333
+\c@author=\count334
+\c@savedauthor=\count335
+\c@bookauthor=\count336
+\c@savedbookauthor=\count337
+\c@commentator=\count338
+\c@savedcommentator=\count339
+\c@editor=\count340
+\c@savededitor=\count341
+\c@editora=\count342
+\c@savededitora=\count343
+\c@editorb=\count344
+\c@savededitorb=\count345
+\c@editorc=\count346
+\c@savededitorc=\count347
+\c@foreword=\count348
+\c@savedforeword=\count349
+\c@holder=\count350
+\c@savedholder=\count351
+\c@introduction=\count352
+\c@savedintroduction=\count353
+\c@namea=\count354
+\c@savednamea=\count355
+\c@nameb=\count356
+\c@savednameb=\count357
+\c@namec=\count358
+\c@savednamec=\count359
+\c@translator=\count360
+\c@savedtranslator=\count361
+\c@shortauthor=\count362
+\c@savedshortauthor=\count363
+\c@shorteditor=\count364
+\c@savedshorteditor=\count365
+\c@preface=\count366
+\c@savedpreface=\count367
+\c@shortbookauthor=\count368
+\c@savedshortbookauthor=\count369
+\c@translatora=\count370
+\c@savedtranslatora=\count371
+\c@translatorb=\count372
+\c@savedtranslatorb=\count373
+\c@labelname=\count374
+\c@savedlabelname=\count375
+\c@institution=\count376
+\c@savedinstitution=\count377
+\c@lista=\count378
+\c@savedlista=\count379
+\c@listb=\count380
+\c@savedlistb=\count381
+\c@listc=\count382
+\c@savedlistc=\count383
+\c@listd=\count384
+\c@savedlistd=\count385
+\c@liste=\count386
+\c@savedliste=\count387
+\c@listf=\count388
+\c@savedlistf=\count389
+\c@location=\count390
+\c@savedlocation=\count391
+\c@organization=\count392
+\c@savedorganization=\count393
+\c@origlocation=\count394
+\c@savedoriglocation=\count395
+\c@origpublisher=\count396
+\c@savedorigpublisher=\count397
+\c@publisher=\count398
+\c@savedpublisher=\count399
+\c@language=\count400
+\c@savedlanguage=\count401
+\c@origlanguage=\count402
+\c@savedoriglanguage=\count403
+\c@pageref=\count404
+\c@savedpageref=\count405
 \shorthandwidth=\skip64
 \shortjournalwidth=\skip65
 \shortserieswidth=\skip66
@@ -492,39 +488,39 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+(C:\Program Files\MiKTeX\tex/latex/biblatex\blx-compat.def
 File: blx-compat.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+(C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
-\c@textcitecount=\count403
-\c@textcitetotal=\count404
-\c@textcitemaxnames=\count405
-\c@biburlbigbreakpenalty=\count406
-\c@biburlbreakpenalty=\count407
-\c@biburlnumpenalty=\count408
-\c@biburlucpenalty=\count409
-\c@biburllcpenalty=\count410
+\c@textcitecount=\count406
+\c@textcitetotal=\count407
+\c@textcitemaxnames=\count408
+\c@biburlbigbreakpenalty=\count409
+\c@biburlbreakpenalty=\count410
+\c@biburlnumpenalty=\count411
+\c@biburlucpenalty=\count412
+\c@biburllcpenalty=\count413
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count411
+\c@smartand=\count414
 )
 Package biblatex Info: Trying to load bibliography style 'windycity'...
 Package biblatex Info: ... file 'windycity.bbx' found.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/windycity\windycity.bbx
-File: windycity.bbx 2021/01/30 Windy City bibliography style for biblatex
+(C:\Program Files\MiKTeX\tex/latex/windycity\windycity.bbx
+File: windycity.bbx 2021/05/02 Windy City bibliography style for biblatex
 )
 Package biblatex Info: Trying to load citation style 'windycity'...
 Package biblatex Info: ... file 'windycity.cbx' found.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/windycity\windycity.cbx
-File: windycity.cbx 2021/01/30 Windy City citation style for biblatex
+(C:\Program Files\MiKTeX\tex/latex/windycity\windycity.cbx
+File: windycity.cbx 2021/05/02 Windy City citation style for biblatex
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\footcite'.
 Package biblatex Info: Redefining '\footfullcite'.
@@ -537,22 +533,22 @@ Package biblatex Info: Redefining '\textcite'.
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+(C:\Program Files\MiKTeX\tex/latex/biblatex\biblatex.cfg
 File: biblatex.cfg 
 ))
-\c@theorem=\count412
-\c@proposition=\count413
-\c@definition=\count414
-\c@algorithm=\count415
-\@quotelevel=\count416
-\@quotereset=\count417
+\c@theorem=\count415
+\c@proposition=\count416
+\c@definition=\count417
+\c@algorithm=\count418
+\@quotelevel=\count419
+\@quotereset=\count420
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdfte
-x.def
-File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count418
-\l__pdf_internal_box=\box49
-) (SingleScore.aux)
+(C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count421
+\l__pdf_internal_box=\box52
+)
+(SingleScore.aux)
 \openout1 = `SingleScore.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
@@ -611,25 +607,23 @@ LaTeX Font Info:    ... okay on input line 36.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+(C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count419
+\scratchcounter=\count422
 \scratchdimen=\dimen169
-\scratchbox=\box50
-\nofMPsegments=\count420
-\nofMParguments=\count421
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count422
+\scratchbox=\box53
+\nofMPsegments=\count423
+\nofMParguments=\count424
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count425
 \MPscratchDim=\dimen170
-\MPnumerator=\count423
-\makeMPintoPDFobject=\count424
-\everyMPtoPDFconversion=\toks30
-)
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-bas
-e.sty
+\MPnumerator=\count426
+\makeMPintoPDFobject=\count427
+\everyMPtoPDFconversion=\toks31
+) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
- (C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/grfext\grfext.sty
+
+(C:\Program Files\MiKTeX\tex/latex/grfext\grfext.sty
 Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -637,24 +631,28 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
-)
+
+(C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
 Package hyperref Info: Link coloring OFF on input line 36.
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+
+(C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+(C:\Program Files\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitle
-string.sty
+(C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count425
+\c@section@level=\count428
 )
 LaTeX Info: Redefining \ref on input line 36.
 LaTeX Info: Redefining \pageref on input line 36.
 LaTeX Info: Redefining \nameref on input line 36.
- (SingleScore.out) (SingleScore.out)
+
+(SingleScore.out) (SingleScore.out)
 \@outlinefile=\write4
 \openout4 = `SingleScore.out'.
 
@@ -662,331 +660,274 @@ Package biblatex Info: Trying to load language 'english' -> 'american-windycity
 '...
 Package biblatex Info: ... file 'american-windycity.lbx' found.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/windycity\american-windyc
-ity.lbx
-File: american-windycity.lbx 2021/01/30 Windy City localization module for bibl
+(C:\Program Files\MiKTeX\tex/latex/windycity\american-windycity.lbx
+File: american-windycity.lbx 2021/05/02 Windy City localization module for bibl
 atex
 Package biblatex Info: Trying to load language 'american' -> 'american-windycit
 y'...
 Package biblatex Info: ... file 'american-windycity.lbx' found.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/windycity\american-windyc
-ity.lbx
-File: american-windycity.lbx 2021/01/30 Windy City localization module for bibl
+(C:\Program Files\MiKTeX\tex/latex/windycity\american-windycity.lbx
+File: american-windycity.lbx 2021/05/02 Windy City localization module for bibl
 atex
 Package biblatex Info: Trying to load language 'american'...
 Package biblatex Info: ... file 'american.lbx' found.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\american.lbx
+(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\american.lbx
 File: american.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
+
+(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\english.lbx
 File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 )))
 Package biblatex Info: Trying to load language 'american' -> 'american-windycit
 y'...
 Package biblatex Info: ... file 'american-windycity.lbx' found.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/windycity\american-windyc
-ity.lbx
-File: american-windycity.lbx 2021/01/30 Windy City localization module for bibl
+(C:\Program Files\MiKTeX\tex/latex/windycity\american-windycity.lbx
+File: american-windycity.lbx 2021/05/02 Windy City localization module for bibl
 atex
 Package biblatex Info: Trying to load language 'american'...
 Package biblatex Info: ... file 'american.lbx' found.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\american.lbx
+(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\american.lbx
 File: american.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
+
+(C:\Program Files\MiKTeX\tex/latex/biblatex/lbx\english.lbx
 File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 ))))
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
 Package biblatex Info: Document encoding is UTF8 ....
- (C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2021-02-18 L3 programming layer (loader) 
+
+(C:\Program Files\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2021-06-01 L3 programming layer (loader) 
 )
 Package biblatex Info: ... and expl3
-(biblatex)             2021-02-18 L3 programming layer (loader) 
+(biblatex)             2021-06-01 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3.s
-ty
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.
-sty
-Package: xparse 2020-10-27 L3 Experimental document command parser
-
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse-
-generic.tex))
+(C:\Program Files\MiKTeX\tex/latex/biblatex\blx-case-expl3.sty
+(C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
+Package: xparse 2021-06-01 L3 Experimental document command parser
+)
 Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 )
 \openout3 = `SingleScore.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'SingleScore.bbl' found.
- (SingleScore.bbl)
+
+(SingleScore.bbl)
 Package biblatex Info: Reference section=0 on input line 36.
 Package biblatex Info: Reference segment=0 on input line 36.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
 
-
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+ (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
 
 
-(C:\Users\Max\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-[1
+) [1
 
-{C:/Users/Max/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-(SingleScore.toc)
+{C:/Users/Max/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (SingleScore.toc)
 \tf@toc=\write5
 \openout5 = `SingleScore.toc'.
 
  [2]
 
 LaTeX Warning: Reference `interpeqinadmmkts' on page 3 undefined on input line 
-66.
+65.
 
 [3] [4] [5]pdfTeX warning (ext4): destination with the same identifier (name{eq
 uation.2.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.112 \begin{equation}
-                      D_c = \mathlarger{\mathlarger{\sum}}_{d=c}^{|C|}pdfTeX wa
-rning (ext4): destination with the same identifier (name{equation.2.1}) has bee
-n already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.112 \begin{equation}
-                      D_c = \mathlarger{\mathlarger{\sum}}_{d=c}^{|C|}pdfTeX wa
-rning (ext4): destination with the same identifier (name{equation.2.1}) has bee
-n already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.112 \begin{equation}
-                      D_c = \mathlarger{\mathlarger{\sum}}_{d=c}^{|C|}pdfTeX wa
-rning (ext4): destination with the same identifier (name{equation.2.1}) has bee
-n already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.112 \begin{equation}
-                      D_c = \mathlarger{\mathlarger{\sum}}_{d=c}^{|C|}pdfTeX wa
-rning (ext4): destination with the same identifier (name{equation.2.1}) has bee
-n already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.131 \end{gather}
+l.128 \end{gather}
                   
-Overfull \hbox (2.44003pt too wide) detected at line 171
+Overfull \hbox (2.44003pt too wide) detected at line 168
 []
  []
 
-[6]
+[6pdfTeX warning (ext4): destination with the same identifier (name{equation.2.
+1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.168 \end{bmatrix}\end{align}
+                              ]
 
 LaTeX Warning: Reference `tat-iter-cutoff' on page 7 undefined on input line 17
-5.
-
-
-LaTeX Warning: Reference `demanddecreasingimpliesunique' on page 7 undefined on
- input line 175.
+2.
 
 [7]
 
-LaTeX Warning: Citation 'ruralhospitalstheorem' on page 8 undefined on input li
-ne 221.
+LaTeX Warning: Reference `vary-gamma-demand' on page 8 undefined on input line 
+198.
 
-[8] [9]
+[8] [9] [10] [11]
 
-LaTeX Warning: Reference `hatpissorted' on page 10 undefined on input line 280.
+LaTeX Warning: Reference `vary-gamma-cutoff' on page 12 undefined on input line
+ 354.
 
-
-[10] [11] [12]pdfTeX warning (ext4): destination with the same identifier (name
-{equation.5.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{equation.5.1}
+) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.380 \begin{equation}
+l.371 \begin{equation}
                       \label{jac-q-p}pdfTeX warning (ext4): destination with th
 e same identifier (name{equation.5.1}) has been already used, duplicate ignored
 
 <to be read again> 
                    \relax 
-l.380 \begin{equation}
+l.371 \begin{equation}
                       \label{jac-q-p}pdfTeX warning (ext4): destination with th
 e same identifier (name{equation.5.1}) has been already used, duplicate ignored
 
 <to be read again> 
                    \relax 
-l.380 \begin{equation}
+l.371 \begin{equation}
                       \label{jac-q-p}pdfTeX warning (ext4): destination with th
 e same identifier (name{equation.5.1}) has been already used, duplicate ignored
 
 <to be read again> 
                    \relax 
-l.380 \begin{equation}
-                      \label{jac-q-p}pdfTeX warning (ext4): destination with th
-e same identifier (name{equation.5.2}) has been already used, duplicate ignored
-
+l.371 \begin{equation}
+                      \label{jac-q-p} [12pdfTeX warning (ext4): destination wit
+h the same identifier (name{equation.5.2}) has been already used, duplicate ign
+ored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.390 
+      ] [13]pdfTeX warning (ext4): destination with the same identifier (name{e
+quation.6.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.390 \begin{equation}
-                      \mathbf{J}_q D(\hat p) =pdfTeX warning (ext4): destinatio
-n with the same identifier (name{equation.5.2}) has been already used, duplicat
-e ignored
-<to be read again> 
-                   \relax 
-l.390 \begin{equation}
-                      \mathbf{J}_q D(\hat p) =pdfTeX warning (ext4): destinatio
-n with the same identifier (name{equation.5.2}) has been already used, duplicat
-e ignored
-<to be read again> 
-                   \relax 
-l.390 \begin{equation}
-                      \mathbf{J}_q D(\hat p) =pdfTeX warning (ext4): destinatio
-n with the same identifier (name{equation.5.2}) has been already used, duplicat
-e ignored
-<to be read again> 
-                   \relax 
-l.390 \begin{equation}
-                      \mathbf{J}_q D(\hat p) = [13]pdfTeX warning (ext4): desti
-nation with the same identifier (name{equation.6.1}) has been already used, dup
-licate ignored
-<to be read again> 
-                   \relax 
-l.476 \end{align}
-                  [14]
-<plots/gammaq-pstar.pdf, id=265, 803.0pt x 702.625pt>
-File: plots/gammaq-pstar.pdf Graphic file (type pdf)
-<use plots/gammaq-pstar.pdf>
-Package pdftex.def Info: plots/gammaq-pstar.pdf  used on input line 485.
-(pdftex.def)             Requested size: 455.24411pt x 398.34544pt.
+l.469 \end{align}
+                 
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 483.
 
 
-LaTeX Warning: Reference `tat-iter-cutoff' on page 15 undefined on input line 4
-91.
-
-<plots/score-cutoff-choice.pdf, id=275, 702.625pt x 451.6875pt>
-File: plots/score-cutoff-choice.pdf Graphic file (type pdf)
-<use plots/score-cutoff-choice.pdf>
-Package pdftex.def Info: plots/score-cutoff-choice.pdf  used on input line 506.
-
-(pdftex.def)             Requested size: 455.24411pt x 292.66295pt.
-<plots/score-DA-placement.pdf, id=276, 702.625pt x 451.6875pt>
-File: plots/score-DA-placement.pdf Graphic file (type pdf)
-<use plots/score-DA-placement.pdf>
-Package pdftex.def Info: plots/score-DA-placement.pdf  used on input line 515.
-(pdftex.def)             Requested size: 455.24411pt x 292.66295pt.
-
-LaTeX Warning: Reference `studentproposingDA' on page 15 undefined on input lin
-e 517.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gamma' on input line 483.
 
 
-LaTeX Warning: Reference `tat-iter-cutoff' on page 15 undefined on input line 5
-17.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 483.
+
+[14]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 511.
 
 
-Overfull \hbox (10.47328pt too wide) in paragraph at lines 522--523
-[]\OT1/cmr/m/n/12 Figures []4[] and []5[] vi-su-al-ize the in-cen-tive anal-y-s
-is un-der two dif-fer-ent as-sign-ment paradigms.
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 511.
 
-[15] [16 <./plots/gammaq-pstar.pdf>] [17 <./plots/score-cutoff-choice.pdf>]
-[18 <./plots/score-DA-placement.pdf>]
-<plots/vary-gamma-demand.pdf, id=308, 602.25pt x 401.5pt>
-File: plots/vary-gamma-demand.pdf Graphic file (type pdf)
-<use plots/vary-gamma-demand.pdf>
-Package pdftex.def Info: plots/vary-gamma-demand.pdf  used on input line 530.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 511.
+
+[15] [16]
+<singlescoreplots/average-preferability-hist.pdf, id=290, 602.25pt x 401.5pt>
+File: singlescoreplots/average-preferability-hist.pdf Graphic file (type pdf)
+<use singlescoreplots/average-preferability-hist.pdf>
+Package pdftex.def Info: singlescoreplots/average-preferability-hist.pdf  used 
+on input line 538.
 (pdftex.def)             Requested size: 455.24411pt x 303.50742pt.
-<plots/vary-gamma-cutoff.pdf, id=311, 602.25pt x 401.5pt>
-File: plots/vary-gamma-cutoff.pdf Graphic file (type pdf)
-<use plots/vary-gamma-cutoff.pdf>
-Package pdftex.def Info: plots/vary-gamma-cutoff.pdf  used on input line 552.
+<singlescoreplots/average-selectivity-hist.pdf, id=291, 602.25pt x 401.5pt>
+File: singlescoreplots/average-selectivity-hist.pdf Graphic file (type pdf)
+<use singlescoreplots/average-selectivity-hist.pdf>
+Package pdftex.def Info: singlescoreplots/average-selectivity-hist.pdf  used on
+ input line 546.
 (pdftex.def)             Requested size: 455.24411pt x 303.50742pt.
-
-Overfull \hbox (6.41371pt too wide) in paragraph at lines 576--576
-[]\OT1/cmr/bx/n/17.28 Inverse op-ti-miza-tion of single-score ad-mis-sions mar-
-
- []
-
-[19] [20 <./plots/vary-gamma-demand.pdf>] [21 <./plots/vary-gamma-cutoff.pdf>]
-[22] [23] [24]
-<plots/US-cutoff-gamma.pdf, id=368, 602.25pt x 602.25pt>
-File: plots/US-cutoff-gamma.pdf Graphic file (type pdf)
-<use plots/US-cutoff-gamma.pdf>
-Package pdftex.def Info: plots/US-cutoff-gamma.pdf  used on input line 634.
-(pdftex.def)             Requested size: 455.24411pt x 455.26112pt.
+<singlescoreplots/cutoff-demand-gamma-sigma-corr-heatmap.pdf, id=292, 963.6pt x
+ 903.375pt>
+File: singlescoreplots/cutoff-demand-gamma-sigma-corr-heatmap.pdf Graphic file 
+(type pdf)
+<use singlescoreplots/cutoff-demand-gamma-sigma-corr-heatmap.pdf>
+Package pdftex.def Info: singlescoreplots/cutoff-demand-gamma-sigma-corr-heatma
+p.pdf  used on input line 556.
+(pdftex.def)             Requested size: 455.24411pt x 426.79181pt.
+ [17] [18 <./singlescoreplots/average-preferability-hist.pdf>]
+[19 <./singlescoreplots/average-selectivity-hist.pdf>] [20 <./singlescoreplots/
+cutoff-demand-gamma-sigma-corr-heatmap.pdf>] [21]
+<singlescoreplots/US-cutoff-gamma.pdf, id=332, 702.625pt x 702.625pt>
+File: singlescoreplots/US-cutoff-gamma.pdf Graphic file (type pdf)
+<use singlescoreplots/US-cutoff-gamma.pdf>
+Package pdftex.def Info: singlescoreplots/US-cutoff-gamma.pdf  used on input li
+ne 588.
+(pdftex.def)             Requested size: 455.24411pt x 455.25348pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 643.
+               Default added (so using `tbp') on input line 597.
 
-
-Overfull \hbox (65.62943pt too wide) in paragraph at lines 644--668
-[][] 
- []
-
-<plots/three-demand-curves.pdf, id=370, 702.625pt x 501.875pt>
-File: plots/three-demand-curves.pdf Graphic file (type pdf)
-<use plots/three-demand-curves.pdf>
-Package pdftex.def Info: plots/three-demand-curves.pdf  used on input line 676.
-
+<singlescoreplots/three-demand-curves.pdf, id=334, 702.625pt x 501.875pt>
+File: singlescoreplots/three-demand-curves.pdf Graphic file (type pdf)
+<use singlescoreplots/three-demand-curves.pdf>
+Package pdftex.def Info: singlescoreplots/three-demand-curves.pdf  used on inpu
+t line 630.
 (pdftex.def)             Requested size: 455.24411pt x 325.18105pt.
-<plots/caltech-demand-curve.pdf, id=372, 702.625pt x 501.875pt>
-File: plots/caltech-demand-curve.pdf Graphic file (type pdf)
-<use plots/caltech-demand-curve.pdf>
-Package pdftex.def Info: plots/caltech-demand-curve.pdf  used on input line 687
-.
+<singlescoreplots/single-demand-curve.pdf, id=336, 702.625pt x 501.875pt>
+File: singlescoreplots/single-demand-curve.pdf Graphic file (type pdf)
+<use singlescoreplots/single-demand-curve.pdf>
+Package pdftex.def Info: singlescoreplots/single-demand-curve.pdf  used on inpu
+t line 641.
 (pdftex.def)             Requested size: 455.24411pt x 325.18105pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 704.
+(hyperref)                removing `math shift' on input line 656.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gamma' on input line 704.
+(hyperref)                removing `\gamma' on input line 656.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 704.
+(hyperref)                removing `math shift' on input line 656.
 
-[25] [26 <./plots/US-cutoff-gamma.pdf>] [27] [28 <./plots/three-demand-curves.p
-df>] [29 <./plots/caltech-demand-curve.pdf>] [30] [31]
-Overfull \hbox (0.99413pt too wide) in paragraph at lines 727--727
+[22] [23 <./singlescoreplots/US-cutoff-gamma.pdf>] [24 <./singlescoreplots/thre
+e-demand-curves.pdf>] [25 <./singlescoreplots/single-demand-curve.pdf>]
+[26] [27]
+Overfull \hbox (0.99413pt too wide) in paragraph at lines 674--674
 \OT1/cmr/m/n/12 How Com-pe-ti-tion Guides De-sign.'' \OT1/cmr/m/it/12 Jour-nal 
 of Eco-nomic The-ory \OT1/cmr/m/n/12 190: ar-ti-cle no. 105120.
  []
 
 
-Overfull \hbox (7.17117pt too wide) in paragraph at lines 727--727
+Overfull \hbox (7.17117pt too wide) in paragraph at lines 674--674
 [][]\OT1/cmr/m/n/12 College Board. 2015. \OT1/cmr/m/it/12 SAT Per-centile Ranks
 \OT1/cmr/m/n/12 . []$https : / / web . archive . org / web / 20160331125512 /
  []
 
 
-Overfull \hbox (30.62401pt too wide) in paragraph at lines 727--727
+Overfull \hbox (30.62401pt too wide) in paragraph at lines 674--674
 [][]\OT1/cmr/m/n/12 Kapur, Max. 2021a. Stu-dent-Pref-s-RevOpt. []$https : / / g
 ithub . com / maxkapur / StudentPrefsRevOpt$[]. 
  []
 
 
-Overfull \hbox (8.24644pt too wide) in paragraph at lines 727--727
+Overfull \hbox (8.24644pt too wide) in paragraph at lines 674--674
 [][][]\OT1/cmr/m/n/12 . 2021b. ``Char-ac-ter-iz-ing nonatomic ad-mis-sions mar-
 kets.'' Preprint, sub-mit-ted July 3,
  []
 
-[32] (SingleScore.aux)
+[28] (SingleScore.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `SingleScore.out' has not changed.
-(rerunfilecheck)             Checksum: D58EFF20D735D3533C5778AB8EF58E18;4322.
+(rerunfilecheck)             Checksum: C2A72E4E402D72BEE77087C647F21707;4763.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                SingleScore
@@ -997,44 +938,38 @@ Package logreq Info: Writing requests to 'SingleScore.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18983 strings out of 479334
- 326566 string characters out of 2858034
- 1127955 words of memory out of 3000000
- 36078 multiletter control sequences out of 15000+200000
- 417945 words of font info for 81 fonts, out of 3000000 for 9000
+ 19270 strings out of 478864
+ 329907 string characters out of 2858523
+ 1151523 words of memory out of 3000000
+ 36840 multiletter control sequences out of 15000+600000
+ 417945 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,25n,74p,1593b,1953s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,25n,66p,1635b,1978s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Max\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm12
 00.pk> <C:\Users\Max\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tc
 rm0700.pk> <C:\Users\Max\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\tcrm1000.pk><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmbx10.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/Max/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Max/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Max/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Max
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Use
-rs/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
-C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10
-.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmr12.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmr17.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr6.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmr7.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmr8.pfb><C:/Users/Max/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Max/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Max/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Max/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Max/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Max/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><
-C:/Users/Max/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/
-msbm10.pfb>
-Output written on SingleScore.pdf (32 pages, 1135567 bytes).
+0\tcrm1000.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pf
+b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fi
+les/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C
+:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program File
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb
+><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/P
+rogram Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on SingleScore.pdf (28 pages, 1209809 bytes).
 PDF statistics:
- 558 PDF objects out of 1000 (max. 8388607)
- 125 named destinations out of 1000 (max. 500000)
- 217 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 538 PDF objects out of 1000 (max. 8388607)
+ 119 named destinations out of 1000 (max. 500000)
+ 223 words of extra memory for PDF output out of 10000 (max. 10000000)
 

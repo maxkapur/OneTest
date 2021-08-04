@@ -51,12 +51,11 @@ Abstract
 
 \pagebreak
 \section{Introduction}
-This article concerns decentralized admissions markets
 
+% get in early the fact that most demand funcs are NP
+This article considers a kind of admissions market that has not received much attention in the school-choice literature but approximates the admissions procedure used in many systems around the world. In this market, all schools have the same preference order, and students' preference orders are determined by the multinomial logit (MNL) choice model.
 
-In this study, I consider a special kind of admissions market that has not received much attention in the school-choice literature but approximates the admissions procedure used in many systems around the world. In this market, all schools have the same preference order, and students' preference orders are determined by the multinomial logit (MNL) choice model.
-
-The primary reason for choosing this market is that it admits an expression for the demand that is invertible in the other parameters, allowing us to compute the equilibrium cutoffs analytically. We can also efficiently compute the gradient of the market parameters with respect to one another both in and out of equilibrium, which enables an interesting comparative analysis of the incentives available to schools under unconstrained school choice and when the market is confined to equilibrium by a deferred acceptance mechanism. Also, when the demand and cutoff vectors are known, one can solve for the preferability parameters, which yields a novel method of ranking schools' popularity and modeling their demand curves.
+The primary reason for choosing this market is that it admits an expression for the demand that is invertible in the other parameters, allowing us to compute the cutoffs at Walrasian equilibrium analytically. One can also efficiently compute the gradient of the market parameters with respect to one another both in and out of equilibrium, which enables an interesting comparative analysis of the incentives available to schools under unconstrained school choice and when the market is confined to equilibrium by a deferred acceptance mechanism. Also, when the demand and cutoff vectors are known, one can solve for the MNL preferability parameters, which yields a novel method of ranking schools' popularity and modeling their demand curves. 
 
 A single-score system may arise in one of several real-world scenarios. The most obvious case is when government regulations require schools to admit students solely on the basis of a standardized test. Alternatively, when students are scored using various dimensions of student characteristics such as test scores, GPA, and the quality of their letters of recommendation, it is common for these various dimensions to tightly correlate. If so, then principle component analysis can be used to determine a composite score whose order approximates the ordering of students at each university. Finally, in many public school systems, schools have \emph{no} preference order over the students; instead students take turns picking their favorite school in an order determined by random lottery, or (equivalently) the single tiebreaking mechanism is used to generate schools’ preference lists and the assignment of students to schools is computed using student-proposing DA \parencite[][]{whatmatters}. In this situation, the random numbers induce a single distribution of scores.
 
@@ -68,14 +67,7 @@ The body of this article is divided into two sections. The first (\S\ref{interpe
 In the second section (\S\ref{singlescoremodel}), I apply the results above to a parameterized admissions market that I call the single-score market with multinomial logit student preferences. This model is chosen for its computational tractability. Unlike the nonatomic markets theorized by previous work, in which computing the equilibrium requires evaluating a demand function that is exponentially complex in the number of schools, the model considered here admits a piecewise linear demand function, and each school's cutoff at equilibrium can be expressed as the solution of a triangular linear system. In this context, comparative statics at the equilibrium can be computed analytically. I also provide an inverse optimization procedure that computes the preferability parameter for each school given the cutoff and demand vectors, and I apply the procedure to a dataset of 677 American colleges. Despite the noisy input data and the model's intrinsic simplicity, this procedure yields a familiar ranking of top universities, and does so without using the costly opinion surveys or data on alumni outcomes that newspapers traditionally use to rank schools. Furthermore, it provides an estimate of each school's demand curve, which could be a useful supplement to the logistic regression models that program planners currently use to predict their admissions yield.
 
 \section{Model description} \label{singlescoremodel}
-This article considers an admissions market with \underline{m}ultino\underline{m}ial logit student \underline{p}references and \underline{h}omogeneous \underline{s}coring (hereafter Memphis). The market consists of a finite set of schools $C = \{ 1\dots |C| \}$ and continuum of students having unit mass and Lebesgue measure $\eta$.
-
-The market is characterized by four parameters:
-\begin{enumerate}
-\item The vector of school preferability parameters $\gamma \in [0, \infty)^C$. 
-\item The score cutoff vector $p \in [0, 1]^C$. 
-\item The demand vector $D \in [0, 1]^C$.
-\end{enumerate}
+This article considers an admissions market with \underline{m}ultino\underline{m}ial logit student \underline{p}references and \underline{h}omogeneous \underline{s}coring (hereafter Memphis). The market consists of a finite set of schools $C = \{ 1\dots |C| \}$ and continuum of students having unit mass and equipped with Lebesgue measure $\eta$.
 
 Each student has a preference order $\succ_s$ over the set of schools. The preference lists are derived from the multinomial logit choice (MNL) model as follows: Each school has an associated quality parameter $\delta_c \in \mathbb{R}$. Each student perturbs the vector $\delta$ by a vector of random Gumbel variables, and the order established by the perturbed values is the student's preference order.
 
@@ -91,7 +83,12 @@ D_c \equiv \eta\left(s: c = \argmax_{\text{wrt } \succ_s} \left\{\hat c: \theta_
 \end{equation}
 Observe that $D_c$ is determined entirely by $p$ and $\gamma$. $D_c$ is weakly decreasing in $p_c$ and weakly increasing in $p_{c'}$ for $c' \neq c$, and $p_c = 1 \implies D_c = 0$ regardless of the other schools' cutoffs.
 
-In summary, the market is characterized
+In summary, the market is characterized by four parameters:
+\begin{enumerate}
+\item The vector of school preferability parameters $\gamma \in [0, \infty)^C$. 
+\item The score cutoff vector $p \in [0, 1]^C$. 
+\item The demand vector $D \in [0, 1]^C$.
+\end{enumerate}
 
 \subsection{Demand function}
 Let us determine a closed-form expression for the demand function $D(\gamma, p)$ for a Memphis market. First, sort the schools by cutoff, so that
@@ -172,8 +169,7 @@ A_{ij} &\equiv \begin{cases}
 
 Since $\gamma > 0$, $A$ is invertible. This $A$ will reappear throughout the analysis. 
 
-The matrix $A$ depends on the order of the $p_c$ values, so the demand function is \emph{piecewise linear} in $p$.\footnote{In the context of an iterative schema such as the t\^{a}tonnement process simulated in Figure \ref{tat-iter-cutoff} below, instead of sorting $p$ itself, it is often simpler to permute the rows and columns of $A$ according to the inverse of the permutation that sorts $p$.} Because the main diagonal of $A$ is strictly negative, the demand at each school $c$ is strictly decreasing in $p_c$. By Theorem \ref{demanddecreasingimpliesunique}, it follows that that the equilibrium is unique.
-
+The matrix $A$ depends on the order of the $p_c$ values, so the demand function is \emph{piecewise linear} in $p$.\footnote{In the context of an iterative schema such as the t\^{a}tonnement process simulated in Figure \ref{tat-iter-cutoff} below, instead of sorting $p$ itself, it is often simpler to permute the rows and columns of $A$ according to the inverse of the permutation that sorts $p$.} Because the main diagonal of $A$ is strictly negative, the demand at each school $c$ is strictly decreasing in $p_c$. 
 
 \section{Derivatives}
 \subsection{Cutoff effects} \label{unconstrainedcutoffeffects}
@@ -185,7 +181,7 @@ Intuitively, this means that if all schools are equally preferable, a highly sel
 
 Observe also that $-1 = A_{11} < A_{22} < \dots < A_{|C||C|} < 0$. This says that the school with the most generous cutoff has the most power to increase its demand with a marginal decrease in $p_c$. Intuitively, this is because a student who gets into a school with a large cutoff gets into \emph{many} schools, so competition for this student is fiercer than for a student whose options are already limited by a low score. 
 
-The derivative is well-defined when the cutoffs are totally ordered. However, an edge case occurs when there is a tie among the cutoffs; then the subdifferential set is given by the convex hull of the Jacobians associated with the possible permutations of $p$. %In this case, I argue that the best interpretation of the effect of an \emph{increase} in $p_c$ should be that associated with the permutation for which $c$ is indexed after schools with which its cutoff is tied. That is, because $p_c$ is "about to" become larger than the other cutoffs involved in the tie, break the tie in its favor. Likewise, to interpret a \emph{decrease} in a tied $p_c$, treat $p_c$ as the least member of the tied set.
+The derivative is well-defined when the cutoffs are totally ordered. An edge case occurs when there is a tie among the cutoffs; then the subdifferential set is given by the convex hull of the Jacobians associated with the possible permutations of $p$. 
 
 \subsection{Quality effects} \label{unconstrainedqualityeffects}
 Differentiate the demand with respect to $\gamma$ to obtain the effect of a marginal change in quality.
@@ -218,7 +214,7 @@ The first condition, called the \emph{capacity condition,} says that no school's
 
 As argued by Azevedo and Leshno \parencite*{supplydemandfw}, the Walrasian equilibrium of a decentralized market is equivalent to the stable assignment produced by centralized school-choice mechanisms in the deferred acceptance family. In fact, deferred acceptance mechanisms can be interpreted as t\^{a}tonnement processes, a price-update rule known to converge to Walrasian equilibrium under certain conditions on the demand function \parencites[][\S2.4]{characterizingnonatomic}[][]{walrastatonnement}.
 
-The connection between stable assignments and Walrasian equilibria yields a sufficient condition for the uniqueness of the equilibrium. The theorem below follows from the rural hospitals theorem (RHT) of Roth \parencite*[][]{ruralhospitalstheorem}, which states the demand for each school is the same in any stable matching. 
+The connection between stable assignments and Walrasian equilibria yields a sufficient condition for the uniqueness of the equilibrium. The theorem below relies on the rural hospitals theorem (RHT), which states the demand for each school is the same in any stable matching \parencite[][]{ruralhospitalstheorem}.
 
 \begin{theorem} \label{equilibriumuniquenesstheorem}
 In any admissions market for which the demand function for school $D_c$ is strictly decreasing in $p_c$ and strictly increasing in $p_{c'}$ for $c' \neq c$, the Walrasian equilibrium is unique.
@@ -228,7 +224,7 @@ In any admissions market for which the demand function for school $D_c$ is stric
 To get a contradiction, suppose that both $p$ and $\pi$ are equilibria and that for some school $c$, $p_c < \pi_c$. By the RHT, $D_c(p_c; p_{c'}) = D_c(\pi_c; \pi_{c'})$. On the other hand, by the gradient constraint,\[D_c(p_c; p_{c'}) > D_c(\pi_c; p_{c'})\]
 For the RHT to hold, there must be some school $d \neq c$ for which $p_d < \pi_d$. In the two-school case, this concludes the proof, because if both schools increase their cutoffs, then the set of unmatched students can only grow, which contradicts the RHT.
 
-In a market with more than two schools, the proof continues by induction. Since both $c$ and $d$ increased their cutoffs between $p$ and $\pi$, then for their demands to remain the same, there must be a third school $e$ that also increased its cutoff. By repeating this logic, we see that \emph{all} schools' cutoffs must increase, contradicting the RHT again. We conclude that $p = \pi$.
+In a market with more than two schools, the proof continues by induction. If both $c$ and $d$ increased their cutoffs between $p$ and $\pi$, then for their demands to remain the same, there must be a third school $e$ that also increased its cutoff. Repeating this logic implies that \emph{all} schools' cutoffs must increase, contradicting the RHT again. We conclude that $p = \pi$.
 \end{proof}
 
 Under Memphis, the equilibrium conditions are as follows:
@@ -244,19 +240,17 @@ As I will now show, it turns out that at equilibrium, the order of the school cu
 \begin{theorem} \label{cutoffsortationthm}
 Index the cutoffs such that $\frac{\gamma_1}{q_1} \leq \dots \leq \frac{\gamma_{|C|}}{q_{|C|}}$. Then % $\hat p_1 \leq \cdots \leq \hat p_{|C|}$, and
 \[\hat p \equiv \left[A^{-1} (q - \frac{1}{\Gamma} \gamma) \right]^+\]
-is the market equilibrium of the Memphis market. Moreover, the equilibrium is unique. 
+is the unique Walrasian equilibrium of the Memphis market.
 \end{theorem} 
 
 \begin{proof}
-Theorem \ref{equilibriumuniquenesstheorem} establishes the uniqueness of the equilibrium.
-
-I show the following statements:
+Theorem \ref{equilibriumuniquenesstheorem} establishes the uniqueness of the equilibrium. To prove theorem \ref{cutoffsortationthm}, I show the following statements:
 \begin{enumerate}
 \item $\hat p$ satisfies $\hat p_1 \leq \cdots \leq \hat p_{|C|}$. This means that the demand at $\hat p$ is given by the expression $A \hat p + \frac{1}{\Gamma}\gamma$ (which only holds if $\hat p$ is sorted).
-\item $\hat p$ is the same regardless of how ties among the competitiveness ratios are resolved.
+%\item $\hat p$ is the same regardless of how ties among the competitiveness ratios are resolved.
 \item $\hat p$ satisfies the equilibrium conditions given in equation \eqref{ssmnleqconds}.
 \end{enumerate}
-The second statement is not necessary for the theorem, but is required by the uniqueness of the equilibrium and thus offers a useful sanity check.
+%The second statement is not necessary for the theorem, but is required by the uniqueness of the equilibrium and thus offers a useful sanity check.
 
 For convenience, let $\bar p \equiv A^{-1} (q - \frac{1}{\Gamma} \gamma) $, so that $\hat p = \bar p^+$. 
 \begin{enumerate}
@@ -277,7 +271,7 @@ It is not difficult to verify that
 \end{align}
 which follows from the assumption that $\gamma_c / q_c \leq \gamma_{c+1} / q_{c+1}$. Hence, $\bar p$ is sorted, and so is $\hat p$. 
 
-\item Inspecting the expression for $\bar p_{c+1} - \bar p_c$ \eqref{hatpissorted} reveals that the gap between adjacent cutoffs is zero when their competitiveness ratios are the same; therefore, the values of  $\bar p_{c+1}$ and $\bar p_c$ do not change when tied indices $c$ and $c+1$ are exchanged.
+%\item Inspecting the expression for $\bar p_{c+1} - \bar p_c$ \eqref{barpissorted} reveals that the gap between adjacent cutoffs is zero when their competitiveness ratios are the same; therefore, the values of  $\bar p_{c+1}$ and $\bar p_c$ do not change when tied indices $c$ and $c+1$ are exchanged.
 
 \item The demand at $\hat p$ is $D = A \hat p + \frac{1}{\Gamma}\gamma$. Hence
 \begin{align*}
@@ -336,7 +330,7 @@ With these results in hand, I turn to a comparative analysis of the incentives t
 Now, I analyze the incentives available to schools when the market is constrained to equilibrium, for example, by a centralized admissions process that uses a DA algorithm to produce a stable matching, or by the assumption that the cutoffs in a decentralized market will quickly correct toward equilibrium after a few admissions cycles. Throughout this section, I assume that schools are indexed in ascending order by the competitiveness ratios $\gamma_c / q_c$. The quantities derived here were proposed by Azevedo and Leshno \parencite*{supplydemandfw}, but not computed analytically.
 
 \subsection{Quality effects at equilibrium} \label{qualityeffectsateq}
-First, I will focus on the effect of a marginal change in quality on the allocation of students at equilibrium. Since, in theory, schools have the power to change their own quality by investing in their programs or marketing, the analysis below enables us to quantify the extent to which these investments are ``worth it'' with respect to the school's interest in maintaining high admissions standards or increasing its demand. 
+First, consider the effect of a marginal change in quality on the allocation of students at equilibrium. Since, in theory, schools have the power to change their own quality by investing in their programs or marketing, these quantities express the extent to which these investments are ``worth it'' with respect to the school's interest in maintaining high admissions standards or increasing its demand. 
 
 First, I provide yet another expression for the equilibrium cutoff vector $\hat p$, which can be verified by expanding the equation given in Theorem \ref{cutoffsortationthm}. $\hat p_c = \bar p_c^+$, where
 \begin{equation} \label{yetanothereqcutoff}
@@ -344,7 +338,7 @@ First, I provide yet another expression for the equilibrium cutoff vector $\hat 
 \frac{1}{\gamma_c} \left(\frac{\gamma_c}{\Gamma} - q_c\right) \sum_{i=1}^{c} \gamma_i 
 + \sum_{j=c+1}^{|C|} \left( \frac{\gamma_j}{\Gamma} - q_j \right)
 \end{equation}
-and, in the $c = |C|$ case, I take $\sum_{j=|C|+1}^{|C|} \left( \frac{\gamma_j}{\Gamma} - q_j \right)= 0$. This assumes the schools are indexed in ascending order by the competitiveness ratios $\gamma_c / q_c$. 
+and, in the $c = |C|$ case, I take $\sum_{j=|C|+1}^{|C|} \left( \frac{\gamma_j}{\Gamma} - q_j \right)= 0$. 
 
 Differentiating the optimal cutoffs with respect to the quality and simplifying, we have
 \begin{equation}\label{jac-gamma-p}
@@ -370,10 +364,7 @@ Applying the chain rule to the demand at equilibrium $D = A \hat p + \frac{1}{\G
 \end{cases}
 \end{equation}
 
-Disregarding the knife-edge case in which $\bar p_c = 0$, the two derivatives above suggest that schools in the single-test model fall into one of two clear categories. For the schools for which $\bar p_c < 0$, a marginal improvement in quality increases the \emph{size} of the entering class but has no effect on its \emph{minimum score} (and, in general, the effect on the average score is small). On the other hand, for the schools for which $\bar p_c > 0$, their capacity is always filled at equilibrium, and any investment in quality yields immediate improvement in the minimum score of the entering class. If the objective functions are a combination of cutoff and demand, this analysis suggests that competition within these two broad groups of schools is close to zero-sum. Underdemanded schools compete for the finite pool of tuition dollars remaining in the market after the best students have chosen the top schools, whereas overdemanded schools compete for the top slice of the fixed distribution of student talent.
-
-The appeal function also be differentiated in $\gamma$, although it does not admit a legible representation for an arbitrary number of schools. 
-
+Disregarding the edge case in which $\bar p_c = 0$, the two derivatives above suggest that schools in the single-test model fall into one of two clear categories. For the schools for which $\bar p_c < 0$, a marginal improvement in quality increases the \emph{size} of the entering class but has no effect on its \emph{minimum score} (and, in general, the effect on the average score is small). On the other hand, for the schools for which $\bar p_c > 0$, their capacity is always filled at equilibrium, and any investment in quality yields immediate improvement in the minimum score of the entering class. If the objective functions are a combination of cutoff and demand, this analysis suggests that competition within these two broad groups of schools is close to zero-sum. Underdemanded schools compete for the finite pool of tuition dollars remaining in the market after the best students have chosen the top schools, whereas overdemanded schools compete for the top slice of the fixed distribution of student talent.
 
 \subsection{Capacity effects}
 Consulting the cutoff sortation result of Theorem \ref{cutoffsortationthm}, it is easy to see that the derivative of the equilibrium cutoffs with respect to a given school's capacity is
@@ -397,29 +388,6 @@ where the entries of $T$ are negative as given in equation \eqref{Tdef}.
 
 This confirms the intuitive result that only schools that are overdemanded at equilibrium can make use of excess capacity. In addition, observe that because $\mathbf{J}_q \hat p$ is upper triangular, adding capacity to a school whose competitiveness ratio is lower than that of $c$ has no marginal effect on the equilibrium cutoff at $c$. 
 
-%Next, it is interesting (although irrelevant to the incentive analysis) to consider the effect of a uniform marginal increase in the total student population $\eta(S)$, which nominally equals one. Since school capacities represent fractions of the total student population, this is equivalent to the effect of decreasing each school's capacity proportionally. In other words, when an attribute of the market is given by $f(q)$, it suffices to evaluate the derivative of $f(\alpha q)$ with respect to $\alpha$ at $\alpha =1$ and flip the sign.
-%
-%The change in cutoffs after a marginal increase in $\eta(S)$ is
-%\begin{equation}\label{d-population-p}
-%\frac{d}{{d}\eta(S)} \hat p_c = 
-%- \left.\frac{{d}}{{d}\alpha} \hat p_c(\alpha q)\right|_{\alpha=1} = \begin{cases}
-%0, & \bar p_c < 0 \\
-%\text{undefined}, & \bar p_c = 0 \\
-%-A^{-1}_{c .} q, & \bar p_c > 0
-%\end{cases}
-%\end{equation}
-%Since the entries of $A^{-1}q$ are strictly negative, any school with a positive cutoff will attain a higher cutoff after an increase in population. The change in demand and appeal can be derived similarly. 
-
-%Inspecting the demand equations \eqref{demand-pc-gt-zero} and \eqref{demand-pc-eq-zero}, the change in demand is
-%\begin{equation}\label{d-population-D}
-%\frac{\mathrm{d}}{\mathrm{d}\eta(S)} D(\hat p_c) = 
-%- \left.\frac{\mathrm{d}}{\mathrm{d}\alpha} D\left( \hat p_c\left(\alpha q\right)\right) \right|_{\alpha=1} = \begin{cases}
-% \frac{\gamma_c}{\sum_{i=1}^{b-1} \gamma_i} \sum_{j=b}^{|C|} q_j , & \bar p_c < 0 \\
-%\text{undefined}, & \bar p_c = 0 \\
-%q_c, & \bar p_c > 0
-%\end{cases}
-%\end{equation}
-
 
 
 \section{Nash equilibrium}
@@ -434,8 +402,10 @@ It is also helpful to define a local Nash equilibrium, which occurs when each sc
 \begin{definition} \label{localnasheqconditions} $p^*$ is a \emph{local Nash equilibrium} for an admissions market when there exists an $\epsilon > 0$ such that for all $c \in C$,
 \begin{equation}p_c \in [0,1] \cap [p_c^* - \epsilon,  p_c^* + \epsilon] ~\implies~ u_c(p^*_c; p_{c'}) \geq u_c(p_c; p_{c'}) \end{equation}
 \end{definition}
-A (local) Nash equilibrium may coincide with the Walrasian equilibrium, but there is no reason to assume so.
+A (local) Nash equilibrium may coincide with the Walrasian equilibrium, but there is no reason to assume so. 
 % previous research has avoided this; theoretical difficulties
+
+In a Memphis market, the Nash equilibrium is not necessarily unique. However, the existence of a pure-strategy equilibrium as defined above is guaranteed by theorem 2 of Rath \parencite*[][]{existenceofpurestrategyequilibria}. 
 
 A standard tool for modeling the dynamics of a competitive game and searching for a pure-strategy equilibrium is the \emph{best-response} operator, which indicates the optimal value for $p_c$ on the assumption that the cutoffs of the other schools are fixed.
 \begin{equation}\operatorname{BR}_c  (p_{c'} ; u_c) \equiv \argmax_{p_c}\bigl\{ u_c(p_c; p_{c'}): p_c \in [0,1] \bigr\}\end{equation}
@@ -443,7 +413,7 @@ If $u_c$ has multiple maxima, pick any of them.
 
 Since $\gamma$ encodes the students' endogenous preferences, I assume that $u_c$ depends on $\gamma$ only through $D_c$. In particular, I consider the case when school's utility functions have the form $\hat u_c = D_c p_c^{\sigma_c}$, or equivalently,
 \begin{equation} u_c = \log D_c(p_c; p_{c'})  + \sigma_c \log p_c \end{equation}
-$\sigma_c \in [0, \infty)$ is a \emph{selectivity parameter} that reflects the school's preference for high admissions standards relative to a large entering class size. This form is appealing because it affords efficient computation of each school's best response, while also allowing the optimum in $p_c$ to increase monotonically from zero to one as $\sigma_c$ increases. The linear combination $D_c + \sigma_c p_c$, for example, does not possess this property; because $D_c$ is a convex function, the linear form is always maximized at $p_c = 0$ or $p_c =1$ or both.
+$\sigma_c \in [0, \infty)$ is a \emph{selectivity parameter} that reflects the school's preference for high admissions standards relative to a large entering class size. This form is appealing because it affords efficient computation of each school's best response, while also allowing the optimum in $p_c$ to increase monotonically from zero to one as $\sigma_c$ increases. The linear combination $D_c + \sigma_c p_c$, for example, does not possess this property; because $D_c$ is a convex function, the linear form is always maximized at $p_c = 0$ or $p_c =1$.
 %An example of $u_c$'s cloudlike shape appears in the next slide. Shows that maxima may be disjoint. 
 
 \subsection{Solving the best-response problem}
@@ -476,108 +446,18 @@ gives the constrained best response for school $c$ when its new index among the 
 \end{align}
 The expression for $\bar p_h$ incurs a computational cost of $\mathcal{O}(|C|)$, because the inner sum does not depend on $h$ and can be calculated in advance. Since there are $|C|$ possible $h$-values, computing one school's best response is $\mathcal{O}(|C|^2)$.
 
-\section{A numerical example}
-In this section, I offer a numerical demonstration of Theorem \ref{cutoffsortationthm}'s sortation result. I validate the interpretation of the equilibrium cutoffs as a stationary point of a t\^{a}tonnement process, as a market-clearing price vector, and as the limit point of stable assignments. (The demonstration of the latter two interpretations follows Azevedo and Leshno \parencite*{supplydemandfw}.) Finally, I represent the incentive results above graphically.
+\subsection{Finding the equilibrium}
+The literature on externality games suggests several strategies for computing the equilibrium. As the primary purpose of this paper is to introduce the Memphis market and explore its theoretical proof, in lieu of a detailed algorithm, I remark only that the best-response dynamics can cycle. 
 
-Figure \ref{gammaq-pstar} demonstrates the relationship between the equilibrium cutoffs $p_c^*$ and the competitiveness ratios $\gamma_c / q_c$ in sixteen randomly generated markets. Some of the markets are overdemanded, yielding $p^* > 0$, and others are underdemanded; however, the equilibrium cutoffs are always ordered according to the competitiveness ratios. As the graph indicates, the precise relationship is nonlinear and highly sensitive to variance in the market parameters. This suggests that even in the highly stylized model under consideration, it is difficult for a school to predict the effect of small perturbation in a single $\gamma_c$ or $q_c$ value on the market as a whole myopically---that is, by looking only at its entering class. Instead, and especially under a stable assignment paradigm, schools must model their demand curve in a way that accounts for the second-order effect of a change in cutoff on the consideration sets of marginal students.
-
-\begin{figure}
-\begin{center}\includegraphics[width=\linewidth, ]{plots/gammaq-pstar.pdf}\end{center}
-\captionsetup{singlelinecheck=off}
-    \caption[.]{Competitiveness ratios $\gamma_c / q_c$ and equilibrium cutoffs $p_c^*$ in 16 randomly generated admissions markets, each containing 20 schools. The preferability parameters $\delta_c$ are drawn from $\operatorname{Uniform(0, 1)}$, while the capacities are drawn from $\operatorname{Uniform(0, 1/10)}$; hence, the market as a whole has a 50 percent chance of being over- or underdemanded. The figure suggests Theorem \ref{cutoffsortationthm}, which states that the order of the equilibrium cutoffs is determined by the order of competitiveness ratios.}
-\label{gammaq-pstar}
-\end{figure}
-
-Figures \ref{tat-iter-cutoff} through \ref{score-DA-placement} consider a fictional admissions market called Pallet Town, which has the following parameters. I have sorted the schools by their equilibrium cutoffs.
-\begin{gather} \label{pallettowndef}
-\begin{aligned}
-\gamma &=  \textstyle{\left(\frac{2}{12}, \frac{1}{12}, \frac{3}{12}, \frac{6}{12}\right)}\\
-q &= (0.3, 0.1, 0.2, 0.2) \\
-p^* &= (0.2, 0.3, 0.4, 0.6)\\
-D(p^*, \gamma) &=  (0.3, 0.1, 0.2, 0.2)
-\end{aligned}
-\end{gather}
-As the total capacity is less than one, each school fills its capacity at equilibrium.
-
-Figures \ref{score-cutoff-choice} and \ref{score-DA-placement} consider discrete approximations of the Pallet Town admissions market with samples of 20, 200, and 2000 students. In Figure \ref{score-cutoff-choice}, schools admit students according to their equilibrium cutoffs, students choose their favorite school, and schools observe their demand. When there are many students, the demand at each school approximately equals its capacity. In Figure \ref{score-DA-placement}, a stable matching of the students is computed so that each school fills its capacity exactly. When there are many students, the implied cutoffs approximately equal $p^*$. Compare Figures \ref{score-cutoff-choice} and \ref{score-DA-placement} with figure 4 of Azevedo and Leshno \parencite*{supplydemandfw}, which demonstrates the asymptotic convergence of implicit cutoffs as the number of students increases using a numerical experiment in which scores are partially correlated between schools. 
-
-
-\begin{figure}
-\begin{center}\includegraphics[width=\linewidth, ]{plots/score-cutoff-choice.pdf}\end{center}
-\captionsetup{singlelinecheck=off}
-    \caption[.]{Simulation of a decentralized school-choice process in Pallet Town. A discrete sample of student preference lists and scores is drawn from $\eta$. Each school admits students whose score exceeds its equilibrium cutoff (shown as vertical lines), then each student chooses her favorite school from her consideration set. As the sample size increases, the demand at each school approximately equals its scaled capacity.}
-\label{score-cutoff-choice}
-\end{figure}
+% {A numerical example} section was here, but removed for brevity
 
 
 
-\begin{figure}
-\begin{center}\includegraphics[width=\linewidth, ]{plots/score-DA-placement.pdf}\end{center}
-\captionsetup{singlelinecheck=off}
-    \caption[.]{Simulation of a deferred acceptance process in Pallet Town. A discrete sample of student preference lists and scores is drawn from $\eta$. The student-proposing deferred acceptance algorithm (Algorithm \ref{studentproposingDA}) is used to compute a stable matching. The score of the least-qualified admit at each school, or the school's implied score cutoff, is computed and represented as a vertical line. Regardless of the sample size, each school fills its scaled capacity, and as the sample size increases, the implied cutoffs approach the market equilibrium. Comparison with Figures \ref{tat-iter-cutoff} and \ref{score-cutoff-choice} suggests the equivalence among stationary points of a t\^{a}tonnement process, market clearing cutoffs, and stable assignments in nonatomic admissions markets.}
-\label{score-DA-placement}
-\end{figure}
+\section{Inverse optimization of Memphis markets}
+In this section, I consider the inverse optimization task, in which the demand of the market and the cutoff vector is provided and we attempt to compute the taste parameters $\gamma$ and $\sigma$. I provide an analytic solution for $\gamma$ that does not rely on an equilibrium assumption. Under the assumption that the market has attained a Nash equilibrium, I also provide an algorithmic solution for $\sigma$. Finally, I offer a proof-of-concept demonstration of the inverse optimization task using admissions data from 1073 American universities. 
 
-
-Figures \ref{vary-gamma-demand} and \ref{vary-gamma-cutoff} visualize the incentive analysis under two different assignment paradigms. In Figure \ref{vary-gamma-demand}, the market is decentralized. Suppose that each school would like to achieve higher demand, and that no school is willing to lower cutoff beyond its current value. (For the sake of comparison with the figure that follows, these fixed cutoffs are chosen to equal the equilibrium cutoffs, although the decentralized market allows schools to exceed their capacity.) The four curves in the graph show how each school's demand would respond to a change in each school's $\gamma_c$-value. The slope of each school's quality--demand curve is given by the diagonal of the Jacobian given in equation \eqref{jac-gamma-demand-uncons}. All schools have a positive incentive to improve in quality, and school 2's incentive is the strongest.
-
-Figure \ref{vary-gamma-cutoff} considers a market that is confined to equilibrium, which can be interpreted as a centralized market that uses a DA mechanism or as the equilibrium of a competitive market in which schools' capacities represent target class sizes or hard constraints. In this case, each school is already filled to capacity, so no school has any hope of increasing its demand; instead, suppose that schools hope to increase achieve a higher equilibrium cutoff by increasing their quality. The $y$-axis of the figure shows how each school's equilibrium cutoff responds to an increase in quality; the slope at the current parameters is given by the diagonal of the matrix given in equation \eqref{jac-gamma-p}.
-
-Perhaps the most interesting feature of Figure \ref{vary-gamma-cutoff} is the flat slope at school 1. When the single-score admissions market is confined to equilibrium, the bulk of students who attend school 1 are those who could not obtain admissions anywhere else. A marginal improvement in school 1's quality pulls some students away from more desirable schools, but the \emph{minimum} score of students at school 1 (that is, its cutoff) does not increase until school 1's quality increases to the point that its competitiveness ratio exceeds that of school 2. The plot shows a distinctive set of ``elbows'' where these transitions occur. Visually, these elbows confirm that the market-clearing cutoffs are continuous in the market parameters. 
-
-
-\begin{figure}
-\begin{center}\includegraphics[width=\linewidth, ]{plots/vary-gamma-demand.pdf}\end{center}
-\captionsetup{singlelinecheck=off}
-    \caption[.]{Quality effects in Pallet Town under a decentralized admissions process like that considered in Figure \ref{score-cutoff-choice}. Each line shows the change in each school’s demand when it changes its quality $\gamma_c$ while holding the cutoff vector and other schools’ quality fixed. To the extent that each school's goal is to increase its demand, the slope of the curve represents the strength the incentive to improve in quality. At the current quality vector, the Jacobian of the demand is
-    \begin{equation*}
-    \mathbf{J}_\gamma D = A = \frac{1}{360}
-    \begin{bmatrix}
-22 & -14 & -6&  -2\\
- -7   &29  &-3  &-1\\
- -9   &-9  &15  &-3\\
- -6   &-6&  -6  & 6
-    \end{bmatrix}
-    \end{equation*} 
-    according to the expression provided in \S\ref{unconstrainedqualityeffects}. }
-\label{vary-gamma-demand}
-\end{figure}
-
-
-
-
-
-
-\begin{figure}
-\begin{center}\includegraphics[width=\linewidth, ]{plots/vary-gamma-cutoff.pdf}\end{center}
-\captionsetup{singlelinecheck=off}
-    \caption[.]{Quality effects in Pallet Town under a centralized admissions process such as the deferred acceptance process shown in Figure \ref{score-DA-placement}. Each line shows the change in each school’s equilibrium cutoff when it changes its quality $\gamma_c$ while holding other schools’ quality fixed. To the extent that each school’s objective is increase its cutoff, the slope of the curve represents the strength of the incentive to improve in quality. At the current quality vector, the Jacobian of the equilibrium cutoffs is
-    \begin{equation*}
-    \mathbf{J}_\gamma \hat p = \frac{1}{30}
-    \begin{bmatrix}
-      0 & & & \\
-      -3 & 6 & & \\
-      -2 & -2 & 2 & \\
-      -1 & -1 & -1 & 1 
-    \end{bmatrix}
-    \end{equation*} 
-according to the expression derived in \S\ref{qualityeffectsateq}. The elbows in the graph correspond to ties among the competitiveness ratios. 
-    }
-\label{vary-gamma-cutoff}
-\end{figure}
-
-
-
-
-
-
-
-
-\section{Inverse optimization of single-score admissions markets}
-In this section, I consider the inverse optimization task, in which the demand of the market and the cutoff vector is provided and we attempt to compute the quality parameters. I provide an analytic solution, discussion its usefulness to admissions planners, and offer a proof-of-concept demonstration of the inverse optimization task using admissions data from 677 American universities. 
-
-\subsection{The inverse optimization task and an analytic solution}
-Given the demand $D$ and cutoff vector $p$, we must solve the following system for $\gamma$.
+\subsection{An analytic solution for the preferability parameters $\gamma$}
+Given the demand $D$ and cutoff vector $p$, we aim to solve the following system for $\gamma$.
 \begin{equation}
 D_c = \sum_{d=c}^{|C|} 
 \frac{\gamma_c}{ \sum_{i=1}^d \gamma_i} 
@@ -597,43 +477,93 @@ Now suppose that we know $\gamma_{c+1}, \gamma_{c+2}, \dots, \gamma_{|C|}$. Then
 \[\sum_{i=1}^d \gamma_i = 1 - \sum_{j=d+1}^{|C|} \gamma_j\]
 where I take $\sum_{j=|C|+1}^{|C|} \gamma_j \equiv 0$.
 
-Hence, the following recursive relation allows us to compute all the $\gamma_c$ values in reverse order, starting with $\gamma_{|C|}$ and moving down.\footnote{Because this expression requires repeated division by small numbers, it is numerically unstable when the number of schools is large or there are many schools whose cutoffs are close together or equal. Moreover, the error accumulates with each iteration. Thus, it is sometimes more effective to solve the system \eqref{solvemeforgamma} using a generic root finder; this spreads the numerical error out over all the schools.} 
+Hence, the following recursive relation allows us to compute all the $\gamma_c$ values in reverse order, starting with $\gamma_{|C|}$ and moving down.
 \begin{align}
 \gamma_{|C|} &= \frac{D_{|C|}}{1 - p_{|C|}} \\[1em]
 \gamma_c &= \frac{D_c}{~~\mathlarger{\sum_{d=c}^{|C|} \frac{p_{d+1} - p_d}{1 - \sum_{j=d+1}^{|C|} \gamma_j} ~~}}, \quad \forall c \in \bigl\{ |C|-1, |C|-2, \dots, 1\bigr\} \label{gammarecursion}
 \end{align}
+This calculation makes no equilibrium assumption. However, $p$ is a Walrasian equilibrium of any market for which school preferability parameters are given by this $\gamma$, $q_c \geq D_c$ for all schools, and $q_c = D_c$ for all schools with $p_c > 0$. 
+
+\subsection{An algorithmic solution for the selectivity parameters $\sigma$}
+Now, I impose an equilibrium assumption. The assumption of a Walrasian equilibrium leaves the inverse optimization problem underdetermined, because for a school with $p_c = 0$, its target demand $q_c$ can be arbitrarily higher than $D_c$ while still establishing an equilibrium. On the other hand, assuming that the market has attained a global Nash equilibrium, each school's selectivity parameter $\sigma_c$ can be computed algorithmically. 
+
+Given the equilibrium cutoffs $p^*$ and preferability parameters $\gamma$, the Nash equilibrium is a stationary point of the best response operator $\operatorname{BR}_c(p)$. The shape of each school's utility function depends only on the cutoffs and $\sigma_c$; thus, it suffices to solve the following $|C|$ univariate root research problems. 
+\[\text{for each } c\text{, find } \sigma_c :\quad p^*_c = \operatorname{BR}_c  (p^*_{c'} ; \sigma_c) \]
+If $\operatorname{BR}_c$ is monotonic and continuous in $\sigma_c$, then the root exists, is unique, and can be found using bisection. In a Memphis market, $\operatorname{BR}_c$ is strictly increasing in $\sigma_c$. That is, as $\sigma_c$ increases, so does the optimal cutoff $p^*_c$.  However, $\operatorname{BR}_c$ not continuous, and in certain cases, the discontinuity straddles the zero. When this happens, the bisection converges to the $\sigma_c$-value at the point of discontinuity. As the number of schools approaches, the values of the best response function are typically quite small. 
+
+The number of bisections $m$ required to achieve a given tolerance is independent of the number of schools in the market. Each bisection calls $\operatorname{BR}_c$ once, and each call is $\mathcal{O}(|C|^2)$, so the overall complexity of computing $\sigma_c$ for each school is $m \mathcal{O}( |C|^3)$.
 
 \subsection{A demonstration using admissions data from American universities}
-Here, I demonstrate the inverse optimization process using a public-domain admissions dataset from a large set of American universities \parencite[][]{collegeadmissionskaggle}. The results and discussion below should be taken only as a proof of concept, for four reasons: First, this model makes the unrealistic assumption that all colleges have the same preference order, which is derived from students' standardized test scores. Second, I did not attempt to account for the fact that many students do not bother applying to schools for which they are are overqualified; as a result, the cutoffs are systematic underestimates. Third, the dataset is not adequately sourced, and appears to mix data across years. I used data from the 2017 ACT and 2014 SAT examinations to derive school cutoffs \parencite[][]{ACTprofilerpt, SATpercentileranks}. Finally, I excluded from consideration schools for which test statistics were not listed, reducing the dataset from 1534 schools to 677. Thus, whereas the inverse optimization procedure provided above estimates schools' \emph{preferability} when given perfect knowledge of their \emph{selectivity}, in the present analysis, both quantities had to be estimated.
+Here, I demonstrate the inverse optimization process using data from the Integrated Postsecondary Education Data System (IPEDS), a government database of information on American colleges and universities. The results and discussion below should be taken only as a proof of concept, for three reasons: First, this model makes the unrealistic assumption that all colleges have the same preference order, which is derived from students' standardized test scores. Second, I did not attempt to account for the fact that many students do not bother applying to schools for which they are are overqualified; as a result, the cutoffs are systematic underestimates. Finally, I excluded from consideration schools for which test statistics were not listed, reducing the dataset to 1073 school. Thus, whereas the inverse optimization procedure provided above estimates schools' \emph{preferability} and \emph{selectivity} when given perfect knowledge of their \emph{admissions standards}, in the present analysis, all three had to be estimated.
 
-The dataset contains information regarding four test scores: the critical reading, math, and writing SAT subscores, and ACT composite scores. For each score, the dataset shows the 25th and 75th percentile of scores among students admitted to each school. By comparing these percentiles to percentile tables released by the testing agencies, I derived eight different estimates of each school's cutoff value. For example, at the University of Alabama, the 75th-percentile ACT composite score among admitted students is a 30 (out of 36). Relative to the population of ACT examinees, a student who earns a 30 is at the 90th percentile overall; hence, if the University of Alabama looks only at ACT composite scores, it follows that the minimum score among Alabama's admits is at the 60th percentile among all test-takers. In the occasional case where this calculation yielded a negative value, I cropped it to zero. Explicitly, letting $p_{\text{rel}}$ (here $0.75$) denote the percentile under consideration, and $p_{\text{abs}}$ (here $0.90$) denote the percentile score of a student with that score relative to the whole student population, the implied school cutoff is \[p_{\text{impl}} = \max\left\{0, 1 - \frac{1 - p_{\text{abs}}}{1- p_{\text{rel}}}\right\}\]
+The IPEDS database contains information regarding students subscores on the SAT and ACT exams. For each test, the dataset shows the 25th and 75th percentile of scores among students admitted to each school. By comparing these percentiles to percentile tables released by the testing agencies, I derived one estimate of each school's cutoff value corresponding to each subscore. For example, at the certain college, the 75th-percentile ACT math score among admitted students is a 30 (out of 36). Relative to the population of ACT examinees, a student who earns a 30 is at the 90th percentile overall; hence, if this college looks only at ACT composite scores, it follows that the minimum score among its admits is at the 60th percentile among all test-takers. In the occasional case where this calculation yielded a negative value, I clamped the cutoff estimate to zero. Explicitly, letting $p_{\text{rel}}$ (here $0.75$) denote the percentile under consideration, and $p_{\text{abs}}$ (here $0.90$) denote the percentile score of a student with that score relative to the whole student population, the implied school cutoff is
+\[p_{\text{impl}} = \max\left\{0, 1 - \frac{1 - p_{\text{abs}}}{1- p_{\text{rel}}}\right\}\]
+To compute a composite estimate of each school's cutoff, I first averaged the cutoffs implied by the ACT and SAT data separately. Then, I took the average of these two weighted by the number of applicants who submitted each test score (which is also included in the IPEDS dataset) and treated this as the school's $p_c$.
 
-To compute a composite estimate of each school's cutoff, I first averaged the cutoffs implied by the ACT and SAT data separately. Then, I took the average of these two weighted by the percentage of applicants who submitted each test score (which is also included in the dataset) and treated this as the school's $p_c$. Schools missing data for any of the eight data points mentioned above were excluded from consideration.
+To compute each school's demand, I divided the number of students enrolled at each school by the sum of the same. (In the tabular results and graphs, I report demand as a number of students instead of the proportion $D_c$ for legibility.) Thus, this model assumes that every student in the market can get into at least one college, and that the dataset includes all the college-like options that students in this market would consider. The first assumption is mild, because there are several colleges in the dataset whose estimated cutoff is zero. The second assumption is much more restrictive, as there are many colleges that do not report test scores, not to mention international schools, that are not represented in the data. Schools were excluded from analysis if fewer than three of the test-score indicators or class-size information was unavailable. 
 
-To compute each school's demand, I divided the number of students enrolled at each school by the sum of the same, which is 752,987. Thus, this model assumes that every student in the market can get into at least one college, and that the dataset includes all the college-like options that students in this market would consider. The first assumption is mild, because there are several colleges in the dataset whose estimated cutoff is zero. The second assumption is much more restrictive, as there are many colleges that do not report test scores, not to mention international schools, that are not represented in the data. (In the tabular results and graphs, I report demand as a number of students instead of the proportion $D_c$ for legibility.)
+For the data corresponding to each year from 2011 through 2019, I performed the preliminary calculations described above and computed the preferability vector $\gamma$ according to the inverse optimization procedure described above. I also estimated the $\sigma$-value corresponding to each school's objective function, but replaced the Nash equilibrium assumption with the arguably weaker assumption that each year, each school shifted its cutoff to its best response to the market conditions of the prior year. Thus, if the current cutoffs are $p^{(t)}$, then $\sigma_c$ was computed according to the assumption that the vector $p_c^{(t+1)}$ is $c$'s best response when the other schools' cutoffs are $p_{c'}^{(t)})$. This yielded an estimate of $\sigma$ for the years 2011 through 2018. Finally, I averaged the results over all years in order to obtain a composite estimate.\footnote{The code used to produce these results, along with additional data visualizations, is available on GitHub at \url{https://github.com/maxkapur/OneTest}.}
 
-The results are shown in Figure \ref{US-cutoff-gamma} and Table \ref{tab:US-inverse-optimization}. The list of the schools with the highest preferability is a predictable list of prestigious universities. This outcome is remarkable, because the input data contains no explicit indicators of ``prestige'' (such as data on endowment size and employment outcomes), nor any survey data akin to the questionnaires that some newspapers send to college executives to generate their rankings. The model also does not require observations of individual student choices, as used to estimate MNL parameters under traditional statistical paradigms. The preferability parameters simply emerge organically from the selectivity of each school, each school's total demand, and the assumptions about the distribution of student talent. For comparison, Table \ref{tab:US-inverse-optimization} provides other metrics that might be used to assess school preferability such as the demand, cutoff, yield (proportion of admitted students who choose to attend), and \emph{true yield.} The last is a contrived term for the proportion of \emph{qualified} students, regardless of whether they applied, who chose to attend the school; this can be computed from the cutoff and demand. 
+\subsubsection{Descriptive statistics}
+The estimated preferability parameters $\gamma$ have an approximate log-normal distribution ($\text{mean} = 9.320 \times 10^{-4}, \text{sd} = 3.900 \times 10^{-3}$), as shown in Figure \ref{average-preferability-hist}. The selectivity parameters have $\gamma_c = 0$ for the nine schools whose average cutoff $p_c = 0$; the remaining $\sigma_c$-values also have an approximate log-normal distribution ($\text{mean} = 0.4819, \text{sd} = 4.1591$), shown in Figure \ref{average-selectivity-hist}.
 
-Again, due to the low quality of the underlying data, I caution against reading deep meaning into this model's estimates. However, it is worthwhile to take the results at face value for a moment to demonstrate the sort of descriptive analysis enabled by the inverse optimization procedure. 
+Figure \ref{cutoff-demand-gamma-sigma-corr-heatmap} gives correlation coefficients among the parameters $p$, $D$, $\gamma$, and $\sigma$ in each year in the data set. While all the parameters are positively correlated, the strongest correlations are across years, suggesting the consistency of the derived measures. 
 
-First, consider the top-ranked schools, whose figures are shown in Table \ref{tab:US-inverse-optimization}. In this market, the top two, Harvard and Yale, appear equally selective (they have almost the same cutoff). However, Harvard achieves a higher preferability parameter because at the same admissions standards, it attracts a larger student body (1659 students, versus Yale's 1356). Conspiciously absent from the list is the school with the highest cutoff, California Institute of Technology ($p_c = 0.9590$, $\gamma_c = 0.0081$, rank 34). While Caltech is a little more selective than Harvard, its entering class size is much smaller, at 249 students. Since, in this model, the set of students admitted to Caltech is only a slight subset of those admitted to Harvard, Harvard must be about $1659 / 249 = 6.7$ times as preferable. Perhaps an admissions director at Caltech would argue that the school's small entering class size is a key element of its appeal, and this is certainly true for many students. However, in this model, Harvard could easily achieve a similar class size to Caltech at a much higher cutoff, eliciting the same conclusion.
-
- Because this model considers not only selectivity but also entering class size as an indication of market power, compared to conventional college rankings, it grants an elevated position to public flagships like the University of Michigan at Ann Arbor, which draw large entering classes while maintaining fairly high admissions standards. Although tuition price has not figured into any stage of the analysis, this example shows that the computed preferability parameters incorporate a notion of \emph{value,} whereas traditional college rankings arrange schools as if their tuition prices are the same.
-
-It is worth considering schools in other parts of the preferability distribution. While conventional wisdom posits small liberal-arts colleges and large public universities as incommensurable, administrators at both types of school share a common goal of recruiting an entering class that is both ``large'' relative to the physical size of the campus and ``highly qualified'' relative to competitor schools. $\gamma_c$ offers us a way to compare the effectiveness of two schools' marketing efforts even when their recruitment strategies diverge. For example, the University of Vermont and Whitman College (a liberal-arts college in eastern Washington) rank 106th and 107th, with preferability parameters $1.079 \times 10^{-3}$ and $1.044 \times 10^{-3}$, respectively. Vermont has a large class size and a middling cutoff, while Whitman has a small class size and a cutoff close to that of UM Ann Arbor. Looking only at conventional statistics, it is hard to predict the decision of a student choosing between the two schools, but comparing $\gamma$-values (which are, by definition, choice probability weights) reveals that in this case it is a nearly even coin flip. Indeed, the two school's demand curves (shown in Figure \ref{three-demand-curves}) are all but identical. 
-
-The inverse optimization task makes no equilibrium assumption, and indeed invokes no notion of capacity or target class size. It simply reports the status of the market with respect to the current allocation of students. Thus, a possible application of this model is for an admissions director to use in modeling her school's demand curve. Figure \ref{three-demand-curves} shows the predicted demand curves for Vermont, Whitman, and Caltech. In the future, suppose that Caltech decides that a larger cohort of 350 students better suits its goals. By how much should it relax its admissions standards in order to achieve this class size? One way to answer this question is to assume that Caltech’s true yield remains approximately fixed. Then, Caltech should try to become $\frac{350}{249}$ as selective, by updating its cutoff to $1 - \frac{350}{249}(1 - 0.9590) = 0.9424$. A simple calculation shows that this way of estimating the demand curve is equivalent to fitting a linear model to the observed demand $(p_c, D_c) = (.9590, 249)$ and the implicit $x$-intercept $(1, 0)$. 
-
-However, when using a linear model, the recommended cutoff associated with the higher target demand will be a slight underestimate, because Caltech’s true yield also varies as a function of $p$. Under the recommended cutoff, students admitted with scores of (say) $0.95$ do \emph{not} qualify for Harvard and Yale, so Caltech will not have to compete as fiercely to recruit them as it does to recruit its current enrollees. The model presented here accounts for this change in the consideration set of marginal students, and thus calls for a more modest reduction in Caltech’s cutoff, to the value of $0.9437$.
-
-Figure \ref{caltech-demand-curve} presents a detailed view of Caltech’s demand curve as predicted by this model alongside the linear model. The curve has a slightly bowed shape, which confirms the intuitive argument for a gentler relaxation of admissions standards in order to achieve lower target enrollment. In fact, every school’s demand curve in this model is piecewise linear convex, meaning that linear regression will always underestimate the demand at cutoffs far from those used to fit the line.\footnote{If the linear model is constrained to contain the point $(1, 0)$, then it forms a chord of the convex curve, and it will \emph{overestimate} the demand at $p_c$-values \emph{higher} than those used to fit the model. On the other hand, if this constraint is dropped and the model is fitted to two or more local observations, then it will \emph{underestimate} the demand at both higher and lower cutoffs.} Of course, a more accurate regression could be constructed by using demand observations from multiple years and including a quadratic term. But even then, if the observations used to fit the curve remain in the same ``piece'' of the piecewise linear demand function, then the expected regression curve will be a straight line.
-
-This analysis has not accounted for the hypothesis that Caltech's appeal depends on a small class size, in which case looser admissions standards also reduce the school's preferability, necessitating a lower cutoff after all. Thus, in practical decisionmaking a model like that presented here is unlikely to be competitive with colleges' in-house models, which incorporate specific observations of students who applied to the school and chose to attend another. However, an advantage of the current model is that it produces an informative approximation of the demand curve without using students' personal data. Thus, a school like Caltech can use it to model the demand curves of its \emph{competitors} schools, enabling a more sophisticated recruitment strategy. 
 
 \begin{figure}
-\begin{center}\includegraphics[width=\linewidth, ]{plots/US-cutoff-gamma.pdf}\end{center}
+\begin{center}\includegraphics[width=\linewidth, ]{singlescoreplots/average-preferability-hist.pdf}\end{center}
 \captionsetup{singlelinecheck=off}
-    \caption[.]{Inverse optimization procedure applied to a dataset of 677 American universities. School cutoffs were determined using a weighted average of cutoffs inferred from admitted students' SAT and ACT scores at the 25th and 75th percentiles. The marker size indicates the true yield, or percentage of qualified students who choose to attend each school. Details for the top twenty schools, as ranked by $\gamma_c$, appear in Table \ref{tab:US-inverse-optimization}.}
+    \caption[.]{Distribution of average preferability estimates $\gamma$ after applying the inverse optimization procedure to a public dataset describing 1073 American universities. The plot, shown on a log scale, suggests that the underlying parameters are normally distributed in the logarithm. }
+\label{average-preferability-hist}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}\includegraphics[width=\linewidth, ]{singlescoreplots/average-selectivity-hist.pdf}\end{center}
+\captionsetup{singlelinecheck=off}
+    \caption[.]{Distribution of average selectiveness estimates $\sigma$ after applying the inverse optimization procedure to a public dataset describing 1073 American universities. The plot, shown on a log scale, suggests that the underlying parameter distribution normal in the logarithm when schools for which $\sigma_c = 0$ are excluded.}
+\label{average-selectivity-hist}
+\end{figure}
+
+
+
+
+\begin{figure}
+\begin{center}\includegraphics[width=\linewidth, ]{singlescoreplots/cutoff-demand-gamma-sigma-corr-heatmap.pdf}\end{center}
+\captionsetup{singlelinecheck=off}
+    \caption[.]{Correlation heatmap over the market parameters $p$, $D$, $\gamma$, and $\sigma$. While all four parameters are positively correlated, the strongest correlations are within each parameter and across data years.}
+\label{cutoff-demand-gamma-sigma-corr-heatmap}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Ranking colleges}
+The averaged results are shown in Figure \ref{US-cutoff-gamma} and Table \ref{tab:US-inverse-optimization}. The list of the schools with the highest preferability is a predictable list of prestigious universities. In a sense, this outcome is remarkable, because the input data contains no explicit indicators of ``prestige'' (such as data on endowment size and employment outcomes), nor any survey data akin to the questionnaires that some newspapers send to college executives to generate their rankings. The model also does not require observations of individual student choices, as used to estimate MNL parameters under traditional statistical paradigms. The preferability parameters simply emerge organically from the selectivity of each school, each school's total demand, and the assumptions about the distribution of student talent. For comparison, Table \ref{tab:US-inverse-optimization} provides other metrics that might be used to assess school preferability such as the demand, cutoff, yield (proportion of admitted students who choose to attend), and \emph{true yield.} The last is a contrived term for the proportion of \emph{qualified} students, regardless of whether they applied, who chose to attend the school; this can be computed from the cutoff and demand. 
+
+First, consider the top-ranked schools, whose figures are shown in Table \ref{tab:US-inverse-optimization}. Because this model considers not only selectivity but also entering class size as an indication of market power, compared to conventional college rankings, it grants an elevated position to public flagships like the University of Michigan at Ann Arbor, which draw large entering classes while maintaining fairly high admissions standards. Although tuition price has not figured into any stage of the analysis, this example shows that the computed preferability parameters incorporate a notion of \emph{value,} whereas traditional college rankings arrange schools as if their tuition prices are the same.
+
+It is worth considering schools in other parts of the preferability distribution. While conventional wisdom posits small liberal-arts colleges and large public universities as incommensurable, administrators at both types of school share a common goal of recruiting an entering class that is both ``large'' relative to the physical size of the campus and ``highly qualified'' relative to competitor schools. $\gamma_c$ offers us a way to compare the effectiveness of two schools' marketing efforts even when their recruitment strategies diverge. For example, the University of Louisville (in Kentucky) and Whitman College (a liberal-arts college in eastern Washington) rank 156th and 157th, with average parameters $6.044 \times 10^{-4}$ and $6.001 \times 10^{-4}$, respectively. Louisville has a large class size and a middling cutoff, while Whitman has a small class size and a cutoff close to that the University of Illinois at Urbana-Champaign and Boston University. Looking only at conventional statistics, it is hard to predict the decision of a student choosing between the two schools, but comparing $\gamma$-values (which are, by definition, choice probability weights) reveals that in this case it is a nearly even coin flip. Indeed, the two schools' 2015 demand curves (shown in Figure \ref{three-demand-curves}) are all but identical. 
+
+\subsubsection{Demand curve modeling}
+The inverse optimization task makes no equilibrium assumption, and indeed invokes no notion of capacity or target class size. It simply reports the status of the market with respect to the current allocation of students. Thus, a possible application of this model is for an admissions director to use in modeling her school's demand curve. Figure \ref{three-demand-curves} shows the predicted demand curves for Louisville, Whitman, and Amherst College in the year 2015. This year, Amherst enrolled 471 students. Suppose that Amherst decides that a larger cohort of 600 students better suits its goals. By how much should it relax its admissions standards in order to achieve this class size? One way to answer this question is to assume that Amherst's true yield remains approximately fixed. Thus, Amherst should try to become $\frac{600}{471}$ more generous by updating its cutoff from the current value of $p_c = 0.9413$ to $1 - \frac{600}{471}(1 - 0.9413) = 0.9253$. A simple calculation shows that this yield-based estimate of the demand curve is equivalent to fitting a line to the observed demand $(p_c, D_c) = (0.9413, 471)$ and the implicit $x$-intercept $(1, 0)$. 
+
+However, when using the yield-based model, the recommended cutoff associated with the higher target demand will be a slight underestimate, because Amherst's true yield also varies as a function of $p$. Under the proposed cutoff, students admitted with scores of (say) $0.935$ are admitted to Amherst but \emph{not} to competitor schools Notre Dame and Johns Hopkins, so Amherst will not have to compete as fiercely to recruit them as it does to recruit its current enrollees. The demand curve drawn by the Memphis model accounts for this change in the consideration set of marginal students, and thus it calls for a more modest reduction in Amherst's cutoff, to the value of $0.9314$.
+
+Figure \ref{caltech-demand-curve} presents a detailed view of Amherst's demand curve in a Memphis market alongside the yield-based model. The Memphis curve has a slightly bowed shape, which confirms the intuitive argument for a gentler relaxation of admissions standards in order to achieve lower target enrollment. In fact, every school’s demand curve in this model is piecewise linear convex, meaning that the yield-based model will always underestimate the demand at cutoffs lower than the observed point.
+
+This analysis has not accounted for the hypothesis that possibility that the appeal of a liberal-arts college like Amherst stems from its small class size, in which case looser admissions standards also reduce the school's preferability, necessitating a lower cutoff after all. Thus, in practical decisionmaking a model like that presented here is unlikely to be competitive with colleges' in-house models, which incorporate specific observations of students who applied to the school and chose to attend another. However, an advantage of the current model is that it produces an informative approximation of the demand curve without using students' personal data. Thus, a school like Amherst can use it to model the demand curves of its \emph{competitor} schools, enabling a more sophisticated recruitment strategy. 
+
+\begin{figure}
+\begin{center}\includegraphics[width=\linewidth, ]{singlescoreplots/US-cutoff-gamma.pdf}\end{center}
+\captionsetup{singlelinecheck=off}
+    \caption[.]{Inverse optimization procedure applied to a dataset of 1073 American universities. School cutoffs were determined using a weighted average of cutoffs inferred from admitted students' SAT and ACT scores at the 25th and 75th percentiles. The marker size indicates the true yield, or percentage of qualified students who choose to attend each school. Details for the top twenty schools, as ranked by $\gamma_c$, appear in Table \ref{tab:US-inverse-optimization}.}
 \label{US-cutoff-gamma}
 \end{figure}
 
@@ -641,31 +571,31 @@ This analysis has not accounted for the hypothesis that Caltech's appeal depends
 
 
 \begin{table}[]
-\begin{tabular}{r|l|r|l|l|l|l}
-\multicolumn{1}{l|}{\textbf{Rank}} & \textbf{University}                   & \multicolumn{1}{l|}{\textbf{Demand}} & \textbf{\begin{tabular}[c]{@{}l@{}}Cutoff\\ ($p_c$)\end{tabular}} & \textbf{Yield} & \textbf{True yield} & \textbf{\begin{tabular}[c]{@{}l@{}}Preferability\\ ($\gamma_c$)\end{tabular}} \\ \hline
-1                                  & Harvard U                             & 1659                                 & 0.9526                  & 0.81           & 0.0465              & 0.0465                              \\
-2                                  & Yale U                                & 1356                                 & 0.9527                  & 0.66           & 0.0381              & 0.0381                              \\
-3                                  & U of Chicago                          & 1426                                 & 0.949                   & 0.53           & 0.0371              & 0.0367                              \\
-4                                  & U of Pennsylvania                     & 2421                                 & 0.9207                  & 0.63           & 0.0405              & 0.0358                              \\
-5                                  & Northwestern U                        & 2037                                 & 0.9268                  & 0.41           & 0.0369              & 0.0337                              \\
-6                                  & Cornell U                             & 3223                                 & 0.8984                  & 0.52           & 0.0421              & 0.0326                              \\
-7                                  & Washington U in St. Louis              & 1610                                 & 0.9364                  & 0.34           & 0.0336              & 0.032                               \\
-8                                  & Mass. Institute of Technology & 1115                                 & 0.9515                  & 0.72           & 0.0305              & 0.0304                              \\
-9                                  & Princeton U                           & 1285                                 & 0.9445                  & 0.65           & 0.0308              & 0.03                                \\
-10                                 & Stanford U                            & 1677                                 & 0.9307                  & 0.76           & 0.0321              & 0.0299                              \\
-11                                 & Vanderbilt U                          & 1613                                 & 0.932                   & 0.41           & 0.0315              & 0.0295                              \\
-12                                 & Columbia U    & 1415                                 & 0.9338                  & 0.6            & 0.0284              & 0.0268                              \\
-13                                 & Duke U                                & 1714                                 & 0.918                   & 0.42           & 0.0278              & 0.0242                              \\
-14                                 & U of Michigan--Ann Arbor               & 6200                                 & 0.813                   & 0.4            & 0.044               & 0.0228                              \\
-15                                 & New York U                            & 5207                                 & 0.8256                  & 0.35           & 0.0397              & 0.0218                              \\
-16                                 & Northeastern U                        & 2891                                 & 0.864                   & 0.19           & 0.0282              & 0.0182                              \\
-17                                 & Brown U                               & 1543                                 & 0.9065                  & 0.58           & 0.0219              & 0.0178                              \\
-18                                 & U of California--Berkeley              & 4162                                 & 0.8214                  & 0.37           & 0.0309              & 0.0167                              \\
-19                                 & U of Southern California              & 2922                                 & 0.8509                  & 0.31           & 0.026               & 0.0159                              \\
-20                                 & Carnegie Mellon U                     & 1442                                 & 0.9035                  & 0.3            & 0.0198              & 0.0158                             
+\footnotesize \centering \begin{tabular}{r|lrrrrrr}
+\textbf{\begin{tabular}[c]{@{}r@{}}Rank\\ ~ \end{tabular}} & \textbf{\begin{tabular}[c]{@{}r@{}}University\\~ \end{tabular}}                  & \textbf{\begin{tabular}[c]{@{}r@{}}Demand \\ ~\end{tabular}}& \textbf{\begin{tabular}[c]{@{}r@{}}Cutoff\\~ ($p_c$)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}r@{}}Yield\\ ~ \end{tabular}} &  \textbf{\begin{tabular}[c]{@{}r@{}}True\\ yield\end{tabular}}  & \textbf{\begin{tabular}[c]{@{}r@{}}Pref.\\ ($\gamma_c$)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}r@{}}Sel.\\ ($\sigma_c$)\end{tabular}} \\ \hline
+1             & Harvard U                             & 1661            & 0.9641                                                         & 0.8074         & 0.0302              & 0.0374                                                                   & 29.71                                                                    \\
+2             & U of Chicago                          & 1578            & 0.9639                                                         & 0.6146         & 0.0286              & 0.0354                                                                   & 29.29                                                                    \\
+3             & Washington U in St. Louis              & 1698            & 0.9612                                                         & 0.3666         & 0.0274              & 0.0332                                                                   & 25.22                                                                    \\
+4             & U of Pennsylvania                     & 2452            & 0.9459                                                         & 0.6532         & 0.0292              & 0.0326                                                                   & 19.15                                                                    \\
+5             & Mass. Institute of Tech. & 1105            & 0.9687                                                         & 0.7265         & 0.0257              & 0.0323                                                                   & 39.05                                                                    \\
+6             & Yale U                                & 1427            & 0.9633                                                         & 0.6784         & 0.0261              & 0.0322                                                                   & 28.48                                                                    \\
+7             & Vanderbilt U                          & 1605            & 0.9589                                                         & 0.4375         & 0.0246              & 0.0297                                                                   & 24.59                                                                    \\
+8             & Northwestern U                        & 2017            & 0.9505                                                         & 0.4738         & 0.0256              & 0.0293                                                                   & 19.95                                                                    \\
+9             & U of Michigan--Ann Arbor               & 6475            & 0.8865                                                         & 0.4222         & 0.0362              & 0.0273                                                                   & 8.41                                                                     \\
+10            & Stanford U                            & 1709            & 0.9509                                                         & 0.7837         & 0.0219              & 0.0251                                                                   & 20.46                                                                    \\
+11            & Columbia U    & 1460            & 0.9553                                                         & 0.6066         & 0.0209              & 0.0248                                                                   & 22.88                                                                    \\
+12            & Princeton U                           & 1318            & 0.9580                                                          & 0.6601         & 0.0198              & 0.0238                                                                   & 23.83                                                                    \\
+13            & Duke U                                & 1734            & 0.9456                                                         & 0.4858         & 0.0210              & 0.0236                                                                   & 19.46                                                                    \\
+14            & Cornell U                             & 3256            & 0.9161                                                         & 0.5397         & 0.0256              & 0.0233                                                                   & 12.50                                                                    \\
+15            & U of Notre Dame                       & 2038            & 0.9372                                                         & 0.5444         & 0.0206              & 0.0212                                                                   & 15.85                                                                    \\
+16            & U of California--Berkeley              & 5418            & 0.8767                                                         & 0.4230          & 0.0285              & 0.0202                                                                   & 7.77                                                                     \\
+17            & Johns Hopkins U                       & 1406            & 0.9373                                                         & 0.3834         & 0.0168              & 0.0188                                                                   & 19.69                                                                    \\
+18            & Brown U                               & 1600            & 0.9336                                                         & 0.5774         & 0.0164              & 0.0172                                                                   & 16.60                                                                    \\
+19            & Carnegie Mellon U                     & 1524            & 0.9318                                                         & 0.3286         & 0.0158              & 0.0166                                                                   & 16.67                                                                    \\
+20            & Northeastern U                        & 2878            & 0.8960                                                          & 0.2052         & 0.0197              & 0.0166                                                                   & 10.95                                                                   
 \end{tabular}
-\caption{\label{tab:US-inverse-optimization}
-The top twenty schools by preferability $\gamma_c$, as determined by applying the inverse optimization process to a dataset of 677 American universities. Each school's demand is given as the number of students in the entering class; to compute $D_c$, divide by the total number of students, 752,987. The school's yield is as reported by the admissions office, while the true yield, which represents the proportion of qualified students who chose to attend the school, was computed by comparing the size of the entering class to the estimated cutoff $p_c$.}
+\normalsize \caption{\label{tab:US-inverse-optimization}
+The top twenty schools by average preferability $\gamma_c$, as determined by applying the inverse optimization process to a dataset of 1073 American universities over the years 2011 through 2019. Each school's demand is given as the average number of students in the entering class; to compute $D_c$, divide by the average total number of students, 1,266,305. The school's yield is as reported by the admissions office, while the true yield, which represents the proportion of qualified students who chose to attend the school, was computed by comparing the size of the entering class to the estimated cutoff $p_c$.}
 \end{table}
 
 
@@ -673,9 +603,9 @@ The top twenty schools by preferability $\gamma_c$, as determined by applying th
 
 
 \begin{figure}
-\begin{center}\includegraphics[width=\linewidth, ]{plots/three-demand-curves.pdf}\end{center}
+\begin{center}\includegraphics[width=\linewidth, ]{singlescoreplots/three-demand-curves.pdf}\end{center}
 \captionsetup{singlelinecheck=off}
-    \caption[.]{Three demand curves derived via the inverse optimization process. The University of Vermont and Whitman College have similar preferability parameters, and thus similar demand curves. However, each school has chosen a different selectivity threshold, reflecting its distinct admissions priorities. A detailed view of Caltech's demand curve appears in Figure \ref{caltech-demand-curve}.}
+    \caption[.]{Three demand curves derived from 2015 data via the inverse optimization process. The University of Louisville and Whitman College have similar preferability parameters, and thus similar demand curves. However, each school has chosen a different selectivity threshold, reflecting its distinct admissions priorities. A detailed view of Amherst's demand curve appears in Figure \ref{caltech-demand-curve}.}
 \label{three-demand-curves}
 \end{figure}
 
@@ -684,9 +614,9 @@ The top twenty schools by preferability $\gamma_c$, as determined by applying th
 
 
 \begin{figure}
-\begin{center}\includegraphics[width=\linewidth, ]{plots/caltech-demand-curve.pdf}\end{center}
+\begin{center}\includegraphics[width=\linewidth, ]{singlescoreplots/single-demand-curve.pdf}\end{center}
 \captionsetup{singlelinecheck=off}
-    \caption[.]{Detailed view of Caltech's demand curve near its current cutoff. Assuming preferability and other schools' cutoffs remain fixed, if Caltech wishes to increase its class size to 350, it should update its cutoff to the value indicated by the intersection of the demand curve and the horizontal coral line. A linear model prescribes decreasing the cutoff to $p_c = 0.9424$, whereas the model provided here accounts for the fact that there is less competition for marginal students at the lower cutoff and prescribes a more conservative decrease to $0.9437$. }
+    \caption[.]{Detailed view of Amherst's demand curve near its 2015 cutoff. Assuming preferability and other schools' cutoffs remain fixed, if Amherst wishes to increase its class size to 700, it should update its cutoff to the value indicated by the intersection of the demand curve and the horizontal coral line. A linear model prescribes decreasing the cutoff to $p_c = 0.9253$, whereas the model provided here accounts for the fact that there is less competition for marginal students at the lower cutoff and prescribes a more conservative decrease to $0.9314$. }
 \label{caltech-demand-curve}
 \end{figure}
 
@@ -697,28 +627,21 @@ The top twenty schools by preferability $\gamma_c$, as determined by applying th
 
 
 
-The code used to produce these results, as well as more details regarding how the cutoffs were estimated from available SAT and ACT data, is available on GitHub \parencite[][]{studentprefsrevopt}.
 
 
-
-\subsection{The informational quality of $\gamma$, and the bias in (true) yield}
+\subsection{The informational quality of $\gamma$ and the bias in yield}
 The question of how to measure aggregate college preferability is not a simple one, and newspaper university rankings attract regular controversy for their imprecise methodology \parencite[][]{intlrankingsandconflicts}. Typical ranking metrics draw from a combination of survey data and performance measures of a university's quality such as its research output or data on alumni salaries. However, conducting accurate surveys is costly and difficult, and while performance measures may correlate with college preferability, they offer a normative indication of which colleges ``should'' be popular without accounting for the decisions students actually make---decisions that may depend less on hard facts than on intangible notions of fitness.
 
-The traditional measure college administrators have used to quantify how preferable their school is relative to others in the market has been the yield. As discussed above, colleges' \emph{true} yield (or another yield metric that corrects for applicant behavior) can be a useful tool in modeling the demand curve. However, as a measure of comparing the preferability of two different colleges, true yield systematically overrates lenient schools, which face less competition for students. For example, consider a market with only two schools, Lunar College ($p_1 = 0, D_1 =  \frac{100}{101}$) and Antarctic University ($p_2 = \frac{99}{100}, D_2 = \frac{1}{101}$). At both schools, the true yield is $D_c / (1 - p_c) = \frac{100}{101}$, a value which exaggerates the preferability of Lunar College by failing to account for the fact that the majority of its admits, and the vast majority of its enrollees, had no other option. The proportion of students who chose Lunar College \emph{over} Antarctic University is given by the former's preferability, $\gamma_1 = \frac{100/101 - 99/100}{1/100} = \frac{1}{101}$, while the preferability of Antartic University is $\gamma_2 = \frac{100}{101}$. This example, along with the demonstration above, suggests that insofar as $\gamma$ can be estimated accurately, it provides unbiased information about school preferability in a well-differentiated admissions market.
+The traditional measure college administrators have used to quantify their school's preferability relative to others in the market has been the yield. As discussed above, colleges' \emph{true} yield (or another yield metric that corrects for applicant behavior) can be a useful tool in modeling the demand curve. However, as a measure of comparing the preferability of two different colleges, true yield systematically overrates lenient schools, which face less competition for students. For example, consider a market with only two schools, Lunar College ($p_1 = 0, D_1 =  \frac{100}{101}$) and Antarctic University ($p_2 = \frac{99}{100}, D_2 = \frac{1}{101}$). At both schools, the true yield is $D_c / (1 - p_c) = \frac{100}{101}$, a value that exaggerates the preferability of Lunar College by failing to account for the fact that the majority of its admits (and the vast majority of its enrollees) had no other option. The proportion of students who chose Lunar College \emph{over} Antarctic University is given by the former's preferability, $\gamma_1 = \frac{100/101 - 99/100}{1/100} = \frac{1}{101}$, while the preferability of Antartic University is $\gamma_2 = \frac{100}{101}$. This example, along with the demonstration above, suggests that insofar as $\gamma$ can be estimated accurately, it provides unbiased information about school preferability in a well-differentiated admissions market.
 
 \section{Discussion}
-This article has considered the characterization of nonatomic admissions markets, and attempted to incorporate the best elements of the mechanism-design paradigm that treats stable assignment as a normative goal alongside those of regression models that parameterize colleges' demand in a decentralized context. Under the assumption that each school's capacity in the school-choice problem can be interpreted as its target demand, stable matchings produced by DA mechanisms coincide with competitive equilbria of decentralized admissions markets. While this interpretation readily follows from prior results, I have also argued that each iteration of DA mechanisms can be characterized by the price vector, and thus that DA is a special form of t\^{a}tonnement. Thus, given access to an oracle that computes the demand for each school at a given cutoff vector, equilibrium cutoffs can be efficiently computed using a generic t\^{a}tonnement algorithm.
+This article has considered Memphis, a set of assumptions that yield an admissions market with many attractive numerical properties. Because each school shares the same ranking over the set of applicants, the number of possible consideration sets is small, and it is possible to efficiently compute demand curves for each school as a function of its admissions cutoff. The Walrasian equilibrium admits a closed-form expression. A Nash equilibrium that allows schools to express their preference for high-quality students relative to a large class size is also readily computable using best-response heuristics. Moreover, Memphis markets are conducive to parameter estimation. Though the Memphis model is too simplistic to match every contour of the American college admissions market, applying the inverse optimization procedure to publically available test score data yielded an intuitive ranking of top universities. The model also allows analyst to chart each school's demand curve without consulting granular data on individual students' enrollment decisions or imposing an equilibrium assumption.
 
-One interpretation of the relationship between discrete admissions markets (with a finite collection of students and integral school capacities) and nonatomic admissions markets (with a distribution over the set of student types and fractional school capacities) regards instances of the former as samples from the latter. Hence, if the parameters of a given economy are known, then computing equilibria and comparative statics with respect to the nonatomic formulation offers a picture of the expected behavior of the market that is insensitive to discretization error. Unfortunately, as shown in this paper's first section, the endogenous complexity of the space of student types makes nonatomic markets difficult to work with directly. Thus, constructing the oracle mentioned in the previous paragraph is usually difficult, and there remains no general solution to the problem of finding equilibrium cutoffs in an arbitrary nonatomic market.
+Natural extensions of the computational model considered here include incorporating a more robust choice model, such as the nested or mixed MNL, and allowing for heterogeneous scoring across schools. Both of these modifications would allow for differentiation based on students' academic interests; for example, students interested in the performing arts systematically promote conservatories in their preference orders, and these schools in turn will score applicants according to different criteria. However, any departure from the homogeneous scoring assumption invites rapid multiplication in the number of possible consideration sets, in principle because it becomes impossible to construct a total ordering of the space of students.
 
-Nonetheless, by making simplifying assumptions on schools' scoring practices and choosing a suitable parametric choice model, we can sometimes compute the demand efficiently. In the example considered here, students choose schools according to a multinomial logit function and schools share a common scoring procedure. Then an invertible, piecewise linear expression relates the market parameters $\gamma$, $D$, and $p$. Though this model is rather simplistic, solving for the preference parameters $\gamma$ using real data from a set of American colleges produced an intuitive ordering of top universities. The model also allows the analyst to chart each school's demand curve without consulting granular data on individual students' enrollment decisions or assumptions about either set of players' utility functions. 
+The two notions of equilibrium treated in this paper were chosen for their computational tractability and theoretical interest. In general, the notion of a school's objective function is problematic, because it implies a cardinal and total ordering over the set of possible entering classes, when in reality even the weaker notion of a total ordering over applicants is difficult to defend \parencite[][]{collegeadmissionsisnotmarriage}.
 
-\subsection{Future directions}
-Natural extensions of the computational model considered here include the mixed MNL model and mixed scoring vectors. Both of these modifications would allow for differentiation based on students' academic interests; for example, students interested in the performing arts systematically promote conservatories in their preference orders, and these schools in turn will score applicants according to different criteria. However, any departure from the single scoring model invites rapid multiplication in the number of possible consideration sets, in principle because it becomes impossible to construct a total ordering of the space of students. Further upstream sits the question of how to evaluate student ability in the first place. Modern standardized examinations used to assess school performance are weighted by individual and school characteristics, and the scoring formula treats the high-dimensional concatenation of student responses, rather than simply the number of correct answers, as the explanatory variable of ability \parencite[][]{measurementofstudentability}. These devices complicate the analyst's task.
-
-A more robust account of the notion of equilibrium in decentralized admissions markets is also needed. This paper's definition of equilibrium was chosen because it coincides with stable assignments, but in principle, schools can have arbitrary utility functions, and the equilibrium in general nonatomic admissions markets will seldom agree with the stable assignment produced by a centralized mechanism. Furthermore, real schools' preferences may be cardinal rather than ordinal, and are sensitive to the composition of the entering class along with its summary statistics, as pointed out by Roth \parencite*{collegeadmissionsisnotmarriage}. Thus, the results given in this paper cannot fully predict the relative efficiency and fairness of decentralized admissions procedures. 
-
-However, in the real world, putatively decentralized admissions procedures often incorporate regulatory elements that push the market toward stable assignment. For example, the college admissions procedure in South Korea can be viewed as a distributed approximation of school-proposing DA. In this model, the government places a firm limit, called an admissions quota, $q_c$ on the number of students who can attend each university. At the beginning of the admissions cycle, colleges are given the profiles of all the students interested in attending. Each college makes admissions offers over the course of several rounds, beginning with the highest-qualified students, and at each round a subset of the admitted students tentatively commits to attending one of the colleges that admitted them. This process continuous for three rounds, at which point most colleges have either filled their capacity, or bottomed out their pool of applicants. If students were allowed to apply to every college and there were infinite rounds, this would be equivalent to school-proposing DA. However, students are in fact allowed to apply to only six colleges, and colleges instate different evaluation criteria for students who rank the school with high priority. It would be interesting to quantify the welfare cost of these regulations relative to a true stable assignment procedure. The MNL model with single scoring could be a useful analytic tool, because admissions decisions in Korea are based heavily on standardized test scores, and the market is well differentiated vertically.
+Nonethless, in the real world, putatively decentralized admissions procedures may incorporate regulatory elements that push the market toward Walrasian equilibrium. For example, the college admissions procedure in South Korea can be viewed as a distributed approximation of the school-proposing deferred acceptance algorithm for stable assignment. In this model, the government places a firm limit, called an admissions quota, on the number of students who can attend each university. At the beginning of the admissions cycle, colleges are given the profiles of all the students interested in attending. Each college makes admissions offers over the course of several rounds, beginning with the highest-qualified students, and at each round a subset of the admitted students tentatively commits to attending one of the colleges that admitted them. This process continuous for three rounds, at which point most colleges have either filled their capacity, or bottomed out their pool of applicants. If students were allowed to apply to every college and there were infinite rounds, this would be equivalent to school-proposing DA. However, students are in fact allowed to apply to only six colleges, and colleges instate different evaluation criteria for students who rank the school with high priority. It would be interesting to quantify the welfare cost of these regulations relative to a true stable assignment procedure. A Memphis approximation of the Korean admissions market could be a useful analytic tool, because admissions decisions in Korea are based heavily on standardized test scores. 
 
 This article has taken a microeconomic view of admissions markets that views the market as a closed system in which the set of schools and the distribution of student preferences are frozen. Thus, the results offered here are incommensurate with macroeconomic studies in the so-called Tiebout framework that model the sorting behavior of families who move in and out of admissions markets according to how much they value public education overall \parencite[][]{apuretheoryoflocalexpenditures, equilibriumandlocalredistribution}. Because this area of the literature includes comparisons across districts that use different assignment mechanisms, it would be worthwhile to examine the relationship between sorting behavior and choice mechanisms, whereas previous regression studies have treated sorting behavior as a dependent variable that must be controlled for \parencite[][]{doescompetitionamongpublicschools}.
 
