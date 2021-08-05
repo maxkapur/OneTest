@@ -19,34 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
-    \entry{ACTprofilerpt}{book}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=90d991b47098ceef3d8283a386cf7e91}{%
-           family={{ACT}},
-           familyi={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{90d991b47098ceef3d8283a386cf7e91}
-      \strng{fullhash}{90d991b47098ceef3d8283a386cf7e91}
-      \strng{bibnamehash}{90d991b47098ceef3d8283a386cf7e91}
-      \strng{authorbibnamehash}{90d991b47098ceef3d8283a386cf7e91}
-      \strng{authornamehash}{90d991b47098ceef3d8283a386cf7e91}
-      \strng{authorfullhash}{90d991b47098ceef3d8283a386cf7e91}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{The ACT Profile Report: National}
-      \field{titlekey}{ACTprofilerpt}
-      \field{year}{2018}
-      \verb{urlraw}
-      \verb https://www.act.org/content/dam/act/unsecured/documents/cccr2018/P_99_999999_N_S_N00_ACT-GCPR_National.pdf
-      \endverb
-      \verb{url}
-      \verb https://www.act.org/content/dam/act/unsecured/documents/cccr2018/P_99_999999_N_S_N00_ACT-GCPR_National.pdf
-      \endverb
-    \endentry
     \entry{whatmatters}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=c1de651a58cf5e0f6f3db3531f3a877b}{%
@@ -76,7 +48,6 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Economic Theory}
       \field{title}{What Matters in School Choice Tie-Breaking? How Competition Guides Design}
-      \field{titlekey}{whatmatters}
       \field{volume}{190}
       \field{year}{2020}
       \field{pages}{ article no. 105120}
@@ -115,41 +86,12 @@
       \field{journaltitle}{Journal of Political Economy}
       \field{number}{5}
       \field{title}{A Supply and Demand Framework for Two-Sided Matching Markets}
-      \field{titlekey}{supplydemandfw}
       \field{volume}{124}
       \field{year}{2016}
       \field{pages}{1235\bibrangedash 68}
       \range{pages}{34}
       \verb{doi}
       \verb https://doi.org/10.1086/687476
-      \endverb
-    \endentry
-    \entry{SATpercentileranks}{book}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=5e9d007aa4ded24ca378767264027f52}{%
-           family={{College Board}},
-           familyi={C\bibinitperiod}}}%
-      }
-      \strng{namehash}{5e9d007aa4ded24ca378767264027f52}
-      \strng{fullhash}{5e9d007aa4ded24ca378767264027f52}
-      \strng{bibnamehash}{5e9d007aa4ded24ca378767264027f52}
-      \strng{authorbibnamehash}{5e9d007aa4ded24ca378767264027f52}
-      \strng{authornamehash}{5e9d007aa4ded24ca378767264027f52}
-      \strng{authorfullhash}{5e9d007aa4ded24ca378767264027f52}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{SAT Percentile Ranks}
-      \field{titlekey}{SATpercentileranks}
-      \field{year}{2015}
-      \verb{urlraw}
-      \verb https://web.archive.org/web/20160331125512/https://secure-media.collegeboard.org/digitalServices/pdf/sat/sat-percentile-ranks-crit-reading-math-writing-2014.pdf
-      \endverb
-      \verb{url}
-      \verb https://web.archive.org/web/20160331125512/https://secure-media.collegeboard.org/digitalServices/pdf/sat/sat-percentile-ranks-crit-reading-math-writing-2014.pdf
       \endverb
     \endentry
     \entry{equilibriumandlocalredistribution}{article}{}
@@ -182,7 +124,6 @@
       \field{journaltitle}{Journal of Urban Economics}
       \field{number}{1}
       \field{title}{Equilibrium and Local Redistribution in an Urban Economy when Households Differ in Both Preferences and Incomes}
-      \field{titlekey}{equilibriumandlocalredistribution}
       \field{volume}{43}
       \field{year}{1998}
       \field{pages}{23\bibrangedash 51}
@@ -215,7 +156,6 @@
       \field{journaltitle}{The American Economic Review}
       \field{number}{5}
       \field{title}{Does Competition among Public Schools Benefit Students and Taxpayers?}
-      \field{titlekey}{doescompetitionamongpublicschools}
       \field{volume}{90}
       \field{year}{2000}
       \field{pages}{1209\bibrangedash 38}
@@ -225,45 +165,6 @@
       \endverb
       \verb{url}
       \verb https://www.jstor.org/stable/2677848
-      \endverb
-    \endentry
-    \entry{measurementofstudentability}{article}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=507ce1122553a755a5be6d302d31ae92}{%
-           family={Jacob},
-           familyi={J\bibinitperiod},
-           given={Brian},
-           giveni={B\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=19192fe53caa301de3ea1ecacca56af9}{%
-           family={Rothstein},
-           familyi={R\bibinitperiod},
-           given={Jesse},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
-      \strng{fullhash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
-      \strng{bibnamehash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
-      \strng{authorbibnamehash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
-      \strng{authornamehash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
-      \strng{authorfullhash}{b6ebbe3ec4df5401c5ee10f17d14c38e}
-      \field{sortinit}{J}
-      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{The Journal of Economic Perspectives}
-      \field{number}{3}
-      \field{title}{The Measurement of Student Ability in Modern Assessment Systems}
-      \field{titlekey}{measurementofstudentability}
-      \field{volume}{30}
-      \field{year}{2016}
-      \field{pages}{85\bibrangedash 107}
-      \range{pages}{23}
-      \verb{doi}
-      \verb http://dx.doi.Org/10.1257/jep.30.3.85
       \endverb
     \endentry
     \entry{intlrankingsandconflicts}{article}{}
@@ -291,7 +192,6 @@
       \field{journaltitle}{Inside Higher Ed}
       \field{month}{5}
       \field{title}{International Rankings and Conflicts of Interest}
-      \field{titlekey}{intlrankingsandconflicts}
       \field{year}{2021}
       \field{dateera}{ce}
       \verb{urlraw}
@@ -301,118 +201,53 @@
       \verb https://www.insidehighered.com/admissions/article/2021/05/03/international-rankings-and-conflicts-interest
       \endverb
     \endentry
-    \entry{studentprefsrevopt}{misc}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=c0eccba479573eeea8435e8c04f111bd}{%
-           family={Kapur},
-           familyi={K\bibinitperiod},
-           given={Max},
-           giveni={M\bibinitperiod},
+    \entry{algorithmicgametheory}{book}{}
+      \name{editor}{4}{}{%
+        {{un=0,uniquepart=base,hash=dd03ed102537d5040adaf7ede9bad0ec}{%
+           family={Nisan},
+           familyi={N\bibinitperiod},
+           given={Noam},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=efce6f6d496cdcc1bb07fb47dfecb3aa}{%
+           family={Roughgarden},
+           familyi={R\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3b65c0aec42ebdc08432a6ece3a86584}{%
+           family={Tardos},
+           familyi={T\bibinitperiod},
+           given={Éva},
+           giveni={É\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4391dea254c3bbcaff1fefed241caed0}{%
+           family={Vazirani},
+           familyi={V\bibinitperiod},
+           given={Vijay\bibnamedelima V.},
+           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod},
            givenun=0}}%
       }
-      \list{organization}{1}{%
-        {GitHub}%
+      \list{location}{1}{%
+        {Cambridge}%
       }
-      \strng{namehash}{c0eccba479573eeea8435e8c04f111bd}
-      \strng{fullhash}{c0eccba479573eeea8435e8c04f111bd}
-      \strng{bibnamehash}{c0eccba479573eeea8435e8c04f111bd}
-      \strng{authorbibnamehash}{c0eccba479573eeea8435e8c04f111bd}
-      \strng{authornamehash}{c0eccba479573eeea8435e8c04f111bd}
-      \strng{authorfullhash}{c0eccba479573eeea8435e8c04f111bd}
-      \field{extraname}{1}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
-      \field{extradate}{1}
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{a461b403bdb909ab1f593fcc8e04d108}
+      \strng{fullhash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \strng{bibnamehash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \strng{editorbibnamehash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \strng{editornamehash}{a461b403bdb909ab1f593fcc8e04d108}
+      \strng{editorfullhash}{f3f9b9c1f783937a9e09835a23bf3b16}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
       \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{editor}
       \field{labeltitlesource}{title}
-      \field{day}{3}
-      \field{month}{6}
-      \field{title}{StudentPrefsRevOpt}
-      \field{titlekey}{studentprefsrevopt}
-      \field{year}{2021}
-      \field{dateera}{ce}
-      \verb{urlraw}
-      \verb https://github.com/maxkapur/StudentPrefsRevOpt
-      \endverb
-      \verb{url}
-      \verb https://github.com/maxkapur/StudentPrefsRevOpt
-      \endverb
-    \endentry
-    \entry{characterizingnonatomic}{unpublished}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=c0eccba479573eeea8435e8c04f111bd}{%
-           family={Kapur},
-           familyi={K\bibinitperiod},
-           given={Max},
-           giveni={M\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{c0eccba479573eeea8435e8c04f111bd}
-      \strng{fullhash}{c0eccba479573eeea8435e8c04f111bd}
-      \strng{bibnamehash}{c0eccba479573eeea8435e8c04f111bd}
-      \strng{authorbibnamehash}{c0eccba479573eeea8435e8c04f111bd}
-      \strng{authornamehash}{c0eccba479573eeea8435e8c04f111bd}
-      \strng{authorfullhash}{c0eccba479573eeea8435e8c04f111bd}
-      \field{extraname}{2}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
-      \field{extradate}{2}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{3}
-      \field{month}{7}
-      \field{pubstate}{preprint}
-      \field{title}{Characterizing nonatomic admissions markets}
-      \field{titlekey}{characterizingnonatomic}
-      \field{year}{2021}
-      \field{dateera}{ce}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2107.01340
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2107.01340
-      \endverb
-    \endentry
-    \entry{collegeadmissionskaggle}{misc}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=57af42130e01efe7087f6bb474007ee8}{%
-           family={Qian},
-           familyi={Q\bibinitperiod},
-           given={Samson},
-           giveni={S\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{organization}{1}{%
-        {GitHub}%
-      }
-      \strng{namehash}{57af42130e01efe7087f6bb474007ee8}
-      \strng{fullhash}{57af42130e01efe7087f6bb474007ee8}
-      \strng{bibnamehash}{57af42130e01efe7087f6bb474007ee8}
-      \strng{authorbibnamehash}{57af42130e01efe7087f6bb474007ee8}
-      \strng{authornamehash}{57af42130e01efe7087f6bb474007ee8}
-      \strng{authorfullhash}{57af42130e01efe7087f6bb474007ee8}
-      \field{sortinit}{Q}
-      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{27}
-      \field{month}{11}
-      \field{title}{College Admissions: Admission/Class Demographics by University}
-      \field{titlekey}{collegeadmissionskaggle}
-      \field{year}{2018}
-      \field{dateera}{ce}
-      \verb{urlraw}
-      \verb https://www.kaggle.com/samsonqian/college-admissions
-      \endverb
-      \verb{url}
-      \verb https://www.kaggle.com/samsonqian/college-admissions
-      \endverb
+      \field{title}{Algorithmic Game Theory}
+      \field{year}{2007}
     \endentry
     \entry{existenceofpurestrategyequilibria}{article}{}
       \name{author}{1}{}{%
@@ -437,7 +272,6 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Economic Theory}
       \field{title}{A direct proof of the existence of pure strategy equilibria}
-      \field{titlekey}{existenceofpurestrategyequilibria}
       \field{volume}{2}
       \field{year}{1992}
       \field{pages}{427\bibrangedash 433}
@@ -474,7 +308,6 @@
       \field{journaltitle}{Journal of Economic Theory}
       \field{number}{2}
       \field{title}{The College Admissions Problem is not Equivalent to the Marriage Problem}
-      \field{titlekey}{collegeadmissionsisnotmarriage}
       \field{volume}{36}
       \field{year}{1985}
       \field{pages}{277\bibrangedash 88}
@@ -508,7 +341,6 @@
       \field{journaltitle}{Econometrica}
       \field{number}{2}
       \field{title}{On the Allocation of Residents to Rural Hospitals: A General Property of Two-Sided Matching Markets}
-      \field{titlekey}{ruralhospitalstheorem}
       \field{volume}{54}
       \field{year}{1986}
       \field{pages}{425\bibrangedash 427}
@@ -541,7 +373,6 @@
       \field{journaltitle}{Journal of Political Economy}
       \field{number}{5}
       \field{title}{A Pure Theory of Local Expenditures}
-      \field{titlekey}{apuretheoryoflocalexpenditures}
       \field{volume}{64}
       \field{year}{1956}
       \field{pages}{416\bibrangedash 24}
@@ -551,39 +382,6 @@
       \endverb
       \verb{url}
       \verb https://www.jstor.org/stable/1826343
-      \endverb
-    \endentry
-    \entry{walrastatonnement}{article}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=4cf09f93abf65f26171201339553f28e}{%
-           family={Uzawa},
-           familyi={U\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{4cf09f93abf65f26171201339553f28e}
-      \strng{fullhash}{4cf09f93abf65f26171201339553f28e}
-      \strng{bibnamehash}{4cf09f93abf65f26171201339553f28e}
-      \strng{authorbibnamehash}{4cf09f93abf65f26171201339553f28e}
-      \strng{authornamehash}{4cf09f93abf65f26171201339553f28e}
-      \strng{authorfullhash}{4cf09f93abf65f26171201339553f28e}
-      \field{sortinit}{U}
-      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{The Review of Economic Studies}
-      \field{number}{3}
-      \field{title}{Walras' Tâtonnement in the Theory of Exchange}
-      \field{titlekey}{walrastatonnement}
-      \field{volume}{27}
-      \field{year}{1960}
-      \field{pages}{182\bibrangedash 194}
-      \range{pages}{13}
-      \verb{doi}
-      \verb https://doi.org/10.2307/2296080
       \endverb
     \endentry
   \enddatalist

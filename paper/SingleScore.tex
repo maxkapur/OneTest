@@ -112,47 +112,49 @@ Hence, the demand for school $c$ is the sum of the number of students with each 
 \label{mnlonetestdemand}\end{equation}
 %If at least one school has $p_c = 0$, then every student can get in somewhere, and $\sum_c D_c = 1$. Generally, there are $p_1$ students who get in nowhere, and $\sum_c D_c = 1 - p_1$.
 
-\subsection{Continuity and piecewise linearity of the demand function} \label{continuityandpiecewiselinearity}
-$D$ is \emph{continuous} in $p$. To see this, expand the equation above:
-\begin{gather}
-\begin{aligned}D_c &= \gamma_c \left[
-\left( \frac{-1}{\sum_{i=1}^c \gamma_i}\right) p_c
-+ \left(\frac{1}{\sum_{i=1}^{c} \gamma_i} - \frac{1}{\sum_{i=1}^{c+1} \gamma_i} \right) p_{c+1}
-%+ \left(\frac{1}{\sum_{i=1}^{c+1} \gamma_i} - \frac{1}{\sum_{i=1}^{c+2} \gamma_i}\right) p_{c+2}
-\right. \\ &\left.
-\quad + \cdots
-+ \left(\frac{1}{\sum_{i=1}^{|C|-1} \gamma_i} - \frac{1}{\sum_{i=1}^{|C|} \gamma_i}\right) p_{|C|}
-+ \frac{1}{\sum_{i=1}^{|C|} \gamma_i}
-\right]
-\end{aligned}
-\end{gather}
-Since $D$ is linear in any neighborhood where the order of cutoffs is unambiguous, the only opportunity for discontinuity occurs when two or more cutoffs are equal. Thus, it suffices to show that the value of $D_c$ is independent of how ties among the $p_c$ are broken. Suppose that $p_j = \dots = p_{j+n} = \tilde p$ for some $j > c$. Then (dividing by $\gamma_c$ for legibility)
-\begin{gather}
-\begin{aligned}
-\frac{D_c}{\gamma_c} &= \cdots
-+ \left(\frac{1}{\sum_{i=1}^{j-1} \gamma_i} - \frac{1}{\sum_{i=1}^{j} \gamma_i} \right) p_{j}
-+ \left(\frac{1}{\sum_{i=1}^{j} \gamma_i} - \frac{1}{\sum_{i=1}^{j+1} \gamma_i} \right) p_{j+1}
-%+ \left(\frac{1}{\sum_{i=1}^{j+1} \gamma_i} - \frac{1}{\sum_{i=1}^{j+2} \gamma_i}\right) p_{j+2}
- \\ &\quad + \cdots
-+ \left(\frac{1}{\sum_{i=1}^{j+n} \gamma_i} - \frac{1}{\sum_{i=1}^{j+n+1} \gamma_i}\right) p_{j+n}
-+ \cdots \\
-&= \cdots
-+ \left(\frac{1}{\sum_{i=1}^{j-1} \gamma_i} - \cancel{\frac{1}{\sum_{i=1}^{j} \gamma_i}} \right) \tilde p
-+ \left(\cancel{\frac{1}{\sum_{i=1}^{j} \gamma_i}} - \cancel{\frac{1}{\sum_{i=1}^{j+1} \gamma_i}} \right) \tilde p
-%+ \left(\cancel{\frac{1}{\sum_{i=1}^{j+1} \gamma_i}} - \cancel{\frac{1}{\sum_{i=1}^{j+2} \gamma_i}}\right) \tilde p 
-\\ &\quad  + \cdots
-+ \left(\cancel{\frac{1}{\sum_{i=1}^{j+n} \gamma_i}} - \frac{1}{\sum_{i=1}^{j+n+1} \gamma_i}\right) \tilde p
-+ \cdots \\
-&= \cdots
-+ \left(\frac{1}{\sum_{i=1}^{j-1} \gamma_i} - \frac{1}{\sum_{i=1}^{j+n+1} \gamma_i}\right) \tilde p
-+ \cdots
-\end{aligned}
-\end{gather}
-The internal sums that depend on the order of the indices $j \dots j+n$ cancel out; hence, they may be arbitrarily reordered without changing the value of $D_c$. Similar canceling shows that the demand does not vary under tiebreaking when $c$ itself is involved in a tie. Hence, $D$ is continuous in $p$. 
+%\subsection{Continuity and piecewise linearity of the demand function} \label{continuityandpiecewiselinearity}
 
-The expansion above also allows us to see that the demand vector is defined by the matrix equation
+
+%To see this, expand the equation above:
+%\begin{gather}
+%\begin{aligned}D_c &= \gamma_c \left[
+%\left( \frac{-1}{\sum_{i=1}^c \gamma_i}\right) p_c
+%+ \left(\frac{1}{\sum_{i=1}^{c} \gamma_i} - \frac{1}{\sum_{i=1}^{c+1} \gamma_i} \right) p_{c+1}
+%%+ \left(\frac{1}{\sum_{i=1}^{c+1} \gamma_i} - \frac{1}{\sum_{i=1}^{c+2} \gamma_i}\right) p_{c+2}
+%\right. \\ &\left.
+%\quad + \cdots
+%+ \left(\frac{1}{\sum_{i=1}^{|C|-1} \gamma_i} - \frac{1}{\sum_{i=1}^{|C|} \gamma_i}\right) p_{|C|}
+%+ \frac{1}{\sum_{i=1}^{|C|} \gamma_i}
+%\right]
+%\end{aligned}
+%\end{gather}
+%Since $D$ is linear in any neighborhood where the order of cutoffs is unambiguous, the only opportunity for discontinuity occurs when two or more cutoffs are equal. Thus, it suffices to show that the value of $D_c$ is independent of how ties among the $p_c$ are broken. Suppose that $p_j = \dots = p_{j+n} = \tilde p$ for some $j > c$. Then (dividing by $\gamma_c$ for legibility)
+%\begin{gather}
+%\begin{aligned}
+%\frac{D_c}{\gamma_c} &= \cdots
+%+ \left(\frac{1}{\sum_{i=1}^{j-1} \gamma_i} - \frac{1}{\sum_{i=1}^{j} \gamma_i} \right) p_{j}
+%+ \left(\frac{1}{\sum_{i=1}^{j} \gamma_i} - \frac{1}{\sum_{i=1}^{j+1} \gamma_i} \right) p_{j+1}
+%%+ \left(\frac{1}{\sum_{i=1}^{j+1} \gamma_i} - \frac{1}{\sum_{i=1}^{j+2} \gamma_i}\right) p_{j+2}
+% \\ &\quad + \cdots
+%+ \left(\frac{1}{\sum_{i=1}^{j+n} \gamma_i} - \frac{1}{\sum_{i=1}^{j+n+1} \gamma_i}\right) p_{j+n}
+%+ \cdots \\
+%&= \cdots
+%+ \left(\frac{1}{\sum_{i=1}^{j-1} \gamma_i} - \cancel{\frac{1}{\sum_{i=1}^{j} \gamma_i}} \right) \tilde p
+%+ \left(\cancel{\frac{1}{\sum_{i=1}^{j} \gamma_i}} - \cancel{\frac{1}{\sum_{i=1}^{j+1} \gamma_i}} \right) \tilde p
+%%+ \left(\cancel{\frac{1}{\sum_{i=1}^{j+1} \gamma_i}} - \cancel{\frac{1}{\sum_{i=1}^{j+2} \gamma_i}}\right) \tilde p 
+%\\ &\quad  + \cdots
+%+ \left(\cancel{\frac{1}{\sum_{i=1}^{j+n} \gamma_i}} - \frac{1}{\sum_{i=1}^{j+n+1} \gamma_i}\right) \tilde p
+%+ \cdots \\
+%&= \cdots
+%+ \left(\frac{1}{\sum_{i=1}^{j-1} \gamma_i} - \frac{1}{\sum_{i=1}^{j+n+1} \gamma_i}\right) \tilde p
+%+ \cdots
+%\end{aligned}
+%\end{gather}
+%The internal sums that depend on the order of the indices $j \dots j+n$ cancel out; hence, they may be arbitrarily reordered without changing the value of $D_c$. Similar canceling shows that the demand does not vary under tiebreaking when $c$ itself is involved in a tie. Hence, $D$ is continuous in $p$. 
+
+The demand vector can also be expressed using the matrix equation
 \begin{equation}D = A p + \frac{1}{\Gamma}\gamma \label{demandmatrixeq}\end{equation}
-where $A\in \mathbb{R}^{|C| \times |C|}$ is the triangular matrix with
+where $A\in \mathbb{R}^{|C| \times |C|}$ is the invertible triangular matrix with
 \begin{align} \label{Adef}
 A_{ij} &\equiv \begin{cases}
 0, & i > j \\
@@ -166,10 +168,13 @@ A_{ij} &\equiv \begin{cases}
  & & & \ddots & \vdots \\
  &  &  &  &  \gamma_{|C|} \left(\frac{1}{\sum_{i=1}^{|C| - 1}\gamma_i} -\frac{1}{\Gamma}  \right)  \\
 \end{bmatrix}\end{align}
+This $A$ will reappear throughout the analysis. 
 
-Since $\gamma > 0$, $A$ is invertible. This $A$ will reappear throughout the analysis. 
+$D$ is \emph{piecewise linear continuous} in $p$. While the coefficients of the linear expression (equivalently, the entries of $A$) depend on how the cutoff vector is ordered, the only opportunity for discontinuity occurs when two schools' cutoffs are equal, creating multiple valid expansions of equation \eqref{mnlonetestdemand}. However, in these cases the term $p_{d+1} - p_d$ in the same equation vanishes, and only the nonzero gaps between the cutoffs within a tied group and the cutoffs above and below the group contribute to the sum. 
 
-The matrix $A$ depends on the order of the $p_c$ values, so the demand function is \emph{piecewise linear} in $p$.\footnote{In the context of an iterative schema such as the t\^{a}tonnement process simulated in Figure \ref{tat-iter-cutoff} below, instead of sorting $p$ itself, it is often simpler to permute the rows and columns of $A$ according to the inverse of the permutation that sorts $p$.} Because the main diagonal of $A$ is strictly negative, the demand at each school $c$ is strictly decreasing in $p_c$. 
+The entries $A$ depends on the order of the $p_c$ values, so the demand function is \emph{piecewise linear} in $p$.
+
+\footnote{In the context of an iterative schema such as the t\^{a}tonnement process simulated in Figure \ref{tat-iter-cutoff} below, instead of sorting $p$ itself, it is often simpler to permute the rows and columns of $A$ according to the inverse of the permutation that sorts $p$.} Because the main diagonal of $A$ is strictly negative, the demand at each school $c$ is strictly decreasing in $p_c$. 
 
 \section{Derivatives}
 \subsection{Cutoff effects} \label{unconstrainedcutoffeffects}
@@ -195,9 +200,8 @@ Differentiate the demand with respect to $\gamma$ to obtain the effect of a marg
 \sum_{d=\hat c}^{|C|} \frac{-\gamma_c}{\left(\sum_{i=1}^{d}\gamma_i \right)^2} \left(p_{d+1} - p_d \right), & \hat c > c
 \end{cases}
 \end{equation}
-(Note that the $\hat c > c$ and $ \hat c < c$ cases differ in the outer sum's starting index.) The demand for $c$ is predictably decreasing in the quality of the other schools and increasing in $\gamma_c$. This Jacobian and a partial graph of schools’ demand curves in a fictional market are given in Figure \ref{vary-gamma-demand}. 
-
-By the same procedure used to show the continuity of $D$ above, it is possible to show that the quality effect is continuous across tiebreaking permutations of $p$.
+(Note that the $\hat c > c$ and $ \hat c < c$ cases differ in the outer sum's starting index.) The demand for $c$ is predictably decreasing in the quality of the other schools and increasing in $\gamma_c$. %This Jacobian and a partial graph of schools’ demand curves in a fictional market are given in Figure \ref{vary-gamma-demand}. 
+By the presence of the $p_{d+1} - p_d$ term, observe that quality effect is continuous across tiebreaking permutations of $p$.
 
 
 
@@ -212,12 +216,11 @@ D_c &= q_c, \quad \forall c: p_c > 0 \label{stabilitycondition}
 The first condition, called the \emph{capacity condition,} says that no school's demand exceeds its capacity. The second, called the \emph{stability condition,} says that if a school is rejecting students, it must be at full capacity.
 \end{definition}
 
-As argued by Azevedo and Leshno \parencite*{supplydemandfw}, the Walrasian equilibrium of a decentralized market is equivalent to the stable assignment produced by centralized school-choice mechanisms in the deferred acceptance family. In fact, deferred acceptance mechanisms can be interpreted as t\^{a}tonnement processes, a price-update rule known to converge to Walrasian equilibrium under certain conditions on the demand function \parencites[][\S2.4]{characterizingnonatomic}[][]{walrastatonnement}.
-
+As argued by Azevedo and Leshno \parencite*{supplydemandfw}, the Walrasian equilibrium of a decentralized market is equivalent to the stable assignment produced by centralized school-choice mechanisms in the deferred acceptance family.% In fact, deferred acceptance mechanisms can be interpreted as t\^{a}tonnement processes, a price-update rule known to converge to Walrasian equilibrium under certain conditions on the demand function \parencites[][\S2.4]{characterizingnonatomic}[][]{walrastatonnement}.
 The connection between stable assignments and Walrasian equilibria yields a sufficient condition for the uniqueness of the equilibrium. The theorem below relies on the rural hospitals theorem (RHT), which states the demand for each school is the same in any stable matching \parencite[][]{ruralhospitalstheorem}.
 
 \begin{theorem} \label{equilibriumuniquenesstheorem}
-In any admissions market for which the demand function for school $D_c$ is strictly decreasing in $p_c$ and strictly increasing in $p_{c'}$ for $c' \neq c$, the Walrasian equilibrium is unique.
+In any admissions market for which the demand function for school $D_c$ is strictly decreasing in $p_c$ and weakly increasing in $p_{c'}$ for $c' \neq c$, the Walrasian equilibrium is unique.
 \end{theorem} 
 
 \begin{proof}
@@ -227,7 +230,7 @@ For the RHT to hold, there must be some school $d \neq c$ for which $p_d < \pi_d
 In a market with more than two schools, the proof continues by induction. If both $c$ and $d$ increased their cutoffs between $p$ and $\pi$, then for their demands to remain the same, there must be a third school $e$ that also increased its cutoff. Repeating this logic implies that \emph{all} schools' cutoffs must increase, contradicting the RHT again. We conclude that $p = \pi$.
 \end{proof}
 
-Under Memphis, the equilibrium conditions are as follows:
+In a Memphis market, the equilibrium conditions are as follows:
 \begin{gather} \label{ssmnleqconds}
 \begin{aligned}
 D = A p + \frac{1}{\Gamma}\gamma &\leq q \\
@@ -235,12 +238,12 @@ D_c = A_{c.} p + \frac{1}{\Gamma} \gamma_c &= q_c, \quad \forall c: p_c > 0
 \end{aligned}
 \end{gather}
 
-As I will now show, it turns out that at equilibrium, the order of the school cutoffs is determined by the order of the \emph{competitiveness ratios} $\gamma_c / q_c$. This fact enables us to compute the equilibrium directly by solving a linear system. Below, the positive part operator $x^+$ works elementwise on its argument $x$. That is, $(x^+)_i \equiv \max\{0, x_i\}$.
+As I will now show, at equilibrium, the order of the school cutoffs is determined by the order of the \emph{competitiveness ratios} $\gamma_c / q_c$. This fact enables us to compute the equilibrium directly by solving a linear system. Below, the positive part operator $x^+$ works elementwise on its argument $x$. That is, $(x^+)_i \equiv \max\{0, x_i\}$.
 
 \begin{theorem} \label{cutoffsortationthm}
-Index the cutoffs such that $\frac{\gamma_1}{q_1} \leq \dots \leq \frac{\gamma_{|C|}}{q_{|C|}}$. Then % $\hat p_1 \leq \cdots \leq \hat p_{|C|}$, and
+In a Memphis admissions market with parameters $\gamma$ and $q$, index the schools such that $\frac{\gamma_1}{q_1} \leq \dots \leq \frac{\gamma_{|C|}}{q_{|C|}}$. Then % $\hat p_1 \leq \cdots \leq \hat p_{|C|}$, and
 \[\hat p \equiv \left[A^{-1} (q - \frac{1}{\Gamma} \gamma) \right]^+\]
-is the unique Walrasian equilibrium of the Memphis market.
+is the unique Walrasian equilibrium.
 \end{theorem} 
 
 \begin{proof}
@@ -248,7 +251,7 @@ Theorem \ref{equilibriumuniquenesstheorem} establishes the uniqueness of the equ
 \begin{enumerate}
 \item $\hat p$ satisfies $\hat p_1 \leq \cdots \leq \hat p_{|C|}$. This means that the demand at $\hat p$ is given by the expression $A \hat p + \frac{1}{\Gamma}\gamma$ (which only holds if $\hat p$ is sorted).
 %\item $\hat p$ is the same regardless of how ties among the competitiveness ratios are resolved.
-\item $\hat p$ satisfies the equilibrium conditions given in equation \eqref{ssmnleqconds}.
+\item The demand at $\hat p$ satisfies the equilibrium conditions given in equation \eqref{ssmnleqconds}.
 \end{enumerate}
 %The second statement is not necessary for the theorem, but is required by the uniqueness of the equilibrium and thus offers a useful sanity check.
 
@@ -391,13 +394,13 @@ This confirms the intuitive result that only schools that are overdemanded at eq
 
 
 \section{Nash equilibrium}
-In this section, I discard the notion of a target class size $q_c$ and consider instead the case in which each school attempts to maximize an objective function $u_c$ whose input consists of the market parameters $\gamma$, $p$, and $D$. Each school can manipulate only its own cutoff $p_c$. The market attains its competitive or Nash equilibrium when no school, acting alone, can improve its objective function by changing its cutoff. 
+Now, I discard the notion of a target class size $q_c$ and consider instead the case in which each school attempts to maximize an objective function $u_c$ whose input consists of the market parameters $\gamma$, $p$, and $D$. Each school can manipulate only its own cutoff $p_c$. The market attains its competitive or Nash equilibrium when no school, acting alone, can improve its objective function by changing its cutoff. 
 
 \begin{definition} \label{nasheqconditions} $p^*$ is a \emph{Nash equilibrium} for an admissions market when for all $c \in C$,
 \begin{equation} p_c^* \in \argmax_{p_c}\bigl\{ u_c(p_c; p_{c'}): p_c \in [0,1] \bigr\}\end{equation}
 \end{definition}
 
-It is also helpful to define a local Nash equilibrium, which occurs when each school's cutoff is a local maximizer of its objective function
+It is also helpful to define a local Nash equilibrium, which occurs when each school's cutoff is a local maximizer of its objective function. Local equilibrium arguably holds more meaning in the context of admissions markets, since schools tend not to consider drastic shifts in their admissions standards between years.
 
 \begin{definition} \label{localnasheqconditions} $p^*$ is a \emph{local Nash equilibrium} for an admissions market when there exists an $\epsilon > 0$ such that for all $c \in C$,
 \begin{equation}p_c \in [0,1] \cap [p_c^* - \epsilon,  p_c^* + \epsilon] ~\implies~ u_c(p^*_c; p_{c'}) \geq u_c(p_c; p_{c'}) \end{equation}
@@ -414,14 +417,16 @@ If $u_c$ has multiple maxima, pick any of them.
 Since $\gamma$ encodes the students' endogenous preferences, I assume that $u_c$ depends on $\gamma$ only through $D_c$. In particular, I consider the case when school's utility functions have the form $\hat u_c = D_c p_c^{\sigma_c}$, or equivalently,
 \begin{equation} u_c = \log D_c(p_c; p_{c'})  + \sigma_c \log p_c \end{equation}
 $\sigma_c \in [0, \infty)$ is a \emph{selectivity parameter} that reflects the school's preference for high admissions standards relative to a large entering class size. This form is appealing because it affords efficient computation of each school's best response, while also allowing the optimum in $p_c$ to increase monotonically from zero to one as $\sigma_c$ increases. The linear combination $D_c + \sigma_c p_c$, for example, does not possess this property; because $D_c$ is a convex function, the linear form is always maximized at $p_c = 0$ or $p_c =1$.
-%An example of $u_c$'s cloudlike shape appears in the next slide. Shows that maxima may be disjoint. 
+
+
+
 
 \subsection{Solving the best-response problem}
 Let us derive a closed-form expression for the best-response operator $\operatorname{BR}_c$. Since $D_c$ is piecewise linear, continuous, decreasing, and convex in $p_c$, $u_c$ is piecewise concave and continuous. Each ``piece'' is formed by the intervals among the entries of $p_{c'}$. The number of pieces is $|C|$; hence, to maximize $u_c$, it suffices to find the maximum on each piece and then take the maximum of these. (In the discussion below, I omit subscripts where doing so improves legibility.)
 
 Since the order of the other cutoffs $p_c'$ is fixed, there are $|C|$ different orderings that could arise from a new $p_c$ value. Suppose that the new cutoff for school $c$ has index $h$; call it $\bar p_h$. The utility is
 \[u_c = \log D_c(\bar p_h)  + \sigma \log \bar p_h \]
-Differentiating:
+and the derivative is
 \[\frac{\partial}{\partial \bar p_h} u_c = \frac{1}{D_c} \frac{\partial D_c}{\partial \bar p_h} + \frac{\sigma}{\bar p_h}\]
 \[= \Biggl({
 \frac{\gamma_c}{ \sum_{\substack{i=1\\i\neq c}}^h \gamma_i} 
@@ -440,14 +445,39 @@ Setting this expression equal to zero, we find the stationary point
 \Biggr)\Biggr]\]
 This point is valid only if $p_{h} \leq \bar p_h \leq p_{h+1}$, but by concavity, if $\bar p_h$ is outside this segment, then the maximum occurs at the nearer of the two endpoints. Hence
 \[\hat p_h = \max \bigl\{ p_{h},  \min \left\{ p_{h+1}, \bar p_h \right\}\bigr\} \]
-gives the constrained best response for school $c$ when its new index among the sorted cutoffs is $h$. The overall maximum, or  best response for $c$, is the maximum over all indices $h$:
+gives the constrained best response for school $c$ when its new index among the sorted cutoffs is $h$. The overall maximum, or best response for $c$, is the maximum over all indices $h$:
 \begin{align} \label{brforc}
 \operatorname{BR}_c  (p_{c'} , \sigma)  =  \hat p_{h^*},\quad \text{where } h^* = \argmax_h \Bigl\{ u_c(\hat p_h; p_{c'}): h \in \left\{ 1 \dots |C| \right\} \Bigr\}
 \end{align}
 The expression for $\bar p_h$ incurs a computational cost of $\mathcal{O}(|C|)$, because the inner sum does not depend on $h$ and can be calculated in advance. Since there are $|C|$ possible $h$-values, computing one school's best response is $\mathcal{O}(|C|^2)$.
 
-\subsection{Finding the equilibrium}
-The literature on externality games suggests several strategies for computing the equilibrium. As the primary purpose of this paper is to introduce the Memphis market and explore its theoretical proof, in lieu of a detailed algorithm, I remark only that the best-response dynamics can cycle. 
+
+
+
+\begin{figure}
+\begin{center}\includegraphics[width=\linewidth, ]{singlescoreplots/cloud-function-example.pdf}\end{center}
+\captionsetup{singlelinecheck=off}
+    \caption[.]{An example of the school utility function considered here. The plot shows the demand and utility at school 2 as a function of its cutoff when $\sigma_2 = 1$ and the market parameters are $\gamma = (1, 3, 2, 6)$ and $p = (0.2, p_2, 0.4, 0.6)$. The utility, shown in green and exponentiated for legibility, is piecewise concave, and thus to compute the school's best response, it suffices to maximize the utility within each piece, then compute the overall maximum. In this case, $\operatorname{BR}_2(p_{c'}) = 0.3$, as shown by the black dashed line. For comparison, the demand function appears in blue.}
+\label{cloud-function-example}
+\end{figure}
+
+
+
+\subsection{Best-response dynamics can cycle}
+Given an initial cutoff vector $p^{(0)}$, suppose that each admissions cycle, each school updates its cutoff to the value that maximizes its utility function under the assumption that the other schools' cutoffs remain the same. In the literature on externality games, such an iterative scheme is called the \emph{best-response dynamics}. 
+\begin{equation} \label{bestresponsedynamics}
+p_c^{(t+1)} \equiv \operatorname{BR}_c  (p_{c'}^{(t)}), \quad \forall c \in C
+\end{equation}
+Any fixed point of the best-response dynamics is a Nash equilibrium, and vice versa. The best-response dynamics are known to converge for many types of games, including so-called potential games in which each school's utility function can be interpreted as the gradient of a scalar-valued, convex potential function \parencite[][chap. 19]{algorithmicgametheory}. However, Memphis markets are not potential games, and the best-response dynamics can cycle. For example, in the market with $\gamma = (2, 4, 2)$ and $\sigma = (1, 1, 1)$, the cutoff vectors $p^{(0)} = \left(\frac{9}{32}, \frac{16}{32}, \frac{9}{32}\right)$ and $p^{(1)}= \left(\frac{12}{32}, \frac{16}{32}, \frac{12}{32}\right)$ are each other's best response. 
+
+\subsection{Incentive-gradient dynamics reach a local equilibrium}
+Given an initial cutoff vector $p^{(0)}$, suppose that each admissions cycle, each school updates its cutoff in the direction that locally improves its objective function according to a predetermined sequence of step sizes. I will call these the \emph{incentive-gradient dynamics}.
+\begin{equation} \label{incentivegradientdynamics}
+p_c^{(t+1)} \equiv p_{c}^{(t)} + \alpha_t u'_c(p_c; p_{c'}), \quad \forall c \in C
+\end{equation}
+Incentive-gradient dynamics are analogous to gradient ascent. Because each school's objective function is locally concave, when the sequence of step sizes $\alpha_t > 0$ satisfies the Robbins--Monro condition $\sum \alpha_t = \infty, \sum \alpha_t^2 < \infty$, these dynamics converge swiftly to a local equilibrium.
+
+Computing the global Nash equilibrium of a Memphis market is a hard problem, and an effective algorithm combines a global search strategy based on best-response dynamics with a local search strategy based on analysis of each school's incentive gradient. 
 
 % {A numerical example} section was here, but removed for brevity
 
@@ -487,9 +517,9 @@ This calculation makes no equilibrium assumption. However, $p$ is a Walrasian eq
 \subsection{An algorithmic solution for the selectivity parameters $\sigma$}
 Now, I impose an equilibrium assumption. The assumption of a Walrasian equilibrium leaves the inverse optimization problem underdetermined, because for a school with $p_c = 0$, its target demand $q_c$ can be arbitrarily higher than $D_c$ while still establishing an equilibrium. On the other hand, assuming that the market has attained a global Nash equilibrium, each school's selectivity parameter $\sigma_c$ can be computed algorithmically. 
 
-Given the equilibrium cutoffs $p^*$ and preferability parameters $\gamma$, the Nash equilibrium is a stationary point of the best response operator $\operatorname{BR}_c(p)$. The shape of each school's utility function depends only on the cutoffs and $\sigma_c$; thus, it suffices to solve the following $|C|$ univariate root research problems. 
+Given the equilibrium cutoffs $p^*$ and preferability parameters $\gamma$, the Nash equilibrium is a stationary point of the best-response operator $\operatorname{BR}_c(p)$. The shape of each school's utility function depends only on the cutoffs and $\sigma_c$; thus, it suffices to solve the following $|C|$ univariate root research problems. 
 \[\text{for each } c\text{, find } \sigma_c :\quad p^*_c = \operatorname{BR}_c  (p^*_{c'} ; \sigma_c) \]
-If $\operatorname{BR}_c$ is monotonic and continuous in $\sigma_c$, then the root exists, is unique, and can be found using bisection. In a Memphis market, $\operatorname{BR}_c$ is strictly increasing in $\sigma_c$. That is, as $\sigma_c$ increases, so does the optimal cutoff $p^*_c$.  However, $\operatorname{BR}_c$ not continuous, and in certain cases, the discontinuity straddles the zero. When this happens, the bisection converges to the $\sigma_c$-value at the point of discontinuity. As the number of schools approaches, the values of the best response function are typically quite small. 
+If $\operatorname{BR}_c$ is monotonic and continuous in $\sigma_c$, then the root exists, is unique, and can be found using bisection. In a Memphis market, $\operatorname{BR}_c$ is strictly increasing in $\sigma_c$. That is, as $\sigma_c$ increases, so does the optimal cutoff $p^*_c$.  However, $\operatorname{BR}_c$ not continuous, and in certain cases, the discontinuity straddles the zero. When this happens, the bisection converges to the $\sigma_c$-value at the point of discontinuity. As the number of schools increases, the values of the best-response operator are typically quite small. 
 
 The number of bisections $m$ required to achieve a given tolerance is independent of the number of schools in the market. Each bisection calls $\operatorname{BR}_c$ once, and each call is $\mathcal{O}(|C|^2)$, so the overall complexity of computing $\sigma_c$ for each school is $m \mathcal{O}( |C|^3)$.
 
@@ -505,7 +535,7 @@ To compute each school's demand, I divided the number of students enrolled at ea
 For the data corresponding to each year from 2011 through 2019, I performed the preliminary calculations described above and computed the preferability vector $\gamma$ according to the inverse optimization procedure described above. I also estimated the $\sigma$-value corresponding to each school's objective function, but replaced the Nash equilibrium assumption with the arguably weaker assumption that each year, each school shifted its cutoff to its best response to the market conditions of the prior year. Thus, if the current cutoffs are $p^{(t)}$, then $\sigma_c$ was computed according to the assumption that the vector $p_c^{(t+1)}$ is $c$'s best response when the other schools' cutoffs are $p_{c'}^{(t)})$. This yielded an estimate of $\sigma$ for the years 2011 through 2018. Finally, I averaged the results over all years in order to obtain a composite estimate.\footnote{The code used to produce these results, along with additional data visualizations, is available on GitHub at \url{https://github.com/maxkapur/OneTest}.}
 
 \subsubsection{Descriptive statistics}
-The estimated preferability parameters $\gamma$ have an approximate log-normal distribution ($\text{mean} = 9.320 \times 10^{-4}, \text{sd} = 3.900 \times 10^{-3}$), as shown in Figure \ref{average-preferability-hist}. The selectivity parameters have $\gamma_c = 0$ for the nine schools whose average cutoff $p_c = 0$; the remaining $\sigma_c$-values also have an approximate log-normal distribution ($\text{mean} = 0.4819, \text{sd} = 4.1591$), shown in Figure \ref{average-selectivity-hist}.
+The estimated preferability parameters $\gamma$ have an approximate log-normal distribution ($\text{mean} = 9.320 \times 10^{-4}$, $\text{sd} = 3.900 \times 10^{-3}$), as shown in Figure \ref{average-preferability-hist}. The selectivity parameters have $\gamma_c = 0$ for the nine schools whose average cutoff $p_c = 0$; the remaining $\sigma_c$-values also have an approximate log-normal distribution ($\text{mean} = 0.4819$, $\text{sd} = 4.1591$), shown in Figure \ref{average-selectivity-hist}.
 
 Figure \ref{cutoff-demand-gamma-sigma-corr-heatmap} gives correlation coefficients among the parameters $p$, $D$, $\gamma$, and $\sigma$ in each year in the data set. While all the parameters are positively correlated, the strongest correlations are across years, suggesting the consistency of the derived measures. 
 
@@ -545,7 +575,7 @@ Figure \ref{cutoff-demand-gamma-sigma-corr-heatmap} gives correlation coefficien
 
 
 \subsubsection{Ranking colleges}
-The averaged results are shown in Figure \ref{US-cutoff-gamma} and Table \ref{tab:US-inverse-optimization}. The list of the schools with the highest preferability is a predictable list of prestigious universities. In a sense, this outcome is remarkable, because the input data contains no explicit indicators of ``prestige'' (such as data on endowment size and employment outcomes), nor any survey data akin to the questionnaires that some newspapers send to college executives to generate their rankings. The model also does not require observations of individual student choices, as used to estimate MNL parameters under traditional statistical paradigms. The preferability parameters simply emerge organically from the selectivity of each school, each school's total demand, and the assumptions about the distribution of student talent. For comparison, Table \ref{tab:US-inverse-optimization} provides other metrics that might be used to assess school preferability such as the demand, cutoff, yield (proportion of admitted students who choose to attend), and \emph{true yield.} The last is a contrived term for the proportion of \emph{qualified} students, regardless of whether they applied, who chose to attend the school; this can be computed from the cutoff and demand. 
+The averaged results are shown in Figure \ref{US-cutoff-gamma} and Table \ref{tab:US-inverse-optimization}. The list of the schools with the highest preferability is a predictable list of prestigious universities. In a sense, this outcome is remarkable, because the input data contains no explicit indicators of ``prestige'' (such as data on endowment size and employment outcomes), nor any survey data akin to the questionnaires that some newspapers send to college executives to generate their rankings. The model also does not require observations of individual student choices, as used to estimate MNL parameters under traditional statistical paradigms. The preferability parameters simply emerge organically from the selectivity of each school, each school's total demand, and the assumptions about the distribution of student talent. For comparison, Table \ref{tab:US-inverse-optimization} provides other metrics that might be used to assess school preferability such as the demand, cutoff, yield (proportion of admitted students who choose to attend), and \emph{true yield.} The last is a contrived term for the proportion of \emph{qualified} students, regardless of whether they applied, who chose to attend the school; this can be computed from the cutoff and demand as $D_c / (1- p_c)$ . 
 
 First, consider the top-ranked schools, whose figures are shown in Table \ref{tab:US-inverse-optimization}. Because this model considers not only selectivity but also entering class size as an indication of market power, compared to conventional college rankings, it grants an elevated position to public flagships like the University of Michigan at Ann Arbor, which draw large entering classes while maintaining fairly high admissions standards. Although tuition price has not figured into any stage of the analysis, this example shows that the computed preferability parameters incorporate a notion of \emph{value,} whereas traditional college rankings arrange schools as if their tuition prices are the same.
 
@@ -559,6 +589,15 @@ However, when using the yield-based model, the recommended cutoff associated wit
 Figure \ref{caltech-demand-curve} presents a detailed view of Amherst's demand curve in a Memphis market alongside the yield-based model. The Memphis curve has a slightly bowed shape, which confirms the intuitive argument for a gentler relaxation of admissions standards in order to achieve lower target enrollment. In fact, every school’s demand curve in this model is piecewise linear convex, meaning that the yield-based model will always underestimate the demand at cutoffs lower than the observed point.
 
 This analysis has not accounted for the hypothesis that possibility that the appeal of a liberal-arts college like Amherst stems from its small class size, in which case looser admissions standards also reduce the school's preferability, necessitating a lower cutoff after all. Thus, in practical decisionmaking a model like that presented here is unlikely to be competitive with colleges' in-house models, which incorporate specific observations of students who applied to the school and chose to attend another. However, an advantage of the current model is that it produces an informative approximation of the demand curve without using students' personal data. Thus, a school like Amherst can use it to model the demand curves of its \emph{competitor} schools, enabling a more sophisticated recruitment strategy. 
+
+
+
+
+%\subsubsection{What is a liberal-arts college?}
+
+
+
+
 
 \begin{figure}
 \begin{center}\includegraphics[width=\linewidth, ]{singlescoreplots/US-cutoff-gamma.pdf}\end{center}
@@ -595,7 +634,7 @@ This analysis has not accounted for the hypothesis that possibility that the app
 20            & Northeastern U                        & 2878            & 0.8960                                                          & 0.2052         & 0.0197              & 0.0166                                                                   & 10.95                                                                   
 \end{tabular}
 \normalsize \caption{\label{tab:US-inverse-optimization}
-The top twenty schools by average preferability $\gamma_c$, as determined by applying the inverse optimization process to a dataset of 1073 American universities over the years 2011 through 2019. Each school's demand is given as the average number of students in the entering class; to compute $D_c$, divide by the average total number of students, 1,266,305. The school's yield is as reported by the admissions office, while the true yield, which represents the proportion of qualified students who chose to attend the school, was computed by comparing the size of the entering class to the estimated cutoff $p_c$.}
+The top twenty schools by average preferability $\gamma_c$, as determined by applying the inverse optimization process to a dataset of 1073 American universities over the years 2011 through 2019. Each school's demand is given as the average number of students in the entering class; to compute $D_c$, divide by the average total number of students, 1,266,305. The school's yield is the demand divided by the number of applicants reported by the admissions office, while the true yield, which represents the proportion of qualified students who chose to attend the school, was computed by comparing the size of the entering class to the estimated cutoff $p_c$.}
 \end{table}
 
 

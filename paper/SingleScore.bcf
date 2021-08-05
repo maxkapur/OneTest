@@ -893,7 +893,6 @@
     <bcf:option datatype="boolean">nopages</bcf:option>
     <bcf:option datatype="boolean">reflist</bcf:option>
     <bcf:option datatype="boolean">short</bcf:option>
-    <bcf:option datatype="boolean">shortafter</bcf:option>
     <bcf:option datatype="boolean">shortfirst</bcf:option>
     <bcf:option datatype="boolean">shortlinks</bcf:option>
     <bcf:option datatype="boolean">swapvol</bcf:option>
@@ -1069,22 +1068,12 @@
     <bcf:option datatype="boolean" backendout="1">isnn</bcf:option>
     <bcf:option datatype="boolean" backendout="1">library</bcf:option>
     <bcf:option datatype="boolean" backendout="1">listvols</bcf:option>
-    <bcf:option datatype="boolean" backendout="1">newauth</bcf:option>
     <bcf:option datatype="boolean" backendout="1">noauth</bcf:option>
     <bcf:option datatype="boolean" backendout="1">noreprint</bcf:option>
     <bcf:option datatype="boolean" backendout="1">skipdate</bcf:option>
     <bcf:option datatype="boolean" backendout="1">swapauth</bcf:option>
+    <bcf:option datatype="boolean" backendout="1">newauth</bcf:option>
     <bcf:option datatype="boolean" backendout="1">swaptrans</bcf:option>
-    <bcf:option datatype="boolean" backendout="1">swaptrans:booktitle</bcf:option>
-    <bcf:option datatype="boolean" backendout="1">swaptrans:bookbooktitle</bcf:option>
-    <bcf:option datatype="boolean" backendout="1">swaptrans:issuetitle</bcf:option>
-    <bcf:option datatype="boolean" backendout="1">swaptrans:maintitle</bcf:option>
-    <bcf:option datatype="boolean" backendout="1">swaptrans:series</bcf:option>
-    <bcf:option datatype="boolean" backendout="1">swaptrans:title</bcf:option>
-    <bcf:option datatype="boolean" backendout="1">swaptrans:book</bcf:option>
-    <bcf:option datatype="boolean" backendout="1">swaptrans:bookbook</bcf:option>
-    <bcf:option datatype="boolean" backendout="1">swaptrans:issue</bcf:option>
-    <bcf:option datatype="boolean" backendout="1">swaptrans:main</bcf:option>
     <bcf:option datatype="boolean" backendout="1">swapvol</bcf:option>
     <bcf:option datatype="boolean" backendout="1">url</bcf:option>
     <bcf:option datatype="boolean" backendout="1">bibtexcaseprotection</bcf:option>
@@ -1145,7 +1134,7 @@
   </bcf:datafieldset>
   <!-- SOURCEMAP -->
   <bcf:sourcemap>
-    <bcf:maps datatype="bibtex" level="style">
+    <bcf:maps datatype="bibtex" level="user">
       <bcf:map map_overwrite="1">
         <bcf:per_type>article</bcf:per_type>
         <bcf:per_type>review</bcf:per_type>
@@ -1166,7 +1155,7 @@
         <bcf:map_step map_field_source="nameaddon" map_match="(.+)" map_replace="\\mkbibbrackets{$1}"/>
       </bcf:map>
     </bcf:maps>
-    <bcf:maps datatype="bibtex" level="style">
+    <bcf:maps datatype="bibtex" level="user">
       <bcf:map map_overwrite="1">
         <bcf:per_type>online</bcf:per_type>
         <bcf:map_step map_notfield="author" map_final="1"/>
@@ -1185,7 +1174,7 @@
         <bcf:map_step map_field_source="nameaddon" map_match="(.+)" map_replace="\\mkbibparens{$1}"/>
       </bcf:map>
     </bcf:maps>
-    <bcf:maps datatype="bibtex" level="style">
+    <bcf:maps datatype="bibtex" level="user">
       <bcf:map>
         <bcf:per_type>inreference</bcf:per_type>
         <bcf:per_type>reference</bcf:per_type>
@@ -1198,21 +1187,6 @@
         <bcf:map_step map_field_source="shortorganization"/>
         <bcf:map_step map_field_set="shortauthor" map_origfieldval="1"/>
         <bcf:map_step map_field_source="shortauthor" map_match="(.+)" map_replace="{$1}"/>
-      </bcf:map>
-    </bcf:maps>
-    <bcf:maps datatype="bibtex" level="style">
-      <bcf:map map_overwrite="1" map_foreach="title,booktitle,bookbooktitle">
-        <bcf:map_step map_field_source="entrykey"/>
-        <bcf:map_step map_field_set="$MAPLOOPkey" map_origfieldval="1"/>
-        <bcf:map_step map_notfield="$MAPLOOP" map_final="1"/>
-        <bcf:map_step map_field_set="$MAPLOOPkey" map_null="1"/>
-      </bcf:map>
-      <bcf:map map_overwrite="1" map_foreach="editor,editora,editorb,editorc,translator,translatora,translatorb">
-        <bcf:map_step map_field_source="entrykey"/>
-        <bcf:map_step map_field_set="$MAPLOOPtype" map_field_value="," map_appendstrict="1"/>
-        <bcf:map_step map_field_set="$MAPLOOPtype" map_origfieldval="1" map_append="1"/>
-        <bcf:map_step map_notfield="$MAPLOOP" map_final="1"/>
-        <bcf:map_step map_field_set="$MAPLOOPtype" map_null="1"/>
       </bcf:map>
     </bcf:maps>
     <bcf:maps datatype="bibtex" level="driver">
@@ -1277,22 +1251,18 @@
       <bcf:type_pair source="*" target="inbook"/>
       <bcf:type_pair source="*" target="letter"/>
       <bcf:type_pair source="*" target="review"/>
-      <bcf:field source="titlekey" target="booktitlekey" override_target="true"/>
-      <bcf:field source="booktitlekey" target="bookbooktitlekey" override_target="true"/>
       <bcf:field source="author" target="bookauthor"/>
       <bcf:field source="authortype" target="bookauthortype"/>
       <bcf:field source="shortauthor" target="shortbookauthor"/>
-      <bcf:field source="editor" target="editora" override_target="true"/>
-      <bcf:field source="editora" target="editorb" override_target="true"/>
-      <bcf:field source="editorb" target="editorc" override_target="true"/>
-      <bcf:field source="editortype" target="editoratype" override_target="true"/>
-      <bcf:field source="editoratype" target="editorbtype" override_target="true"/>
-      <bcf:field source="editorbtype" target="editorctype" override_target="true"/>
-      <bcf:field source="editoraddon" target="editoraaddon"/>
+      <bcf:field source="editor" target="editora"/>
+      <bcf:field source="editora" target="editorb"/>
+      <bcf:field source="editorb" target="editorc"/>
+      <bcf:field source="editortype" target="editoratype"/>
+      <bcf:field source="editoratype" target="editorbtype"/>
+      <bcf:field source="editorbtype" target="editorctype"/>
       <bcf:field source="translator" target="translatora"/>
       <bcf:field source="translatora" target="translatorb"/>
-      <bcf:field source="translatortype" target="translatoratype" override_target="true"/>
-      <bcf:field source="translatoratype" target="translatorbtype" override_target="true"/>
+      <bcf:field source="translatortype" target="translatoratype"/>
       <bcf:field source="title" target="booktitle"/>
       <bcf:field source="subtitle" target="booksubtitle"/>
       <bcf:field source="titleaddon" target="booktitleaddon"/>
@@ -1619,13 +1589,10 @@
       <bcf:field fieldtype="field" datatype="literal">blogtitleaddon</bcf:field>
       <bcf:field fieldtype="field" datatype="literal">bookauthortype</bcf:field>
       <bcf:field fieldtype="field" datatype="literal">bookbooktitle</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">bookvolume</bcf:field>
       <bcf:field fieldtype="field" datatype="literal">bookbookvolume</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">booktitlekey</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">bookbooktitlekey</bcf:field>
+      <bcf:field fieldtype="field" datatype="literal">bookvolume</bcf:field>
       <bcf:field fieldtype="field" datatype="literal">bookyear</bcf:field>
       <bcf:field fieldtype="field" datatype="literal">editoraddon</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">editoraaddon</bcf:field>
       <bcf:field fieldtype="field" datatype="literal">endbookyear</bcf:field>
       <bcf:field fieldtype="field" datatype="literal">handle</bcf:field>
       <bcf:field fieldtype="field" datatype="literal">seriesaddon</bcf:field>
@@ -1633,10 +1600,8 @@
       <bcf:field fieldtype="field" datatype="literal">shortbooktitle</bcf:field>
       <bcf:field fieldtype="field" datatype="literal">shortmaintitle</bcf:field>
       <bcf:field fieldtype="field" datatype="literal">shortorganization</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">titlekey</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">translatortype</bcf:field>
       <bcf:field fieldtype="field" datatype="literal">translatoratype</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">translatorbtype</bcf:field>
+      <bcf:field fieldtype="field" datatype="literal">translatortype</bcf:field>
       <bcf:field fieldtype="list" datatype="name">preface</bcf:field>
       <bcf:field fieldtype="list" datatype="name">shortbookauthor</bcf:field>
       <bcf:field fieldtype="list" datatype="name">translatora</bcf:field>
@@ -2665,16 +2630,15 @@
     <bcf:citekey order="1">whatmatters</bcf:citekey>
     <bcf:citekey order="2">supplydemandfw</bcf:citekey>
     <bcf:citekey order="3">supplydemandfw</bcf:citekey>
-    <bcf:citekey order="4">characterizingnonatomic</bcf:citekey>
-    <bcf:citekey order="5">walrastatonnement</bcf:citekey>
-    <bcf:citekey order="6">ruralhospitalstheorem</bcf:citekey>
-    <bcf:citekey order="7">supplydemandfw</bcf:citekey>
-    <bcf:citekey order="8">existenceofpurestrategyequilibria</bcf:citekey>
-    <bcf:citekey order="9">intlrankingsandconflicts</bcf:citekey>
-    <bcf:citekey order="10">collegeadmissionsisnotmarriage</bcf:citekey>
-    <bcf:citekey order="11">apuretheoryoflocalexpenditures</bcf:citekey>
-    <bcf:citekey order="11">equilibriumandlocalredistribution</bcf:citekey>
-    <bcf:citekey order="12">doescompetitionamongpublicschools</bcf:citekey>
+    <bcf:citekey order="4">ruralhospitalstheorem</bcf:citekey>
+    <bcf:citekey order="5">supplydemandfw</bcf:citekey>
+    <bcf:citekey order="6">existenceofpurestrategyequilibria</bcf:citekey>
+    <bcf:citekey order="7">algorithmicgametheory</bcf:citekey>
+    <bcf:citekey order="8">intlrankingsandconflicts</bcf:citekey>
+    <bcf:citekey order="9">collegeadmissionsisnotmarriage</bcf:citekey>
+    <bcf:citekey order="10">apuretheoryoflocalexpenditures</bcf:citekey>
+    <bcf:citekey order="10">equilibriumandlocalredistribution</bcf:citekey>
+    <bcf:citekey order="11">doescompetitionamongpublicschools</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
