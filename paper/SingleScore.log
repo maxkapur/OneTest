@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  5 AUG 2021 10:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.12)  6 AUG 2021 07:44
 entering extended mode
 **./SingleScore.tex
 (SingleScore.tex
@@ -918,41 +918,41 @@ cutoff-demand-gamma-sigma-corr-heatmap.pdf>] [22]
 File: singlescoreplots/US-cutoff-gamma.pdf Graphic file (type pdf)
 <use singlescoreplots/US-cutoff-gamma.pdf>
 Package pdftex.def Info: singlescoreplots/US-cutoff-gamma.pdf  used on input li
-ne 594.
+ne 603.
 (pdftex.def)             Requested size: 455.24411pt x 455.25348pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 603.
+               Default added (so using `tbp') on input line 612.
 
 <singlescoreplots/three-demand-curves.pdf, id=342, 702.625pt x 501.875pt>
 File: singlescoreplots/three-demand-curves.pdf Graphic file (type pdf)
 <use singlescoreplots/three-demand-curves.pdf>
 Package pdftex.def Info: singlescoreplots/three-demand-curves.pdf  used on inpu
-t line 636.
+t line 645.
 (pdftex.def)             Requested size: 455.24411pt x 325.18105pt.
 <singlescoreplots/single-demand-curve.pdf, id=344, 702.625pt x 501.875pt>
 File: singlescoreplots/single-demand-curve.pdf Graphic file (type pdf)
 <use singlescoreplots/single-demand-curve.pdf>
 Package pdftex.def Info: singlescoreplots/single-demand-curve.pdf  used on inpu
-t line 647.
+t line 656.
 (pdftex.def)             Requested size: 455.24411pt x 325.18105pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 662.
+(hyperref)                removing `math shift' on input line 671.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gamma' on input line 662.
+(hyperref)                removing `\gamma' on input line 671.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 662.
+(hyperref)                removing `math shift' on input line 671.
 
 [23] [24 <./singlescoreplots/US-cutoff-gamma.pdf>] [25 <./singlescoreplots/thre
 e-demand-curves.pdf>] [26 <./singlescoreplots/single-demand-curve.pdf>]
 [27] [28]
-Overfull \hbox (0.99413pt too wide) in paragraph at lines 680--680
+Overfull \hbox (0.99413pt too wide) in paragraph at lines 689--689
 \OT1/cmr/m/n/12 How Com-pe-ti-tion Guides De-sign.'' \OT1/cmr/m/it/12 Jour-nal 
 of Eco-nomic The-ory \OT1/cmr/m/n/12 190: ar-ti-cle no. 105120.
  []
@@ -1001,7 +1001,7 @@ ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Max/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Max/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Max/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on SingleScore.pdf (29 pages, 1195248 bytes).
+Output written on SingleScore.pdf (29 pages, 1195798 bytes).
 PDF statistics:
  505 PDF objects out of 1000 (max. 8388607)
  115 named destinations out of 1000 (max. 500000)
