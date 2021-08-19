@@ -254,7 +254,7 @@ function bestresponse_it(market::Market{T},
     
     verbose && print("\n  c = ")
     
-    for c in 1:C
+    Threads.@threads for c in 1:C
         verbose && c%10 == 1 && print("$c ")
         p_star[c] = brforc(c, global_sort_order, market, sigma[c], p; heuristic=heuristic)
     end
@@ -406,9 +406,9 @@ function sigmainvopt(market::Market{T},
     res = zeros(T, length(market))
     err = zeros(T, length(market))
     
-    for (c, pc) in enumerate(p)
+    Threads.@threads for c in 1:length(p)
         verbose && c % 100 == 1 && @show c
-        if pc == 0
+        if p[c] == 0
             res[c] = 0
         else
             function f(x::T)::T
@@ -460,9 +460,9 @@ function sigmainvopt_disequilibrium(market::Market{T},
     res = zeros(T, length(market))
     err = zeros(T, length(market))
     
-    for (c, pc) in enumerate(p)
+    Threads.@threads for c in 1:length(p)
         verbose && c % 100 == 1 && @show c
-        if pc == 0
+        if p[c] == 0
             res[c] = 0
         else
             function f(x::T)::T
